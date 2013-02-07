@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Beach Camp Prices"
+                OnQuickLaunch="TRUE"
+                TemplateType="100"
+                FeatureId="00bfea71-de22-43b2-a848-c05709900100"
+                Url="Lists/BCPrices"
+                CustomSchema="BCPrices/Schema.xml"
+                Description="[BeachCamp] - Period Section Prices">
+    <Data>
+
+      <Rows>
+
+        <Row>
+          <Field Name='ID'>1</Field>
+          <Field Name='Title'>A</Field>
+          <Field Name='Period1'>150</Field>
+          <Field Name='Period2'>150</Field>
+          <Field Name='FullDay'>300</Field>
+          <Field Name='Ramadan'>150</Field>
+        </Row>
+
+        <Row>
+          <Field Name='ID'>2</Field>
+          <Field Name='Title'>B</Field>
+          <Field Name='Period1'>150</Field>
+          <Field Name='Period2'>150</Field>
+          <Field Name='FullDay'>300</Field>
+          <Field Name='Ramadan'>150</Field>
+        </Row>
+
+        <Row>
+          <Field Name='ID'>3</Field>
+          <Field Name='Title'>A&amp;B</Field>
+          <Field Name='Period1'>300</Field>
+          <Field Name='Period2'>300</Field>
+          <Field Name='FullDay'>600</Field>
+          <Field Name='Ramadan'>300</Field>
+        </Row>
+
+      </Rows>
+
+    </Data>
+
+
+  </ListInstance>
+
+</Elements>
