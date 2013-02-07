@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="TVMCORP.TVS - BCPrices" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/TVMCORP.TVS-ListDefinition1" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    
+    <ContentTypes>
+    </ContentTypes>
+    
+    <Fields>
+
+      <Field Type="Text" Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}"  DisplayName="Section" ></Field>
+      <Field Type="Text" Name="LinkTitleNoMenu" ID="{bc91a437-52e7-49e1-8c4e-4698904b2b6d}" DisplayName="Section" ></Field>
+      <Field Type="Text" Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Section" ></Field>
+
+      <Field Type="Integer" DisplayName="1st Period(07:00-16:30)" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE"
+             ID="{A7EA1618-CD57-4634-BB74-A4FD04980789}" StaticName="Period1" Name="Period1" Decimals="0" Group="[BeachCamp]" >
+      </Field>
+
+      <Field Type="Integer" DisplayName="2st Period(17:30-02:00)" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE"
+             ID="{B0BE7AB2-351A-4af7-ABC8-ACB131D03A48}" StaticName="Period2" Name="Period2" Decimals="0" Group="[BeachCamp]" >
+      </Field>
+
+      <Field Type="Integer" DisplayName="Full day(07:00-02:00)" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE"
+             ID="{8C2303FB-3466-47ac-9F15-DC15F9936E29}" StaticName="FullDay" Name="FullDay" Decimals="0" Group="[BeachCamp]" >
+      </Field>
+
+      <Field Type="Integer" DisplayName="Ramadan(15:00-04:00)" Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE"
+             ID="{7B459B50-284D-41cf-92A9-85EA9F1DC8B9}" StaticName="Ramadan" Name="Ramadan" Decimals="0" Group="[BeachCamp]" >
+      </Field>
+      
+    </Fields>
+    
+    <Views>
+      <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="LinkTitleNoMenu"></FieldRef>
+        </ViewFields>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="Modified" Ascending="FALSE"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View>
+      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <!--<FieldRef Name="Attachments"></FieldRef>-->
+          <FieldRef Name="Edit"></FieldRef>
+          <FieldRef Name="LinkTitle"></FieldRef>
+          <FieldRef Name="Period1"></FieldRef>
+          <FieldRef Name="Period2"></FieldRef>
+          <FieldRef Name="FullDay"></FieldRef>
+          <FieldRef Name="Ramadan"></FieldRef>
+        </ViewFields>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="ID"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View>
+    </Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>
