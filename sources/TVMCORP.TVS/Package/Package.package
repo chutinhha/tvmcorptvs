@@ -5,8 +5,7 @@
     <customAssembly location="itextsharp.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Libs\itextsharp.dll" />
   </assemblies>
   <features>
-    <featureReference itemId="ebda4b40-c8c3-496e-bb89-e387cc054ca4" />
-    <featureReference itemId="880d238d-8905-44a2-a4fc-9eab13e80a8f" />
+    <featureReference itemId="f9307581-4225-4f07-9222-f51c049c9660" />
   </features>
   <projectItems>
     <projectItemReference itemId="d8fea4bc-affa-4359-bcb7-67f75bfd4347" />

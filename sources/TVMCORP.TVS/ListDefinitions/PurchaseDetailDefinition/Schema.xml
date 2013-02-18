@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="Purchase Detail" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/TVMCORP.TVS-PurchaseDetailDefinition" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+      <ContentType ID="0x01003b1ce67c698947c29aac0c2202abbf30" 
+                   Name="[TVM-eOffice] - Purchase Detail Content Type" 
+                   Group="[TVM-eOffice]" 
+                   Description="[TVM-eOffice] - Purchase Detail Content Type" 
+                   Inherits="TRUE" 
+                   Version="0">
+        <FieldRefs>
+          <FieldRef ID="{B6E9B7D1-D815-4a06-A495-C2C147D4BD27}" Name="ProductName" />
+          <FieldRef ID="{E4DCC65B-44D5-4f46-A00E-0F9260A0E5A5}" Name="Quantity" />
+          <FieldRef ID="{22DFF1BB-9332-41ff-A3D3-10B6EDC06732}" Name="Price" />
+          <FieldRef ID="{166CA42B-6B2B-47ab-8C99-782FC16C4DDF}" Name="Description" />
+        </FieldRefs>
+      </ContentType>
+    </ContentTypes>
+    <Fields>
+      <Field Type="Text" DisplayName="Mô tả" Required="FALSE" MaxLength="255"
+             ID="{B6E9B7D1-D815-4a06-A495-C2C147D4BD27}" Name="ProductName" StaticName="ProductName" Group="[TVM-eOffice]">
+      </Field>
+
+      <Field Type="Number" DisplayName="Số lượng" Required="FALSE" Decimals="0" Min="0" Max="100" ID="{E4DCC65B-44D5-4f46-A00E-0F9260A0E5A5}"
+             StaticName="Quantity" Name="Quantity" Group="[TVM-eOffice]" >
+        <Default>0</Default>
+      </Field>
+
+      <Field Type="Number" DisplayName="Đơn giá" Required="FALSE" Decimals="0" Min="0" Max="1000000" ID="{22DFF1BB-9332-41ff-A3D3-10B6EDC06732}"
+             StaticName="Price" Name="Price" Group="[TVM-eOffice]" >
+        <Default>0</Default>
+      </Field>
+
+      <Field Type="Text" DisplayName="Mục đích" Required="FALSE" MaxLength="255"
+                 ID="{166CA42B-6B2B-47ab-8C99-782FC16C4DDF}" Name="Description" StaticName="Description" Group="[TVM-eOffice]">
+      </Field>
+    </Fields>
+    <Views>
+      <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="LinkTitleNoMenu">
+          </FieldRef>
+        </ViewFields>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="Modified" Ascending="FALSE">
+            </FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View>
+      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="Attachments">
+          </FieldRef>
+          <FieldRef Name="LinkTitle">
+          </FieldRef>
+        </ViewFields>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="ID">
+            </FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View>
+    </Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>
