@@ -91,30 +91,13 @@
     <Compile Include="BeachCampWorkflow\TaskActivity.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ContentTypes\BeachCampEvent\BeachCampEventReciver.cs" />
-    <Compile Include="ControlTemplates\SharePoint.BeachCamp\BeachCampDispEvent.ascx.cs">
-      <DependentUpon>BeachCampDispEvent.ascx</DependentUpon>
+    <Compile Include="ContentTypes\PurchaseContentType\PurchaseContentTypeEventReceiver.cs" />
+    <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseForm.ascx.cs">
+      <DependentUpon>PurchaseForm.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ControlTemplates\SharePoint.BeachCamp\BeachCampDispEvent.ascx.designer.cs">
-      <DependentUpon>BeachCampDispEvent.ascx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ControlTemplates\SharePoint.BeachCamp\BeachCampEditEvent.ascx.cs">
-      <DependentUpon>BeachCampEditEvent.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ControlTemplates\SharePoint.BeachCamp\BeachCampEditEvent.ascx.designer.cs">
-      <DependentUpon>BeachCampEditEvent.ascx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ControlTemplates\SharePoint.BeachCamp\BeachCampNewEvent.ascx.cs">
-      <DependentUpon>BeachCampNewEvent.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ControlTemplates\SharePoint.BeachCamp\BeachCampNewEvent.ascx.designer.cs">
-      <DependentUpon>BeachCampNewEvent.ascx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Features\SharePoint.BeachCamp\SharePoint.EventReceiver.cs">
-      <DependentUpon>SharePoint.BeachCamp.feature</DependentUpon>
+    <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseForm.ascx.designer.cs">
+      <DependentUpon>PurchaseForm.ascx.cs</DependentUpon>
     </Compile>
     <Compile Include="Layouts\SharePoint.BeachCamp\BeachCampExport.aspx.cs">
       <DependentUpon>BeachCampExport.aspx</DependentUpon>
@@ -146,18 +129,36 @@
     <None Include="ContentTypes\BeachCampTaskContentType\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{253e32cc-47ba-42e7-a077-78699edcf3db}</SharePointProjectItemId>
     </None>
+    <None Include="ContentTypes\PurchaseContentType\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6e8c6874-7473-48d0-9fec-55bf34d2dc10}</SharePointProjectItemId>
+    </None>
+    <None Include="ContentTypes\PurchaseDetailContentType\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d669ad8f-12c4-48ca-8731-e503824368ae}</SharePointProjectItemId>
+    </None>
     <None Include="CustomActions\BeachCampRegistration\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{602814f3-2bd6-4da0-978b-00e8c237acec}</SharePointProjectItemId>
     </None>
     <None Include="CustomActions\BeachCampRibbon\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{776ed2f1-30f6-4be1-a628-23a01726c3d6}</SharePointProjectItemId>
     </None>
+    <None Include="Features\TVMCorp.TVS\TVMCorp.TVS.feature">
+      <FeatureId>{f9307581-4225-4f07-9222-f51c049c9660}</FeatureId>
+    </None>
     <None Include="Images\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{b46a8b12-6299-4515-8912-9cd7a5e66392}</SharePointProjectItemId>
     </None>
     <None Include="Layouts\SharePoint.BeachCamp\BeachCampReservation.docx" />
-    <None Include="ListInstances\BCCalendar\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{cb631e6c-8b96-47e0-8d4d-a7bb5e9383ca}</SharePointProjectItemId>
+    <None Include="ListDefinitions\PurchaseDefinition\PurchaseInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bd02efba-053d-4ec6-b601-a6fd28f378bf}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\PurchaseDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5834c38f-31f3-49a3-9a05-a8d2791caf3f}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\PurchaseDetailDefinition\PurchaseDetailInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3a6e6143-cfc1-46f8-8910-de23a2978f91}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\PurchaseDetailDefinition\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e644d922-2813-4c24-98e9-db82dfafc795}</SharePointProjectItemId>
     </None>
     <None Include="ListInstances\BeachCampTask\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{748bf8b7-5520-40fe-b937-abf202cce299}</SharePointProjectItemId>
@@ -165,24 +166,12 @@
     <None Include="BeachCampWorkflow\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{7e7a8337-cd9d-44f9-9db6-68c0d58b7a50}</SharePointProjectItemId>
     </None>
-    <None Include="ContentTypes\BeachCampEvent\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{3b28a4c9-c760-42e2-af0d-3ecd0aa3f4b0}</SharePointProjectItemId>
-    </None>
     <None Include="ControlTemplates\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{d8fea4bc-affa-4359-bcb7-67f75bfd4347}</SharePointProjectItemId>
-    </None>
-    <None Include="Features\SharePoint.BeachCamp.Site\SharePoint.BeachCamp.Site.feature">
-      <FeatureId>{880d238d-8905-44a2-a4fc-9eab13e80a8f}</FeatureId>
-    </None>
-    <None Include="Features\SharePoint.BeachCamp\SharePoint.BeachCamp.feature">
-      <FeatureId>{ebda4b40-c8c3-496e-bb89-e387cc054ca4}</FeatureId>
     </None>
     <None Include="Layouts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{472dc5da-57bd-4ea6-aa11-189b37c799ee}</SharePointProjectItemId>
       <SubType>Designer</SubType>
-    </None>
-    <None Include="ListInstances\BCPrices\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{4be44827-6f22-4fdf-bec7-0374527644e3}</SharePointProjectItemId>
     </None>
     <None Include="ListInstances\EmailTemplates\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{2085b108-5315-43d7-828b-b87b81178978}</SharePointProjectItemId>
@@ -210,15 +199,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="BeachCampWorkflow\BCWorkflowAssociationForm.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="ContentTypes\BeachCampTaskContentType\Elements.xml" />
+    <Content Include="ContentTypes\PurchaseContentType\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ContentTypes\PurchaseDetailContentType\Elements.xml" />
+    <Content Include="ControlTemplates\TVMCORP.TVS\PurchaseForm.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="CustomActions\BeachCampRegistration\Elements.xml" />
     <Content Include="CustomActions\BeachCampRibbon\Elements.xml" />
+    <Content Include="Features\TVMCorp.TVS\TVMCorp.TVS.Template.xml">
+      <DependentUpon>TVMCorp.TVS.feature</DependentUpon>
+    </Content>
     <Content Include="Images\SharePoint.BeachCamp\css\style.css" />
     <Content Include="Images\SharePoint.BeachCamp\images\bgcontainer_form.png" />
     <Content Include="Images\SharePoint.BeachCamp\images\bgfieldset.png" />
@@ -250,41 +246,22 @@
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="Libs\itextsharp.dll" />
-    <Content Include="ListInstances\BCCalendar\Elements.xml" />
-    <Content Include="ListInstances\BCCalendar\Schema.xml" />
+    <Content Include="ListDefinitions\PurchaseDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\PurchaseDefinition\PurchaseInstance\Elements.xml" />
+    <Content Include="ListDefinitions\PurchaseDefinition\Schema.xml" />
+    <Content Include="ListDefinitions\PurchaseDetailDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\PurchaseDetailDefinition\PurchaseDetailInstance\Elements.xml" />
+    <Content Include="ListDefinitions\PurchaseDetailDefinition\Schema.xml" />
     <Content Include="ListInstances\BeachCampTask\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="BeachCampWorkflow\Elements.xml" />
-    <Content Include="ContentTypes\BeachCampEvent\Elements.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ControlTemplates\BeachCampRenderTemplate.ascx">
+    <Content Include="ControlTemplates\TVMCorpTemplate.ascx">
       <SubType>ASPXCodeBehind</SubType>
-    </Content>
-    <Content Include="ControlTemplates\SharePoint.BeachCamp\BeachCampDispEvent.ascx">
-      <SubType>ASPXCodeBehind</SubType>
-    </Content>
-    <Content Include="ControlTemplates\SharePoint.BeachCamp\BeachCampEditEvent.ascx">
-      <SubType>ASPXCodeBehind</SubType>
-    </Content>
-    <Content Include="ControlTemplates\SharePoint.BeachCamp\BeachCampNewEvent.ascx">
-      <SubType>ASPXCodeBehind</SubType>
-    </Content>
-    <Content Include="Features\SharePoint.BeachCamp.Site\SharePoint.BeachCamp.Site.Template.xml">
-      <DependentUpon>SharePoint.BeachCamp.Site.feature</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Features\SharePoint.BeachCamp\SharePoint.BeachCamp.Template.xml">
-      <DependentUpon>SharePoint.BeachCamp.feature</DependentUpon>
     </Content>
     <Content Include="Layouts\1033\jquery-1.8.2.min.js" />
     <Content Include="Layouts\SharePoint.BeachCamp\BeachCampTask.aspx">
       <SubType>ASPXCodeBehind</SubType>
-    </Content>
-    <Content Include="ListInstances\BCPrices\Elements.xml" />
-    <Content Include="ListInstances\BCPrices\Schema.xml">
-      <SubType>Designer</SubType>
     </Content>
     <Content Include="ListInstances\BeachCampTask\Schema.xml" />
     <Content Include="ListInstances\EmailTemplates\Elements.xml" />
