@@ -49,7 +49,7 @@ cr_$(ConfigurationName).bat</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>md "$(SolutionDir)Setup\$(ConfigurationName)"
-copy "$(SolutionDir)SharePoint.BeachCamp\$(OutDir)SharePoint.BeachCamp.wsp" "$(SolutionDir)Setup\$(ConfigurationName)\WSPS\SharePoint.BeachCamp.wsp" /Y
+copy "$(SolutionDir)TVMCORP.TVS\$(OutDir)TVMCORP.TVS.wsp" "$(SolutionDir)Setup\$(ConfigurationName)\WSPS\TVMCORP.TVS.wsp" /Y
 </PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
