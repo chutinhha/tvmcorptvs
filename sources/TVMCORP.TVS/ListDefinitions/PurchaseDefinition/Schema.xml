@@ -2,10 +2,11 @@
 <List xmlns:ows="Microsoft SharePoint" Title="Purchase" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/Purchase" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
   <MetaData>
     <ContentTypes>
-      <ContentType ID="0x0100ded6f23a2f434302b5583a6b55451f61" 
-                   Name="[TVM - eOffice] - Purchase Content Type" 
-                   Group="[TVM - eOffice]" 
-                   Description="[TVM - eOffice] - Purchase Content Type" 
+      <!-- Parent ContentType: Item (0x01) -->
+      <ContentType ID="0x0100ded6f23a2f434302b5583a6b55451f61"
+                   Name="[TVM - eOffice] - Purchase Content Type"
+                   Group="[TVM - eOffice]"
+                   Description="[TVM - eOffice] - Purchase Content Type"
                    Version="0">
         <FieldRefs>
           <FieldRef ID="{CFE09400-F6DF-45f1-88FC-992343BA09CD}" Name="DateRequest" />
@@ -14,6 +15,7 @@
           <FieldRef ID="{F3C54B04-959E-401a-8273-82CB0CE828EF}" Name="TypeOfApproval" />
           <FieldRef ID="{A3423F74-F45A-469e-85A8-F29A5E1560A3}" Name="PurchaseDetail" />
           <FieldRef ID="{836180CE-7589-400c-88CA-ABB0340EAD37}" Name="RequestStatus" />
+
         </FieldRefs>
         <XmlDocuments>
           <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/events">
@@ -25,10 +27,8 @@
                 <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
                 <Class>$SharePoint.Type.3f414e0d-5138-48dd-b29d-a3270ae1070b.FullName$</Class>
                 <SolutionId>$SharePoint.Package.Id$</SolutionId>
-                <Data>
-                </Data>
-                <Filter>
-                </Filter>
+                <Data></Data>
+                <Filter></Filter>
               </Receiver>
             </Receivers>
           </XmlDocument>

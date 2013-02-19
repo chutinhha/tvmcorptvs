@@ -2,7 +2,7 @@
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <ListInstance Title="Purchase Detail"
                 OnQuickLaunch="TRUE"
-                TemplateType="10001"
+                TemplateType="11001"
                 Url="Lists/PurchaseDetail"
                 Description="[TVM-eOffice] - Purchase Detail">
   </ListInstance>
