@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SandboxedSolution>False</SandboxedSolution>
-    <ActiveDeploymentConfiguration>No Activation</ActiveDeploymentConfiguration>
+    <ActiveDeploymentConfiguration>Default</ActiveDeploymentConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -195,7 +195,9 @@
     <Content Include="ContentTypes\PurchaseContentType\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="ContentTypes\PurchaseDetailContentType\Elements.xml" />
+    <Content Include="ContentTypes\PurchaseDetailContentType\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ControlTemplates\TVMCORP.TVS\PurchaseForm.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
@@ -265,12 +267,6 @@
       <DependentUpon>BeachCampWorkflow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Webparts.xml" />
-    <Content Include="TEMPLATE\PAGES\FullPage_WebPart.aspx">
-      <SubType>ASPXCodeBehind</SubType>
-    </Content>
-    <Content Include="TEMPLATE\PAGES\TwoColumn_WebPart.aspx">
-      <SubType>ASPXCodeBehind</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TVMCORP.TVS.UTIL\TVMCORP.TVS.UTIL.csproj">
@@ -279,6 +275,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="TEMPLATE\PAGES\" />
     <Folder Include="TimerJobs\" />
     <Folder Include="WebParts\" />
   </ItemGroup>
