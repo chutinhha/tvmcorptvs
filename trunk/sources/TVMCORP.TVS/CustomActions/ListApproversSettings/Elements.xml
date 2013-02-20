@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction Id="db618935-2ffc-4cb4-bf45-bc343c06a4e6"
+                Title="List Approvers Settings"
+                GroupId="GeneralSettings"
+                Location="Microsoft.SharePoint.ListEdit"
+                RegistrationType ="List"
+                RegistrationId="11000"
+                Sequence="1000">
+    <UrlAction Url="javascript:window.location='{SiteUrl}/_layouts/TVMCORP.TVS/ApproversSettings.aspx?List={ListId}&amp;Source=' + window.location"/>
+  </CustomAction>
+</Elements>

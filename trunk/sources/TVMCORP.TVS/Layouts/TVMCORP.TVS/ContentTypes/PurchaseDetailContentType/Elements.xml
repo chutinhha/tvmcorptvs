@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+
+  <Field Type="Text" DisplayName="Mô tả" Required="FALSE" MaxLength="255"
+             ID="{B6E9B7D1-D815-4a06-A495-C2C147D4BD27}" Name="ProductName" StaticName="ProductName" Group="[TVM-eOffice]">
+  </Field>
+
+  <Field Type="Number" DisplayName="Số lượng" Required="FALSE" Decimals="0" Min="0" Max="100" ID="{E4DCC65B-44D5-4f46-A00E-0F9260A0E5A5}" 
+         StaticName="Quantity" Name="Quantity" Group="[TVM-eOffice]" >
+    <Default>0</Default>
+  </Field>
+
+  <Field Type="Number" DisplayName="Đơn giá" Required="FALSE" Decimals="0" Min="0" Max="1000000" ID="{22DFF1BB-9332-41ff-A3D3-10B6EDC06732}"
+         StaticName="Price" Name="Price" Group="[TVM-eOffice]" >
+    <Default>0</Default>
+  </Field>
+
+  <Field Type="Text" DisplayName="Mục đích" Required="FALSE" MaxLength="255"
+             ID="{166CA42B-6B2B-47ab-8C99-782FC16C4DDF}" Name="Description" StaticName="Description" Group="[TVM-eOffice]">
+  </Field>
+  
+  <!-- Parent ContentType: Item (0x01) -->
+  <ContentType ID="0x01003b1ce67c698947c29aac0c2202abbf30"
+               Name="[TVM-eOffice] - Purchase Detail Content Type"
+               Group="[TVM-eOffice]"
+               Description="[TVM-eOffice] - Purchase Detail Content Type"
+               Inherits="TRUE"
+               Version="0">
+    <FieldRefs>
+      <FieldRef ID="{B6E9B7D1-D815-4a06-A495-C2C147D4BD27}" Name="ProductName" />
+      <FieldRef ID="{E4DCC65B-44D5-4f46-A00E-0F9260A0E5A5}" Name="Quantity" />
+      <FieldRef ID="{22DFF1BB-9332-41ff-A3D3-10B6EDC06732}" Name="Price" />
+      <FieldRef ID="{166CA42B-6B2B-47ab-8C99-782FC16C4DDF}" Name="Description" />
+      
+    </FieldRefs>
+  </ContentType>
+</Elements>

@@ -160,6 +160,7 @@
     <Compile Include="Services\EmailListService.cs" />
     <Compile Include="Services\EmailTemplateService.cs" />
     <Compile Include="TMVCorpContentType.cs" />
+    <Compile Include="Models\ListApproversSettings.cs" />
     <Compile Include="Models\WebpartPageDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\SerializationHelper.cs" />
