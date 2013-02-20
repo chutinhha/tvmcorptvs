@@ -51,7 +51,9 @@ namespace TVMCORP.TVS.UTIL.MODELS
         WFApproved,
         WFRejected,
         WFEnd,
-        WFStarted
+        WFStarted,
+        TaskLevelCompleted,
+        TaskLevelStarted
     }
 
     [Serializable]
