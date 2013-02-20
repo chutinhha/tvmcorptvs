@@ -1,8 +1,0 @@
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.UTIL.RESOURCES\bin\Debug\TVMCORP.TVS.UTIL.RESOURCES.dll
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.UTIL.RESOURCES\bin\Debug\TVMCORP.TVS.UTIL.RESOURCES.pdb
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.UTIL.RESOURCES\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.UTIL.RESOURCES\obj\Debug\TVMCORP.TVS.UTIL.RESOURCES.ApprovalWorkflowResources.resources
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.UTIL.RESOURCES\obj\Debug\ResGen.read.1.tlog
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.UTIL.RESOURCES\obj\Debug\ResGen.write.1.tlog
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.UTIL.RESOURCES\obj\Debug\TVMCORP.TVS.UTIL.RESOURCES.dll
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.UTIL.RESOURCES\obj\Debug\TVMCORP.TVS.UTIL.RESOURCES.pdb
