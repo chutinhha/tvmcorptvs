@@ -1,6 +1,0 @@
-C:\Source\I-Office\trunk\Hypertek.IOffice.Workflows.Core\bin\Debug\Hypertek.IOffice.Workflow.Core.dll
-C:\Source\I-Office\trunk\Hypertek.IOffice.Workflows.Core\bin\Debug\Hypertek.IOffice.Workflow.Core.pdb
-C:\Source\I-Office\trunk\Hypertek.IOffice.Workflows.Core\bin\Debug\Microsoft.Sharepoint.Sandbox.dll
-C:\Source\I-Office\trunk\Hypertek.IOffice.Workflows.Core\obj\Debug\ResolveAssemblyReference.cache
-C:\Source\I-Office\trunk\Hypertek.IOffice.Workflows.Core\obj\Debug\Hypertek.IOffice.Workflow.Core.dll
-C:\Source\I-Office\trunk\Hypertek.IOffice.Workflows.Core\obj\Debug\Hypertek.IOffice.Workflow.Core.pdb
