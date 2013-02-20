@@ -3,10 +3,10 @@ using System.IO;
 using NVelocity;
 using NVelocity.Exception;
 using NVelocity.Runtime;
-using TVMCORP.TVS.Util.NVelocityTemplateEngine.BaseClasses;
-using TVMCORP.TVS.Util.NVelocityTemplateEngine.Interfaces;
+using TVMCORP.TVS.UTIL.NVelocityTemplateEngine.BaseClasses;
+using TVMCORP.TVS.UTIL.NVelocityTemplateEngine.Interfaces;
 
-namespace TVMCORP.TVS.Util.NVelocityTemplateEngine.Engines
+namespace TVMCORP.TVS.UTIL.NVelocityTemplateEngine.Engines
 {
 	/// <summary>
 	/// Summary description for NVelocityFileEngine.

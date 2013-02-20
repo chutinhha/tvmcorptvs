@@ -2,11 +2,11 @@
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.WebControls;
 using System.Web.UI.WebControls;
-using TVMCORP.TVS.Util;
+using TVMCORP.TVS.UTIL;
 using System.Data;
-using TVMCORP.TVS.Util.Utilities;
-using TVMCORP.TVS.Util.Helpers;
-using TVMCORP.TVS.Util.Helper.DocXGenerator;
+using TVMCORP.TVS.UTIL.Utilities;
+using TVMCORP.TVS.UTIL.Helpers;
+using TVMCORP.TVS.UTIL.Helper.DocXGenerator;
 using Microsoft.SharePoint.Utilities;
 using System.Text;
 
@@ -104,7 +104,7 @@ namespace TVMCORP.TVS.Layouts.TVMCORP.TVS
             }
             catch (Exception ex)
             {
-                Utility.LogError(ex.Message, BeachCampFeatures.BeachCamp);
+                Utility.LogError(ex.Message, TVMCORPFeatures.TVS);
             }
         }
 
@@ -161,7 +161,7 @@ namespace TVMCORP.TVS.Layouts.TVMCORP.TVS
             }
             catch (Exception ex)
             {
-                Utility.LogError(ex.Message, BeachCampFeatures.Workflow);
+                Utility.LogError(ex.Message, TVMCORPFeatures.Workflow);
             }
         }
 

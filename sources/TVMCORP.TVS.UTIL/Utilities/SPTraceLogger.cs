@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 using System.Diagnostics.Eventing;
 using System.Security.Principal;
 
-namespace TVMCORP.TVS.Util.Utilities
+namespace TVMCORP.TVS.UTIL.Utilities
 {
     public class SPTraceLogger : EventProvider
     {

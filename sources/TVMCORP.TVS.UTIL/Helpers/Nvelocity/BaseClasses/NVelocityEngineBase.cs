@@ -3,7 +3,7 @@ using NVelocity;
 using NVelocity.App;
 using NVelocity.Context;
 
-namespace TVMCORP.TVS.Util.NVelocityTemplateEngine.BaseClasses
+namespace TVMCORP.TVS.UTIL.NVelocityTemplateEngine.BaseClasses
 {
 	/// <summary>
 	/// Summary description for NVelocityEngineBase.

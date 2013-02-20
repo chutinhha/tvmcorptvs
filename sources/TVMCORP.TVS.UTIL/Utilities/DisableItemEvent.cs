@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.SharePoint;
 
-namespace TVMCORP.TVS.Util.Utilities
+namespace TVMCORP.TVS.UTIL.Utilities
 {
     public class DisableItemEvent : SPItemEventReceiver, IDisposable
     {

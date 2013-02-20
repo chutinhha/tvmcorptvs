@@ -2,10 +2,10 @@
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.WebControls;
 using System.Web.UI.WebControls;
-using TVMCORP.TVS.Util.Helpers;
+using TVMCORP.TVS.UTIL.Helpers;
 using System.Data;
-using TVMCORP.TVS.Util.Utilities;
-using TVMCORP.TVS.Util;
+using TVMCORP.TVS.UTIL.Utilities;
+using TVMCORP.TVS.UTIL;
 using Microsoft.SharePoint.Utilities;
 using System.Linq;
 
@@ -167,7 +167,7 @@ namespace TVMCORP.TVS.Layouts.TVMCORP.TVS
             }
             catch (Exception ex)
             {
-                Utility.LogError(ex.Message, BeachCampFeatures.Workflow);
+                Utility.LogError(ex.Message, TVMCORPFeatures.Workflow);
             }
         }
 

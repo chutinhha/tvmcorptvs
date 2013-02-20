@@ -2,9 +2,9 @@
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using TVMCORP.TVS.Util.Extensions;
+using TVMCORP.TVS.UTIL.Extensions;
 
-namespace TVMCORP.TVS.Util.Helpers
+namespace TVMCORP.TVS.UTIL.Helpers
 {
     public class SerializationHelper
     {

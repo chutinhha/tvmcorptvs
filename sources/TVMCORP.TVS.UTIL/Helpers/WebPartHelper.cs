@@ -10,10 +10,10 @@ using System.Web.UI;
 using SP = Microsoft.SharePoint.WebPartPages;
 using System.IO;
 using Microsoft.SharePoint.Utilities;
-using TVMCORP.TVS.Util.Models;
-using TVMCORP.TVS.Util.Extensions;
+using TVMCORP.TVS.UTIL.MODELS;
+using TVMCORP.TVS.UTIL.Extensions;
 
-namespace TVMCORP.TVS.Util.Helpers
+namespace TVMCORP.TVS.UTIL.Helpers
 {
     public class WebPartHelper
     {

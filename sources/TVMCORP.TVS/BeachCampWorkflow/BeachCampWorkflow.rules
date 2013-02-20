@@ -10,7 +10,7 @@
 									<ns0:CodeMethodReferenceExpression.TargetObject>
 										<ns0:CodeFieldReferenceExpression FieldName="Approved">
 											<ns0:CodeFieldReferenceExpression.TargetObject>
-												<ns0:CodeTypeReferenceExpression Type="TVMCORP.TVS.Util.TaskResult, TVMCORP.TVS.Util, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b729a361cadc17a6" />
+												<ns0:CodeTypeReferenceExpression Type="TVMCORP.TVS.UTIL.TaskResult, TVMCORP.TVS.UTIL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b729a361cadc17a6" />
 											</ns0:CodeFieldReferenceExpression.TargetObject>
 										</ns0:CodeFieldReferenceExpression>
 									</ns0:CodeMethodReferenceExpression.TargetObject>

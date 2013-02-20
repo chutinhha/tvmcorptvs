@@ -156,7 +156,7 @@
             <table width="100%" border="0" cellpadding="0" cellspacing="0">
                 <tr>
                     <td width="100px">
-                        <img src="../../_layouts/images/Hypertek.IOffice.Infrastructure/logo_form.png" alt="logo"
+                        <img src="../../_layouts/images/TVMCORP.TVS.WORKFLOWS/logo_form.png" alt="logo"
                             align="absmiddle" />
                     </td>
                     <td width="860px" class="title_request" align="center">

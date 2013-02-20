@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using Hypertek.IOffice.Common.Helpers;
+
 using System.Collections;
 using Microsoft.SharePoint.Utilities;
+using TVMCORP.TVS.UTIL.Helpers;
 
-namespace Hypertek.IOffice.Common.Extensions
+namespace TVMCORP.TVS.UTIL.Extensions
 {
     public static class HashtableExtensions
     {

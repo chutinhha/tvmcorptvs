@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="ca9ab544-a78f-4d24-a332-09db2f5fdc93" SharePointProductVersion="14.0">
+  <Assemblies>
+    <Assembly Location="Hypertek.IOffice.Workflow.Core.dll" DeploymentTarget="GlobalAssemblyCache" />
+  </Assemblies>
+  <TemplateFiles>
+    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\ApprovalWF\ApprovalWFAssociation.aspx" />
+    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\ApprovalWF\ApprovalWFInitiation.aspx" />
+    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\ApprovalWF\ApprovalWFTaskForm.aspx" />
+    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\ApprovalWF\ReassignWFTaskForm.aspx" />
+    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\ApprovalWF\ApprovalWFViewOnlyTaskForm.aspx" />
+    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\ApprovalWF\ApprovalWFReasignTaskForm.aspx" />
+    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\IncomingDocumentWF\IncomingDocumentWorkflowTaskForm_ImplementationUnit.aspx" />
+    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\IncomingDocumentWF\IncomingDocumentWorkflowTaskForm_FocalPointUnit.aspx" />
+    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\IncomingDocumentWF\IncomingDocumentWorkflowTaskForm_Recipient.aspx" />
+    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\IncomingDocumentWF\IncomingDocumentWorkflowTaskForm_Approver.aspx" />
+    <TemplateFile Location="Layouts\Hypertek.IOffice.Workflow.Core\CCIappWorkflowTaskRequestChange.aspx.bak" />
+    <TemplateFile Location="Layouts\1033\jquery.maskedinput-1.3.js" />
+    <TemplateFile Location="Layouts\Hypertek.IOffice.Workflow.Core\CCIappWorkflowSendEEC.aspx" />
+    <TemplateFile Location="Layouts\Hypertek.IOffice.Workflow.Core\CCIappWorkflowTaskApproval.aspx" />
+    <TemplateFile Location="Layouts\Hypertek.IOffice.Workflow.Core\CCIappWorkflowTaskChange.aspx" />
+    <TemplateFile Location="Layouts\Hypertek.IOffice.Workflow.Core\CCIappWorkflowTaskDisplay.aspx" />
+    <TemplateFile Location="Layouts\Hypertek.IOffice.Workflow.Core\CCIappWorkflowTaskOnHold.aspx" />
+    <TemplateFile Location="Layouts\Hypertek.IOffice.Workflow.Core\CCIappWorkflowTaskReassign.aspx" />
+    <TemplateFile Location="Layouts\Hypertek.IOffice.Workflow.Core\CCIappWorkflowTaskRequestChange.aspx" />
+    <TemplateFile Location="1033\Workflow\DPWorkflow.ACTIONS" />
+    <TemplateFile Location="1033\Workflow\IOfficeSecurity.ACTIONS" />
+    <TemplateFile Location="1033\Workflow\IOfficeWorkflow.ACTIONS" />
+    <TemplateFile Location="ControlTemplates\Hypertek.IOffice.Workflow.Core\ApprovalUC.ascx" />
+    <TemplateFile Location="ControlTemplates\Hypertek.IOffice.Workflow.Core\ApproverUC.ascx" />
+    <TemplateFile Location="ControlTemplates\Hypertek.IOffice.Workflow\LinkToDocumentEditor.ascx" />
+  </TemplateFiles>
+  <FeatureManifests>
+    <FeatureManifest Location="Hypertek.IOffice.Workflow.Core_Hypertek.IOffice.Workflow.Core\Feature.xml" />
+  </FeatureManifests>
+</Solution>

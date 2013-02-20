@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowInfo Language="en-us">
+  <Actions Sequential="then" Parallel="and">
+    <Action Name="Grant Permission on Item"
+     ClassName="Hypertek.IOffice.Workflow.Core.Activities.WorkflowActions.GrantPermissionsOnItem"
+     Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     AppliesTo="all"
+     Category="[I-Office] Security">
+      <RuleDesigner Sentence="Grant %1 permission on %2 to %3">
+        <FieldBind Field="PermissionLevel" DesignerType="TextArea" Id="1" Text="this level" />
+        <FieldBind Field="ListId,ListItem" DesignerType="ChooseListItem" Id="2" Text="this item" />
+        <FieldBind Field="UserName" DesignerType="SinglePerson" Id="3" Text="this user" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="PermissionLevel" Type="System.String, mscorlib" Direction="In"/>
+        <Parameter Name="ListId" Type="System.String, mscorlib" Direction="In"/>
+        <Parameter Name="ListItem" Type="System.Int32, mscorlib" Direction="In"/>
+        <Parameter Name="UserName" Type="System.String, mscorlib" Direction="In"/>
+        <Parameter Name="__ActivationProperties"
+			   Type="Microsoft.SharePoint.Workflow.SPWorkflowActivationProperties, Microsoft.SharePoint"
+			   Direction="In" />
+      </Parameters>
+    </Action>
+
+    <Action Name="Delete Item Permission Assignment"
+     ClassName="Hypertek.IOffice.Workflow.Core.Activities.WorkflowActions.DeleteListItemPermissionAssignment"
+     Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     AppliesTo="all"
+     Category="[I-Office] Security">
+      <RuleDesigner Sentence="Delete permission assignment in %1 for %2">
+        <FieldBind Field="ListId,ListItem" Text="this item" Id="1" DesignerType="ChooseListItem" />
+        <FieldBind Field="UserName" DesignerType="SinglePerson" Text="this user" Id="2"/>
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="ListId" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="ListItem" Type="System.Int32, mscorlib" Direction="In" />
+        <Parameter Name="UserName" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="__ActivationProperties"
+			   Type="Microsoft.SharePoint.Workflow.SPWorkflowActivationProperties, Microsoft.SharePoint"
+			   Direction="In" />
+      </Parameters>
+    </Action>
+
+    <Action Name="Reset Item Permissions Inheritance"
+     ClassName="Hypertek.IOffice.Workflow.Core.Activities.WorkflowActions.ResetListItemPermissionInheritance"
+     Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     AppliesTo="all"
+     Category="[I-Office] Security">
+      <RuleDesigner Sentence="Reset permissions inheritance on %1">
+        <FieldBind Field="ListId,ListItem" DesignerType="ChooseListItem" Id="1" Text="this item" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="ListId" Type="System.String, mscorlib" Direction="In"/>
+        <Parameter Name="ListItem" Type="System.Int32, mscorlib" Direction="In"/>
+        <Parameter Name="__ActivationProperties"
+			   Type="Microsoft.SharePoint.Workflow.SPWorkflowActivationProperties, Microsoft.SharePoint"
+			   Direction="In" />
+      </Parameters>
+    </Action>
+
+    <Action Name="Reset to Security Rules Permissions"
+     ClassName="Hypertek.IOffice.Workflow.Core.Activities.WorkflowActions.ResetToSecurityRulesPermissions"
+     Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     AppliesTo="all"
+     Category="[I-Office] Security">
+      <RuleDesigner Sentence="Reset to Hypertek.IOffice Security permissions on %1 using event %2">
+        <FieldBind Field="ListId,ListItem" DesignerType="ChooseListItem" Id="1" Text="this item" />
+        <FieldBind Field="EventType" DesignerType="Dropdown" Id="2" Text="type" >
+          <Option Name="Item Changed" Value="ItemUpdated"/>
+          <Option Name="Item Created" Value="ItemAdded"/>
+        </FieldBind>
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="ListId" Type="System.String, mscorlib" Direction="In"/>
+        <Parameter Name="ListItem" Type="System.Int32, mscorlib" Direction="In"/>
+        <Parameter Name="EventType" Type="System.String, mscorlib" Direction="In" InitialValue="true"/>
+        <Parameter Name="__ActivationProperties"
+			   Type="Microsoft.SharePoint.Workflow.SPWorkflowActivationProperties, Microsoft.SharePoint"
+			   Direction="In" />
+      </Parameters>
+    </Action>
+
+    <Action Name="Change all list item permissions to new permission"
+     ClassName="Hypertek.IOffice.Workflow.Core.Activities.WorkflowActions.ChangeAllListItemPermissions"
+     Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     AppliesTo="all"
+     Category="[I-Office] Security">
+      <RuleDesigner Sentence="Change all permissions on %1 to %2">
+        <FieldBind Field="ListId,ListItem" DesignerType="ChooseListItem" Id="1" Text="this item" />
+        <FieldBind Field="PermissionLevel" DesignerType="TextArea" Id="2" Text="this level" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="ListId" Type="System.String, mscorlib" Direction="In"/>
+        <Parameter Name="ListItem" Type="System.Int32, mscorlib" Direction="In"/>
+        <Parameter Name="PermissionLevel" Type="System.String, mscorlib" Direction="In"/>
+        <Parameter Name="__ActivationProperties"
+			   Type="Microsoft.SharePoint.Workflow.SPWorkflowActivationProperties, Microsoft.SharePoint"
+			   Direction="In" />
+      </Parameters>
+    </Action>
+
+  </Actions>
+</WorkflowInfo>

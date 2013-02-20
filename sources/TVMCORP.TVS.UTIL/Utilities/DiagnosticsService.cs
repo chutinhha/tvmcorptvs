@@ -7,9 +7,10 @@ using Microsoft.SharePoint.Administration;
 using System.Reflection;
 using System.ComponentModel;
 using System.Diagnostics;
+using TVMCORP.TVS.UTIL;
 
 
-namespace TVMCORP.TVS.Util.Utilities
+namespace TVMCORP.TVS.UTIL.Utilities
 {
     [System.Runtime.InteropServices.GuidAttribute("DBEEB5AB-C5A7-46B5-A2BB-5581F960C333")]
     public class DiagnosticsService : SPDiagnosticsServiceBase
@@ -47,10 +48,10 @@ namespace TVMCORP.TVS.Util.Utilities
         protected override IEnumerable<SPDiagnosticsArea> ProvideAreas()
         {
             List<SPDiagnosticsCategory> categories = new List<SPDiagnosticsCategory>();
-            foreach (string catName in Enum.GetNames(typeof(BeachCampFeatures)))
+            foreach (string catName in Enum.GetNames(typeof(TVMCORPFeatures)))
             {
-                BeachCampFeatures entry = ( BeachCampFeatures)Enum.Parse(typeof(BeachCampFeatures), catName) ;
-                uint catId = (uint)(int)Enum.Parse(typeof(BeachCampFeatures), catName);
+                TVMCORPFeatures entry = ( TVMCORPFeatures)Enum.Parse(typeof(TVMCORPFeatures), catName) ;
+                uint catId = (uint)(int)Enum.Parse(typeof(TVMCORPFeatures), catName);
                 string friendlyname = GetDescription(entry);
                 categories.Add(new SPDiagnosticsCategory(friendlyname, TraceSeverity.Verbose, EventSeverity.Error, 0, catId));
             }
@@ -71,7 +72,7 @@ namespace TVMCORP.TVS.Util.Utilities
                 return Areas[DiagnosticsAreaName].Categories[categoryName];
             }
         }
-        public SPDiagnosticsCategory this[BeachCampFeatures id]
+        public SPDiagnosticsCategory this[TVMCORPFeatures id]
         {
             get
             {

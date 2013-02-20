@@ -4,13 +4,38 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Collections;
 using System.Xml.Linq;
-using TVMCORP.TVS.Util.NVelocityTemplateEngine;
-using TVMCORP.TVS.Util.Utilities;
+using TVMCORP.TVS.UTIL.NVelocityTemplateEngine;
+using TVMCORP.TVS.UTIL.Utilities;
+using TVMCORP.TVS.UTIL.Helpers;
+using TVMCORP.TVS.UTIL;
 
-namespace TVMCORP.TVS.Util.Extensions
+namespace TVMCORP.TVS.UTIL.Extensions
 {
     public static class StringExtensions
     {
+        public static string ToPlainText(this string source)
+        {
+            HtmlToTextConverter converter = new HtmlToTextConverter();
+            return converter.Convert(source);
+
+        }
+        public static string CustomFunctionPopulate(this string template)
+        {
+            try
+            {
+                //var memoryEngine = NVelocityEngineFactory.CreateNVelocityMemoryEngine(true);
+                //var Parameters = new Hashtable();
+                //Parameters.Add("Helper", new StringHelper());
+                //template = memoryEngine.Process(Parameters, template);
+            }
+            catch (Exception ex)
+            {
+
+                Utility.LogError(ex.Message + ex.StackTrace, "aaa");
+            }
+            return template;
+        }
+
         public static bool IsAbsoluteUrl(this string url)
         {
             Uri result;
@@ -153,7 +178,7 @@ namespace TVMCORP.TVS.Util.Extensions
         //    catch (Exception ex)
         //    {
 
-        //        CCIUtility.LogError(ex.Message+ ex.StackTrace, Model.IOfficeFeatures.IOfficeApp);
+        //        Utility.LogError(ex.Message+ ex.StackTrace, Model.TVMCORPFeatures.IOfficeApp);
         //    }
         //   return template;
         //}
@@ -256,7 +281,7 @@ namespace TVMCORP.TVS.Util.Extensions
             catch (Exception ex)
             {
 
-                Utility.LogError(ex.Message + ex.StackTrace, BeachCampFeatures.BeachCamp);
+                Utility.LogError(ex.Message + ex.StackTrace, TVMCORPFeatures.TVS);
             }
             return template;
         }

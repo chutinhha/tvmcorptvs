@@ -4,8 +4,8 @@
 // </copyright>
 // ------------------------------------------------------------------------
 
-using TVMCORP.TVS.Util.Helper.DocXGenerator;
-namespace TVMCORP.TVS.Util.Helper.DocXGenerator
+using TVMCORP.TVS.UTIL.Helper.DocXGenerator;
+namespace TVMCORP.TVS.UTIL.Helper.DocXGenerator
 {
     /// <summary>
     /// This class is used only for generic document generators that generate based on Xml, XPath and data bound content controls(optional)

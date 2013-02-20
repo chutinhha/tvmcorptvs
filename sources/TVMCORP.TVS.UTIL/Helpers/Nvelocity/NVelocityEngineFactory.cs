@@ -1,7 +1,7 @@
-using TVMCORP.TVS.Util.NVelocityTemplateEngine.Engines;
-using TVMCORP.TVS.Util.NVelocityTemplateEngine.Interfaces;
+using TVMCORP.TVS.UTIL.NVelocityTemplateEngine.Engines;
+using TVMCORP.TVS.UTIL.NVelocityTemplateEngine.Interfaces;
 
-namespace TVMCORP.TVS.Util.NVelocityTemplateEngine
+namespace TVMCORP.TVS.UTIL.NVelocityTemplateEngine
 {
 	/// <summary>
 	/// Summary description for NVelocityEngineFactory.

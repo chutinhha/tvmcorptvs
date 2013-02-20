@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Linq;
 using System.Web;
-using Hypertek.IOffice.Common.Utilities;
+using Microsoft.SharePoint;
+using Microsoft.SharePoint.Utilities;
+using TVMCORP.TVS.UTIL.Utilities;
+
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Utilities;
 
-namespace Hypertek.IOffice.Common.Extensions
+namespace TVMCORP.TVS.UTIL.Extensions
 {
     public static class SPSiteExtensions
     {
@@ -82,7 +85,7 @@ namespace Hypertek.IOffice.Common.Extensions
             bool disposeSite = false;
             try
             {
-                if (CCIUtility.IsAbsoluteUri(strURL))
+                if (Utility.IsAbsoluteUri(strURL))
                     try
                     {
                         siteGet = new SPSite(strURL);
@@ -91,7 +94,7 @@ namespace Hypertek.IOffice.Common.Extensions
                     }
                     catch
                     {
-                        CCIUtility.LogInfo("Unable to open web from Url : " + strURL + "It isn't SharePoint site or current user don't have permission to open it", "Hypertek.IOffice");
+                        Utility.LogInfo("Unable to open web from Url : " + strURL + "It isn't SharePoint site or current user don't have permission to open it", "Hypertek.IOffice");
                     }
                 else
                 {
@@ -105,12 +108,12 @@ namespace Hypertek.IOffice.Common.Extensions
                 }
                 catch
                 {
-                    CCIUtility.LogInfo("Unable to load list from Url : " + strURL, "Hypertek.IOffice");
+                    Utility.LogInfo("Unable to load list from Url : " + strURL, "Hypertek.IOffice");
                 }
             }
             catch
             {
-                CCIUtility.LogInfo("Couldn't open " + strURL + " as a SharePoint list", "Hypertek.IOffice");
+                Utility.LogInfo("Couldn't open " + strURL + " as a SharePoint list", "Hypertek.IOffice");
             }
             finally
             {
@@ -139,7 +142,7 @@ namespace Hypertek.IOffice.Common.Extensions
             }
             catch (Exception ex)
             {
-                CCIUtility.LogInfo("CreateSite " + ex.ToString(), "Hypertek.IOffice.Common.Extensions");
+                Utility.LogInfo("CreateSite " + ex.ToString(), "TVMCORP.TVS.UTIL.Extensions");
             }
             return siteDepartmentUrl;
         }

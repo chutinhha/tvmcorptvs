@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowInfo Language="en-us">
+  <Conditions And="and" Or="or" Not="not" When="If" Else="Else if">
+    <Condition Name="Is Role assigned to User"
+     FunctionName="IsUserRoleAssigned"
+     ClassName="Hypertek.IOffice.Workflow.Core.Activities.DP.Common"
+     Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     AppliesTo="all"
+     UsesCurrentItem="true">
+      <RuleDesigner Sentence="is %1 role assigned to %2">
+        <FieldBind Id="1" Field="_1_" Text="this" DesignerType="TextArea"/>
+        <FieldBind Id="2" Field="_2_" Text="this user" DesignerType="SinglePerson"/>
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="_1_" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="_2_" Type="System.String, mscorlib" Direction="In" />
+      </Parameters>
+    </Condition>
+
+    <Condition Name="Is User a member of a sharepoint group"
+     FunctionName="IsUserPartOfSharepointGroup"
+     ClassName="Hypertek.IOffice.Workflow.Core.Activities.DP.Common"
+     Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     UsesCurrentItem="true"
+     AppliesTo="all">
+      <RuleDesigner Sentence="%1 is a member of %2 sharepoint group">
+        <FieldBind Id="1" Field="_1_" Text="this user" DesignerType="SinglePerson"/>
+        <FieldBind Id="2" Field="_2_" Text="this" DesignerType="SinglePerson"/>
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="_1_" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="_2_" Type="System.String, mscorlib" Direction="In" />
+      </Parameters>
+    </Condition>
+  </Conditions>
+  <Actions Sequential="then" Parallel="and">
+    <Action Name="Send Email with HTTP file attachment"
+        ClassName="Hypertek.IOffice.Workflow.Core.Activities.DP.SendMailWHttpFileAttachment2"
+        Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+        AppliesTo="all"
+        Category="[I-Office] Actions">
+      <RuleDesigner Sentence="Send %1 email to %2, display %3 as sender.Also attach file named %4 retrieved from this url: %5. %6 sharepoint account when getting the file.">
+        <FieldBind Field="IsMessageUrgent" DesignerType="Dropdown" Text="choose" Id="1">
+          <Option Name="urgent" Value="true"/>
+          <Option Name="non urgent" Value="false"/>
+        </FieldBind>
+        <FieldBind Field="RecipientTO,RecipientCC,Subject,Body" Text="this address" DesignerType="Email" Id="2"/>
+        <FieldBind Field="RecipientFrom" Text="this address" Id="3" DesignerType="stringbuilder" />
+        <FieldBind Field="AttachmentFileName" Text="this value" Id="4" DesignerType="stringbuilder" />
+        <FieldBind Field="AttachmentWebUrl" Text="this url" Id="5" DesignerType="stringbuilder" />
+        <FieldBind Field="ImpersonateSystemAccount" DesignerType="Dropdown" Text="choose" Id="6" >
+          <Option Name="Do not impersonate" Value="true"/>
+          <Option Name="Impersonate" Value="false"/>
+        </FieldBind>
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, Microsoft.SharePoint.WorkflowActions" Direction="In"/>
+        <Parameter Name="IsMessageUrgent" Type="System.String, mscorlib" Direction="In" InitialValue="false" />
+        <Parameter Name="RecipientTO" Type="System.Collections.ArrayList, mscorlib" Direction="In" />
+        <Parameter Name="RecipientCC" Type="System.Collections.ArrayList, mscorlib" Direction="Optional" />
+        <Parameter Name="RecipientFrom" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="Subject" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="Body" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="AttachmentFileName" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="AttachmentWebUrl" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="ImpersonateSystemAccount" Type="System.String, mscorlib" Direction="In" InitialValue="false" />
+      </Parameters>
+    </Action>
+    <Action Name="Send Email with List Item Attachments"
+        ClassName="Hypertek.IOffice.Workflow.Core.Activities.DP.SendMailWListItemAttachments"
+        Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+        AppliesTo="all"
+        Category="[I-Office] Actions">
+      <RuleDesigner Sentence="Send %1 email to %2, display %3 as sender.Also include all files attached to %4 as attachments in the email.">
+        <FieldBind Field="IsMessageUrgent" DesignerType="Dropdown" Text="choose" Id="1">
+          <Option Name="urgent" Value="true"/>
+          <Option Name="non urgent" Value="false"/>
+        </FieldBind>
+        <FieldBind Field="RecipientTO,RecipientCC,Subject,Body" Text="this address" DesignerType="Email" Id="2"/>
+        <FieldBind Field="RecipientFrom" Text="this address" Id="3" DesignerType="stringbuilder" />
+        <FieldBind Field="ListId,ListItem" Text="this item" Id="4" DesignerType="ChooseListItem" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, Microsoft.SharePoint.WorkflowActions" Direction="In"/>
+        <Parameter Name="IsMessageUrgent" Type="System.String, mscorlib" Direction="In" InitialValue="false" />
+        <Parameter Name="RecipientTO" Type="System.Collections.ArrayList, mscorlib" Direction="In" />
+        <Parameter Name="RecipientCC" Type="System.Collections.ArrayList, mscorlib" Direction="Optional" />
+        <Parameter Name="RecipientFrom" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="Subject" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="Body" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="ListId" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="ListItem" Type="System.Int32, mscorlib" Direction="In" />
+        <Parameter Name="SendIfNoAttachments" Type="System.Boolean, mscorlib" Direction="In" InitialValue="false" />
+      </Parameters>
+    </Action>
+    <Action Name="Delete List Item Permission Assigment"
+        ClassName="Hypertek.IOffice.Workflow.Core.Activities.DP.DeleteListItemPermissionAssigment"
+        Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+        AppliesTo="all"
+        Category="[I-Office] Actions">
+      <RuleDesigner Sentence="Delete permission assigment in %1 for %2">
+        <FieldBind Field="ListId,ListItem" Text="this item" Id="1" DesignerType="ChooseListItem" />
+        <FieldBind Field="User" DesignerType="SinglePerson" Text="this user" Id="2"/>
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+        <Parameter Name="ListId" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="ListItem" Type="System.Int32, mscorlib" Direction="In" />
+        <Parameter Name="User" Type="System.String, mscorlib" Direction="In" />
+      </Parameters>
+    </Action>
+    <Action Name="Start Another Workflow"
+        ClassName="Hypertek.IOffice.Workflow.Core.Activities.DP.StartAnotherWorkflow"
+        Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+        AppliesTo="all"
+        Category="[I-Office] Actions">
+      <RuleDesigner Sentence="Start another workflow on %2, named %1">
+        <FieldBind Field="WorkflowIdentifier"  Text="this" Id="1" DesignerType="TextArea"/>
+        <FieldBind Field="ListId,ListItem" Text="this item" Id="2" DesignerType="ChooseListItem" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+        <Parameter Name="WorkflowIdentifier" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="ListId" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="ListItem" Type="System.Int32, mscorlib" Direction="In" />
+      </Parameters>
+    </Action>
+    <Action Name="Grant Permission on Item"
+     ClassName="Hypertek.IOffice.Workflow.Core.Activities.DP.AddListItemPermissionAssigment"
+     Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     AppliesTo="all"
+     Category="[I-Office] Actions">
+      <RuleDesigner Sentence="Grant %1 Permission on %2 to %3">
+        <FieldBind Field="PermissionLevel" DesignerType="TextArea" Id="1" Text="this level" />
+        <FieldBind Field="ListId,ListItem" DesignerType="ChooseListItem" Id="2" Text="this item" />
+        <FieldBind Field="UserName" DesignerType="SinglePerson" Id="3" Text="this user" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context" Type="Microsoft.Sharepoint.WorkflowActions.WorkflowContext, Microsoft.SharePoint.WorkflowActions" Direction="In"/>
+        <Parameter Name="PermissionLevel" Type="System.String, mscorlib" Direction="In"/>
+        <Parameter Name="ListId" Type="System.String, mscorlib" Direction="In"/>
+        <Parameter Name="ListItem" Type="System.Int32, mscorlib" Direction="In"/>
+        <Parameter Name="UserName" Type="System.String, mscorlib" Direction="In"/>
+      </Parameters>
+    </Action>
+    <Action Name="Reset List Permissions Inheritance"
+   ClassName="Hypertek.IOffice.Workflow.Core.Activities.DP.ResetListItemPermissionInheritance"
+   Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+   AppliesTo="all"
+   Category="[I-Office] Actions">
+      <RuleDesigner Sentence="Inherit list permissions on %1">
+        <FieldBind Field="ListId,ListItem" DesignerType="ChooseListItem" Id="1" Text="this item" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context" Type="Microsoft.Sharepoint.WorkflowActions.WorkflowContext, Microsoft.SharePoint.WorkflowActions" Direction="In"/>
+        <Parameter Name="ListId" Type="System.String, mscorlib" Direction="In"/>
+        <Parameter Name="ListItem" Type="System.Int32, mscorlib" Direction="In"/>
+      </Parameters>
+    </Action>
+    <!--<Action Name="Get InfoPath form field inner text"
+     ClassName="Hypertek.IOffice.Workflow.Core.Activities.DP.GetInfoPathFormValueInnerText"
+     Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     AppliesTo="doclib"
+     Category="[I-Office] Actions">
+      <RuleDesigner Sentence="Get InfoPath field inner text at %1 and store in %2">
+        <FieldBind Field="PropertyPath" DesignerType="TextArea" Id="1" Text="this path" />
+        <FieldBind Field="PropertyValue" DesignerType="ParameterNames" Text="variable" Id="2"/>
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context" Type="Microsoft.Sharepoint.WorkflowActions.WorkflowContext, Microsoft.SharePoint.WorkflowActions" Direction="In"/>
+        <Parameter Name="PropertyPath" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="PropertyValue" Type="System.String, mscorlib" Direction="Out" />
+      </Parameters>
+    </Action>
+    <Action Name="Get InfoPath form field inner xml"
+ ClassName="Hypertek.IOffice.Workflow.Core.Activities.DP.GetInfoPathFormValueInnerXml"
+ Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+ AppliesTo="doclib"
+ Category="[I-Office] Actions">
+      <RuleDesigner Sentence="Get InfoPath field inner xml at %1 and store in %2">
+        <FieldBind Field="PropertyPath" DesignerType="TextArea" Id="1" Text="this path" />
+        <FieldBind Field="PropertyValue" DesignerType="ParameterNames" Text="variable" Id="2"/>
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context" Type="Microsoft.Sharepoint.WorkflowActions.WorkflowContext, Microsoft.SharePoint.WorkflowActions" Direction="In"/>
+        <Parameter Name="PropertyPath" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="PropertyValue" Type="System.String, mscorlib" Direction="Out" />
+      </Parameters>
+    </Action>
+    <Action Name="Set InfoPath form field inner text"
+ ClassName="Hypertek.IOffice.Workflow.Core.Activities.DP.SetInfoPathFormValueInnerText"
+ Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+ AppliesTo="doclib"
+ Category="[I-Office] Actions">
+      <RuleDesigner Sentence="Set InfoPath field inner text at %1 to %2">
+        <FieldBind Field="PropertyPath" DesignerType="TextArea" Id="1" Text="this path" />
+        <FieldBind Field="PropertyValue" DesignerType="TextArea" Text="this value" Id="2"/>
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context" Type="Microsoft.Sharepoint.WorkflowActions.WorkflowContext, Microsoft.SharePoint.WorkflowActions" Direction="In"/>
+        <Parameter Name="PropertyPath" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="PropertyValue" Type="System.String, mscorlib" Direction="In" />
+      </Parameters>
+    </Action>
+    <Action Name="Set InfoPath form field inner xml"
+ ClassName="Hypertek.IOffice.Workflow.Core.Activities.DP.SetInfoPathFormValueInnerXml"
+ Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+ AppliesTo="doclib"
+ Category="[I-Office] Actions">
+      <RuleDesigner Sentence="Set InfoPath field inner xml at %1 to %2">
+        <FieldBind Field="PropertyPath" DesignerType="TextArea" Id="1" Text="this path" />
+        <FieldBind Field="PropertyValue" DesignerType="TextArea" Text="this value" Id="2"/>
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context" Type="Microsoft.Sharepoint.WorkflowActions.WorkflowContext, Microsoft.SharePoint.WorkflowActions" Direction="In"/>
+        <Parameter Name="PropertyPath" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="PropertyValue" Type="System.String, mscorlib" Direction="In" />
+      </Parameters>
+    </Action>-->
+    <Action Name="Lookup site user property"
+ ClassName="Hypertek.IOffice.Workflow.Core.Activities.DP.LookupUserInfo"
+ Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+ AppliesTo="all"
+ Category="[I-Office] Actions">
+      <RuleDesigner Sentence="Lookup %1 property for %2, store in %3">
+        <FieldBind Field="UserProperty" DesignerType="TextArea" Id="1" Text="this user" />
+        <FieldBind Field="UserName" DesignerType="TextArea" Id="2" Text="this user" />
+        <FieldBind Field="PropertyValueVariable" DesignerType="ParameterNames" Text="variable" Id="3"/>
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context" Type="Microsoft.Sharepoint.WorkflowActions.WorkflowContext, Microsoft.SharePoint.WorkflowActions" Direction="In"/>
+        <Parameter Name="UserProperty" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="UserName" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="PropertyValueVariable" Type="System.String, mscorlib" Direction="Out" />
+      </Parameters>
+    </Action>
+    <Action Name="Copy List Item Extended"
+  ClassName="Hypertek.IOffice.Workflow.Core.Activities.DP.CopyListItemExtended"
+  Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+  AppliesTo="all"
+  Category="[I-Office] Actions">
+      <RuleDesigner Sentence="%1 item in %2 to list at %3, %4 existing items. Store resulting list item id in %5">
+        <FieldBind Field="Move" DesignerType="Dropdown" Text="choose" Id="1">
+          <Option Name="Move" Value="true"/>
+          <Option Name="Copy" Value="false"/>
+        </FieldBind>
+        <FieldBind Field="ListId,ListItem" Text="this list" Id="2" DesignerType="ChooseListItem" />
+        <FieldBind Field="DestinationListUrl" Text="this url" Id="3" DesignerType="TextArea" />
+        <FieldBind Field="Overwrite" DesignerType="Dropdown" Text="choose" Id="4">
+          <Option Name="Overwrite" Value="true"/>
+          <Option Name="Do not Overwrite" Value="false"/>
+        </FieldBind>
+        <FieldBind Field="OutListItemID" DesignerType="ParameterNames" Text="variable" Id="5"/>
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext" Direction="In" />
+        <Parameter Name="ListId" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="ListItem" Type="System.Int32, mscorlib" Direction="In"  />
+        <Parameter Name="OutListItemID" Type="System.Int32, mscorlib" Direction="Out"  />
+        <Parameter Name="DestinationListUrl" Type="System.String, mscorlib" Direction="In"  />
+        <Parameter Name="Overwrite" Type="System.String, mscorlib" Direction="In" InitialValue="true" />
+        <Parameter Name="Move" Type="System.String, mscorlib" Direction="In" InitialValue="false" />
+      </Parameters>
+    </Action>
+    <Action Name="Send Email Extended"
+           ClassName="Hypertek.IOffice.Workflow.Core.Activities.DP.SendEmailExtended"
+           Assembly="Hypertek.IOffice.Workflow.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+           AppliesTo="all"
+           Category="[I-Office] Actions">
+      <RuleDesigner Sentence="Send %1 email to %2, display %3 as sender.">
+        <FieldBind Field="IsMessageUrgent" DesignerType="Dropdown" Text="choose" Id="1">
+          <Option Name="urgent" Value="true"/>
+          <Option Name="non urgent" Value="false"/>
+        </FieldBind>
+        <FieldBind Field="RecipientTO,RecipientCC,Subject,Body" Text="this address" DesignerType="Email" Id="2"/>
+        <FieldBind Field="RecipientFrom" Text="this address" Id="3" DesignerType="stringbuilder" />
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context" Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext, Microsoft.SharePoint.WorkflowActions" Direction="In"/>
+        <Parameter Name="IsMessageUrgent" Type="System.String, mscorlib" Direction="In" InitialValue="false" />
+        <Parameter Name="RecipientTO" Type="System.Collections.ArrayList, mscorlib" Direction="In" />
+        <Parameter Name="RecipientCC" Type="System.Collections.ArrayList, mscorlib" Direction="Optional" />
+        <Parameter Name="RecipientFrom" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="Subject" Type="System.String, mscorlib" Direction="In" />
+        <Parameter Name="Body" Type="System.String, mscorlib" Direction="In" />
+      </Parameters>
+    </Action>
+  </Actions>
+</WorkflowInfo>

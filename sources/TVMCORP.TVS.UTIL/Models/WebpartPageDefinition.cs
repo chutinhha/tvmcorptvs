@@ -9,7 +9,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.Web.UI.WebControls.WebParts;
 
-namespace TVMCORP.TVS.Util.Models
+namespace TVMCORP.TVS.UTIL.MODELS
 {
     [Serializable]
     [XmlRoot("Page")]
@@ -21,17 +21,18 @@ namespace TVMCORP.TVS.Util.Models
 
         public string PageUrl { get; set; }
         public bool Overwrite { get; set; }
-
         [XmlElement("Webparts")]
         public List<WebpartDefinition> Webparts { get; set; }
-
-        public WebpartPageDefinition() 
-        {
+        public WebpartPageDefinition() {
             Webparts = new List<WebpartDefinition>();
-        }
+    }
 
 
         public string Title { get; set; }
+
+        
+
+        public bool UseFormFolder { get; set; }
     }
 
     public class WebpartPageDefinitionCollection : List<WebpartPageDefinition>
@@ -79,20 +80,10 @@ namespace TVMCORP.TVS.Util.Models
         {
 
             var type = webpart.GetType();
-            System.Reflection.PropertyInfo pi = type.GetProperty(property);
+            var pi = type.GetProperty(property);
             if (pi != null)
             {
-
-                Object objValue = null;
-
-                if (System.Reflection.PropertyInfo.Equals(pi.PropertyType.ToString(), "System.Web.UI.WebControls.WebParts.PartChromeType"))
-                {
-                    objValue = System.Web.UI.WebControls.WebParts.PartChromeType.None;
-                }
-                else
-                {
-                    objValue = Convert.ChangeType(value, pi.PropertyType);
-                }
+                Object objValue = Convert.ChangeType(value, pi.PropertyType);
 
                 pi.SetValue(webpart, objValue, null);
             }
@@ -122,9 +113,8 @@ namespace TVMCORP.TVS.Util.Models
         [XmlAttribute]
         public string Type { get; set; }
     }
-
-
     [Serializable]
+
     public class XSLTListViewWP : WebpartDefinition
     {
         public string SiteUrl { get; set; }
@@ -132,7 +122,7 @@ namespace TVMCORP.TVS.Util.Models
         public string ListUrl { get; set; }
         public string ViewName { get; set; }
         public bool CreateDefaultWP { get; set; }
-        public override WebPart CreateWebPart(SPWeb web,Microsoft.SharePoint.WebPartPages.SPLimitedWebPartManager webPartManager)
+        public override WebPart CreateWebPart(SPWeb web, Microsoft.SharePoint.WebPartPages.SPLimitedWebPartManager webPartManager)
         {
             SPList list = GetList(web, ListUrl, ListName);
             
@@ -251,7 +241,7 @@ namespace TVMCORP.TVS.Util.Models
             }
 
             SPListItemCollection webParts = webPartGallery.GetItems(qry);
-
+            
             XmlReader xmlReader = new XmlTextReader(webParts[0].File.OpenBinaryStream());
             string errorMsg;
             WebPart webPart = webPartManager.ImportWebPart(xmlReader, out errorMsg);
@@ -287,12 +277,7 @@ namespace TVMCORP.TVS.Util.Models
             SPView view = GetView(list, ViewName);
             webPart.ViewGuid = view.ID.ToString();
             webPart.ListViewXml = view.GetViewXml();
-            webPart.AllowMinimize = false;
-            webPart.AllowClose = false;
-            webPart.AllowHide = false;
-            webPart.AllowZoneChange = false;
-            webPart.AllowEdit = false;
-            webPart.AllowConnect = false;
+
             webPart.ExportMode = WebPartExportMode.All;
             base.UpdateProperties(webPart);
             return webPart;

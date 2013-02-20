@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ca9ab544-a78f-4d24-a332-09db2f5fdc93" solutionId="ca9ab544-a78f-4d24-a332-09db2f5fdc93" resetWebServer="false" name="Hypertek.IOffice.Workflows.Core" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="aa778f3e-676d-4fce-b3f6-35d75bf4902b" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="2a042f96-4fca-40ce-beb0-5c68258aab3e" />
+    <projectItemReference itemId="ae284498-7b8d-47cd-8550-6a39ee272ea9" />
+    <projectItemReference itemId="853c1667-d99c-45f2-8774-7bcb67706795" />
+  </projectItems>
+</package>
