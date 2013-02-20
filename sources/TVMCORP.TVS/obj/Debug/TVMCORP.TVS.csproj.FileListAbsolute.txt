@@ -1,7 +1,0 @@
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS\bin\Debug\TVMCORP.TVS.dll
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS\bin\Debug\TVMCORP.TVS.pdb
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS\bin\Debug\itextsharp.dll
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS\bin\Debug\Microsoft.Sharepoint.Sandbox.dll
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS\obj\Debug\TVMCORP.TVS.dll
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS\obj\Debug\TVMCORP.TVS.pdb
