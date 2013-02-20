@@ -9,7 +9,7 @@ using Microsoft.SharePoint;
 using Microsoft.SharePoint.Workflow;
 using TVMCORP.TVS.UTIL.Utilities;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.TaskActions
+namespace TVMCORP.TVS.WORKFLOWS.TaskActions
 {
     public class UpdateTaskPermission : ITaskActionHandler
     {

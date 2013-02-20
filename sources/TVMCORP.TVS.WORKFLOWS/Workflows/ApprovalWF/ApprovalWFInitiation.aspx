@@ -11,7 +11,7 @@
 <%@ Register TagPrefix="wssuc" TagName="ButtonSection" Src="~/_controltemplates/ButtonSection.ascx" %>
 
 <%@ Page Language="C#" DynamicMasterPageFile="~masterurl/default.master" AutoEventWireup="true"
-    Inherits="TVMCORP.TVS.WORKFLOWS.Core.Workflows.ApprovalWFInitiation" CodeBehind="ApprovalWFInitiation.aspx.cs" %>
+    Inherits="TVMCORP.TVS.WORKFLOWS.Workflows.ApprovalWFInitiation" CodeBehind="ApprovalWFInitiation.aspx.cs" %>
 
     
 

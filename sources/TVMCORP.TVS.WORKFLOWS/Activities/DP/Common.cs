@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 using Microsoft.SharePoint.Administration;
 using System.Diagnostics;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities.DP
+namespace TVMCORP.TVS.WORKFLOWS.Activities.DP
 {
 
     public class WorkflowHistoryTraceListener : TraceListener

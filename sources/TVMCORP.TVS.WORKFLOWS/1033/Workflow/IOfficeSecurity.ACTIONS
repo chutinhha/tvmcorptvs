@@ -2,8 +2,8 @@
 <WorkflowInfo Language="en-us">
   <Actions Sequential="then" Parallel="and">
     <Action Name="Grant Permission on Item"
-     ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.WorkflowActions.GrantPermissionsOnItem"
-     Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     ClassName="TVMCORP.TVS.WORKFLOWS.Activities.WorkflowActions.GrantPermissionsOnItem"
+     Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
      AppliesTo="all"
      Category="[I-Office] Security">
       <RuleDesigner Sentence="Grant %1 permission on %2 to %3">
@@ -23,8 +23,8 @@
     </Action>
 
     <Action Name="Delete Item Permission Assignment"
-     ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.WorkflowActions.DeleteListItemPermissionAssignment"
-     Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     ClassName="TVMCORP.TVS.WORKFLOWS.Activities.WorkflowActions.DeleteListItemPermissionAssignment"
+     Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
      AppliesTo="all"
      Category="[I-Office] Security">
       <RuleDesigner Sentence="Delete permission assignment in %1 for %2">
@@ -42,8 +42,8 @@
     </Action>
 
     <Action Name="Reset Item Permissions Inheritance"
-     ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.WorkflowActions.ResetListItemPermissionInheritance"
-     Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     ClassName="TVMCORP.TVS.WORKFLOWS.Activities.WorkflowActions.ResetListItemPermissionInheritance"
+     Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
      AppliesTo="all"
      Category="[I-Office] Security">
       <RuleDesigner Sentence="Reset permissions inheritance on %1">
@@ -59,8 +59,8 @@
     </Action>
 
     <Action Name="Reset to Security Rules Permissions"
-     ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.WorkflowActions.ResetToSecurityRulesPermissions"
-     Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     ClassName="TVMCORP.TVS.WORKFLOWS.Activities.WorkflowActions.ResetToSecurityRulesPermissions"
+     Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
      AppliesTo="all"
      Category="[I-Office] Security">
       <RuleDesigner Sentence="Reset to Hypertek.IOffice Security permissions on %1 using event %2">
@@ -81,8 +81,8 @@
     </Action>
 
     <Action Name="Change all list item permissions to new permission"
-     ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.WorkflowActions.ChangeAllListItemPermissions"
-     Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     ClassName="TVMCORP.TVS.WORKFLOWS.Activities.WorkflowActions.ChangeAllListItemPermissions"
+     Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
      AppliesTo="all"
      Category="[I-Office] Security">
       <RuleDesigner Sentence="Change all permissions on %1 to %2">

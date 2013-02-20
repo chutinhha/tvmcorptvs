@@ -3,8 +3,8 @@
   <Conditions And="and" Or="or" Not="not" When="If" Else="Else if">
     <Condition Name="Is Role assigned to User"
      FunctionName="IsUserRoleAssigned"
-     ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.DP.Common"
-     Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     ClassName="TVMCORP.TVS.WORKFLOWS.Activities.DP.Common"
+     Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
      AppliesTo="all"
      UsesCurrentItem="true">
       <RuleDesigner Sentence="is %1 role assigned to %2">
@@ -19,8 +19,8 @@
 
     <Condition Name="Is User a member of a sharepoint group"
      FunctionName="IsUserPartOfSharepointGroup"
-     ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.DP.Common"
-     Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     ClassName="TVMCORP.TVS.WORKFLOWS.Activities.DP.Common"
+     Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
      UsesCurrentItem="true"
      AppliesTo="all">
       <RuleDesigner Sentence="%1 is a member of %2 sharepoint group">
@@ -35,8 +35,8 @@
   </Conditions>
   <Actions Sequential="then" Parallel="and">
     <Action Name="Send Email with HTTP file attachment"
-        ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.DP.SendMailWHttpFileAttachment2"
-        Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+        ClassName="TVMCORP.TVS.WORKFLOWS.Activities.DP.SendMailWHttpFileAttachment2"
+        Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
         AppliesTo="all"
         Category="[I-Office] Actions">
       <RuleDesigner Sentence="Send %1 email to %2, display %3 as sender.Also attach file named %4 retrieved from this url: %5. %6 sharepoint account when getting the file.">
@@ -67,8 +67,8 @@
       </Parameters>
     </Action>
     <Action Name="Send Email with List Item Attachments"
-        ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.DP.SendMailWListItemAttachments"
-        Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+        ClassName="TVMCORP.TVS.WORKFLOWS.Activities.DP.SendMailWListItemAttachments"
+        Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
         AppliesTo="all"
         Category="[I-Office] Actions">
       <RuleDesigner Sentence="Send %1 email to %2, display %3 as sender.Also include all files attached to %4 as attachments in the email.">
@@ -94,8 +94,8 @@
       </Parameters>
     </Action>
     <Action Name="Delete List Item Permission Assigment"
-        ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.DP.DeleteListItemPermissionAssigment"
-        Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+        ClassName="TVMCORP.TVS.WORKFLOWS.Activities.DP.DeleteListItemPermissionAssigment"
+        Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
         AppliesTo="all"
         Category="[I-Office] Actions">
       <RuleDesigner Sentence="Delete permission assigment in %1 for %2">
@@ -110,8 +110,8 @@
       </Parameters>
     </Action>
     <Action Name="Start Another Workflow"
-        ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.DP.StartAnotherWorkflow"
-        Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+        ClassName="TVMCORP.TVS.WORKFLOWS.Activities.DP.StartAnotherWorkflow"
+        Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
         AppliesTo="all"
         Category="[I-Office] Actions">
       <RuleDesigner Sentence="Start another workflow on %2, named %1">
@@ -126,8 +126,8 @@
       </Parameters>
     </Action>
     <Action Name="Grant Permission on Item"
-     ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.DP.AddListItemPermissionAssigment"
-     Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     ClassName="TVMCORP.TVS.WORKFLOWS.Activities.DP.AddListItemPermissionAssigment"
+     Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
      AppliesTo="all"
      Category="[I-Office] Actions">
       <RuleDesigner Sentence="Grant %1 Permission on %2 to %3">
@@ -144,8 +144,8 @@
       </Parameters>
     </Action>
     <Action Name="Reset List Permissions Inheritance"
-   ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.DP.ResetListItemPermissionInheritance"
-   Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+   ClassName="TVMCORP.TVS.WORKFLOWS.Activities.DP.ResetListItemPermissionInheritance"
+   Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
    AppliesTo="all"
    Category="[I-Office] Actions">
       <RuleDesigner Sentence="Inherit list permissions on %1">
@@ -158,8 +158,8 @@
       </Parameters>
     </Action>
     <!--<Action Name="Get InfoPath form field inner text"
-     ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.DP.GetInfoPathFormValueInnerText"
-     Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+     ClassName="TVMCORP.TVS.WORKFLOWS.Activities.DP.GetInfoPathFormValueInnerText"
+     Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
      AppliesTo="doclib"
      Category="[I-Office] Actions">
       <RuleDesigner Sentence="Get InfoPath field inner text at %1 and store in %2">
@@ -173,8 +173,8 @@
       </Parameters>
     </Action>
     <Action Name="Get InfoPath form field inner xml"
- ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.DP.GetInfoPathFormValueInnerXml"
- Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+ ClassName="TVMCORP.TVS.WORKFLOWS.Activities.DP.GetInfoPathFormValueInnerXml"
+ Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
  AppliesTo="doclib"
  Category="[I-Office] Actions">
       <RuleDesigner Sentence="Get InfoPath field inner xml at %1 and store in %2">
@@ -188,8 +188,8 @@
       </Parameters>
     </Action>
     <Action Name="Set InfoPath form field inner text"
- ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.DP.SetInfoPathFormValueInnerText"
- Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+ ClassName="TVMCORP.TVS.WORKFLOWS.Activities.DP.SetInfoPathFormValueInnerText"
+ Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
  AppliesTo="doclib"
  Category="[I-Office] Actions">
       <RuleDesigner Sentence="Set InfoPath field inner text at %1 to %2">
@@ -203,8 +203,8 @@
       </Parameters>
     </Action>
     <Action Name="Set InfoPath form field inner xml"
- ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.DP.SetInfoPathFormValueInnerXml"
- Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+ ClassName="TVMCORP.TVS.WORKFLOWS.Activities.DP.SetInfoPathFormValueInnerXml"
+ Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
  AppliesTo="doclib"
  Category="[I-Office] Actions">
       <RuleDesigner Sentence="Set InfoPath field inner xml at %1 to %2">
@@ -218,8 +218,8 @@
       </Parameters>
     </Action>-->
     <Action Name="Lookup site user property"
- ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.DP.LookupUserInfo"
- Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+ ClassName="TVMCORP.TVS.WORKFLOWS.Activities.DP.LookupUserInfo"
+ Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
  AppliesTo="all"
  Category="[I-Office] Actions">
       <RuleDesigner Sentence="Lookup %1 property for %2, store in %3">
@@ -235,8 +235,8 @@
       </Parameters>
     </Action>
     <Action Name="Copy List Item Extended"
-  ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.DP.CopyListItemExtended"
-  Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+  ClassName="TVMCORP.TVS.WORKFLOWS.Activities.DP.CopyListItemExtended"
+  Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
   AppliesTo="all"
   Category="[I-Office] Actions">
       <RuleDesigner Sentence="%1 item in %2 to list at %3, %4 existing items. Store resulting list item id in %5">
@@ -263,8 +263,8 @@
       </Parameters>
     </Action>
     <Action Name="Send Email Extended"
-           ClassName="TVMCORP.TVS.WORKFLOWS.Core.Activities.DP.SendEmailExtended"
-           Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+           ClassName="TVMCORP.TVS.WORKFLOWS.Activities.DP.SendEmailExtended"
+           Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
            AppliesTo="all"
            Category="[I-Office] Actions">
       <RuleDesigner Sentence="Send %1 email to %2, display %3 as sender.">

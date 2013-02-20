@@ -8,7 +8,7 @@ using Microsoft.SharePoint.Utilities;
 using TVMCORP.TVS.UTIL.MODELS;
 using TVMCORP.TVS.UTIL;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Controls
+namespace TVMCORP.TVS.WORKFLOWS.Controls
 {
     public partial class LinkToDocumentEditor : UserControl
     {

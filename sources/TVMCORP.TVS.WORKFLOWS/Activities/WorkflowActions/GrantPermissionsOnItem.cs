@@ -8,7 +8,7 @@ using Microsoft.SharePoint;
 using Microsoft.SharePoint.Workflow;
 using TVMCORP.TVS.UTIL.Extensions;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities.WorkflowActions
+namespace TVMCORP.TVS.WORKFLOWS.Activities.WorkflowActions
 {
 	public partial class GrantPermissionsOnItem: Activity
 	{

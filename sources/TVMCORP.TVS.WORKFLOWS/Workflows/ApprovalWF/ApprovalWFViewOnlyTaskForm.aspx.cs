@@ -8,7 +8,7 @@ using TVMCORP.TVS.UTIL;
 using TVMCORP.TVS.UTIL.RESOURCES;
  
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Workflows
+namespace TVMCORP.TVS.WORKFLOWS.Workflows
 {
     public partial class ApprovalWFViewOnlyTaskForm : TaskFormBase
     {

@@ -31,9 +31,9 @@
     <XmlDocuments>
       <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms/url">
         <FormUrls xmlns="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms/url">
-          <New>_layouts/TVMCORP.TVS.WORKFLOWS.Core/CCIappWorkflowTaskApproval.aspx</New>
-          <Display>_layouts/TVMCORP.TVS.WORKFLOWS.Core/CCIappWorkflowTaskApproval.aspx</Display>
-          <Edit>_layouts/TVMCORP.TVS.WORKFLOWS.Core/CCIappWorkflowTaskApproval.aspx</Edit>
+          <New>_layouts/TVMCORP.TVS.WORKFLOWS/CCIappWorkflowTaskApproval.aspx</New>
+          <Display>_layouts/TVMCORP.TVS.WORKFLOWS/CCIappWorkflowTaskApproval.aspx</Display>
+          <Edit>_layouts/TVMCORP.TVS.WORKFLOWS/CCIappWorkflowTaskApproval.aspx</Edit>
         </FormUrls>
       </XmlDocument>
     </XmlDocuments>

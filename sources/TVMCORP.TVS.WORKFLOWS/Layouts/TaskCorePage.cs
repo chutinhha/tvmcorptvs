@@ -7,7 +7,7 @@ using Microsoft.SharePoint.WebControls;
 using Microsoft.SharePoint.Workflow;
 using TVMCORP.TVS.UTIL.Utilities;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Pages
+namespace TVMCORP.TVS.WORKFLOWS.Pages
 {
     public class TaskCorePage : LayoutsPageBase
     {

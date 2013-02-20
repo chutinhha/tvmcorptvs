@@ -100,6 +100,12 @@
     <None Include="Images\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{b46a8b12-6299-4515-8912-9cd7a5e66392}</SharePointProjectItemId>
     </None>
+    <None Include="ListDefinitions\EmailTemplate\EmailTemplateInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ed547073-42fe-451c-bdcb-b7390d5da0f2}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\EmailTemplate\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{546d741b-7c88-48e7-af7d-23661a5d40f8}</SharePointProjectItemId>
+    </None>
     <None Include="ListDefinitions\PurchaseDefinition\PurchaseInstance\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{bd02efba-053d-4ec6-b601-a6fd28f378bf}</SharePointProjectItemId>
     </None>
@@ -180,6 +186,9 @@
     <Content Include="Layouts\1033\public\javascript\zebra_datepicker.src.js" />
     <Content Include="Images\SharePoint.BeachCamp\Printer-icon.png" />
     <Content Include="Libs\itextsharp.dll" />
+    <Content Include="ListDefinitions\EmailTemplate\Elements.xml" />
+    <Content Include="ListDefinitions\EmailTemplate\EmailTemplateInstance\Elements.xml" />
+    <Content Include="ListDefinitions\EmailTemplate\Schema.xml" />
     <Content Include="ListDefinitions\PurchaseDefinition\Elements.xml" />
     <Content Include="ListDefinitions\PurchaseDefinition\PurchaseInstance\Elements.xml" />
     <Content Include="ListDefinitions\PurchaseDefinition\Schema.xml" />

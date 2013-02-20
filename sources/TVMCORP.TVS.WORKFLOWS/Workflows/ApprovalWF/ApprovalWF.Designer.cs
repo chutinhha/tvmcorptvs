@@ -13,7 +13,7 @@ using System.Workflow.Activities;
 using System.Workflow.Activities.Rules;
 using TVMCORP.TVS.WORKFLOWS.Activities;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Workflows
+namespace TVMCORP.TVS.WORKFLOWS.Workflows
 {
     public sealed partial class ApprovalWF
     {
@@ -63,8 +63,8 @@ namespace TVMCORP.TVS.WORKFLOWS.Core.Workflows
             this.DocumentNotChangeByUser = new System.Workflow.Activities.WhileActivity();
             this.ifElseBranchActivity7 = new System.Workflow.Activities.IfElseBranchActivity();
             this.ifElseBranchActivity4 = new System.Workflow.Activities.IfElseBranchActivity();
-            this.approvalLevel = new TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalLevel();
-            this.updatePermissionActivity1 = new TVMCORP.TVS.WORKFLOWS.Core.Activities.UpdatePermissionActivity();
+            this.approvalLevel = new TVMCORP.TVS.WORKFLOWS.Activities.ApprovalLevel();
+            this.updatePermissionActivity1 = new TVMCORP.TVS.WORKFLOWS.Activities.UpdatePermissionActivity();
             this.codeActivity2 = new System.Workflow.Activities.CodeActivity();
             this.ifElseActivity2 = new System.Workflow.Activities.IfElseActivity();
             this.UpdateApprovalStatus = new System.Workflow.Activities.CodeActivity();
@@ -78,7 +78,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Core.Workflows
             this.WFApprovedEvent = new TVMCORP.TVS.WORKFLOWS.Activities.TaskEventHandler();
             this.SetWFApprovedEventParameter = new System.Workflow.Activities.CodeActivity();
             this.ifElseActivity1 = new System.Workflow.Activities.IfElseActivity();
-            this.SetItemApproval = new TVMCORP.TVS.WORKFLOWS.Core.Activities.PublishItemActivity();
+            this.SetItemApproval = new TVMCORP.TVS.WORKFLOWS.Activities.PublishItemActivity();
             this.SetItemApprovalData = new System.Workflow.Activities.CodeActivity();
             this.conditionedActivityGroup1 = new System.Workflow.Activities.ConditionedActivityGroup();
             this.DeplayOnStart = new Microsoft.SharePoint.WorkflowActions.DelayForActivity();
@@ -157,9 +157,9 @@ namespace TVMCORP.TVS.WORKFLOWS.Core.Workflows
             activitybind3.Path = "TaskOutcome";
             activitybind4.Name = "ApprovalWF";
             activitybind4.Path = "workflowProperties";
-            this.approvalLevel.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalLevel.TaskOutcomeProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind3)));
-            this.approvalLevel.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalLevel.workflowPropertiesProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind4)));
-            this.approvalLevel.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalLevel.EndAtFirstRejectionProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind2)));
+            this.approvalLevel.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalLevel.TaskOutcomeProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind3)));
+            this.approvalLevel.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalLevel.workflowPropertiesProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind4)));
+            this.approvalLevel.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalLevel.EndAtFirstRejectionProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind2)));
             // 
             // updatePermissionActivity1
             // 
@@ -172,10 +172,10 @@ namespace TVMCORP.TVS.WORKFLOWS.Core.Workflows
             this.updatePermissionActivity1.Name = "updatePermissionActivity1";
             activitybind8.Name = "ApprovalWF";
             activitybind8.Path = "AssociationObj.Permissions";
-            this.updatePermissionActivity1.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.UpdatePermissionActivity.ItemProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind6)));
-            this.updatePermissionActivity1.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.UpdatePermissionActivity.KeepExistingPermissionsProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind7)));
-            this.updatePermissionActivity1.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.UpdatePermissionActivity.PermissionsProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind8)));
-            this.updatePermissionActivity1.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.UpdatePermissionActivity.ApproversProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind5)));
+            this.updatePermissionActivity1.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.UpdatePermissionActivity.ItemProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind6)));
+            this.updatePermissionActivity1.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.UpdatePermissionActivity.KeepExistingPermissionsProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind7)));
+            this.updatePermissionActivity1.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.UpdatePermissionActivity.PermissionsProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind8)));
+            this.updatePermissionActivity1.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.UpdatePermissionActivity.ApproversProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind5)));
             // 
             // codeActivity2
             // 
@@ -276,7 +276,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Core.Workflows
             this.SetItemApproval.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.CCICoreActivity.@__ActivationPropertiesProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind12)));
             this.SetItemApproval.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.CCICoreActivity.@__ListIdProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind13)));
             this.SetItemApproval.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.CCICoreActivity.@__ListItemProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind14)));
-            this.SetItemApproval.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.PublishItemActivity.StatusProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind15)));
+            this.SetItemApproval.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.PublishItemActivity.StatusProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind15)));
             // 
             // SetItemApprovalData
             // 

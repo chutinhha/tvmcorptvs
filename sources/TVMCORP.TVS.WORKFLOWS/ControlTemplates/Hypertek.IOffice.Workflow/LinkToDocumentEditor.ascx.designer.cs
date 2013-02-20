@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Controls {
+namespace TVMCORP.TVS.WORKFLOWS.Controls {
     
     
     public partial class LinkToDocumentEditor {

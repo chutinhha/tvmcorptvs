@@ -4,7 +4,7 @@ using System.Text;
 using System.Workflow.Runtime;
 using Microsoft.SharePoint;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities.DP
+namespace TVMCORP.TVS.WORKFLOWS.Activities.DP
 {
 
     public enum PermissionActionType

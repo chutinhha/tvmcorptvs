@@ -6,11 +6,11 @@ using Microsoft.SharePoint;
 using Microsoft.SharePoint.Utilities;
 using Microsoft.SharePoint.WebControls;
 using Microsoft.SharePoint.Workflow;
-using TVMCORP.TVS.WORKFLOWS.Core.Controls;
+using TVMCORP.TVS.WORKFLOWS.Controls;
 using TVMCORP.TVS.UTIL.MODELS;
 using TVMCORP.TVS.UTIL.Helpers;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Workflows
+namespace TVMCORP.TVS.WORKFLOWS.Workflows
 {
     public partial class ApprovalWFAssociation : LayoutsPageBase
     {

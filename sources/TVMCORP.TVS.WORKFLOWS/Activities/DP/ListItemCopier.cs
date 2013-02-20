@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Collections;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities.DP
+namespace TVMCORP.TVS.WORKFLOWS.Activities.DP
 {
     /// <summary>
     /// represents an error that occured during copy operation

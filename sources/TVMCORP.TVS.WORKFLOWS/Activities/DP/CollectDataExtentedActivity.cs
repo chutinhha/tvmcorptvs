@@ -11,7 +11,7 @@ using System.Workflow.Runtime;
 using System.Workflow.Activities;
 using System.Workflow.Activities.Rules;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities.DP
+namespace TVMCORP.TVS.WORKFLOWS.Activities.DP
 {
 	public partial class CollectDataExtentedActivity: SequenceActivity
 	{

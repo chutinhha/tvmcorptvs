@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using TVMCORP.TVS.UTIL.MODELS;
 using System.Linq;
 using TVMCORP.TVS.UTIL;
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities
+namespace TVMCORP.TVS.WORKFLOWS.Activities
 {
 
     public partial class ApprovalLevel : SequenceActivity

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Workflows {
+namespace TVMCORP.TVS.WORKFLOWS.Workflows {
     
     
     public partial class ApprovalWFViewOnlyTaskForm {

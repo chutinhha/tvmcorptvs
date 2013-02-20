@@ -1,36 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="ca9ab544-a78f-4d24-a332-09db2f5fdc93" SharePointProductVersion="14.0">
+  <ApplicationResourceFiles>
+    <App_GlobalResourceFile Location="ApprovalWorkflowResources.resx" />
+  </ApplicationResourceFiles>
   <Assemblies>
-    <Assembly Location="Hypertek.IOffice.Workflow.Core.dll" DeploymentTarget="GlobalAssemblyCache" />
+    <Assembly Location="TVMCORP.TVS.WORKFLOWS.dll" DeploymentTarget="GlobalAssemblyCache" />
   </Assemblies>
   <TemplateFiles>
-    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\ApprovalWF\ApprovalWFAssociation.aspx" />
-    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\ApprovalWF\ApprovalWFInitiation.aspx" />
-    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\ApprovalWF\ApprovalWFTaskForm.aspx" />
-    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\ApprovalWF\ReassignWFTaskForm.aspx" />
-    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\ApprovalWF\ApprovalWFViewOnlyTaskForm.aspx" />
-    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\ApprovalWF\ApprovalWFReasignTaskForm.aspx" />
-    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\IncomingDocumentWF\IncomingDocumentWorkflowTaskForm_ImplementationUnit.aspx" />
-    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\IncomingDocumentWF\IncomingDocumentWorkflowTaskForm_FocalPointUnit.aspx" />
-    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\IncomingDocumentWF\IncomingDocumentWorkflowTaskForm_Recipient.aspx" />
-    <TemplateFile Location="LAYOUTS\Hypertek.IOffice.Workflow.Core\IncomingDocumentWF\IncomingDocumentWorkflowTaskForm_Approver.aspx" />
-    <TemplateFile Location="Layouts\Hypertek.IOffice.Workflow.Core\CCIappWorkflowTaskRequestChange.aspx.bak" />
+    <TemplateFile Location="LAYOUTS\TVMCORP.TVS.WORKFLOWS\ApprovalWF\ApprovalWFAssociation.aspx" />
+    <TemplateFile Location="LAYOUTS\TVMCORP.TVS.WORKFLOWS\ApprovalWF\ApprovalWFInitiation.aspx" />
+    <TemplateFile Location="LAYOUTS\TVMCORP.TVS.WORKFLOWS\ApprovalWF\ApprovalWFTaskForm.aspx" />
+    <TemplateFile Location="LAYOUTS\TVMCORP.TVS.WORKFLOWS\ApprovalWF\ReassignWFTaskForm.aspx" />
+    <TemplateFile Location="LAYOUTS\TVMCORP.TVS.WORKFLOWS\ApprovalWF\ApprovalWFViewOnlyTaskForm.aspx" />
+    <TemplateFile Location="LAYOUTS\TVMCORP.TVS.WORKFLOWS\ApprovalWF\ApprovalWFReasignTaskForm.aspx" />
     <TemplateFile Location="Layouts\1033\jquery.maskedinput-1.3.js" />
-    <TemplateFile Location="Layouts\Hypertek.IOffice.Workflow.Core\CCIappWorkflowSendEEC.aspx" />
-    <TemplateFile Location="Layouts\Hypertek.IOffice.Workflow.Core\CCIappWorkflowTaskApproval.aspx" />
-    <TemplateFile Location="Layouts\Hypertek.IOffice.Workflow.Core\CCIappWorkflowTaskChange.aspx" />
-    <TemplateFile Location="Layouts\Hypertek.IOffice.Workflow.Core\CCIappWorkflowTaskDisplay.aspx" />
-    <TemplateFile Location="Layouts\Hypertek.IOffice.Workflow.Core\CCIappWorkflowTaskOnHold.aspx" />
-    <TemplateFile Location="Layouts\Hypertek.IOffice.Workflow.Core\CCIappWorkflowTaskReassign.aspx" />
-    <TemplateFile Location="Layouts\Hypertek.IOffice.Workflow.Core\CCIappWorkflowTaskRequestChange.aspx" />
+    <TemplateFile Location="Layouts\TVMCORP.TVS.WORKFLOWS\TaskEvent.aspx" />
     <TemplateFile Location="1033\Workflow\DPWorkflow.ACTIONS" />
     <TemplateFile Location="1033\Workflow\IOfficeSecurity.ACTIONS" />
     <TemplateFile Location="1033\Workflow\IOfficeWorkflow.ACTIONS" />
-    <TemplateFile Location="ControlTemplates\Hypertek.IOffice.Workflow.Core\ApprovalUC.ascx" />
-    <TemplateFile Location="ControlTemplates\Hypertek.IOffice.Workflow.Core\ApproverUC.ascx" />
+    <TemplateFile Location="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\CreateUnreadTaskEditor.ascx" />
+    <TemplateFile Location="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\SendEmailToStaticAddressEditor.ascx" />
+    <TemplateFile Location="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\SendEmailToWfItemUserColumnEditor.ascx" />
+    <TemplateFile Location="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\SendEmailtoWorkflowTaskUserColumnEditor.ascx" />
+    <TemplateFile Location="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateExecutedDocumentMetaDataEditor.ascx" />
+    <TemplateFile Location="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateTaskItemWithItemPropertyEditor.ascx" />
+    <TemplateFile Location="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateTaskPermissionEditor.ascx" />
+    <TemplateFile Location="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateWFItemPermissionEditor.ascx" />
+    <TemplateFile Location="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateWorkflowItemMetaDataEditor.ascx" />
+    <TemplateFile Location="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateWorkflowItemWithKeywordEditor.ascx" />
+    <TemplateFile Location="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateWorkflowItemWithTaskPropertyEditor.ascx" />
+    <TemplateFile Location="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateWorkflowTaskMetaDataEditor.ascx" />
+    <TemplateFile Location="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ApprovalUC.ascx" />
+    <TemplateFile Location="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ApproverUC.ascx" />
     <TemplateFile Location="ControlTemplates\Hypertek.IOffice.Workflow\LinkToDocumentEditor.ascx" />
+    <TemplateFile Location="ControlTemplates\TVMCORP.TVS.WORKFLOWS\EmailTemplateSelector.ascx" />
   </TemplateFiles>
   <FeatureManifests>
-    <FeatureManifest Location="Hypertek.IOffice.Workflow.Core_Hypertek.IOffice.Workflow.Core\Feature.xml" />
+    <FeatureManifest Location="TVMCORP.TVS.WORKFLOWS_TVMCORP.TVS.WORKFLOWS\Feature.xml" />
+    <FeatureManifest Location="TVMCORP.TVS.WORKFLOWS_TVMCORP.TVS.WORKFLOWS.WEBAPP\Feature.xml" />
   </FeatureManifests>
 </Solution>

@@ -6,13 +6,13 @@ Name="[NAME]" ==> Name="MyWorkflow" -->
 
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Workflow
-     Name="[I-Office] Approval"
-     Description="[I-Office] Approval"
+     Name="[TVS] Approval Workflow"
+     Description="[TVS] Approval Workflow"
      Id="83f72118-1ea1-4001-b8fe-5bc07fa71592"
-     CodeBesideClass="TVMCORP.TVS.WORKFLOWS.Core.Workflows.ApprovalWF"
+     CodeBesideClass="TVMCORP.TVS.WORKFLOWS.Workflows.ApprovalWF"
      CodeBesideAssembly="$assemblyname$" 
-     AssociationUrl="_LAYOUTS/TVMCORP.TVS.WORKFLOWS.Core/ApprovalWF/ApprovalWFAssociation.aspx" 
-     InstantiationUrl="_LAYOUTS/TVMCORP.TVS.WORKFLOWS.Core/ApprovalWF/ApprovalWFInitiation.aspx"
+     AssociationUrl="_LAYOUTS/TVMCORP.TVS.WORKFLOWS/ApprovalWF/ApprovalWFAssociation.aspx" 
+     InstantiationUrl="_LAYOUTS/TVMCORP.TVS.WORKFLOWS/ApprovalWF/ApprovalWFInitiation.aspx"
      
      >
     <Categories/>

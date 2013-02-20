@@ -1,7 +1,7 @@
 ﻿using System;
 using TVMCORP.TVS.UTIL.MODELS;
 using TVMCORP.TVS.UTIL.MODELS;
-using TVMCORP.TVS.WORKFLOWS.Core.TaskActions;
+using TVMCORP.TVS.WORKFLOWS.TaskActions;
 
 namespace TVMCORP.TVS.WORKFLOWS.TaskActions
 {

@@ -1,6 +1,9 @@
 C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\obj\Debug\Hypertek.IOffice.Workflow.Core.dll
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\obj\Debug\Hypertek.IOffice.Workflow.Core.pdb
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\bin\Debug\Hypertek.IOffice.Workflow.Core.dll
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\bin\Debug\Hypertek.IOffice.Workflow.Core.pdb
 C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\bin\Debug\Microsoft.Sharepoint.Sandbox.dll
+C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\obj\Debug\ResGen.read.1.tlog
+C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\obj\Debug\ResGen.write.1.tlog
+C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\obj\Debug\TVMCORP.TVS.WORKFLOWS.AppGlobalResources.ApprovalWorkflowResources.resources
+C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\bin\Debug\TVMCORP.TVS.WORKFLOWS.dll
+C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\bin\Debug\TVMCORP.TVS.WORKFLOWS.pdb
+C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\obj\Debug\TVMCORP.TVS.WORKFLOWS.dll
+C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\obj\Debug\TVMCORP.TVS.WORKFLOWS.pdb

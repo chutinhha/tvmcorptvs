@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Workflow.ComponentModel.Compiler;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities.DP
+namespace TVMCORP.TVS.WORKFLOWS.Activities.DP
 {
 	public class CopyListItemActivityValidator:ActivityValidator
 	{

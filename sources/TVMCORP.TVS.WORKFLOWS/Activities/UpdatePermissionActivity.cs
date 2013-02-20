@@ -7,7 +7,7 @@ using TVMCORP.TVS.UTIL.MODELS;
 using Microsoft.SharePoint;
 using TVMCORP.TVS.UTIL.Extensions;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities
+namespace TVMCORP.TVS.WORKFLOWS.Activities
 {
     public class UpdatePermissionActivity : System.Workflow.ComponentModel.Activity
     {

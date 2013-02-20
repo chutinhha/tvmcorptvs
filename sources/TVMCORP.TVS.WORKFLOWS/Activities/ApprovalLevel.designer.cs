@@ -12,7 +12,7 @@ using System.Workflow.Activities;
 using System.Workflow.Activities.Rules;
 using TVMCORP.TVS.WORKFLOWS.Activities;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities
+namespace TVMCORP.TVS.WORKFLOWS.Activities
 {
     public partial class ApprovalLevel
     {
@@ -34,7 +34,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Core.Activities
             System.Workflow.ComponentModel.ActivityBind activitybind7 = new System.Workflow.ComponentModel.ActivityBind();
             System.Workflow.ComponentModel.ActivityBind activitybind6 = new System.Workflow.ComponentModel.ActivityBind();
             System.Workflow.Activities.CodeCondition codecondition1 = new System.Workflow.Activities.CodeCondition();
-            this.SingleTaskApproval = new TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnitWrapper();
+            this.SingleTaskApproval = new TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnitWrapper();
             this.customLogToWFHistoryActivity1 = new TVMCORP.TVS.WORKFLOWS.Activities.CustomLogToWFHistoryActivity();
             this.MultiTaskReplicator = new System.Workflow.Activities.ReplicatorActivity();
             this.SetData = new System.Workflow.Activities.CodeActivity();
@@ -53,10 +53,10 @@ namespace TVMCORP.TVS.WORKFLOWS.Core.Activities
             this.SingleTaskApproval.TaskSequenceType = null;
             activitybind4.Name = "ApprovalLevel";
             activitybind4.Path = "workflowProperties";
-            this.SingleTaskApproval.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnitWrapper.workflowPropertiesProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind4)));
-            this.SingleTaskApproval.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnitWrapper.TaskContentTypeIdProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind2)));
-            this.SingleTaskApproval.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnitWrapper.TaskOutcomeProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind3)));
-            this.SingleTaskApproval.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnitWrapper.FormOptionProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind1)));
+            this.SingleTaskApproval.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnitWrapper.workflowPropertiesProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind4)));
+            this.SingleTaskApproval.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnitWrapper.TaskContentTypeIdProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind2)));
+            this.SingleTaskApproval.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnitWrapper.TaskOutcomeProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind3)));
+            this.SingleTaskApproval.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnitWrapper.FormOptionProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind1)));
             // 
             // customLogToWFHistoryActivity1
             // 

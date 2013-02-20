@@ -10,7 +10,7 @@ using Microsoft.SharePoint;
 using Microsoft.SharePoint.Workflow;
 using System.Collections;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities.DP
+namespace TVMCORP.TVS.WORKFLOWS.Activities.DP
 {
     /// <summary>
     /// sends a mail message using mail server configured in sharepoint, also attaches a file retrieved using HTTP request

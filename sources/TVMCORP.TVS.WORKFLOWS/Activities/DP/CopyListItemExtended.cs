@@ -14,7 +14,7 @@ using Microsoft.SharePoint.WorkflowActions;
 using Microsoft.SharePoint;
 using System.Diagnostics;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities.DP
+namespace TVMCORP.TVS.WORKFLOWS.Activities.DP
 {
     [ActivityValidator(typeof(CopyListItemActivityValidator))]
     public partial class CopyListItemExtended : Activity

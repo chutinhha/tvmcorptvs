@@ -14,7 +14,7 @@ using System.Workflow.Activities.Rules;
 using Microsoft.SharePoint;
 
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities.DP
+namespace TVMCORP.TVS.WORKFLOWS.Activities.DP
 {
 	public partial class ResetListItemPermissionInheritance
 	{

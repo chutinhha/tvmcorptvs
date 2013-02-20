@@ -9,7 +9,7 @@ using Microsoft.SharePoint;
 using Microsoft.SharePoint.Utilities;
 using System.Workflow.Runtime;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities.DP
+namespace TVMCORP.TVS.WORKFLOWS.Activities.DP
 {   
 
     /// <summary>

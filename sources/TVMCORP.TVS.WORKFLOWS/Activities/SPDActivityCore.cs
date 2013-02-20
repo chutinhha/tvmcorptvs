@@ -6,7 +6,7 @@ using System.Workflow.ComponentModel;
 using System.ComponentModel;
 using System.Workflow.ComponentModel.Compiler;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities
+namespace TVMCORP.TVS.WORKFLOWS.Activities
 {
    public class SPDActivityCore : Activity
     {

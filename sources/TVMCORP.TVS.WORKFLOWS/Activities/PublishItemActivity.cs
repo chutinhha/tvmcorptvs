@@ -10,7 +10,7 @@ using System.Workflow.ComponentModel.Compiler;
 using Microsoft.SharePoint.Workflow;
 
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities
+namespace TVMCORP.TVS.WORKFLOWS.Activities
 {
     public class PublishItemActivity : CCICoreActivity
     {
