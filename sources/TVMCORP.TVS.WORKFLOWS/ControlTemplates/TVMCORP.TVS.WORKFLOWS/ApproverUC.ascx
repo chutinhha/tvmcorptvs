@@ -213,6 +213,21 @@
 						        </td>
 					        </tr>
 
+                            <tr>
+						        <td style="padding-bottom: 5px; padding-left:10px"><img src="/_layouts/images/square.gif" alt=""/></td>
+						        <td style="padding-left: 5px; padding-bottom: 5px;">
+							        <a onclick="showTaskEventEditorDialog_<%=this.ClientID %>(0,'Approval Level Started','<%=_uniqueID.Value %>', '<%=TaskEventTypes.TaskLevelStarted.ToString() %>');return false" id="A4" href="#">Approval Level Started</a>
+							        <asp:Label Text="" runat="server" ID="Label4" />
+						        </td>
+					        </tr>
+                             <tr>
+						        <td style="padding-bottom: 5px; padding-left:10px"><img src="/_layouts/images/square.gif" alt=""/></td>
+						        <td style="padding-left: 5px; padding-bottom: 5px;">
+							        <a onclick="showTaskEventEditorDialog_<%=this.ClientID %>(0,'Approval Level Completed','<%=_uniqueID.Value %>', '<%=TaskEventTypes.TaskLevelCompleted.ToString() %>');return false" id="A5" href="#">Approval Level Completed</a>
+							        <asp:Label Text="" runat="server" ID="Label5" />
+						        </td>
+					        </tr>
+
 				        </tbody>
 			        </table>
 

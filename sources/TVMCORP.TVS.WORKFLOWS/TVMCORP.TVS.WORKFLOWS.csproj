@@ -476,7 +476,9 @@
     <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ApprovalUC.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
-    <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ApproverUC.ascx" />
+    <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ApproverUC.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="ControlTemplates\Hypertek.IOffice.Workflow\LinkToDocumentEditor.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
