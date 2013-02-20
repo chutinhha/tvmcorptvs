@@ -1,6 +1,0 @@
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.Util\bin\Debug\TVMCORP.TVS.UTIL.dll
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.Util\bin\Debug\TVMCORP.TVS.UTIL.pdb
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.Util\bin\Debug\Microsoft.Sharepoint.Sandbox.dll
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.Util\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.Util\obj\Debug\TVMCORP.TVS.UTIL.dll
-C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.Util\obj\Debug\TVMCORP.TVS.UTIL.pdb
