@@ -1,1 +1,0 @@
-bin\Debug\Hypertek.IOffice.Workflows.Core.wsp

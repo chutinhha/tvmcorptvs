@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Id="2ee09f69-77fb-410e-906a-bedbb132376d" ReceiverAssembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=44dc3ce128de1979" ReceiverClass="TVMCORP.TVS.WORKFLOWS.Features.TVMCORP.TVS.WORKFLOWS.HypertekIOfficeWorkflowEventReceiver" Scope="Site" Title="Hypertek.IOffice.Workflow.Core Feature1">
-  <ElementManifests>
-    <ElementManifest Location="I-Office Approval Task\Elements.xml" />
-    <ElementManifest Location="ApprovalWF\Elements.xml" />
-    <ElementManifest Location="Approval WF task\Elements.xml" />
-    <ElementManifest Location="AppGlobalResources\Elements.xml" />
-  </ElementManifests>
-</Feature>
