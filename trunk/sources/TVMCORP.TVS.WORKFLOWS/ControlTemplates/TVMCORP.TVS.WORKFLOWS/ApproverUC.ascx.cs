@@ -17,7 +17,7 @@ using TVMCORP.TVS.UTIL.Extensions;
 using TVMCORP.TVS.UTIL.RESOURCES;
 using TVMCORP.TVS.UTIL;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Controls
+namespace TVMCORP.TVS.WORKFLOWS.Controls
 {
     public partial class ApproverUC : UserControl
     {

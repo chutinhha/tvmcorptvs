@@ -7,8 +7,8 @@
     <ProjectGuid>{608B1764-A6B9-4F5F-BECF-4729A4744E94}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Hypertek.IOffice.Workflow.Core</RootNamespace>
-    <AssemblyName>Hypertek.IOffice.Workflow.Core</AssemblyName>
+    <RootNamespace>TVMCORP.TVS.WORKFLOWS</RootNamespace>
+    <AssemblyName>TVMCORP.TVS.WORKFLOWS</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -20,7 +20,7 @@
     <SccAuxPath />
     <SccProvider>
     </SccProvider>
-    <ActiveDeploymentConfiguration>No Activation</ActiveDeploymentConfiguration>
+    <ActiveDeploymentConfiguration>Default</ActiveDeploymentConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,7 +45,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>TVMCORP.TVS.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Properties\TVMCORP.TVS.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="microsoft.sharepoint.WorkflowActions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
@@ -332,8 +332,11 @@
     <Compile Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\EmailTemplateSelector.ascx.designer.cs">
       <DependentUpon>EmailTemplateSelector.ascx.cs</DependentUpon>
     </Compile>
-    <Compile Include="Features\Hypertek.IOffice.Workflow.Core\Hypertek.IOffice.Workflow.EventReceiver.cs">
-      <DependentUpon>Hypertek.IOffice.Workflow.Core.feature</DependentUpon>
+    <Compile Include="Features\TVMCORP.TVS.WORKFLOWS.WEBAPP\TVMCORP.TVS.WORKFLOWS.EventReceiver.cs">
+      <DependentUpon>TVMCORP.TVS.WORKFLOWS.WEBAPP.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\TVMCORP.TVS.WORKFLOWS\TVMCORP.TVS.WORKFLOWS.EventReceiver.cs">
+      <DependentUpon>TVMCORP.TVS.WORKFLOWS.feature</DependentUpon>
     </Compile>
     <Compile Include="Layouts\TVMCORP.TVS.WORKFLOWS\TaskEvent.aspx.cs">
       <DependentUpon>TaskEvent.aspx</DependentUpon>
@@ -412,9 +415,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Hypertek.IOffice.snk">
-      <Link>Properties\Hypertek.IOffice.snk</Link>
-    </None>
     <None Include="1033\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{ae284498-7b8d-47cd-8550-6a39ee272ea9}</SharePointProjectItemId>
     </None>
@@ -424,13 +424,19 @@
     <None Include="Actions\ExtractIPAttachments.cs.bak" />
     <None Include="Actions\SendEmailFromTemplate.cs.bak" />
     <None Include="Activities\SendWFTaskEmail.cs.bak" />
+    <None Include="AppGlobalResources\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d201e8fa-f2e7-49ad-8ff7-6e3b6768a197}</SharePointProjectItemId>
+    </None>
     <None Include="Content Types\Approval WF task\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{cc4e5cc9-d57b-45cb-ba63-dcd198bd6eb7}</SharePointProjectItemId>
     </None>
     <None Include="ControlTemplates\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{853c1667-d99c-45f2-8774-7bcb67706795}</SharePointProjectItemId>
     </None>
-    <None Include="Features\Hypertek.IOffice.Workflow.Core\Hypertek.IOffice.Workflow.Core.feature">
+    <None Include="Features\TVMCORP.TVS.WORKFLOWS.WEBAPP\TVMCORP.TVS.WORKFLOWS.WEBAPP.feature">
+      <FeatureId>{a89aaec1-e329-4d06-8272-5dadf424de82}</FeatureId>
+    </None>
+    <None Include="Features\TVMCORP.TVS.WORKFLOWS\TVMCORP.TVS.WORKFLOWS.feature">
       <FeatureId>{aa778f3e-676d-4fce-b3f6-35d75bf4902b}</FeatureId>
     </None>
     <None Include="Content Types\I-Office Approval Task\SharePointProjectItem.spdata">
@@ -445,12 +451,13 @@
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
     </None>
-    <None Include="TVMCORP.TVS.snk" />
+    <None Include="Properties\TVMCORP.TVS.snk" />
     <None Include="Workflows\ApprovalWF\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{d4f0c402-cf6c-4ac4-ba40-fd11d2134411}</SharePointProjectItemId>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AppGlobalResources\Elements.xml" />
     <Content Include="Content Types\Approval WF task\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -476,8 +483,11 @@
     <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\EmailTemplateSelector.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
-    <Content Include="Features\Hypertek.IOffice.Workflow.Core\Hypertek.IOffice.Workflow.Core.Template.xml">
-      <DependentUpon>Hypertek.IOffice.Workflow.Core.feature</DependentUpon>
+    <Content Include="Features\TVMCORP.TVS.WORKFLOWS.WEBAPP\TVMCORP.TVS.WORKFLOWS.WEBAPP.Template.xml">
+      <DependentUpon>TVMCORP.TVS.WORKFLOWS.WEBAPP.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\TVMCORP.TVS.WORKFLOWS\TVMCORP.TVS.WORKFLOWS.Template.xml">
+      <DependentUpon>TVMCORP.TVS.WORKFLOWS.feature</DependentUpon>
     </Content>
     <Content Include="Content Types\I-Office Approval Task\Elements.xml">
       <SubType>Designer</SubType>
@@ -488,9 +498,7 @@
     <Content Include="Workflows\ApprovalWF\ApprovalWFTaskForm.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
-    <Content Include="Workflows\ApprovalWF\ApprovalWFAssociation.aspx">
-      <SubType>ASPXCodeBehind</SubType>
-    </Content>
+    <Content Include="Workflows\ApprovalWF\ApprovalWFAssociation.aspx" />
     <Content Include="Workflows\ApprovalWF\ApprovalWFInitiation.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
@@ -519,6 +527,7 @@
     <EmbeddedResource Include="Activities\ApprovalUnit.rules">
       <DependentUpon>ApprovalUnit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppGlobalResources\ApprovalWorkflowResources.resx" />
     <EmbeddedResource Include="Workflows\ApprovalWF\ApprovalWF.rules">
       <DependentUpon>ApprovalWF.cs</DependentUpon>
     </EmbeddedResource>

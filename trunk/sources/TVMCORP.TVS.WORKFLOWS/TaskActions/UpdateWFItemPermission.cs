@@ -8,7 +8,7 @@ using TVMCORP.TVS.UTIL.Extensions;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Workflow;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.TaskActions
+namespace TVMCORP.TVS.WORKFLOWS.TaskActions
 {
     public class UpdateWFItemPermission : ITaskActionHandler
     {

@@ -22,7 +22,7 @@ using TVMCORP.TVS.UTIL;
 using TVMCORP.TVS.UTIL.Helpers;
 using TVMCORP.TVS.UTIL.Services;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Workflows
+namespace TVMCORP.TVS.WORKFLOWS.Workflows
 {
     public partial class ApprovalWFInitiation : LayoutsPageBase
     {

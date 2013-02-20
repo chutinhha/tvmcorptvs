@@ -11,7 +11,7 @@ using TVMCORP.TVS.UTIL;
 using TVMCORP.TVS.UTIL;
 
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities.WorkflowActions
+namespace TVMCORP.TVS.WORKFLOWS.Activities.WorkflowActions
 {
     public partial class ResetToSecurityRulesPermissions : Activity
     {

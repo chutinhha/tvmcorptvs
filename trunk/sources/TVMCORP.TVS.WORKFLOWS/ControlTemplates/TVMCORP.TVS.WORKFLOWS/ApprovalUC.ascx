@@ -8,13 +8,13 @@
 <%@ Register TagPrefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages"
     Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 
-<%@ Register TagPrefix="uc" TagName="ucApprover" Src="/_controltemplates/TVMCORP.TVS.WORKFLOWS.Core/ApproverUC.ascx" %>
+<%@ Register TagPrefix="uc" TagName="ucApprover" Src="/_controltemplates/TVMCORP.TVS.WORKFLOWS/ApproverUC.ascx" %>
 <%@ Register TagPrefix="uc" TagName="EmailSelector" Src="~/_controltemplates/TVMCORP.TVS.WORKFLOWS/EmailTemplateSelector.ascx" %>
 <%@ Register TagPrefix="wssuc" TagName="ToolBar" Src="~/_controltemplates/ToolBar.ascx" %>
 <%@ Register TagPrefix="wssuc" TagName="ToolBarButton" Src="~/_controltemplates/ToolBarButton.ascx" %>
-<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ApprovalUC.ascx.cs" EnableViewState="true" Inherits="TVMCORP.TVS.WORKFLOWS.Core.Controls.ApprovalUC" %>
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ApprovalUC.ascx.cs" EnableViewState="true" Inherits="TVMCORP.TVS.WORKFLOWS.Controls.ApprovalUC" %>
 
-<%@ Assembly Name="TVMCORP.TVS.UTIL.MODELS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f" %>
+<%@ Assembly Name="TVMCORP.TVS.UTIL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=44dc3ce128de1979" %>
 <%@ Import Namespace="TVMCORP.TVS.UTIL.MODELS"%>
 <%@ Import Namespace="TVMCORP.TVS.UTIL.MODELS"%>
 <script type="text/javascript">

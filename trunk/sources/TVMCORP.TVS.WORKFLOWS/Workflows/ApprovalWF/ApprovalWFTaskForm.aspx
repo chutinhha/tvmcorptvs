@@ -12,7 +12,7 @@
     Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ApprovalWFTaskForm.aspx.cs"
-    Inherits="TVMCORP.TVS.WORKFLOWS.Core.Workflows.ApprovalWFTaskForm" DynamicMasterPageFile="~masterurl/default.master" %>
+    Inherits="TVMCORP.TVS.WORKFLOWS.Workflows.ApprovalWFTaskForm" DynamicMasterPageFile="~masterurl/default.master" %>
 
 <asp:Content ID="PageHead" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" runat="server">
 </asp:Content>

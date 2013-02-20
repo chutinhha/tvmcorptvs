@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Id="ebee0057-7bba-4da0-8fa7-fb85825c3c53" ReceiverAssembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=44dc3ce128de1979" ReceiverClass="TVMCORP.TVS.WORKFLOWS.FEATURES.TVMCORPTVSWORKFLOWSEventReceiver" Scope="WebApplication" Title="TVMCORP.TVS.WORKFLOWS Feature1"></Feature>

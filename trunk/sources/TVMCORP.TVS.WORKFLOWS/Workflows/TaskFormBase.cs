@@ -17,7 +17,7 @@ using TVMCORP.TVS.UTIL.Helpers;
 using TVMCORP.TVS.UTIL;
 
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Workflows
+namespace TVMCORP.TVS.WORKFLOWS.Workflows
 {
     public class TaskFormBase : LayoutsPageBase
     {

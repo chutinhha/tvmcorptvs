@@ -13,7 +13,7 @@ using System.Workflow.Activities;
 using System.Workflow.Activities.Rules;
 using TVMCORP.TVS.WORKFLOWS.Activities;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities
+namespace TVMCORP.TVS.WORKFLOWS.Activities
 {
     public sealed partial class ApprovalUnit
     {

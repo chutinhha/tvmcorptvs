@@ -9,10 +9,10 @@
 	Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Register TagPrefix="uc" TagName="EmailSelector" Src="~/_controltemplates/TVMCORP.TVS.WORKFLOWS/EmailTemplateSelector.ascx" %>
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ApproverUC.ascx.cs"
-	Inherits="TVMCORP.TVS.WORKFLOWS.Core.Controls.ApproverUC" EnableViewState="true" %>
-<%@ Assembly Name="TVMCORP.TVS.UTIL.MODELS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f" %>
+	Inherits="TVMCORP.TVS.WORKFLOWS.Controls.ApproverUC" EnableViewState="true" %>
+<%@ Assembly Name="TVMCORP.TVS.UTIL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=44dc3ce128de1979" %>
 <%@ Import Namespace="TVMCORP.TVS.UTIL.MODELS"%>
-<%@ Import Namespace="TVMCORP.TVS.UTIL.MODELS"%>
+
 
 
 <script src="/_layouts/1033/jquery.maskedinput-1.3.js" type="text/javascript"></script>

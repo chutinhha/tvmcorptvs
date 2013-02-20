@@ -9,11 +9,11 @@ using System.Workflow.Activities;
 using TVMCORP.TVS.UTIL.MODELS;
 using System.Collections.Generic;
 using TVMCORP.TVS.UTIL.MODELS;
-using TVMCORP.TVS.WORKFLOWS.Core.Activities;
+using TVMCORP.TVS.WORKFLOWS.Activities;
 using System.Text;
 using TVMCORP.TVS.UTIL;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities
+namespace TVMCORP.TVS.WORKFLOWS.Activities
 {
 
     public partial class ApprovalUnitWrapper : SequenceActivity

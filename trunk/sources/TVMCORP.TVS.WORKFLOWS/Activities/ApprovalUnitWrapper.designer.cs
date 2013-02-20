@@ -11,7 +11,7 @@ using System.Workflow.Runtime;
 using System.Workflow.Activities;
 using System.Workflow.Activities.Rules;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities
+namespace TVMCORP.TVS.WORKFLOWS.Activities
 {
     public partial class ApprovalUnitWrapper
     {
@@ -43,7 +43,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Core.Activities
             System.Workflow.ComponentModel.ActivityBind activitybind16 = new System.Workflow.ComponentModel.ActivityBind();
             System.Workflow.ComponentModel.ActivityBind activitybind17 = new System.Workflow.ComponentModel.ActivityBind();
             System.Workflow.Activities.CodeCondition codecondition1 = new System.Workflow.Activities.CodeCondition();
-            this.SingleTask = new TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit();
+            this.SingleTask = new TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit();
             this.codeActivity2 = new System.Workflow.Activities.CodeActivity();
             this.TaskLifeCycleLoop = new System.Workflow.Activities.WhileActivity();
             this.codeActivity1 = new System.Workflow.Activities.CodeActivity();
@@ -87,23 +87,23 @@ namespace TVMCORP.TVS.WORKFLOWS.Core.Activities
             activitybind16.Path = "TaskInfo.UpdatedProperties";
             activitybind17.Name = "ApprovalUnitWrapper";
             activitybind17.Path = "workflowProperties";
-            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.WorkflowPropertiesProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind17)));
-            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.TaskContentTypeIdProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind11)));
-            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.PreviousTaskIdProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind10)));
-            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.TaskOutcomeProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind14)));
-            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.TaskTitleProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind15)));
-            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.MessageProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind9)));
-            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.DueDateProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind3)));
-            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.DurationPerTaskProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind4)));
-            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.ApproverProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind2)));
-            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.EmailBodyProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind5)));
-            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.EmailTitleProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind6)));
-            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.EnableEmailProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind7)));
-            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.TaskDescriptionProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind12)));
-            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.AppendTitleProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind1)));
-            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.FormOptionProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind8)));
-            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.UpdatedPropertiesProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind16)));
-            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.TaskEventsProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind13)));
+            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.WorkflowPropertiesProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind17)));
+            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.TaskContentTypeIdProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind11)));
+            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.PreviousTaskIdProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind10)));
+            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.TaskOutcomeProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind14)));
+            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.TaskTitleProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind15)));
+            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.MessageProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind9)));
+            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.DueDateProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind3)));
+            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.DurationPerTaskProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind4)));
+            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.ApproverProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind2)));
+            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.EmailBodyProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind5)));
+            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.EmailTitleProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind6)));
+            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.EnableEmailProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind7)));
+            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.TaskDescriptionProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind12)));
+            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.AppendTitleProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind1)));
+            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.FormOptionProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind8)));
+            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.UpdatedPropertiesProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind16)));
+            this.SingleTask.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.TaskEventsProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind13)));
             // 
             // codeActivity2
             // 

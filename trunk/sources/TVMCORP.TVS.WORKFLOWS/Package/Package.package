@@ -2,6 +2,7 @@
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ca9ab544-a78f-4d24-a332-09db2f5fdc93" solutionId="ca9ab544-a78f-4d24-a332-09db2f5fdc93" resetWebServer="false" name="Hypertek.IOffice.Workflows.Core" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
   <features>
     <featureReference itemId="aa778f3e-676d-4fce-b3f6-35d75bf4902b" />
+    <featureReference itemId="a89aaec1-e329-4d06-8272-5dadf424de82" />
   </features>
   <projectItems>
     <projectItemReference itemId="2a042f96-4fca-40ce-beb0-5c68258aab3e" />

@@ -14,7 +14,7 @@ using TVMCORP.TVS.UTIL.Extensions;
 
 using Microsoft.SharePoint;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Controls
+namespace TVMCORP.TVS.WORKFLOWS.Controls
 {
     public partial class ApprovalUC : UserControl
     {
@@ -129,7 +129,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Core.Controls
         List<ApproverUC> myApproverUC = new List<ApproverUC>();
         private void AddApproverControl(string item)
         {
-            ApproverUC ucApproverUC = (ApproverUC)this.LoadControl("~/_controltemplates/TVMCORP.TVS.WORKFLOWS.Core/ApproverUC.ascx");
+            ApproverUC ucApproverUC = (ApproverUC)this.LoadControl("~/_controltemplates/TVMCORP.TVS.WORKFLOWS/ApproverUC.ascx");
             ucApproverUC.ID = item;
 
             phUserInfoBox.Controls.Add(ucApproverUC);
@@ -142,7 +142,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Core.Controls
 
         private void AddApproverControl(string item, ApprovalWFApprover objApprover)
         {
-            ApproverUC ucApproverUC = (ApproverUC)this.LoadControl("~/_controltemplates/TVMCORP.TVS.WORKFLOWS.Core/ApproverUC.ascx");
+            ApproverUC ucApproverUC = (ApproverUC)this.LoadControl("~/_controltemplates/TVMCORP.TVS.WORKFLOWS/ApproverUC.ascx");
             ucApproverUC.ID = item;
            
 
@@ -367,7 +367,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Core.Controls
         }
         protected void btnAddApprover_Click(object sender, EventArgs e)
         {
-            //ApproverUC ucApproverUC = (ApproverUC)this.LoadControl("~/_controltemplates/TVMCORP.TVS.WORKFLOWS.Core/ApproverUC.ascx");
+            //ApproverUC ucApproverUC = (ApproverUC)this.LoadControl("~/_controltemplates/TVMCORP.TVS.WORKFLOWS/ApproverUC.ascx");
             AddApproverControl(getNameApproverUC());
             //phUserInfoBox.Controls.Add(ucApproverUC);
 

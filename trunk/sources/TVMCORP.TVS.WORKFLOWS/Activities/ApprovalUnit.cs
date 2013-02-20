@@ -13,7 +13,7 @@ using TVMCORP.TVS.UTIL.Helpers;
 using System.Collections.Generic;
 using TVMCORP.TVS.UTIL;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Activities
+namespace TVMCORP.TVS.WORKFLOWS.Activities
 {
     public sealed partial class ApprovalUnit : SequenceActivity
     {
@@ -170,11 +170,11 @@ namespace TVMCORP.TVS.WORKFLOWS.Core.Activities
         ////{
         ////    get
         ////    {
-        ////        return ((int)(base.GetValue(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.TaskItemIdProperty)));
+        ////        return ((int)(base.GetValue(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.TaskItemIdProperty)));
         ////    }
         ////    set
         ////    {
-        ////        base.SetValue(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.TaskItemIdProperty, value);
+        ////        base.SetValue(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.TaskItemIdProperty, value);
         ////    }
         ////}
 
@@ -424,7 +424,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Core.Activities
 
         #region "CreateTaskWithContentType Activities "
 
-        public static DependencyProperty TaskContentTypeIdProperty = DependencyProperty.Register("TaskContentTypeId", typeof(System.String), typeof(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit));
+        public static DependencyProperty TaskContentTypeIdProperty = DependencyProperty.Register("TaskContentTypeId", typeof(System.String), typeof(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit));
 
         [DesignerSerializationVisibilityAttribute(DesignerSerializationVisibility.Visible)]
         [BrowsableAttribute(true)]
@@ -433,11 +433,11 @@ namespace TVMCORP.TVS.WORKFLOWS.Core.Activities
         {
             get
             {
-                return ((string)(base.GetValue(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.TaskContentTypeIdProperty)));
+                return ((string)(base.GetValue(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.TaskContentTypeIdProperty)));
             }
             set
             {
-                base.SetValue(TVMCORP.TVS.WORKFLOWS.Core.Activities.ApprovalUnit.TaskContentTypeIdProperty, value);
+                base.SetValue(TVMCORP.TVS.WORKFLOWS.Activities.ApprovalUnit.TaskContentTypeIdProperty, value);
             }
         }
 

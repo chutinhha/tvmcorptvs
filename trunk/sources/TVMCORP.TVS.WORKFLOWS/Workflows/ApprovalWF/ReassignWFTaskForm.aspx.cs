@@ -6,7 +6,7 @@ using TVMCORP.TVS.UTIL.MODELS;
 using Microsoft.SharePoint.Workflow;
 using TVMCORP.TVS.UTIL;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Workflows
+namespace TVMCORP.TVS.WORKFLOWS.Workflows
 {
     public partial class ReassignWFTaskForm : TaskFormBase
     {

@@ -4,7 +4,7 @@
 		<Condition Name="InfoPath Form has attachments"
 		FunctionName="HasAttachments"
 		ClassName="TVMCORP.TVS.WORKFLOWS.Conditions.InfoPathForm"
-		Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+		Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
 		UsesCurrentItem="true"
 		AppliesTo="all">
 			<RuleDesigner Sentence="this InfoPath form contains attachments at xpath %1">
@@ -19,7 +19,7 @@
 	<Actions Sequential="then" Parallel="and">
 		<!-- <Action Name="Find User Profile"
 			ClassName="TVMCORP.TVS.WORKFLOWS.Actions.FindUserProfileActivity"
-			Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+			Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
 			AppliesTo="all"
 			Category="[I-Office] Actions">
 			<RuleDesigner Sentence="Find user profile with has username is %1 with title %2 or level %3 allow chain %4 return as format %5 and output to %6">
@@ -54,7 +54,7 @@
 		
 		<Action Name="Extract Attachment"
 			ClassName="TVMCORP.TVS.WORKFLOWS.Activities.ExtractAttachmentsActivity"
-			Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+			Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
 			AppliesTo="all"
 			Category="[I-Office] Actions">
 			<RuleDesigner Sentence="Extract the attachments of %1 and place them in %2 using Content Type %3 and %4 throw an exception if the item does not exist.">
@@ -80,7 +80,7 @@
 
 		<Action Name="Send email from template"
 			ClassName="TVMCORP.TVS.WORKFLOWS.Actions.SendEmailFromTemplate"
-			Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+			Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
 			AppliesTo="all"
 			Category="[I-Office] Actions">
 			<RuleDesigner Sentence="Send email using %1 in %2 to %3 and cc %4 with %5">
@@ -106,7 +106,7 @@
  
 		<Action Name="General Approval"
 			ClassName="TVMCORP.TVS.WORKFLOWS.Actions.ApprovalWorkflow"
-			Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+			Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
 			AppliesTo="all"
 			CreatesTask="true"
 			Category="[I-Office Tasks">
@@ -129,7 +129,7 @@
 
 		<Action Name="Value Approval"
 			ClassName="TVMCORP.TVS.WORKFLOWS.Actions.ValueApproval"
-			Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+			Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
 			AppliesTo="all"
 			CreatesTask="true"
 			Category="[I-Office Tasks">
@@ -165,7 +165,7 @@
 
 		<Action Name="Entry Approval"
 			ClassName="TVMCORP.TVS.WORKFLOWS.Actions.EntryApproval"
-			Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+			Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
 			AppliesTo="all"
 			CreatesTask="true"
 			Category="[I-Office Tasks">
@@ -201,7 +201,7 @@
 		
 		<Action Name="Multi-Entry Approval"
 			ClassName="TVMCORP.TVS.WORKFLOWS.Actions.MultiEntriesApproval"
-			Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+			Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
 			AppliesTo="all"
 			CreatesTask="true"
 			Category="[I-Office Tasks">
@@ -233,7 +233,7 @@
 
 		<Action Name="Transfer Metadata"
 		ClassName="TVMCORP.TVS.WORKFLOWS.Activities.TransferMetadata"
-		Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+		Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
 		AppliesTo="all"
 		Category="[I-Office] Actions">
 			<RuleDesigner Sentence="Transfer metadata from %1 to %2, override the destination item's content type %3">
@@ -255,7 +255,7 @@
 
 		<!--<Action Name="Generate Contract Number"
 		ClassName="TVMCORP.TVS.WORKFLOWS.Activities.GenerateContractNumber"
-		Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+		Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
 		AppliesTo="all"
 		Category="[I-Office] Actions">
 			<RuleDesigner Sentence="Save contract number to %1 of current item." >
@@ -273,7 +273,7 @@
 
 		<Action Name="Generate Contract Number"
 		ClassName="TVMCORP.TVS.WORKFLOWS.Activities.GenerateContractNumberV1"
-		Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+		Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
 		AppliesTo="all"
 		Category="[I-Office] Actions">
 			<RuleDesigner Sentence="Generate new contract number to %1" >
@@ -291,7 +291,7 @@
 
 		<Action Name="Convert To Valid SharePoint FileName"
 		ClassName="TVMCORP.TVS.WORKFLOWS.Activities.ConvertToValidSPFileName"
-		Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+		Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
 		AppliesTo="all"
 		Category="[I-Office] Actions">
 			<RuleDesigner Sentence="Convert %1 to valid SharePoint filename then output to %2">
@@ -306,7 +306,7 @@
 
 		<Action Name="Extract InfoPath Attachments"
 				 ClassName="TVMCORP.TVS.WORKFLOWS.Actions.ExtractIPAttachments"
-				 Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+				 Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
 				 AppliesTo="all"
 				 Category="Corridor Actions">
 			<RuleDesigner Sentence="Extract InfoPath Form Attachments at xpath %1 into library %2 using %7 account with %3 content type and %4 files if  they already exist. Then copy description at xpath %5 into column %6">
@@ -340,7 +340,7 @@
 		
 		<Action Name="Generate PDF Version"
 				ClassName="TVMCORP.TVS.WORKFLOWS.Activities.GeneratePDFWorkflow"
-				Assembly="TVMCORP.TVS.WORKFLOWS.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
+				Assembly="TVMCORP.TVS.WORKFLOWS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=079ac6f381ab0c9f"
 				AppliesTo="all"
 				CreatesTask="true"
 				Category="[I-Office Tasks">

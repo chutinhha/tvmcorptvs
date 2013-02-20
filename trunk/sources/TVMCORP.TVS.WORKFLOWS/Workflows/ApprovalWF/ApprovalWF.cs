@@ -17,14 +17,14 @@ using Microsoft.SharePoint.WorkflowActions;
 using TVMCORP.TVS.UTIL.Extensions;
 using TVMCORP.TVS.UTIL.MODELS;
 using TVMCORP.TVS.UTIL.MODELS;
-using TVMCORP.TVS.WORKFLOWS.Core.Activities;
+using TVMCORP.TVS.WORKFLOWS.Activities;
 using TVMCORP.TVS.UTIL.Helpers;
 using TVMCORP.TVS.UTIL.Utilities;
 using TVMCORP.TVS.UTIL;
 using TVMCORP.TVS.UTIL.Entities;
 using TVMCORP.TVS.UTIL.Utilities.Camlex;
 
-namespace TVMCORP.TVS.WORKFLOWS.Core.Workflows
+namespace TVMCORP.TVS.WORKFLOWS.Workflows
 {
     public sealed partial class ApprovalWF : SequentialWorkflowActivity
     {

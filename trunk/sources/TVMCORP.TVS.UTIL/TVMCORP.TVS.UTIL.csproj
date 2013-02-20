@@ -285,6 +285,7 @@
     <Compile Include="Utilities\Utility.cs" />
     <Compile Include="Utilities\DiagnosticsService.cs" />
     <Compile Include="Utilities\SPTraceLogger.cs" />
+    <Compile Include="Utilities\WebConfigModifierReciever.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Package\Package.package">
