@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="09e80497-3297-4e4a-9494-d10b27df9c62" solutionId="09e80497-3297-4e4a-9494-d10b27df9c62" resetWebServer="false" name="SharePoint.BeachCamp" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <customAssembly location="itextsharp.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Libs\itextsharp.dll" />
+    <projectOutputAssembly location="TVMCORP.TVS.UTIL.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\TVMCORP.TVS.UTIL\TVMCORP.TVS.UTIL.csproj" />
+  </assemblies>
+  <features>
+    <featureReference itemId="f9307581-4225-4f07-9222-f51c049c9660" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="d8fea4bc-affa-4359-bcb7-67f75bfd4347" />
+    <projectItemReference itemId="472dc5da-57bd-4ea6-aa11-189b37c799ee" />
+    <projectItemReference itemId="b46a8b12-6299-4515-8912-9cd7a5e66392" />
+    <projectItemReference itemId="75012795-b088-476a-830c-87ba1937b360" />
+  </projectItems>
+</package>

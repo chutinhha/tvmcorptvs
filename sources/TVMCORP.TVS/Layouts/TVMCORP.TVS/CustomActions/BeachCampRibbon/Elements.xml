@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction
+    Id="ExportReservation"
+    RegistrationType="List"
+    RegistrationId="106"
+    Location="CommandUI.Ribbon">
+    
+    <CommandUIExtension>
+      <CommandUIDefinitions>
+        <CommandUIDefinition
+         Location="Ribbon.Calendar.Events.Actions.Controls._children">
+          <Button
+           Id="Ribbon.Calendar.Events.Actions.Controls.ExportReservation"
+           Alt="Export Reservation"
+           Sequence="10"
+           Image32by32="/_layouts/images/TVMCORP.TVS/Printer-icon-32.png"
+           Command="TVMCORP.TVS.ExportReservation"
+           LabelText="Export Reservation"
+           TemplateAlias="o2"/>
+        </CommandUIDefinition>
+
+        <CommandUIDefinition
+         Location="Ribbon.Calendar.Events.Actions.Controls._children">
+          <Button
+           Id="Ribbon.Calendar.Events.Actions.Controls.PayForReservation"
+           Alt="Export Reservation"
+           Sequence="11"
+           Image32by32="/_layouts/images/TVMCORP.TVS/Payment-icon-32.png"
+           Command="TVMCORP.TVS.PayForReservation"
+           LabelText="Pay For Reservation"
+           TemplateAlias="o2"/>
+        </CommandUIDefinition>
+        
+      </CommandUIDefinitions>
+      
+      <CommandUIHandlers>
+        
+        <CommandUIHandler
+         Command="TVMCORP.TVS.ExportReservation"
+         CommandAction="javascript:OpenPopUpPageWithTitle('{SiteUrl}/_layouts/TVMCORP.TVS/BeachCampExport.aspx?ID={SelectedItemId}&amp;List={ListId}',RefreshOnDialogClose,650,850,'Beach Camp Reservation')"
+         EnabledScript="javascript:
+          function enableExportReservation()
+          {
+            var items = SP.ListOperation.Selection.getSelectedItems();
+            return (items.length > 0);
+          }
+          enableExportReservation();"/>
+
+        <CommandUIHandler
+         Command="TVMCORP.TVS.PayForReservation"
+         CommandAction="javascript:OpenPopUpPageWithTitle('{SiteUrl}/_layouts/TVMCORP.TVS/BeachCampPayment.aspx?ID={SelectedItemId}&amp;List={ListId}',RefreshOnDialogClose,650,300,'Beach Camp Payment')"
+         EnabledScript="javascript:
+          function enableExportReservation()
+          {
+            var items = SP.ListOperation.Selection.getSelectedItems();
+            return (items.length > 0);
+          }
+          enableExportReservation();"/>
+        
+      </CommandUIHandlers>
+    </CommandUIExtension>
+    
+  </CustomAction>
+</Elements>
