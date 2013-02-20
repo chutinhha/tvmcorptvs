@@ -3,11 +3,11 @@ using System.Collections;
 using System.IO;
 using NVelocity.Context;
 using NVelocity.Exception;
-using TVMCORP.TVS.Util.NVelocityTemplateEngine.BaseClasses;
-using TVMCORP.TVS.Util.NVelocityTemplateEngine.Interfaces;
+using TVMCORP.TVS.UTIL.NVelocityTemplateEngine.BaseClasses;
+using TVMCORP.TVS.UTIL.NVelocityTemplateEngine.Interfaces;
 
 
-namespace TVMCORP.TVS.Util.NVelocityTemplateEngine.Engines
+namespace TVMCORP.TVS.UTIL.NVelocityTemplateEngine.Engines
 {
 	/// <summary>
 	/// Summary description for NVelocityMemoryEngine.

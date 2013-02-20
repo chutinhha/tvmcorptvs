@@ -1,0 +1,342 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Workflow.Activities;
+using System.Workflow.ComponentModel;
+using System.Workflow.ComponentModel.Compiler;
+using Hypertek.IOffice.Common.Extensions;
+using Hypertek.IOffice.Model;
+using Hypertek.IOffice.Model.Workflow;
+
+using Microsoft.SharePoint;
+using Microsoft.SharePoint.Workflow;
+using Hypertek.IOffice.Common.Extensions;
+
+namespace Hypertek.IOffice.Workflow.Actions
+{
+    public partial class ExtractIPAttachments : SequenceActivity
+    {
+        public ExtractIPAttachments()
+        {
+            InitializeComponent();
+        }
+
+        #region Dependency Properties
+        public static DependencyProperty __ActivationPropertiesProperty =
+            DependencyProperty.Register("__ActivationProperties",
+            typeof(SPWorkflowActivationProperties),
+            typeof(ExtractIPAttachments));
+
+        [ValidationOption(ValidationOption.Required)]
+        public SPWorkflowActivationProperties __ActivationProperties
+        {
+            get
+            {
+                return (SPWorkflowActivationProperties)base.GetValue(__ActivationPropertiesProperty);
+            }
+            set
+            {
+                base.SetValue(__ActivationPropertiesProperty, value);
+            }
+        }
+
+        public static DependencyProperty AttachmentFieldPathProperty =
+            DependencyProperty.Register("AttachmentFieldPath",
+            typeof(string),
+            typeof(ExtractIPAttachments));
+
+        [Description("Attachment field path")]
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [ValidationOption(ValidationOption.Required)]
+        public string AttachmentFieldPath
+        {
+            get { return ((string)(base.GetValue(AttachmentFieldPathProperty))); }
+            set { base.SetValue(AttachmentFieldPathProperty, value); }
+        }
+
+        public static DependencyProperty DestinationFolderUrlProperty =
+            DependencyProperty.Register("DestinationFolderUrl",
+            typeof(string),
+            typeof(ExtractIPAttachments));
+
+        [Description("Destination list url")]
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [ValidationOption(ValidationOption.Required)]
+        public string DestinationFolderUrl
+        {
+            get { return ((string)(base.GetValue(DestinationFolderUrlProperty))); }
+            set { base.SetValue(DestinationFolderUrlProperty, value); }
+        }
+
+        public static DependencyProperty ContentTypeProperty =
+            DependencyProperty.Register("ContentType",
+            typeof(string),
+            typeof(ExtractIPAttachments));
+
+        [Description("Destination Content Type")]
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [ValidationOption(ValidationOption.Required)]
+        public string ContentType
+        {
+            get { return ((string)(base.GetValue(ContentTypeProperty))); }
+            set { base.SetValue(ContentTypeProperty, value); }
+        }
+
+        public static DependencyProperty OverrideProperty =
+            DependencyProperty.Register("Override",
+            typeof(string),
+            typeof(ExtractIPAttachments));
+
+        [Description("Override destination file if exist")]
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [ValidationOption(ValidationOption.Required)]
+        public string Override
+        {
+            get { return ((string)(base.GetValue(OverrideProperty))); }
+            set { base.SetValue(OverrideProperty, value); }
+        }
+
+        public static DependencyProperty DescriptionFieldPathProperty =
+        DependencyProperty.Register("DescriptionFieldPath",
+        typeof(string),
+        typeof(ExtractIPAttachments));
+
+        [Description("Description Field Path")]
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [ValidationOption(ValidationOption.Required)]
+        public string DescriptionFieldPath
+        {
+            get { return ((string)(base.GetValue(DescriptionFieldPathProperty))); }
+            set { base.SetValue(DescriptionFieldPathProperty, value); }
+        }
+
+        public static DependencyProperty DescriptionFieldNameProperty =
+        DependencyProperty.Register("DescriptionFieldName",
+        typeof(string),
+        typeof(ExtractIPAttachments));
+
+        [Description("Destination Description Field Name")]
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [ValidationOption(ValidationOption.Required)]
+        public string DescriptionFieldName
+        {
+            get { return ((string)(base.GetValue(DescriptionFieldNameProperty))); }
+            set { base.SetValue(DescriptionFieldNameProperty, value); }
+        }
+
+        public static DependencyProperty UsingAccountProperty =
+        DependencyProperty.Register("UsingAccount",
+        typeof(string),
+        typeof(ExtractIPAttachments));
+
+        [Description("Using system account or workflow starter to upload document")]
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [ValidationOption(ValidationOption.Required)]
+        public string UsingAccount
+        {
+            get { return ((string)(base.GetValue(UsingAccountProperty))); }
+            set { base.SetValue(UsingAccountProperty, value); }
+        }
+        
+        #endregion
+
+        #region Fields
+        private bool overrideDetinationFile;
+        #endregion
+
+        #region Event Hanlders Code
+        private void ExtractAttachmentsExecuteCode(object sender, EventArgs e)
+        {
+            this.overrideDetinationFile = Convert.ToBoolean(this.Override);
+            SPSecurity.RunWithElevatedPrivileges(delegate()
+            {
+                using (SPSite site = this.__ActivationProperties.GetDestinationSite(this.DestinationFolderUrl))
+                {
+                    if (site == null)
+                    {
+                        this.__ActivationProperties.LogToWorkflowHistory(SPWorkflowHistoryEventType.WorkflowError, string.Format(Constants.Workflow.ERROR_GET_SITE, this.DestinationFolderUrl), string.Empty);
+                        return;
+                    }
+
+                    using (SPWeb web = site.GetDestinationWeb(this.DestinationFolderUrl))
+                    {
+                        if (web == null)
+                        {
+                            this.__ActivationProperties.LogToWorkflowHistory(SPWorkflowHistoryEventType.WorkflowError, string.Format(Constants.Workflow.ERROR_GET_WEB, this.DestinationFolderUrl), string.Empty);
+                            return;
+                        }
+
+                        SPFolder destinationFolder = null;
+                        destinationFolder = web.GetFolder(this.DestinationFolderUrl.Split(',')[0]);
+                        if (destinationFolder == null || !destinationFolder.Exists)
+                        {
+                            this.__ActivationProperties.LogToWorkflowHistory(SPWorkflowHistoryEventType.WorkflowError, string.Format(Constants.Workflow.ERROR_GET_FOLDER, this.DestinationFolderUrl), string.Empty);
+                            return;
+                        }
+
+                        //In case of Forms folder
+                        if (destinationFolder.Properties["vti_listbasetype"] == null)
+                        {
+                            //Error when the hidden folder of document
+                            this.__ActivationProperties.LogToWorkflowHistory(SPWorkflowHistoryEventType.WorkflowError, string.Format(Constants.Workflow.ERROR_UPLOAD_FILE_TO_HIDDEN_FOLDER, this.DestinationFolderUrl), string.Empty);
+                            return;
+                        }
+
+                        //get destination content type
+                        SPContentType destinationContentType = null;
+                        if (string.Compare(this.ContentType.Trim(), Constants.Workflow.DEFAULT_CONTENT_TYPE, true) != 0)
+                        {
+                            destinationContentType = destinationFolder.ContentTypeOrder.SingleOrDefault(ct => string.Compare(ct.Name, this.ContentType, true) == 0);
+                            if (destinationContentType == null)
+                            {
+                                this.__ActivationProperties.LogToWorkflowHistory(SPWorkflowHistoryEventType.WorkflowError, string.Format(Constants.Workflow.ERROR_CONTENT_TYPE_NOT_EXIST_ON_LIBRARY, this.ContentType), string.Empty);
+                                return;
+                            }
+                        }
+
+                        CopyAttachmentsAndMetaDataToDestinationLibrary(destinationFolder, destinationContentType);
+                    }
+                }
+            });
+        }
+        #endregion
+
+        #region ExecutedCode
+        private void CopyAttachmentsAndMetaDataToDestinationLibrary(SPFolder destinationFolder, SPContentType destinationContentType)
+        {
+            InfoPathHelper ipHelper;
+            ipHelper = new InfoPathHelper(this.__ActivationProperties);
+
+            try
+            {
+                ipHelper.LoadForm();
+            }
+            catch
+            {
+                this.__ActivationProperties.LogToWorkflowHistory(SPWorkflowHistoryEventType.WorkflowError, Constants.Workflow.ERROR_LOAD_INFOPATH_FORM_DATA, string.Empty);
+            }
+
+            try
+            {
+                //attachment path not exist or is null, log and exit function
+                if (ipHelper.NodeIsNullOrNotExistAt(this.AttachmentFieldPath))
+                {
+                    this.__ActivationProperties.LogToWorkflowHistory(SPWorkflowHistoryEventType.WorkflowComment, string.Format(Constants.Workflow.ERROR_INFOPATH_FORM_VALUE_IS_NULL_OR_NOT_EXIST, this.AttachmentFieldPath), string.Empty);
+                    return;
+                }
+
+                //log message when description path is null or not exist
+                if (ipHelper.NodeIsNullOrNotExistAt(this.DescriptionFieldPath))
+                {
+                    this.__ActivationProperties.LogToWorkflowHistory(SPWorkflowHistoryEventType.WorkflowComment, string.Format(Constants.Workflow.ERROR_LOAD_DESCRIPTION_INFOPATH_FORM_VALUE, this.DescriptionFieldPath), string.Empty);
+                }
+
+                //log message when destination description field name not exist
+                var descriptionField = destinationFolder.DocumentLibrary.Fields.Cast<SPField>().ToList().FirstOrDefault(p => string.Compare(p.Title, this.DescriptionFieldName.Trim(), true) == 0);
+                if (descriptionField == null)
+                {
+                    this.__ActivationProperties.LogToWorkflowHistory(SPWorkflowHistoryEventType.WorkflowComment, string.Format(Constants.Workflow.ERROR_FIELD_NAME_NOT_EXIST_ON_LIBRARY, this.DescriptionFieldName), string.Empty);
+                }
+
+                List<InfoPathAttachment> attachments = ipHelper.GetFilesFromPath(this.AttachmentFieldPath, this.DescriptionFieldPath);
+                if (attachments.Count == 0)
+                {
+                    this.__ActivationProperties.LogToWorkflowHistory(SPWorkflowHistoryEventType.WorkflowComment, string.Format(Constants.Workflow.ERROR_NO_ATTACHMENT, this.AttachmentFieldPath), string.Empty);
+                    return;
+                }
+
+                foreach (InfoPathAttachment attachment in attachments)
+                {
+                    string destinationFileURL = destinationFolder.Url + "/" + attachment.Filename.ConvertToValidSharePointFileName();
+                    //file exist
+                    if (!this.overrideDetinationFile && destinationFolder.FileExists(attachment.Filename))
+                    {
+                        string errorMessage = string.Format(Constants.Workflow.ERROR_FILE_EXIST, attachment.Filename, this.DestinationFolderUrl);
+                        this.__ActivationProperties.LogToWorkflowHistory(SPWorkflowHistoryEventType.WorkflowComment, errorMessage, string.Empty);
+                        continue;
+                    }
+
+                    if (UsingAccount == "System")
+                    {
+                        UploadWithSystemAccount(destinationFolder, destinationContentType, descriptionField, attachment, destinationFileURL);
+                    }
+                    else
+                    {
+                        UploadWithOriginatorUser(destinationFolder, destinationContentType, descriptionField, attachment, destinationFileURL);
+                    }
+
+                    this.__ActivationProperties.LogToWorkflowHistory(SPWorkflowHistoryEventType.WorkflowComment, string.Format(Constants.Workflow.UPLOAD_FILE_SUCESSFULLY, attachment.Filename, this.DestinationFolderUrl), string.Empty);
+                }
+            }
+            catch
+            {
+                this.__ActivationProperties.LogToWorkflowHistory(SPWorkflowHistoryEventType.WorkflowError, Constants.Workflow.ERROR_UPLOADING_FILE, string.Empty);
+            }
+        }
+
+        private void UploadWithSystemAccount(SPFolder destinationFolder, SPContentType destinationContentType, SPField descriptionField, InfoPathAttachment attachment, string destinationFileURL)
+        {
+            //add file 
+            SPFile fileAdded = destinationFolder.Files.Add(destinationFileURL, attachment.DecodedFile, null, __ActivationProperties.OriginatorUser, __ActivationProperties.OriginatorUser, DateTime.Now, DateTime.Now, true);
+
+
+            //set contenttype
+            if (destinationContentType != null)
+            {
+                fileAdded.Item.Properties["ContentTypeId"] = destinationContentType.Id.ToString();
+                fileAdded.Item.SystemUpdate();
+            }
+
+            //copy description
+            CopyDescription(attachment, descriptionField, fileAdded.Item);
+        }
+
+        private void UploadWithOriginatorUser(SPFolder destinationFolder, SPContentType destinationContentType, SPField descriptionField, InfoPathAttachment attachment, string destinationFileURL)
+        {
+
+            using (SPSite site = new SPSite(destinationFolder.ParentWeb.Site.ID, __ActivationProperties.OriginatorUser.UserToken))
+            {
+                using (SPWeb web = site.OpenWeb(destinationFolder.ParentWeb.ID))
+                {
+                    SPFolder tempDestFolder = web.GetFolder(destinationFolder.UniqueId);
+                    //SPFile fileAdded = tempDestFolder.Files.Add( destinationFileURL, attachment.DecodedFile, null, __ActivationProperties.OriginatorUser, __ActivationProperties.OriginatorUser, DateTime.Now, DateTime.Now, true);
+                    SPFile fileAdded = tempDestFolder.Files.Add( destinationFileURL, attachment.DecodedFile, null, true);
+                    if (destinationContentType != null)
+                    {
+                        fileAdded.Item.Properties["ContentTypeId"] = destinationContentType.Id.ToString();
+                        fileAdded.Item.SystemUpdate();
+                    }
+
+                    CopyDescription(attachment, descriptionField, fileAdded.Item);
+                }
+            }
+
+
+            //set contenttype
+        }
+
+        private void CopyDescription(InfoPathAttachment attachment, SPField descriptionField, SPListItem item)
+        {
+            try
+            {
+                if (descriptionField != null)
+                {
+                    item[descriptionField.Id] = attachment.Description;
+                    item.SystemUpdate();
+                }
+            }
+            catch { }
+        }
+
+        #endregion
+    }
+}

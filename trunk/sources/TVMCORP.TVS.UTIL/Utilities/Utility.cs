@@ -11,10 +11,11 @@ using System.Text.RegularExpressions;
 using Microsoft.SharePoint.WebControls;
 using System.Web.UI;
 using System.Reflection;
-using TVMCORP.TVS.Util.Helpers;
-using TVMCORP.TVS.Util.Extensions;
+using TVMCORP.TVS.UTIL.Helpers;
+using TVMCORP.TVS.UTIL.Extensions;
+using TVMCORP.TVS.UTIL;
 
-namespace TVMCORP.TVS.Util.Utilities
+namespace TVMCORP.TVS.UTIL.Utilities
 {
     public class Utility
     {
@@ -51,7 +52,7 @@ namespace TVMCORP.TVS.Util.Utilities
         } 
 
         #region Log
-        public static void LogInfo(string errorMessage, BeachCampFeatures category)
+        public static void LogInfo(string errorMessage, TVMCORPFeatures category)
         {
             try
             {
@@ -71,10 +72,10 @@ namespace TVMCORP.TVS.Util.Utilities
         public static void LogInfo(string errorMessage, string category)
         {
             //Log(errorMessage, TraceProvider.TraceSeverity.InformationEvent, category);
-            BeachCampFeatures e = BeachCampFeatures.BeachCamp;
+            TVMCORPFeatures e = TVMCORPFeatures.TVS;
             try 
 	        {	        
-		        e = (BeachCampFeatures)Enum.Parse(typeof(BeachCampFeatures), category);
+		        e = (TVMCORPFeatures)Enum.Parse(typeof(TVMCORPFeatures), category);
 	        }
 	        catch{};
             LogInfo(errorMessage, e);
@@ -84,7 +85,7 @@ namespace TVMCORP.TVS.Util.Utilities
             //logger.Write(0, SPTraceLogger.TraceSeverity.InformationEvent, "Hypertek.IOffice TraceProvider", "Hypertek.IOffice", category, errorMessage);
 
         }
-        public static void LogError(string errorMessage, BeachCampFeatures category)
+        public static void LogError(string errorMessage, TVMCORPFeatures category)
         {
             
             try
@@ -111,10 +112,10 @@ namespace TVMCORP.TVS.Util.Utilities
 
         public static void LogError(string errorMessage, string category)
         {
-            BeachCampFeatures e = BeachCampFeatures.BeachCamp;
+            TVMCORPFeatures e = TVMCORPFeatures.TVS;
             try
             {
-                e = (BeachCampFeatures)Enum.Parse(typeof(BeachCampFeatures), category);
+                e = (TVMCORPFeatures)Enum.Parse(typeof(TVMCORPFeatures), category);
             }
             catch { };
 
@@ -146,7 +147,7 @@ namespace TVMCORP.TVS.Util.Utilities
         }
         #endregion
 
-        public static string BuildKey<T>(BeachCampFeatures featureName)
+        public static string BuildKey<T>(TVMCORPFeatures featureName)
         {
             return featureName.ToString() + typeof(T).ToString();
         }
@@ -317,7 +318,7 @@ namespace TVMCORP.TVS.Util.Utilities
 
         public static void LogError(Exception ex)
         {
-            LogError(ex.Message + ex.StackTrace, BeachCampFeatures.BeachCamp);
+            LogError(ex.Message + ex.StackTrace, TVMCORPFeatures.TVS);
         }
 
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TVMCORP.TVS.Util.Helper.DocXGenerator
+namespace TVMCORP.TVS.UTIL.Helper.DocXGenerator
 {
     [System.AttributeUsage(System.AttributeTargets.Property |
                          System.AttributeTargets.Struct,

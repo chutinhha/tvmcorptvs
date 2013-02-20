@@ -9,11 +9,12 @@ using Microsoft.SharePoint;
 using System.Reflection;
 using System.IO;
 using Microsoft.SharePoint.Utilities;
-using TVMCORP.TVS.Util.Utilities;
-using TVMCORP.TVS.Util.Helpers;
+using TVMCORP.TVS.UTIL.Utilities;
+using TVMCORP.TVS.UTIL.Helpers;
+using TVMCORP.TVS.UTIL;
 
 
-namespace TVMCORP.TVS.Util.Extensions
+namespace TVMCORP.TVS.UTIL.Extensions
 {
     public static class SPWebExtensions
     {
@@ -40,7 +41,7 @@ namespace TVMCORP.TVS.Util.Extensions
         //                            {
         //                                Type runtimeType = ctDef.Data.GetType();
         //                                //ct.SetCustomSettings<SettingBase>(ctDef.Feature, ctDef.Data);
-        //                                MethodInfo method = typeof(SPContentTypeExtensions).GetGenericMethod("SetCustomSettings", new Type[4] { typeof(SPContentType), typeof(BeachCampFeatures), runtimeType, typeof(bool) });
+        //                                MethodInfo method = typeof(SPContentTypeExtensions).GetGenericMethod("SetCustomSettings", new Type[4] { typeof(SPContentType), typeof(TVMCORPFeatures), runtimeType, typeof(bool) });
 
         //                                MethodInfo generic = method.MakeGenericMethod(runtimeType);
         //                                generic.Invoke(null, new object[] { ct, ctDef.Feature, ctDef.Data, true });
@@ -67,7 +68,7 @@ namespace TVMCORP.TVS.Util.Extensions
         //                            if (list != null)
         //                            {
         //                                Type runtimeType = listDefinition.Data.GetType();
-        //                                MethodInfo method = typeof(SPListExtensions).GetGenericMethod("SetCustomSettings", new Type[3] { typeof(SPList), typeof(BeachCampFeatures), runtimeType});
+        //                                MethodInfo method = typeof(SPListExtensions).GetGenericMethod("SetCustomSettings", new Type[3] { typeof(SPList), typeof(TVMCORPFeatures), runtimeType});
 
         //                                MethodInfo generic = method.MakeGenericMethod(runtimeType);
         //                                generic.Invoke(null, new object[] { list, listDefinition.Feature, listDefinition.Data });
@@ -197,7 +198,7 @@ namespace TVMCORP.TVS.Util.Extensions
             }
             catch (Exception ex)
             {
-                Utility.LogError(ex.Message + ex.StackTrace, BeachCampFeatures.BeachCamp);
+                Utility.LogError(ex.Message + ex.StackTrace, TVMCORPFeatures.TVS);
             }
             finally
             {
@@ -360,12 +361,12 @@ namespace TVMCORP.TVS.Util.Extensions
             return false;
         }
        
-        public static T GetCustomSettings<T>(this SPWeb web, BeachCampFeatures featureName)
+        public static T GetCustomSettings<T>(this SPWeb web, TVMCORPFeatures featureName)
         {
             return web.GetCustomSettings<T>(featureName, true);
         }
 
-        public static T GetCustomSettings<T>(this SPWeb web, BeachCampFeatures featureName, bool lookupInParent)
+        public static T GetCustomSettings<T>(this SPWeb web, TVMCORPFeatures featureName, bool lookupInParent)
         {
             string strKey = Utility.BuildKey<T>(featureName);
             string settingsXml = web.GetCustomProperty(strKey);
@@ -379,14 +380,14 @@ namespace TVMCORP.TVS.Util.Extensions
             return default(T);
         }
 
-        public static void SetCustomSettings<T>(this SPWeb web, BeachCampFeatures featureName, T settingsObject)
+        public static void SetCustomSettings<T>(this SPWeb web, TVMCORPFeatures featureName, T settingsObject)
         {
             string strKey = Utility.BuildKey<T>(featureName);
             string settingsXml = SerializationHelper.SerializeToXml<T>(settingsObject);
             web.SetCustomProperty(strKey, settingsXml);
         }
 
-        public static void RemoveCustomSettings<T>(this SPWeb web, BeachCampFeatures featureName)
+        public static void RemoveCustomSettings<T>(this SPWeb web, TVMCORPFeatures featureName)
         {
             string strKey = Utility.BuildKey<T>(featureName);
             //web.Properties.Remove(strKey);
@@ -425,7 +426,7 @@ namespace TVMCORP.TVS.Util.Extensions
 
         public static bool CCIappFeatureNameContainName(string s)
         {
-            foreach (string name in Enum.GetNames(typeof(BeachCampFeatures)))
+            foreach (string name in Enum.GetNames(typeof(TVMCORPFeatures)))
             {
                 if (string.Compare(name, s) == 0)
                     return true;
@@ -797,7 +798,7 @@ namespace TVMCORP.TVS.Util.Extensions
                 catch (Exception ex)
                 {
                     principal = null;
-                    Utility.LogError("GetPrinciple " + ex.ToString(), BeachCampFeatures.BeachCamp);
+                    Utility.LogError("GetPrinciple " + ex.ToString(), TVMCORPFeatures.TVS);
                 }
             }
 

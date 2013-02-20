@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TVMCORP.TVS.Util
+namespace TVMCORP.TVS.UTIL
 {
-    public enum BeachCampFeatures
-    {
-        Workflow,
-        BeachCamp
-    }
+//    public enum TVMCORPFeatures
+//    {
+//        Workflow,
+//        BeachCamp
+//    }
 }

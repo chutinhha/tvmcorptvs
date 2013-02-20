@@ -1,0 +1,6 @@
+C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\obj\Debug\Hypertek.IOffice.Workflow.Core.dll
+C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\obj\Debug\Hypertek.IOffice.Workflow.Core.pdb
+C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\bin\Debug\Hypertek.IOffice.Workflow.Core.dll
+C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\bin\Debug\Hypertek.IOffice.Workflow.Core.pdb
+C:\Users\Administrator\Desktop\TMVCORP.TVS\sources\TVMCORP.TVS.WORKFLOWS\bin\Debug\Microsoft.Sharepoint.Sandbox.dll

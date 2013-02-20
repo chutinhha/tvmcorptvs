@@ -10,10 +10,11 @@ using System.IO;
 
 using System.Reflection;
 using Microsoft.SharePoint.Workflow;
-using TVMCORP.TVS.Util.Utilities;
-using TVMCORP.TVS.Util.Helpers;
-using TVMCORP.TVS.Util.Extensions;
-namespace TVMCORP.TVS.Util.Extensions
+using TVMCORP.TVS.UTIL.Utilities;
+using TVMCORP.TVS.UTIL.Helpers;
+using TVMCORP.TVS.UTIL.Extensions;
+using TVMCORP.TVS.UTIL;
+namespace TVMCORP.TVS.UTIL.Extensions
 {
     public static class SPListExtensions
     {
@@ -183,7 +184,7 @@ namespace TVMCORP.TVS.Util.Extensions
         //            catch (Exception ex)
         //            {
 
-        //                Utility.LogError(ex.Message + ex.StackTrace, BeachCampFeatures.Infrastructure);
+        //                Utility.LogError(ex.Message + ex.StackTrace, TVMCORPFeatures.Infrastructure);
         //            }
                    
         //        }
@@ -313,7 +314,7 @@ namespace TVMCORP.TVS.Util.Extensions
                 return list.GetItemById(id);
             }
             catch  {
-                Utility.LogError("The list item id = " +  id.ToString() + " doesn't exist in list " +  list.RootFolder.Url, "TVMCORP.TVS.Util");
+                Utility.LogError("The list item id = " +  id.ToString() + " doesn't exist in list " +  list.RootFolder.Url, "TVMCORP.TVS.UTIL");
             }
             return null;
         }
@@ -385,12 +386,12 @@ namespace TVMCORP.TVS.Util.Extensions
             return (list.GetItems(query).Count == 0 );
         }
         
-        public static T GetCustomSettings<T>(this SPList list, BeachCampFeatures featureName)
+        public static T GetCustomSettings<T>(this SPList list, TVMCORPFeatures featureName)
         {
             return list.GetCustomSettings<T>(featureName, true);
         }
 
-        public static T GetCustomSettings<T>(this SPList list, BeachCampFeatures featureName, bool lookupInParent)
+        public static T GetCustomSettings<T>(this SPList list, TVMCORPFeatures featureName, bool lookupInParent)
         {
             string strKey = Utility.BuildKey<T>(featureName);
             string settingsXml = list.GetCustomProperty(strKey);
@@ -404,7 +405,7 @@ namespace TVMCORP.TVS.Util.Extensions
             return default(T);
         }
 
-        public static void SetCustomSettings<T>(this SPList list, BeachCampFeatures featureName, T settingsObject)
+        public static void SetCustomSettings<T>(this SPList list, TVMCORPFeatures featureName, T settingsObject)
         {
             string strKey = Utility.BuildKey<T>(featureName);
             string settingsXml = SerializationHelper.SerializeToXml<T>(settingsObject);
@@ -475,7 +476,7 @@ namespace TVMCORP.TVS.Util.Extensions
                         }
                         catch(Exception e)
                         {
-                            Utility.LogError("Add contenttype error: " + e.Message, "TVMCORP.TVS.Util");
+                            Utility.LogError("Add contenttype error: " + e.Message, "TVMCORP.TVS.UTIL");
                         }
                         finally
                         {
@@ -505,7 +506,7 @@ namespace TVMCORP.TVS.Util.Extensions
             return ctIdReturn;
         }
 
-        public static void RemoveCustomSettings<T>(this SPList list, BeachCampFeatures featureName)
+        public static void RemoveCustomSettings<T>(this SPList list, TVMCORPFeatures featureName)
         {
             string strKey = Utility.BuildKey<T>(featureName);
 
@@ -673,7 +674,7 @@ namespace TVMCORP.TVS.Util.Extensions
             }
             catch (Exception ex)
             {
-                Utility.LogError(ex.Message, "TVMCORP.TVS.Util");
+                Utility.LogError(ex.Message, "TVMCORP.TVS.UTIL");
             }
         }
 
@@ -744,7 +745,7 @@ namespace TVMCORP.TVS.Util.Extensions
             }
             catch (Exception ex)
             {
-                Utility.LogError("SetPermissionForList " + ex.ToString(), "TVMCORP.TVS.Util.Extensions");
+                Utility.LogError("SetPermissionForList " + ex.ToString(), "TVMCORP.TVS.UTIL.Extensions");
                 throw;
             }
         }

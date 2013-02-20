@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using System.Reflection;
 
-namespace TVMCORP.TVS.Util.Extensions
+namespace TVMCORP.TVS.UTIL.Extensions
 {
     public static class AssemblyExtensions
     {

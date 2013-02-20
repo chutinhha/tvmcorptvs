@@ -5,9 +5,9 @@ using System.Text;
 using System.IO;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System.Reflection;
-using TVMCORP.TVS.Util.Helper.DocXGenerator;
+using TVMCORP.TVS.UTIL.Helper.DocXGenerator;
 
-namespace TVMCORP.TVS.Util.Helper.DocXGenerator
+namespace TVMCORP.TVS.UTIL.Helper.DocXGenerator
 {
     /// <summary>
     /// Usage
@@ -15,7 +15,7 @@ namespace TVMCORP.TVS.Util.Helper.DocXGenerator
     ///        reporter.GenerateDocument();
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class DocxGenericReport<T> : TVMCORP.TVS.Util.Helper.DocXGenerator.DocumentGenerator where T : IReportBase
+    public class DocxGenericReport<T> : TVMCORP.TVS.UTIL.Helper.DocXGenerator.DocumentGenerator where T : IReportBase
     {
         public T ReportData{ get; set; }
 

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.IO;
 
-namespace TVMCORP.TVS.Util.NVelocityTemplateEngine.Interfaces
+namespace TVMCORP.TVS.UTIL.NVelocityTemplateEngine.Interfaces
 {
 	/// <summary>
 	/// Summary description for INVelocityEngine.

@@ -3,12 +3,12 @@ using System.Globalization;
 using System.Threading;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Hypertek.IOffice.Common.Utilities;
+using TVMCORP.TVS.UTIL.Utilities;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Utilities;
 using Microsoft.SharePoint.WebControls;
 
-namespace Hypertek.IOffice.Common.Extensions
+namespace TVMCORP.TVS.UTIL.Extensions
 {
     public static class SPFieldExtensions
     {
@@ -66,7 +66,7 @@ namespace Hypertek.IOffice.Common.Extensions
                 }
             }
             catch {
-                CCIUtility.LogInfo("The field : " + field.Title + " doesn't exit in target list id" + targetListId, "Hypertek.IOffice.Common");
+                Utility.LogInfo("The field : " + field.Title + " doesn't exit in target list id" + targetListId, "Hypertek.IOffice.Common");
                 /*field is not existed*/
                 
                 }

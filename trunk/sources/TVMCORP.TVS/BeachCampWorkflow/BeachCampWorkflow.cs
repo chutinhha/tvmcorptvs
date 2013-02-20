@@ -14,9 +14,9 @@ using System.Workflow.Activities.Rules;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Workflow;
 using Microsoft.SharePoint.WorkflowActions;
-using TVMCORP.TVS.Util.Helpers;
-using TVMCORP.TVS.Util;
-using TVMCORP.TVS.Util.Utilities;
+using TVMCORP.TVS.UTIL.Helpers;
+using TVMCORP.TVS.UTIL;
+using TVMCORP.TVS.UTIL.Utilities;
 using System.Globalization;
 
 namespace TVMCORP.TVS.BeachCampWorkflow

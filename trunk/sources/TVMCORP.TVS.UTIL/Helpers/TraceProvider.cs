@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 using Microsoft.SharePoint.Administration;
 using System.Security.Permissions;
 
-namespace TVMCORP.TVS.Util.Helpers
+namespace TVMCORP.TVS.UTIL.Helpers
 {
     public class TraceProvider
     {

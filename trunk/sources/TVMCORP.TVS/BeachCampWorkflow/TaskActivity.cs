@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Workflow.Activities;
 using System.Workflow.ComponentModel;
-using TVMCORP.TVS.Util;
+using TVMCORP.TVS.UTIL;
 using System.ComponentModel;
 using Microsoft.SharePoint.Workflow;
-using TVMCORP.TVS.Util.Extensions;
+using TVMCORP.TVS.UTIL.Extensions;
 
 namespace TVMCORP.TVS.BeachCampWorkflow
 {

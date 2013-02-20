@@ -4,7 +4,7 @@
 // </copyright>
 // ------------------------------------------------------------------------
 
-namespace TVMCORP.TVS.Util.Helper.DocXGenerator
+namespace TVMCORP.TVS.UTIL.Helper.DocXGenerator
 {
     using DocumentFormat.OpenXml;
 

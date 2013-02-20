@@ -5,7 +5,7 @@ using System.Text;
 using System.Workflow.ComponentModel;
 
 using Microsoft.SharePoint;
-using TVMCORP.TVS.Util.Extensions;
+using TVMCORP.TVS.UTIL.Extensions;
 using System.Workflow.ComponentModel.Compiler;
 using Microsoft.SharePoint.Workflow;
 

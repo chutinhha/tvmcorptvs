@@ -3,9 +3,9 @@ using System.Web;
 
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Workflow;
-using TVMCORP.TVS.Util.Utilities;
+using TVMCORP.TVS.UTIL.Utilities;
 
-namespace TVMCORP.TVS.Util.Extensions
+namespace TVMCORP.TVS.UTIL.Extensions
 {
     public static class SPWorkflowActivationPropertiesExtensions
     {

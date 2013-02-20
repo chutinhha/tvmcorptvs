@@ -1,14 +1,14 @@
 ﻿using System.Xml;
-using Hypertek.IOffice.Common.Helpers;
-using Hypertek.IOffice.Common.Utilities;
-using Hypertek.IOffice.Common.Extensions;
 using Microsoft.SharePoint;
-using Hypertek.IOffice.Model;
+
 using System.Linq;
 using Microsoft.SharePoint.Workflow;
 using System;
+using TVMCORP.TVS.UTIL.Helpers;
+using TVMCORP.TVS.UTIL.Utilities;
+using TVMCORP.TVS.UTIL;
 
-namespace Hypertek.IOffice.Common.Extensions
+namespace TVMCORP.TVS.UTIL.Extensions
 {
     public static class SPContentTypeExtensions
     {
@@ -92,24 +92,24 @@ namespace Hypertek.IOffice.Common.Extensions
             contenttype.Update();
         }
 
-        public static void SetCustomSettings<T>(this SPContentType contentType, IOfficeFeatures featureName, T settingsObject)
+        public static void SetCustomSettings<T>(this SPContentType contentType, TVMCORPFeatures featureName, T settingsObject)
         {
             contentType.SetCustomSettings<T>(featureName, settingsObject, false);
         }
 
-        public static void RemoveCustomSettings<T>(this SPContentType ctype, IOfficeFeatures featureName)
+        public static void RemoveCustomSettings<T>(this SPContentType ctype, TVMCORPFeatures featureName)
         {
             ctype.SetCustomSettings<T>(featureName, default(T));
         }
 
-        public static void RemoveCustomSettings<T>(this SPContentType ctype, IOfficeFeatures featureName, bool applyToChilds)
+        public static void RemoveCustomSettings<T>(this SPContentType ctype, TVMCORPFeatures featureName, bool applyToChilds)
         {
             ctype.SetCustomSettings<T>(featureName, default(T), applyToChilds);
         }
 
-        public static void SetCustomSettings<T>(this SPContentType contentType, IOfficeFeatures featureName, T settingsObject, bool applyToChilds)
+        public static void SetCustomSettings<T>(this SPContentType contentType, TVMCORPFeatures featureName, T settingsObject, bool applyToChilds)
         {
-            string strKey = CCIUtility.BuildKey<T>(featureName);
+            string strKey = Utility.BuildKey<T>(featureName);
             string settingsXml = SerializationHelper.SerializeToXml<T>(settingsObject, strKey);
             SPXmlDocumentCollection xmlDocCollection = contentType.XmlDocuments;
             if (!string.IsNullOrEmpty(xmlDocCollection[strKey]))
@@ -138,18 +138,18 @@ namespace Hypertek.IOffice.Common.Extensions
             //}
             //catch
             //{
-            //    CCIUtility.LogInfo("Do not throw message if using option apply to child but current content type doen't have any child", "Hypertek.IOffice.Common");
+            //    Utility.LogInfo("Do not throw message if using option apply to child but current content type doen't have any child", "TVMCORP.TVS.UTIL");
             //}
         }
 
-        public static T GetCustomSettings<T>(this SPContentType contentType, IOfficeFeatures featureName)
+        public static T GetCustomSettings<T>(this SPContentType contentType, TVMCORPFeatures featureName)
         {
             return contentType.GetCustomSettings<T>(featureName, true);
         }
 
-        public static T GetCustomSettings<T>(this SPContentType contentType, IOfficeFeatures featureName, bool lookupInParent)
+        public static T GetCustomSettings<T>(this SPContentType contentType, TVMCORPFeatures featureName, bool lookupInParent)
         {
-            string strKey = CCIUtility.BuildKey<T>(featureName);
+            string strKey = Utility.BuildKey<T>(featureName);
             string settingsXml = contentType.XmlDocuments[strKey];
 
             if (!string.IsNullOrEmpty(settingsXml))
