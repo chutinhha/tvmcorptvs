@@ -92,12 +92,6 @@
     <None Include="ContentTypes\PurchaseDetailContentType\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{d669ad8f-12c4-48ca-8731-e503824368ae}</SharePointProjectItemId>
     </None>
-    <None Include="CustomActions\BeachCampRegistration\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{602814f3-2bd6-4da0-978b-00e8c237acec}</SharePointProjectItemId>
-    </None>
-    <None Include="CustomActions\BeachCampRibbon\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{776ed2f1-30f6-4be1-a628-23a01726c3d6}</SharePointProjectItemId>
-    </None>
     <None Include="CustomActions\ListApproversSettings\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{03b227f1-ebb5-44a1-ad38-ec7970a3b582}</SharePointProjectItemId>
     </None>
@@ -141,9 +135,6 @@
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
     </None>
-    <None Include="Modules\BeachCampPages\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{88a42153-7c01-4e49-86a8-6acf49a6c137}</SharePointProjectItemId>
-    </None>
     <None Include="TEMPLATE\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{75012795-b088-476a-830c-87ba1937b360}</SharePointProjectItemId>
     </None>
@@ -159,8 +150,6 @@
     <Content Include="ControlTemplates\TVMCORP.TVS\PurchaseForm.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
-    <Content Include="CustomActions\BeachCampRegistration\Elements.xml" />
-    <Content Include="CustomActions\BeachCampRibbon\Elements.xml" />
     <Content Include="CustomActions\ListApproversSettings\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -212,10 +201,6 @@
     <Content Include="ListInstances\EmailTemplates\Schema.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Modules\BeachCampPages\Elements.xml" />
-    <Content Include="Modules\BeachCampPages\BeachCampReservation.aspx">
-      <SubType>ASPXCodeBehind</SubType>
-    </Content>
     <EmbeddedResource Include="Webparts.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -225,6 +210,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Modules\" />
     <Folder Include="TEMPLATE\PAGES\" />
     <Folder Include="TimerJobs\" />
     <Folder Include="WebParts\" />
