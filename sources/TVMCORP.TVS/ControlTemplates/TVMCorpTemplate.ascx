@@ -9,11 +9,25 @@
 <%@ Register TagPrefix="wssuc" TagName="ToolBar" Src="~/_controltemplates/ToolBar.ascx" %>
 <%@ Register TagPrefix="wssuc" TagName="ToolBarButton" Src="~/_controltemplates/ToolBarButton.ascx" %>
 
-<%@ Register TagPrefix="uc" TagName="PurchaseFormControl" Src="~/_controltemplates/TVMCORP.TVS/PurchaseForm.ascx" %>
+<%@ Register TagPrefix="uc" TagName="PurchaseNewFormControl" Src="~/_controltemplates/TVMCORP.TVS/PurchaseNewForm.ascx" %>
+<%@ Register TagPrefix="uc" TagName="PurchaseEditFormControl" Src="~/_controltemplates/TVMCORP.TVS/PurchaseEditForm.ascx" %>
+<%@ Register TagPrefix="uc" TagName="PurchaseDispFormControl" Src="~/_controltemplates/TVMCORP.TVS/PurchaseDispForm.ascx" %>
 
 
-<SharePoint:RenderingTemplate ID="PurchaseFormTemplate" runat="server">
+<SharePoint:RenderingTemplate ID="PurchaseDispFormTemplate" runat="server">
   <Template>
-        <uc:PurchaseFormControl ID="PurchaseFormTemplate1" runat="server" />
+        <uc:PurchaseDispFormControl ID="PurchaseDispFormTemplate1" runat="server" />
+  </Template>
+</SharePoint:RenderingTemplate>
+
+<SharePoint:RenderingTemplate ID="PurchaseEditFormTemplate" runat="server">
+  <Template>
+        <uc:PurchaseEditFormControl ID="PurchaseEditFormTemplate1" runat="server" />
+  </Template>
+</SharePoint:RenderingTemplate>
+
+<SharePoint:RenderingTemplate ID="PurchaseNewFormTemplate" runat="server">
+  <Template>
+        <uc:PurchaseNewFormControl ID="PurchaseNewFormTemplate1" runat="server" />
   </Template>
 </SharePoint:RenderingTemplate>

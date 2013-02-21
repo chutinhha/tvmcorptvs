@@ -10,7 +10,7 @@
 namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
     
     
-    public partial class PurchaseForm {
+    public partial class PurchaseNewForm {
         
         /// <summary>
         /// InformationBar1 control.
@@ -139,6 +139,15 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::System.Web.UI.WebControls.RadioButton rdbTypeOfApproval1;
         
         /// <summary>
+        /// literalTypeOfApproval control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literalTypeOfApproval;
+        
+        /// <summary>
         /// rdbTypeOfApproval2 control.
         /// </summary>
         /// <remarks>
@@ -166,13 +175,13 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::System.Web.UI.WebControls.Repeater repeaterPurchaseDetail;
         
         /// <summary>
-        /// btnAddPurchaseDetail control.
+        /// linkButtonAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddPurchaseDetail;
+        protected global::System.Web.UI.WebControls.LinkButton linkButtonAdd;
         
         /// <summary>
         /// literalApprovalTitle control.
@@ -229,49 +238,49 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::System.Web.UI.WebControls.Literal literalConfirmer;
         
         /// <summary>
-        /// ffChief control.
+        /// peChief control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FormField ffChief;
+        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peChief;
         
         /// <summary>
-        /// ffBuyer control.
+        /// peBuyer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FormField ffBuyer;
+        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peBuyer;
         
         /// <summary>
-        /// ffAccountant control.
+        /// peAccountant control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FormField ffAccountant;
+        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peAccountant;
         
         /// <summary>
-        /// ffApprover control.
+        /// peApprover control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FormField ffApprover;
+        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peApprover;
         
         /// <summary>
-        /// ffConfirmer control.
+        /// peConfirmer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FormField ffConfirmer;
+        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peConfirmer;
         
         /// <summary>
         /// FormComponent1 control.

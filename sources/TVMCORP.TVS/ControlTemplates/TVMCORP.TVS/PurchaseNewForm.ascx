@@ -7,8 +7,8 @@
 <%@ Import Namespace="Microsoft.SharePoint" %>
 <%@ Register TagPrefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages"
     Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
-<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PurchaseForm.ascx.cs"
-    Inherits="TVMCORP.TVS.ControlTemplates.TVMCORP.TVS.PurchaseForm" %>
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PurchaseNewForm.ascx.cs"
+    Inherits="TVMCORP.TVS.ControlTemplates.TVMCORP.TVS.PurchaseNewForm" %>
 <%@ Register TagPrefix="wssuc" TagName="ToolBar" Src="~/_controltemplates/ToolBar.ascx" %>
 <%@ Register TagPrefix="wssuc" TagName="ToolBarButton" Src="~/_controltemplates/ToolBarButton.ascx" %>
 <style type="text/css">
@@ -174,8 +174,7 @@
             <table width="100%" border="0" cellpadding="0" cellspacing="0">
                 <tr>
                     <td width="100px">
-                        <img src="../../_layouts/images/TVMCORP.TVS.WORKFLOWS/logo_form.png" alt="logo"
-                            align="absmiddle" />
+                        <img src="../../_layouts/images/TVMCORP.TVS/logo_form.png" alt="logo" align="absmiddle" />
                     </td>
                     <td width="860px" class="title_company" align="center">
                         <asp:Literal ID="literalCompany" Text="CÔNG TY CỔ PHẦN TRUYỀN THÔNG TRÍ VIỆT" runat="server"></asp:Literal>
@@ -227,6 +226,7 @@
                 <tr>
                     <td class="request_column1" width="50%" align="right">
                         <asp:RadioButton ID="rdbTypeOfApproval1" Text="Hành chính" GroupName="TypeOfApproval" Checked="true" runat="server" />
+                        <asp:Literal ID="literalTypeOfApproval" Text="Hành chính" runat="server"></asp:Literal>
                     </td>
                     <td class="request_column2" width="50%" align="left">
                         <asp:RadioButton ID="rdbTypeOfApproval2" Text="Công nghệ thông tin" GroupName="TypeOfApproval" runat="server" />
@@ -292,7 +292,8 @@
                             </asp:Repeater>
                             <tr>
                                 <td style="padding: 5px 5px 5px 5px;" colspan="5">
-                                    <asp:Button ID="btnAddPurchaseDetail" runat="server" Text="Thêm dòng" /> 
+                                    <%--<asp:Button ID="btnAddPurchaseDetail" CausesValidation="false" runat="server" Text="Thêm dòng" />--%> 
+                                    <asp:LinkButton ID="linkButtonAdd" CausesValidation="false" runat="server"><i>Thêm dòng</i></asp:LinkButton>
                                 </td>
                             </tr>
                         </table>
@@ -336,29 +337,34 @@
                                 
                             <tr class="row2">
                                 <td align="center" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peChief" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false" />--%>
-                                    <SharePoint:FormField FieldName="Chief" ID="ffChief" runat="server">
-                                    </SharePoint:FormField>
+                                    <SharePoint:PeopleEditor ID="peChief" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
+                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />
+                                    <%--<SharePoint:FormField FieldName="Chief" ID="ffChief" runat="server">
+                                    </SharePoint:FormField>--%>
                                 </td>
                                 <td align="left" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peBuyer" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false" />--%>
-                                    <SharePoint:FormField FieldName="Buyer" ID="ffBuyer" runat="server">
-                                    </SharePoint:FormField>
+                                    <SharePoint:PeopleEditor ID="peBuyer" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
+                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />
+                                    <%--<SharePoint:FormField FieldName="Buyer" ID="ffBuyer" runat="server">
+                                    </SharePoint:FormField>--%>
                                 </td>
                                 <td align="center" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peAccountant" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false" />--%>
-                                    <SharePoint:FormField FieldName="Accountant" ID="ffAccountant" runat="server">
-                                    </SharePoint:FormField>
+                                    <SharePoint:PeopleEditor ID="peAccountant" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
+                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />
+                                    <%--<SharePoint:FormField FieldName="Accountant" ID="ffAccountant" runat="server">
+                                    </SharePoint:FormField>--%>
                                 </td>
                                 <td align="center" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peApprover" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false" />--%>
-                                    <SharePoint:FormField FieldName="Approver" ID="ffApprover" runat="server">
-                                    </SharePoint:FormField>
+                                    <SharePoint:PeopleEditor ID="peApprover" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
+                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />
+                                    <%--<SharePoint:FormField FieldName="Approver" ID="ffApprover" runat="server">
+                                    </SharePoint:FormField>--%>
                                 </td>
                                 <td align="left" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peConfirmer" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false" />--%>
-                                    <SharePoint:FormField FieldName="Confirmer" ID="ffConfirmer" runat="server">
-                                    </SharePoint:FormField>
+                                    <SharePoint:PeopleEditor ID="peConfirmer" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false" 
+                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />
+                                    <%--<SharePoint:FormField FieldName="Confirmer" ID="ffConfirmer" runat="server">
+                                    </SharePoint:FormField>--%>
                                 </td>
                             </tr>
 

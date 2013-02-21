@@ -69,12 +69,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContentTypes\PurchaseContentType\PurchaseContentTypeEventReceiver.cs" />
-    <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseForm.ascx.cs">
-      <DependentUpon>PurchaseForm.ascx</DependentUpon>
+    <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseDispForm.ascx.cs">
+      <DependentUpon>PurchaseDispForm.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseForm.ascx.designer.cs">
-      <DependentUpon>PurchaseForm.ascx.cs</DependentUpon>
+    <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseDispForm.ascx.designer.cs">
+      <DependentUpon>PurchaseDispForm.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseEditForm.ascx.cs">
+      <DependentUpon>PurchaseEditForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseEditForm.ascx.designer.cs">
+      <DependentUpon>PurchaseEditForm.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseNewForm.ascx.cs">
+      <DependentUpon>PurchaseNewForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseNewForm.ascx.designer.cs">
+      <DependentUpon>PurchaseNewForm.ascx.cs</DependentUpon>
     </Compile>
     <Compile Include="Layouts\TVMCORP.TVS\ApproversSettings.aspx.cs">
       <DependentUpon>ApproversSettings.aspx</DependentUpon>
@@ -147,7 +161,13 @@
     <Content Include="ContentTypes\PurchaseDetailContentType\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="ControlTemplates\TVMCORP.TVS\PurchaseForm.ascx">
+    <Content Include="ControlTemplates\TVMCORP.TVS\PurchaseDispForm.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="ControlTemplates\TVMCORP.TVS\PurchaseEditForm.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="ControlTemplates\TVMCORP.TVS\PurchaseNewForm.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="CustomActions\ListApproversSettings\Elements.xml">
@@ -164,6 +184,7 @@
     <Content Include="Images\TVMCORP.TVS\images\dot_note.gif" />
     <Content Include="Images\TVMCORP.TVS\images\icon.gif" />
     <Content Include="Images\TVMCORP.TVS\images\icon_cal.gif" />
+    <Content Include="Images\TVMCORP.TVS\logo_form.png" />
     <Content Include="Images\TVMCORP.TVS\Payment-icon-32.png" />
     <Content Include="Images\TVMCORP.TVS\Printer-icon-32.png" />
     <Content Include="Images\TVMCORP.TVS\Printer-icon-48.png" />
