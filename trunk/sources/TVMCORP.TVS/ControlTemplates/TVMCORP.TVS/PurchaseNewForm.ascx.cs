@@ -6,12 +6,14 @@ using System.Data;
 using Microsoft.SharePoint.WebControls;
 using TVMCORP.TVS.UTIL;
 using TVMCORP.TVS.UTIL.Utilities;
+using TVMCORP.TVS.UTIL.Extensions;
 using Microsoft.SharePoint;
 using System.Collections.Generic;
+using TVMCORP.TVS.UTIL.Models;
 
 namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
 {
-    public partial class PurchaseForm : UserControl
+    public partial class PurchaseNewForm : UserControl
     {
 
         protected override void OnInit(EventArgs e)
@@ -24,11 +26,34 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
                 ribbon.TrimById("Ribbon.ListForm.Edit.Commit");
             }
             //
-            GetUserInfo();
+            rdbTypeOfApproval1.Text = ApproversGroups.HanhChinh;
+            rdbTypeOfApproval2.Text = ApproversGroups.CongNgheThongTin;
+            literalTypeOfApproval.Text = ApproversGroups.HanhChinh;
+            LoadApprovalSettings(ApproversGroups.HanhChinh);
+            //
             repeaterPurchaseDetail.ItemDataBound += new RepeaterItemEventHandler(repeaterPurchaseDetail_ItemDataBound);
-            btnAddPurchaseDetail.Click += new EventHandler(btnAddPurchaseDetail_Click);
+            linkButtonAdd.Click += new EventHandler(btnAddPurchaseDetail_Click);
             btnSave.Click += new EventHandler(btnSave_Click);
+            rdbTypeOfApproval1.AutoPostBack = true;
+            rdbTypeOfApproval2.AutoPostBack = true;
+            rdbTypeOfApproval1.CheckedChanged +=new EventHandler(ChangeApprovalSettings);
+            rdbTypeOfApproval2.CheckedChanged += new EventHandler(ChangeApprovalSettings);
+            //
+            GetUserInfo();
+        }
 
+
+        void ChangeApprovalSettings(object sender, EventArgs e)
+        {
+            RadioButton rad = sender as RadioButton;
+            if (rad != null)
+            {
+                if (rad.Checked)
+                {
+                    literalTypeOfApproval.Text = rad.Text;
+                    LoadApprovalSettings(rad.Text);
+                }
+            }
         }
 
         void btnSave_Click(object sender, EventArgs e)
@@ -85,6 +110,58 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
         }
 
         #region Private Functions
+
+        private void LoadApprovalSettings(string typeOfApprover)
+        {
+            ListApproversSettingsCollection settingsCollection = SPContext.Current.List.GetCustomSettings<ListApproversSettingsCollection>(TVMCORPFeatures.TVS);
+
+            if (settingsCollection != null && settingsCollection.Settings != null)
+            {
+                foreach (var setting in settingsCollection.Settings)
+                {
+                    if (setting != null)
+                    {
+                        if (setting.ApproversGroup == typeOfApprover)
+                        {
+                            peChief.CommaSeparatedAccounts = setting.TruongBoPhan;
+                            if (!setting.AllowToChangeTruongBoPhan)
+                            {
+                                peChief.Enabled = false;
+                                peChief.AllowTypeIn = false;
+                            }
+
+                            peBuyer.CommaSeparatedAccounts = setting.NguoiMuaHang;
+                            if (!setting.AllowToChangeNguoiMuaHang)
+                            {
+                                peBuyer.Enabled = false;
+                                peBuyer.AllowTypeIn = false;
+                            }                   
+
+                            peApprover.CommaSeparatedAccounts = setting.NguoiDuyet;
+                            if (!setting.AllowToChangeNguoiDuyet)
+                            {
+                                peApprover.Enabled = false;
+                                peApprover.AllowTypeIn = false;
+                            }
+
+                            peAccountant.CommaSeparatedAccounts = setting.PhongKeToan;
+                            if (!setting.AllowToChangePhongKeToan)
+                            {
+                                peAccountant.Enabled = false;
+                                peAccountant.AllowTypeIn = false;
+                            }
+
+                            peConfirmer.CommaSeparatedAccounts = setting.NguoiXacNhan;
+                            if (!setting.AllowToChangeNguoiXacNhan)
+                            {
+                                peConfirmer.Enabled = false;
+                                peConfirmer.AllowTypeIn = false;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         private string GetUserInfo()
         {
@@ -194,13 +271,13 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             purchaseItem["DateRequest"] = DateTime.Now;
             purchaseItem["UserRequest"] = SPContext.Current.Web.CurrentUser;
             purchaseItem["DepartmentRequest"] = literalDepartmentRequestValue.Text;
-            purchaseItem["TypeOfApproval"] = "Công nghệ thông tin";
+            purchaseItem["TypeOfApproval"] = literalTypeOfApproval.Text;
             purchaseItem["PurchaseDetail"] = purchaseDetails;
-            purchaseItem["Chief"] = ffChief.Value; //SPContext.Current.Web.EnsureUser(((PickerEntity)peChief.ResolvedEntities[0]).Key);
-            purchaseItem["Buyer"] = ffBuyer.Value; //SPContext.Current.Web.EnsureUser(((PickerEntity)peBuyer.ResolvedEntities[0]).Key);
-            purchaseItem["Approver"] = ffApprover.Value; //SPContext.Current.Web.EnsureUser(((PickerEntity)peApprover.ResolvedEntities[0]).Key);
-            purchaseItem["Accountant"] = ffAccountant.Value; //SPContext.Current.Web.EnsureUser(((PickerEntity)peAccountant.ResolvedEntities[0]).Key);
-            purchaseItem["Confirmer"] = ffConfirmer.Value; //SPContext.Current.Web.EnsureUser(((PickerEntity)peConfirmer.ResolvedEntities[0]).Key);
+            purchaseItem["Chief"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peChief.ResolvedEntities[0]).Key); //ffChief.Value; //
+            purchaseItem["Buyer"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peBuyer.ResolvedEntities[0]).Key); //ffBuyer.Value; //
+            purchaseItem["Approver"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peApprover.ResolvedEntities[0]).Key); //ffApprover.Value; //
+            purchaseItem["Accountant"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peAccountant.ResolvedEntities[0]).Key); //ffAccountant.Value; //
+            purchaseItem["Confirmer"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peConfirmer.ResolvedEntities[0]).Key); //ffConfirmer.Value; //
             purchaseItem.Update();
         }
 
