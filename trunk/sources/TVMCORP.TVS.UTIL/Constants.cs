@@ -7,6 +7,12 @@ namespace TVMCORP.TVS.UTIL
 {
    public class Constants
    {
+       #region Purchase
+       public const string PURCHASE_LIST_URL = "/Lists/Purchase";
+       public const string PURCHASE_DETAIL_LIST_URL = "/Lists/PurchaseDetail";
+       public const string PURCHASE_TITLE_PREFIX = "Yêu cầu mua hàng - ";
+       #endregion Purchase
+
        #region Approval Status
        public const string APPROVED = "0";
 
