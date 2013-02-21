@@ -5,8 +5,20 @@ using System.Text;
 
 namespace TVMCORP.TVS.UTIL.Models
 {
+    public class ListApproversSettingsCollection
+    {
+        public List<ListApproversSettings> Settings { get; set; }
+
+        public ListApproversSettingsCollection()
+        {
+            Settings = new List<ListApproversSettings>();
+        }
+    }
+
     public class ListApproversSettings
     {
+        public string ApproversGroup { get; set; }
+
         public string TruongBoPhan { get; set; }
         public bool AllowToChangeTruongBoPhan { get; set; }
 

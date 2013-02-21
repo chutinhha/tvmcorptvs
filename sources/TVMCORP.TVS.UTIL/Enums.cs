@@ -2,11 +2,11 @@
 
 namespace TVMCORP.TVS.UTIL
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    /// 
-    /// 
+    public class ApproversGroups
+    {
+        public const string HanhChinh = "Hành chính";
+        public const string CongNgheThongTin = "Công nghệ thông tin";
+    }
 
     public class TaskApprovalStatus
     {
