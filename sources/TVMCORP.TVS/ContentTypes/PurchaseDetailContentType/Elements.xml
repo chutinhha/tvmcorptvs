@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
 
-  <Field Type="Text" DisplayName="Mô tả" Required="FALSE" MaxLength="255"
+  <!--<Field Type="Text" DisplayName="Mô tả" Required="FALSE" MaxLength="255"
              ID="{B6E9B7D1-D815-4a06-A495-C2C147D4BD27}" Name="ProductName" StaticName="ProductName" Group="[TVM-eOffice]">
-  </Field>
+  </Field>-->
 
   <Field Type="Number" DisplayName="Số lượng" Required="FALSE" Decimals="0" Min="0" Max="100" ID="{E4DCC65B-44D5-4f46-A00E-0F9260A0E5A5}" 
          StaticName="Quantity" Name="Quantity" Group="[TVM-eOffice]" >
@@ -27,11 +27,13 @@
                Inherits="TRUE"
                Version="0">
     <FieldRefs>
-      <FieldRef ID="{B6E9B7D1-D815-4a06-A495-C2C147D4BD27}" Name="ProductName" />
+      <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Mô tả" Sealed="TRUE" />
+      <FieldRef Name="LinkTitleNoMenu" ID="{bc91a437-52e7-49e1-8c4e-4698904b2b6d}" DisplayName="Mô tả" Sealed="TRUE" />
+      <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Mô tả" Sealed="TRUE" />
+      <!--<FieldRef ID="{B6E9B7D1-D815-4a06-A495-C2C147D4BD27}" Name="ProductName" />-->
       <FieldRef ID="{E4DCC65B-44D5-4f46-A00E-0F9260A0E5A5}" Name="Quantity" />
       <FieldRef ID="{22DFF1BB-9332-41ff-A3D3-10B6EDC06732}" Name="Price" />
       <FieldRef ID="{166CA42B-6B2B-47ab-8C99-782FC16C4DDF}" Name="Description" />
-      
     </FieldRefs>
   </ContentType>
 </Elements>

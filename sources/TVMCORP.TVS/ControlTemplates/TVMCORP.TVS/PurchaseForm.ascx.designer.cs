@@ -22,42 +22,6 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::Microsoft.SharePoint.WebControls.InformationBar InformationBar1;
         
         /// <summary>
-        /// toolBarTbltop control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UserControl toolBarTbltop;
-        
-        /// <summary>
-        /// NextPageButton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.NextPageButton NextPageButton1;
-        
-        /// <summary>
-        /// SaveButton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.SaveButton SaveButton1;
-        
-        /// <summary>
-        /// GoBackButton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.GoBackButton GoBackButton1;
-        
-        /// <summary>
         /// FormToolBar1 control.
         /// </summary>
         /// <remarks>
@@ -85,85 +49,31 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::Microsoft.SharePoint.WebControls.FolderFormFields FolderFormFields1;
         
         /// <summary>
-        /// ffTitle control.
+        /// literalCompany control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FormField ffTitle;
+        protected global::System.Web.UI.WebControls.Literal literalCompany;
         
         /// <summary>
-        /// ffDepartment control.
+        /// literalCompanyEnglish control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FormField ffDepartment;
+        protected global::System.Web.UI.WebControls.Literal literalCompanyEnglish;
         
         /// <summary>
-        /// ffRequestDate control.
+        /// literalTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FormField ffRequestDate;
-        
-        /// <summary>
-        /// literalTitleRequest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal literalTitleRequest;
-        
-        /// <summary>
-        /// literalMonthRequest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal literalMonthRequest;
-        
-        /// <summary>
-        /// literalMonthYear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal literalMonthYear;
-        
-        /// <summary>
-        /// literalDepartmentRequest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal literalDepartmentRequest;
-        
-        /// <summary>
-        /// literalDepartment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal literalDepartment;
-        
-        /// <summary>
-        /// literalDateRequestTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal literalDateRequestTitle;
+        protected global::System.Web.UI.WebControls.Literal literalTitle;
         
         /// <summary>
         /// literalDateRequest control.
@@ -175,22 +85,193 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::System.Web.UI.WebControls.Literal literalDateRequest;
         
         /// <summary>
-        /// repeaterStationery control.
+        /// literalDateRequestValue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repeaterStationery;
+        protected global::System.Web.UI.WebControls.Literal literalDateRequestValue;
         
         /// <summary>
-        /// ApprovalStatus1 control.
+        /// literalUserRequest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.ApprovalStatus ApprovalStatus1;
+        protected global::System.Web.UI.WebControls.Literal literalUserRequest;
+        
+        /// <summary>
+        /// literalUserRequestValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literalUserRequestValue;
+        
+        /// <summary>
+        /// literalDepartmentRequest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literalDepartmentRequest;
+        
+        /// <summary>
+        /// literalDepartmentRequestValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literalDepartmentRequestValue;
+        
+        /// <summary>
+        /// rdbTypeOfApproval1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdbTypeOfApproval1;
+        
+        /// <summary>
+        /// rdbTypeOfApproval2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdbTypeOfApproval2;
+        
+        /// <summary>
+        /// literalPurchaseDetail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literalPurchaseDetail;
+        
+        /// <summary>
+        /// repeaterPurchaseDetail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeaterPurchaseDetail;
+        
+        /// <summary>
+        /// btnAddPurchaseDetail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddPurchaseDetail;
+        
+        /// <summary>
+        /// literalApprovalTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literalApprovalTitle;
+        
+        /// <summary>
+        /// literalChief control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literalChief;
+        
+        /// <summary>
+        /// literalBuyer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literalBuyer;
+        
+        /// <summary>
+        /// literalApprover control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literalApprover;
+        
+        /// <summary>
+        /// literalAccountant control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literalAccountant;
+        
+        /// <summary>
+        /// literalConfirmer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literalConfirmer;
+        
+        /// <summary>
+        /// ffChief control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FormField ffChief;
+        
+        /// <summary>
+        /// ffBuyer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FormField ffBuyer;
+        
+        /// <summary>
+        /// ffAccountant control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FormField ffAccountant;
+        
+        /// <summary>
+        /// ffApprover control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FormField ffApprover;
+        
+        /// <summary>
+        /// ffConfirmer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FormField ffConfirmer;
         
         /// <summary>
         /// FormComponent1 control.
@@ -247,13 +328,13 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::Microsoft.SharePoint.WebControls.CreatedModifiedInfo CreatedModifiedInfo1;
         
         /// <summary>
-        /// SaveButton2 control.
+        /// btnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.SaveButton SaveButton2;
+        protected global::System.Web.UI.WebControls.Button btnSave;
         
         /// <summary>
         /// GoBackButton2 control.
