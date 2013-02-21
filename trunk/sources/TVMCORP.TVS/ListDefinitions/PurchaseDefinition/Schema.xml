@@ -9,15 +9,32 @@
                    Description="[TVM - eOffice] - Purchase Content Type"
                    Version="0">
         <FieldRefs>
+          <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Tiêu đề" Sealed="TRUE" />
+          <FieldRef Name="LinkTitleNoMenu" ID="{bc91a437-52e7-49e1-8c4e-4698904b2b6d}" DisplayName="Tiêu đề" Sealed="TRUE" />
+          <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Tiêu đề" Sealed="TRUE" />
           <FieldRef ID="{CFE09400-F6DF-45f1-88FC-992343BA09CD}" Name="DateRequest" />
           <FieldRef ID="{362533BD-4768-4979-9FBD-D2794915E626}" Name="UserRequest" />
           <FieldRef ID="{38E7C422-3656-4ff2-992B-D02980A15E3B}" Name="DepartmentRequest" />
           <FieldRef ID="{F3C54B04-959E-401a-8273-82CB0CE828EF}" Name="TypeOfApproval" />
           <FieldRef ID="{A3423F74-F45A-469e-85A8-F29A5E1560A3}" Name="PurchaseDetail" />
-          <FieldRef ID="{836180CE-7589-400c-88CA-ABB0340EAD37}" Name="RequestStatus" />
-
+          <FieldRef ID="{DC1E8FCF-2F61-4bd8-BE52-C9E7A6B9851D}" Name="Chief" />
+          <FieldRef ID="{C5FF7F88-2CB1-496a-9175-92A9E6344CEF}" Name="ChiefStatus" />
+          <FieldRef ID="{16CC0DE3-825D-4520-B8DB-067D49D68244}" Name="ChiefComment" />
+          <FieldRef ID="{981DE36C-6D92-42e3-8E6D-2BE0770AC827}" Name="Buyer" />
+          <FieldRef ID="{FEB03CB0-59A6-47ae-B469-3779C41C3943}" Name="BuyerStatus" />
+          <FieldRef ID="{35B56725-4AEB-403e-BB15-B6496FA4BEBB}" Name="BuyerComment" />
+          <FieldRef ID="{58059BC3-40D1-4371-BB22-B5B424198E86}" Name="Approver" />
+          <FieldRef ID="{632D59C0-0748-4f76-B650-911FC1811483}" Name="ApproverStatus" />
+          <FieldRef ID="{A2ADCAAA-90C0-4869-823B-E9AF74B90B87}" Name="ApproverComment" />
+          <FieldRef ID="{C56AC49F-D5F4-4a02-9C92-42CDBB1A0449}" Name="Accountant" />
+          <FieldRef ID="{FFF7EE31-8609-4fc4-BFF3-D79520C40B27}" Name="AccountantStatus" />
+          <FieldRef ID="{29287230-FD40-4298-8FF4-01DAA2B09A68}" Name="AccountantComment" />
+          <FieldRef ID="{1CAAE119-5949-49db-B158-11C9F3E4E681}" Name="Confirmer" />
+          <FieldRef ID="{766B34A3-B9EA-4bf9-BA63-2B672D78B7E4}" Name="ConfirmerStatus" />
+          <FieldRef ID="{35B3B2D4-7356-4f1a-81E2-0B46E311516F}" Name="ConfirmerComment" />
         </FieldRefs>
         <XmlDocuments>
+          
           <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/events">
             <Receivers xmlns:spe="http://schemas.microsoft.com/sharepoint/events">
               <Receiver>
@@ -32,6 +49,15 @@
               </Receiver>
             </Receivers>
           </XmlDocument>
+
+          <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
+            <FormTemplates xmlns="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
+              <New>PurchaseFormTemplate</New>
+              <Edit>PurchaseFormTemplate</Edit>
+              <Display>PurchaseFormTemplate</Display>
+            </FormTemplates>
+          </XmlDocument>
+          
         </XmlDocuments>
       </ContentType>
     </ContentTypes>
@@ -40,28 +66,74 @@
          Required="FALSE" Format="DateOnly" Group="[TVM-eOffice]">
       </Field>
 
-      <Field Type="Text" DisplayName="Người đề nghị" Required="FALSE" MaxLength="255"
-                 ID="{362533BD-4768-4979-9FBD-D2794915E626}" Name="UserRequest" StaticName="UserRequest" Group="[TVM-eOffice]">
-      </Field>
+      <Field Type="User" DisplayName="Người đề nghị" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName" UserSelectionMode="PeopleOnly"
+             UserSelectionScope="0" ID="{362533BD-4768-4979-9FBD-D2794915E626}" Name="UserRequest" StaticName="UserRequest" />
 
       <Field Type="Text" DisplayName="Bộ phận" Required="FALSE" MaxLength="255"
                  ID="{38E7C422-3656-4ff2-992B-D02980A15E3B}" Name="DepartmentRequest" StaticName="DepartmentRequest" Group="[TVM-eOffice]">
       </Field>
 
-      <Field Type="Choice" DisplayName="TypeOfApproval" ID="{F3C54B04-959E-401a-8273-82CB0CE828EF}" Name="TypeOfApproval" StaticName="TypeOfApproval"
+      <Field Type="Choice" DisplayName="Type of Approval" ID="{F3C54B04-959E-401a-8273-82CB0CE828EF}" Name="TypeOfApproval" StaticName="TypeOfApproval"
              Required="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="RadioButtons" FillInChoice="FALSE" Group="[TVM-eOffice]" >
         <CHOICES>
           <CHOICE>Hành chánh</CHOICE>
           <CHOICE>Công nghệ thông tin</CHOICE>
         </CHOICES>
+        <MAPPINGS>
+          <MAPPING Value="0">Hành chánh</MAPPING>
+          <MAPPING Value="1">Công nghệ thông tin</MAPPING>
+        </MAPPINGS>
+        <Default>Hành chánh</Default>
       </Field>
 
       <Field Type="LookupMulti" List="Lists/PurchaseDetail" DisplayName="PurchaseDetail" ID="{A3423F74-F45A-469e-85A8-F29A5E1560A3}" Name="PurchaseDetail" StaticName="PurchaseDetail" Required="FALSE" EnforceUniqueValues="FALSE"
              ShowField="Title" Mult="TRUE" Sortable="FALSE" UnlimitedLengthInDocumentLibrary="FALSE" RelationshipDeleteBehavior="None" Group="[TVM-eOffice]" />
 
-      <Field Type="Text" DisplayName="Request Status" Required="FALSE" MaxLength="255"
-                 ID="{836180CE-7589-400c-88CA-ABB0340EAD37}" Name="RequestStatus" StaticName="RequestStatus" Group="[TVM-eOffice]">
-      </Field>
+      <Field Type="User" DisplayName="Trưởng bộ phận" List="UserInfo" Required="TRUE" EnforceUniqueValues="FALSE" ShowField="ImnName" UserSelectionMode="PeopleOnly"
+             UserSelectionScope="0" ID="{DC1E8FCF-2F61-4bd8-BE52-C9E7A6B9851D}" Name="Chief" StaticName="Chief" />
+
+      <Field Type="Text" DisplayName="ChiefStatus" Required="FALSE" Hidden="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"
+             ID="{C5FF7F88-2CB1-496a-9175-92A9E6344CEF}" Name="ChiefStatus" StaticName="ChiefStatus" />
+
+      <Field Type="Note" DisplayName="ChiefComment" Required="FALSE" Hidden="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE"
+             Sortable="FALSE" ID="{16CC0DE3-825D-4520-B8DB-067D49D68244}" Name="ChiefComment" StaticName="ChiefComment" />
+
+      <Field Type="User" DisplayName="Người mua hàng" List="UserInfo" Required="TRUE" EnforceUniqueValues="FALSE" ShowField="ImnName" UserSelectionMode="PeopleOnly"
+             UserSelectionScope="0" ID="{981DE36C-6D92-42e3-8E6D-2BE0770AC827}" Name="Buyer" StaticName="Buyer" />
+
+      <Field Type="Text" DisplayName="BuyerStatus" Required="FALSE" Hidden="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"
+             ID="{FEB03CB0-59A6-47ae-B469-3779C41C3943}" Name="BuyerStatus" StaticName="BuyerStatus" />
+
+      <Field Type="Note" DisplayName="BuyerComment" Required="FALSE" Hidden="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE"
+             Sortable="FALSE" ID="{35B56725-4AEB-403e-BB15-B6496FA4BEBB}" Name="BuyerComment" StaticName="BuyerComment" />
+
+      <Field Type="User" DisplayName="Duyệt" List="UserInfo" Required="TRUE" EnforceUniqueValues="FALSE" ShowField="ImnName" UserSelectionMode="PeopleOnly"
+             UserSelectionScope="0" ID="{58059BC3-40D1-4371-BB22-B5B424198E86}" Name="Approver" StaticName="Approver" />
+
+      <Field Type="Text" DisplayName="ApproverStatus" Required="FALSE" Hidden="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"
+             ID="{632D59C0-0748-4f76-B650-911FC1811483}" Name="ApproverStatus" StaticName="ApproverStatus" />
+
+      <Field Type="Note" DisplayName="ApproverComment" Required="FALSE" Hidden="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE"
+             Sortable="FALSE" ID="{A2ADCAAA-90C0-4869-823B-E9AF74B90B87}" Name="ApproverComment" StaticName="ApproverComment" />
+
+      <Field Type="User" DisplayName="Phòng kế toán" List="UserInfo" Required="TRUE" EnforceUniqueValues="FALSE" ShowField="ImnName" UserSelectionMode="PeopleOnly"
+             UserSelectionScope="0" ID="{C56AC49F-D5F4-4a02-9C92-42CDBB1A0449}" Name="Accountant" StaticName="Accountant" />
+
+      <Field Type="Text" DisplayName="AccountantStatus" Required="FALSE" Hidden="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"
+             ID="{FFF7EE31-8609-4fc4-BFF3-D79520C40B27}" Name="AccountantStatus" StaticName="AccountantStatus" />
+
+      <Field Type="Note" DisplayName="AccountantComment" Required="FALSE" Hidden="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE"
+             Sortable="FALSE" ID="{29287230-FD40-4298-8FF4-01DAA2B09A68}" Name="AccountantComment" StaticName="ConfirmerComment" />
+
+      <Field Type="User" DisplayName="Người xác nhận" List="UserInfo" Required="TRUE" EnforceUniqueValues="FALSE" ShowField="ImnName" UserSelectionMode="PeopleOnly"
+             UserSelectionScope="0" ID="{1CAAE119-5949-49db-B158-11C9F3E4E681}" Name="Confirmer" StaticName="Confirmer" />
+
+      <Field Type="Text" DisplayName="ConfirmerStatus" Required="FALSE" Hidden="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"
+             ID="{766B34A3-B9EA-4bf9-BA63-2B672D78B7E4}" Name="ConfirmerStatus" StaticName="ConfirmerStatus" />
+
+      <Field Type="Note" DisplayName="ConfirmerComment" Required="FALSE" Hidden="TRUE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE"
+             Sortable="FALSE" ID="{35B3B2D4-7356-4f1a-81E2-0B46E311516F}" Name="ConfirmerComment" StaticName="ConfirmerComment" />
+
     </Fields>
     <Views>
       <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
@@ -92,6 +164,12 @@
           <FieldRef Name="Attachments">
           </FieldRef>
           <FieldRef Name="LinkTitle">
+          </FieldRef>
+          <FieldRef Name="DateRequest">
+          </FieldRef>
+          <FieldRef Name="UserRequest">
+          </FieldRef>
+          <FieldRef Name="DepartmentRequest">
           </FieldRef>
         </ViewFields>
         <Query>

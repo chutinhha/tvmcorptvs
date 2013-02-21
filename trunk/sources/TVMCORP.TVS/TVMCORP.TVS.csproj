@@ -86,9 +86,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ContentTypes\BeachCampTaskContentType\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{253e32cc-47ba-42e7-a077-78699edcf3db}</SharePointProjectItemId>
-    </None>
     <None Include="ContentTypes\PurchaseContentType\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{6e8c6874-7473-48d0-9fec-55bf34d2dc10}</SharePointProjectItemId>
     </None>
@@ -104,9 +101,8 @@
     <None Include="CustomActions\ListApproversSettings\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{03b227f1-ebb5-44a1-ad38-ec7970a3b582}</SharePointProjectItemId>
     </None>
-    <None Include="Features\TVMCorp.TVS\TVMCorp.TVS.feature">
-      <FeatureId>{f9307581-4225-4f07-9222-f51c049c9660}</FeatureId>
-      <SubType>Designer</SubType>
+    <None Include="Features\TVMCORP.TVS.Feature\TVMCORP.TVS.Feature.feature">
+      <FeatureId>{50b86f56-c6cc-4062-9557-4e8f67504c67}</FeatureId>
     </None>
     <None Include="Images\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{b46a8b12-6299-4515-8912-9cd7a5e66392}</SharePointProjectItemId>
@@ -128,9 +124,6 @@
     </None>
     <None Include="ListDefinitions\PurchaseDetailDefinition\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{e644d922-2813-4c24-98e9-db82dfafc795}</SharePointProjectItemId>
-    </None>
-    <None Include="ListInstances\BeachCampTask\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{748bf8b7-5520-40fe-b937-abf202cce299}</SharePointProjectItemId>
     </None>
     <None Include="ControlTemplates\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{d8fea4bc-affa-4359-bcb7-67f75bfd4347}</SharePointProjectItemId>
@@ -157,7 +150,6 @@
     <None Include="Properties\TVMCORP.TVS.snk" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ContentTypes\BeachCampTaskContentType\Elements.xml" />
     <Content Include="ContentTypes\PurchaseContentType\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -172,8 +164,8 @@
     <Content Include="CustomActions\ListApproversSettings\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Features\TVMCorp.TVS\TVMCorp.TVS.Template.xml">
-      <DependentUpon>TVMCorp.TVS.feature</DependentUpon>
+    <Content Include="Features\TVMCORP.TVS.Feature\TVMCORP.TVS.Feature.Template.xml">
+      <DependentUpon>TVMCORP.TVS.Feature.feature</DependentUpon>
     </Content>
     <Content Include="Images\SharePoint.BeachCamp\css\style.css" />
     <Content Include="Images\SharePoint.BeachCamp\images\bgcontainer_form.png" />
@@ -212,14 +204,10 @@
     <Content Include="ListDefinitions\PurchaseDetailDefinition\Elements.xml" />
     <Content Include="ListDefinitions\PurchaseDetailDefinition\PurchaseDetailInstance\Elements.xml" />
     <Content Include="ListDefinitions\PurchaseDetailDefinition\Schema.xml" />
-    <Content Include="ListInstances\BeachCampTask\Elements.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="ControlTemplates\TVMCorpTemplate.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="Layouts\1033\jquery-1.8.2.min.js" />
-    <Content Include="ListInstances\BeachCampTask\Schema.xml" />
     <Content Include="ListInstances\EmailTemplates\Elements.xml" />
     <Content Include="ListInstances\EmailTemplates\Schema.xml">
       <SubType>Designer</SubType>
