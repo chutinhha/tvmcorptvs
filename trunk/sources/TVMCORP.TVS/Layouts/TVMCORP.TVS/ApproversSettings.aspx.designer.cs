@@ -31,22 +31,22 @@ namespace TVMCORP.TVS.Layouts.TVMCORP.TVS {
         protected global::System.Web.UI.UserControl InputFormControl1;
         
         /// <summary>
-        /// peTruongBoPhan control.
+        /// peTruongBoPhanHC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peTruongBoPhan;
+        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peTruongBoPhanHC;
         
         /// <summary>
-        /// chkAllowToChangeTruongBophan control.
+        /// chkAllowToChangeTruongBophanHC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkAllowToChangeTruongBophan;
+        protected global::System.Web.UI.WebControls.CheckBox chkAllowToChangeTruongBophanHC;
         
         /// <summary>
         /// InputFormSection2 control.
@@ -67,22 +67,22 @@ namespace TVMCORP.TVS.Layouts.TVMCORP.TVS {
         protected global::System.Web.UI.UserControl InputFormControl2;
         
         /// <summary>
-        /// peNguoiMuaHang control.
+        /// peNguoiMuaHangHC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peNguoiMuaHang;
+        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peNguoiMuaHangHC;
         
         /// <summary>
-        /// chkAllowToChangeNguoiMuaHang control.
+        /// chkAllowToChangeNguoiMuaHangHC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkAllowToChangeNguoiMuaHang;
+        protected global::System.Web.UI.WebControls.CheckBox chkAllowToChangeNguoiMuaHangHC;
         
         /// <summary>
         /// InputFormSection3 control.
@@ -103,22 +103,22 @@ namespace TVMCORP.TVS.Layouts.TVMCORP.TVS {
         protected global::System.Web.UI.UserControl InputFormControl3;
         
         /// <summary>
-        /// peNguoiDuyet control.
+        /// peNguoiDuyetHC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peNguoiDuyet;
+        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peNguoiDuyetHC;
         
         /// <summary>
-        /// chkAllowToChangeNguoiDuyet control.
+        /// chkAllowToChangeNguoiDuyetHC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkAllowToChangeNguoiDuyet;
+        protected global::System.Web.UI.WebControls.CheckBox chkAllowToChangeNguoiDuyetHC;
         
         /// <summary>
         /// InputFormSection4 control.
@@ -139,22 +139,22 @@ namespace TVMCORP.TVS.Layouts.TVMCORP.TVS {
         protected global::System.Web.UI.UserControl InputFormControl4;
         
         /// <summary>
-        /// pePhongKeToan control.
+        /// pePhongKeToanHC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.PeopleEditor pePhongKeToan;
+        protected global::Microsoft.SharePoint.WebControls.PeopleEditor pePhongKeToanHC;
         
         /// <summary>
-        /// chkAllowToChangePhongKeToan control.
+        /// chkAllowToChangePhongKeToanHC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkAllowToChangePhongKeToan;
+        protected global::System.Web.UI.WebControls.CheckBox chkAllowToChangePhongKeToanHC;
         
         /// <summary>
         /// InputFormSection5 control.
@@ -175,22 +175,202 @@ namespace TVMCORP.TVS.Layouts.TVMCORP.TVS {
         protected global::System.Web.UI.UserControl InputFormControl5;
         
         /// <summary>
-        /// peNguoiXacNhan control.
+        /// peNguoiXacNhanHC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peNguoiXacNhan;
+        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peNguoiXacNhanHC;
         
         /// <summary>
-        /// chkAllowToChangeNguoiXacNhan control.
+        /// chkAllowToChangeNguoiXacNhanHC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkAllowToChangeNguoiXacNhan;
+        protected global::System.Web.UI.WebControls.CheckBox chkAllowToChangeNguoiXacNhanHC;
+        
+        /// <summary>
+        /// InputFormSection6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UserControl InputFormSection6;
+        
+        /// <summary>
+        /// InputFormControl6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UserControl InputFormControl6;
+        
+        /// <summary>
+        /// peTruongBoPhanCNTT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peTruongBoPhanCNTT;
+        
+        /// <summary>
+        /// chkAllowToChangeTruongBophanCNTT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkAllowToChangeTruongBophanCNTT;
+        
+        /// <summary>
+        /// InputFormSection7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UserControl InputFormSection7;
+        
+        /// <summary>
+        /// InputFormControl7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UserControl InputFormControl7;
+        
+        /// <summary>
+        /// peNguoiMuaHangCNTT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peNguoiMuaHangCNTT;
+        
+        /// <summary>
+        /// chkAllowToChangeNguoiMuaHangCNTT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkAllowToChangeNguoiMuaHangCNTT;
+        
+        /// <summary>
+        /// InputFormSection8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UserControl InputFormSection8;
+        
+        /// <summary>
+        /// InputFormControl8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UserControl InputFormControl8;
+        
+        /// <summary>
+        /// peNguoiDuyetCNTT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peNguoiDuyetCNTT;
+        
+        /// <summary>
+        /// chkAllowToChangeNguoiDuyetCNTT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkAllowToChangeNguoiDuyetCNTT;
+        
+        /// <summary>
+        /// InputFormSection9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UserControl InputFormSection9;
+        
+        /// <summary>
+        /// InputFormControl9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UserControl InputFormControl9;
+        
+        /// <summary>
+        /// pePhongKeToanCNTT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.PeopleEditor pePhongKeToanCNTT;
+        
+        /// <summary>
+        /// chkAllowToChangePhongKeToanCNTT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkAllowToChangePhongKeToanCNTT;
+        
+        /// <summary>
+        /// InputFormSection10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UserControl InputFormSection10;
+        
+        /// <summary>
+        /// InputFormControl10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UserControl InputFormControl10;
+        
+        /// <summary>
+        /// peNguoiXacNhanCNTT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peNguoiXacNhanCNTT;
+        
+        /// <summary>
+        /// chkAllowToChangeNguoiXacNhanCNTT control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkAllowToChangeNguoiXacNhanCNTT;
         
         /// <summary>
         /// ButtonSection1 control.

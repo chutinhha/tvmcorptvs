@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.WebControls;
-using TVMCORP.TVS.Util.Extensions;
-using TVMCORP.TVS.Util;
 using TVMCORP.TVS.UTIL.Models;
 using Microsoft.SharePoint.Utilities;
 using System.Web;
+using TVMCORP.TVS.UTIL;
+using TVMCORP.TVS.UTIL.Extensions;
 
 namespace TVMCORP.TVS.Layouts.TVMCORP.TVS
 {
@@ -34,83 +34,174 @@ namespace TVMCORP.TVS.Layouts.TVMCORP.TVS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            var settings = new ListApproversSettings();
+            var settingsCollection = new ListApproversSettingsCollection();
 
-            if (peTruongBoPhan.ResolvedEntities.Count > 0)
+            var settingsHC = new ListApproversSettings();
+
+            settingsHC.ApproversGroup = ApproversGroups.HanhChinh;
+
+            if (peTruongBoPhanHC.ResolvedEntities.Count > 0)
             {
-                settings.TruongBoPhan = ((PickerEntity)peTruongBoPhan.ResolvedEntities[0]).Key;
+                settingsHC.TruongBoPhan = ((PickerEntity)peTruongBoPhanHC.ResolvedEntities[0]).Key;
             }
             else
             {
-                settings.TruongBoPhan = string.Empty;
+                settingsHC.TruongBoPhan = string.Empty;
             }
-            settings.AllowToChangeTruongBoPhan = chkAllowToChangeTruongBophan.Checked;
+            settingsHC.AllowToChangeTruongBoPhan = chkAllowToChangeTruongBophanHC.Checked;
 
-            if (peNguoiMuaHang.ResolvedEntities.Count > 0)
+            if (peNguoiMuaHangHC.ResolvedEntities.Count > 0)
             {
-                settings.NguoiMuaHang = ((PickerEntity)peNguoiMuaHang.ResolvedEntities[0]).Key;
+                settingsHC.NguoiMuaHang = ((PickerEntity)peNguoiMuaHangHC.ResolvedEntities[0]).Key;
             }
             else
             {
-                settings.NguoiMuaHang = string.Empty;
+                settingsHC.NguoiMuaHang = string.Empty;
             }
-            settings.AllowToChangeNguoiMuaHang = chkAllowToChangeNguoiMuaHang.Checked;
+            settingsHC.AllowToChangeNguoiMuaHang = chkAllowToChangeNguoiMuaHangHC.Checked;
 
-            if (peNguoiDuyet.ResolvedEntities.Count > 0)
+            if (peNguoiDuyetHC.ResolvedEntities.Count > 0)
             {
-                settings.NguoiDuyet = ((PickerEntity)peNguoiDuyet.ResolvedEntities[0]).Key;
+                settingsHC.NguoiDuyet = ((PickerEntity)peNguoiDuyetHC.ResolvedEntities[0]).Key;
             }
             else
             {
-                settings.NguoiDuyet = string.Empty;
+                settingsHC.NguoiDuyet = string.Empty;
             }
-            settings.AllowToChangeNguoiDuyet = chkAllowToChangeNguoiDuyet.Checked;
+            settingsHC.AllowToChangeNguoiDuyet = chkAllowToChangeNguoiDuyetHC.Checked;
 
-            if (pePhongKeToan.ResolvedEntities.Count > 0)
+            if (pePhongKeToanHC.ResolvedEntities.Count > 0)
             {
-                settings.PhongKeToan = ((PickerEntity)pePhongKeToan.ResolvedEntities[0]).Key;
+                settingsHC.PhongKeToan = ((PickerEntity)pePhongKeToanHC.ResolvedEntities[0]).Key;
             }
             else
             {
-                settings.PhongKeToan = string.Empty;
+                settingsHC.PhongKeToan = string.Empty;
             }
-            settings.AllowToChangePhongKeToan = chkAllowToChangePhongKeToan.Checked;
+            settingsHC.AllowToChangePhongKeToan = chkAllowToChangePhongKeToanHC.Checked;
 
-            if (peNguoiXacNhan.ResolvedEntities.Count > 0)
+            if (peNguoiXacNhanHC.ResolvedEntities.Count > 0)
             {
-                settings.NguoiXacNhan = ((PickerEntity)peNguoiXacNhan.ResolvedEntities[0]).Key;
+                settingsHC.NguoiXacNhan = ((PickerEntity)peNguoiXacNhanHC.ResolvedEntities[0]).Key;
             }
             else
             {
-                settings.NguoiXacNhan = string.Empty;
+                settingsHC.NguoiXacNhan = string.Empty;
             }
-            settings.AllowToChangeNguoiXacNhan = chkAllowToChangeNguoiXacNhan.Checked;
+            settingsHC.AllowToChangeNguoiXacNhan = chkAllowToChangeNguoiXacNhanHC.Checked;
 
-            SPContext.Current.List.SetCustomSettings<ListApproversSettings>(BeachCampFeatures.BeachCamp, settings);
+            settingsCollection.Settings.Add(settingsHC);
+
+
+            var settingsCNTT = new ListApproversSettings();
+
+            settingsCNTT.ApproversGroup = ApproversGroups.CongNgheThongTin;
+
+            if (peTruongBoPhanCNTT.ResolvedEntities.Count > 0)
+            {
+                settingsCNTT.TruongBoPhan = ((PickerEntity)peTruongBoPhanCNTT.ResolvedEntities[0]).Key;
+            }
+            else
+            {
+                settingsCNTT.TruongBoPhan = string.Empty;
+            }
+            settingsCNTT.AllowToChangeTruongBoPhan = chkAllowToChangeTruongBophanCNTT.Checked;
+
+            if (peNguoiMuaHangCNTT.ResolvedEntities.Count > 0)
+            {
+                settingsCNTT.NguoiMuaHang = ((PickerEntity)peNguoiMuaHangCNTT.ResolvedEntities[0]).Key;
+            }
+            else
+            {
+                settingsCNTT.NguoiMuaHang = string.Empty;
+            }
+            settingsCNTT.AllowToChangeNguoiMuaHang = chkAllowToChangeNguoiMuaHangCNTT.Checked;
+
+            if (peNguoiDuyetCNTT.ResolvedEntities.Count > 0)
+            {
+                settingsCNTT.NguoiDuyet = ((PickerEntity)peNguoiDuyetCNTT.ResolvedEntities[0]).Key;
+            }
+            else
+            {
+                settingsCNTT.NguoiDuyet = string.Empty;
+            }
+            settingsCNTT.AllowToChangeNguoiDuyet = chkAllowToChangeNguoiDuyetCNTT.Checked;
+
+            if (pePhongKeToanCNTT.ResolvedEntities.Count > 0)
+            {
+                settingsCNTT.PhongKeToan = ((PickerEntity)pePhongKeToanCNTT.ResolvedEntities[0]).Key;
+            }
+            else
+            {
+                settingsCNTT.PhongKeToan = string.Empty;
+            }
+            settingsCNTT.AllowToChangePhongKeToan = chkAllowToChangePhongKeToanCNTT.Checked;
+
+            if (peNguoiXacNhanCNTT.ResolvedEntities.Count > 0)
+            {
+                settingsCNTT.NguoiXacNhan = ((PickerEntity)peNguoiXacNhanCNTT.ResolvedEntities[0]).Key;
+            }
+            else
+            {
+                settingsCNTT.NguoiXacNhan = string.Empty;
+            }
+            settingsCNTT.AllowToChangeNguoiXacNhan = chkAllowToChangeNguoiXacNhanCNTT.Checked;
+
+            settingsCollection.Settings.Add(settingsCNTT);
+
+            SPContext.Current.List.SetCustomSettings<ListApproversSettingsCollection>(TVMCORPFeatures.TVS, settingsCollection);
 
             GoToListSettingsPage();
         }
 
         private void LoadListApproversSettings()
         {
-            var settings = SPContext.Current.List.GetCustomSettings<ListApproversSettings>(BeachCampFeatures.BeachCamp);
+            ListApproversSettingsCollection settingsCollection = SPContext.Current.List.GetCustomSettings<ListApproversSettingsCollection>(TVMCORPFeatures.TVS);
 
-            if (settings != null)
+            if (settingsCollection != null && settingsCollection.Settings != null)
             {
-                peTruongBoPhan.CommaSeparatedAccounts = settings.TruongBoPhan;
-                chkAllowToChangeTruongBophan.Checked = settings.AllowToChangeTruongBoPhan;
 
-                peNguoiMuaHang.CommaSeparatedAccounts = settings.NguoiMuaHang;
-                chkAllowToChangeNguoiMuaHang.Checked = settings.AllowToChangeNguoiMuaHang;
+                foreach (var settings in settingsCollection.Settings)
+                {
+                    if (settings != null)
+                    {
+                        if (settings.ApproversGroup == ApproversGroups.HanhChinh)
+                        {
+                            peTruongBoPhanHC.CommaSeparatedAccounts = settings.TruongBoPhan;
+                            chkAllowToChangeTruongBophanHC.Checked = settings.AllowToChangeTruongBoPhan;
 
-                peNguoiDuyet.CommaSeparatedAccounts = settings.NguoiDuyet;
-                chkAllowToChangeNguoiDuyet.Checked = settings.AllowToChangeNguoiDuyet;
+                            peNguoiMuaHangHC.CommaSeparatedAccounts = settings.NguoiMuaHang;
+                            chkAllowToChangeNguoiMuaHangHC.Checked = settings.AllowToChangeNguoiMuaHang;
 
-                pePhongKeToan.CommaSeparatedAccounts = settings.PhongKeToan;
-                chkAllowToChangePhongKeToan.Checked = settings.AllowToChangePhongKeToan;
+                            peNguoiDuyetHC.CommaSeparatedAccounts = settings.NguoiDuyet;
+                            chkAllowToChangeNguoiDuyetHC.Checked = settings.AllowToChangeNguoiDuyet;
 
-                peNguoiXacNhan.CommaSeparatedAccounts = settings.NguoiXacNhan;
-                chkAllowToChangeNguoiXacNhan.Checked = settings.AllowToChangeNguoiXacNhan;
+                            pePhongKeToanHC.CommaSeparatedAccounts = settings.PhongKeToan;
+                            chkAllowToChangePhongKeToanHC.Checked = settings.AllowToChangePhongKeToan;
+
+                            peNguoiXacNhanHC.CommaSeparatedAccounts = settings.NguoiXacNhan;
+                            chkAllowToChangeNguoiXacNhanHC.Checked = settings.AllowToChangeNguoiXacNhan;
+                        }
+                        else if (settings.ApproversGroup == ApproversGroups.CongNgheThongTin)
+                        {
+                            peTruongBoPhanCNTT.CommaSeparatedAccounts = settings.TruongBoPhan;
+                            chkAllowToChangeTruongBophanCNTT.Checked = settings.AllowToChangeTruongBoPhan;
+
+                            peNguoiMuaHangCNTT.CommaSeparatedAccounts = settings.NguoiMuaHang;
+                            chkAllowToChangeNguoiMuaHangCNTT.Checked = settings.AllowToChangeNguoiMuaHang;
+
+                            peNguoiDuyetCNTT.CommaSeparatedAccounts = settings.NguoiDuyet;
+                            chkAllowToChangeNguoiDuyetCNTT.Checked = settings.AllowToChangeNguoiDuyet;
+
+                            pePhongKeToanCNTT.CommaSeparatedAccounts = settings.PhongKeToan;
+                            chkAllowToChangePhongKeToanCNTT.Checked = settings.AllowToChangePhongKeToan;
+
+                            peNguoiXacNhanCNTT.CommaSeparatedAccounts = settings.NguoiXacNhan;
+                            chkAllowToChangeNguoiXacNhanCNTT.Checked = settings.AllowToChangeNguoiXacNhan;
+                        }
+                    }
+
+                }
             }
         }
 

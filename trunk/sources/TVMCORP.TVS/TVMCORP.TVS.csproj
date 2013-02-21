@@ -106,6 +106,7 @@
     </None>
     <None Include="Features\TVMCorp.TVS\TVMCorp.TVS.feature">
       <FeatureId>{f9307581-4225-4f07-9222-f51c049c9660}</FeatureId>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Images\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{b46a8b12-6299-4515-8912-9cd7a5e66392}</SharePointProjectItemId>
