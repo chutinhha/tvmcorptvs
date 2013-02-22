@@ -139,13 +139,13 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::System.Web.UI.WebControls.RadioButton rdbTypeOfApproval1;
         
         /// <summary>
-        /// literalTypeOfApproval control.
+        /// hiddenTypeOfApproval control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal literalTypeOfApproval;
+        protected global::System.Web.UI.WebControls.HiddenField hiddenTypeOfApproval;
         
         /// <summary>
         /// rdbTypeOfApproval2 control.

@@ -26,13 +26,8 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
                 ribbon.TrimById("Ribbon.ListForm.Edit.Commit");
             }
             //
-            rdbTypeOfApproval1.Text = ApproversGroups.HanhChinh;
-            rdbTypeOfApproval2.Text = ApproversGroups.CongNgheThongTin;
-            literalTypeOfApproval.Text = ApproversGroups.HanhChinh;
-            LoadApprovalSettings(ApproversGroups.HanhChinh);
-            //
             repeaterPurchaseDetail.ItemDataBound += new RepeaterItemEventHandler(repeaterPurchaseDetail_ItemDataBound);
-            linkButtonAdd.Click += new EventHandler(btnAddPurchaseDetail_Click);
+            linkButtonAdd.Click += new EventHandler(AddPurchaseDetail);
             btnSave.Click += new EventHandler(btnSave_Click);
             rdbTypeOfApproval1.AutoPostBack = true;
             rdbTypeOfApproval2.AutoPostBack = true;
@@ -50,7 +45,7 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             {
                 if (rad.Checked)
                 {
-                    literalTypeOfApproval.Text = rad.Text;
+                    hiddenTypeOfApproval.Value = rad.Text;
                     LoadApprovalSettings(rad.Text);
                 }
             }
@@ -69,7 +64,7 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             this.Page.Response.End();
         }
 
-        void btnAddPurchaseDetail_Click(object sender, EventArgs e)
+        void AddPurchaseDetail(object sender, EventArgs e)
         {
             DataTable dataTable = MakePurchaseDetail();
             repeaterPurchaseDetail.DataSource = dataTable;
@@ -102,6 +97,11 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
         {
             if (!IsPostBack)
             {
+                //Init data
+                rdbTypeOfApproval1.Text = ApproversGroups.HanhChinh;
+                rdbTypeOfApproval2.Text = ApproversGroups.CongNgheThongTin;
+                hiddenTypeOfApproval.Value = ApproversGroups.HanhChinh;
+                LoadApprovalSettings(ApproversGroups.HanhChinh);
                 //Load purchase detail
                 DataTable purchaseDetail = MakePurchaseDetail();
                 repeaterPurchaseDetail.DataSource = purchaseDetail;
@@ -113,8 +113,12 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
 
         private void LoadApprovalSettings(string typeOfApprover)
         {
+            peChief.Enabled = true;
+            peBuyer.Enabled = true;
+            peApprover.Enabled = true;
+            peAccountant.Enabled = true;
+            peConfirmer.Enabled = true;
             ListApproversSettingsCollection settingsCollection = SPContext.Current.List.GetCustomSettings<ListApproversSettingsCollection>(TVMCORPFeatures.TVS);
-
             if (settingsCollection != null && settingsCollection.Settings != null)
             {
                 foreach (var setting in settingsCollection.Settings)
@@ -124,38 +128,38 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
                         if (setting.ApproversGroup == typeOfApprover)
                         {
                             peChief.CommaSeparatedAccounts = setting.TruongBoPhan;
-                            if (!setting.AllowToChangeTruongBoPhan)
+                            if (!setting.AllowToChangeTruongBoPhan && !string.IsNullOrEmpty(setting.TruongBoPhan))
                             {
                                 peChief.Enabled = false;
-                                peChief.AllowTypeIn = false;
+                                //peChief.AllowTypeIn = false;
                             }
 
                             peBuyer.CommaSeparatedAccounts = setting.NguoiMuaHang;
-                            if (!setting.AllowToChangeNguoiMuaHang)
+                            if (!setting.AllowToChangeNguoiMuaHang && !string.IsNullOrEmpty(setting.NguoiMuaHang))
                             {
                                 peBuyer.Enabled = false;
-                                peBuyer.AllowTypeIn = false;
-                            }                   
+                                //peBuyer.AllowTypeIn = false;
+                            }
 
                             peApprover.CommaSeparatedAccounts = setting.NguoiDuyet;
-                            if (!setting.AllowToChangeNguoiDuyet)
+                            if (!setting.AllowToChangeNguoiDuyet && !string.IsNullOrEmpty(setting.NguoiDuyet))
                             {
                                 peApprover.Enabled = false;
-                                peApprover.AllowTypeIn = false;
+                                //peApprover.AllowTypeIn = false;
                             }
 
                             peAccountant.CommaSeparatedAccounts = setting.PhongKeToan;
-                            if (!setting.AllowToChangePhongKeToan)
+                            if (!setting.AllowToChangePhongKeToan && !string.IsNullOrEmpty(setting.PhongKeToan))
                             {
                                 peAccountant.Enabled = false;
-                                peAccountant.AllowTypeIn = false;
+                                //peAccountant.AllowTypeIn = false;
                             }
 
                             peConfirmer.CommaSeparatedAccounts = setting.NguoiXacNhan;
-                            if (!setting.AllowToChangeNguoiXacNhan)
+                            if (!setting.AllowToChangeNguoiXacNhan && !string.IsNullOrEmpty(setting.NguoiXacNhan))
                             {
                                 peConfirmer.Enabled = false;
-                                peConfirmer.AllowTypeIn = false;
+                                //peConfirmer.AllowTypeIn = false;
                             }
                         }
                     }
@@ -271,7 +275,7 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             purchaseItem["DateRequest"] = DateTime.Now;
             purchaseItem["UserRequest"] = SPContext.Current.Web.CurrentUser;
             purchaseItem["DepartmentRequest"] = literalDepartmentRequestValue.Text;
-            purchaseItem["TypeOfApproval"] = literalTypeOfApproval.Text;
+            purchaseItem["TypeOfApproval"] = hiddenTypeOfApproval.Value;
             purchaseItem["PurchaseDetail"] = purchaseDetails;
             purchaseItem["Chief"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peChief.ResolvedEntities[0]).Key); //ffChief.Value; //
             purchaseItem["Buyer"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peBuyer.ResolvedEntities[0]).Key); //ffBuyer.Value; //
