@@ -226,7 +226,7 @@
                 <tr>
                     <td class="request_column1" width="50%" align="right">
                         <asp:RadioButton ID="rdbTypeOfApproval1" Text="Hành chính" GroupName="TypeOfApproval" Checked="true" runat="server" />
-                        <asp:Literal ID="literalTypeOfApproval" Text="Hành chính" runat="server"></asp:Literal>
+                        <asp:HiddenField ID="hiddenTypeOfApproval" runat="server" />
                     </td>
                     <td class="request_column2" width="50%" align="left">
                         <asp:RadioButton ID="rdbTypeOfApproval2" Text="Công nghệ thông tin" GroupName="TypeOfApproval" runat="server" />
@@ -411,7 +411,7 @@
                     </Template_Buttons>
                     <Template_RightButtons>
                         <%--<SharePoint:SaveButton ID="SaveButton2" runat="server" />--%>
-                        <asp:Button ID="btnSave" runat="server" CssClas="ms-ButtonHeightWidth" Text="Save" />
+                        <asp:Button ID="btnSave" runat="server" CssClass="ms-ButtonHeightWidth" Text="Save" />
                         <SharePoint:GoBackButton ID="GoBackButton2" runat="server" />
                     </Template_RightButtons>
                 </wssuc:ToolBar>
