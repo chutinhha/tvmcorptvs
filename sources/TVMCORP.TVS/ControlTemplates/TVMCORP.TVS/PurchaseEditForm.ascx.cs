@@ -27,8 +27,25 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             linkButtonAdd.Click += new EventHandler(AddPurchaseDetail);
             repeaterPurchaseDetail.ItemDataBound +=new RepeaterItemEventHandler(repeaterPurchaseDetail_ItemDataBound);
             btnSave.Click += new EventHandler(btnSave_Click);
+            rdbTypeOfApproval1.AutoPostBack = true;
+            rdbTypeOfApproval2.AutoPostBack = true;
+            rdbTypeOfApproval1.CheckedChanged += new EventHandler(ChangeApprovalSettings);
+            rdbTypeOfApproval2.CheckedChanged += new EventHandler(ChangeApprovalSettings);
             //
             InitData();
+        }
+
+        void ChangeApprovalSettings(object sender, EventArgs e)
+        {
+            RadioButton rad = sender as RadioButton;
+            if (rad != null)
+            {
+                if (rad.Checked)
+                {
+                    hiddenTypeOfApproval.Value = rad.Text;
+                    LoadApprovalSettings(rad.Text);
+                }
+            }
         }
 
         void btnSave_Click(object sender, EventArgs e)
@@ -142,7 +159,7 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
                 }
             }
 
-            purchaseItem["TypeOfApproval"] = hiddenTypeOfApproval.Value;
+            SPContext.Current.ListItem["TypeOfApproval"] = hiddenTypeOfApproval.Value;
             SPContext.Current.ListItem["PurchaseDetail"] = purchaseDetails;
             if (peChief.Enabled)
                 SPContext.Current.ListItem["Chief"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peChief.ResolvedEntities[0]).Key); //ffChief.Value; //
