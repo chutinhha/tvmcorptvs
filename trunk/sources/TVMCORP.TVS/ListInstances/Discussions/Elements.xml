@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Thảo luận"
+                OnQuickLaunch="FALSE"
+                TemplateType="108"
+                FeatureId="00bfea71-6a49-43fa-b535-d15c05500108"
+                Url="Lists/Thaoluan"
+                Description="">
+  </ListInstance>
+</Elements>

@@ -97,6 +97,13 @@
     <Compile Include="Layouts\TVMCORP.TVS\ApproversSettings.aspx.designer.cs">
       <DependentUpon>ApproversSettings.aspx.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layouts\TVMCORP.TVS\DiscussionResolver.aspx.cs">
+      <DependentUpon>DiscussionResolver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\TVMCORP.TVS\DiscussionResolver.aspx.designer.cs">
+      <DependentUpon>DiscussionResolver.aspx.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -108,6 +115,9 @@
     </None>
     <None Include="CustomActions\ListApproversSettings\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{03b227f1-ebb5-44a1-ad38-ec7970a3b582}</SharePointProjectItemId>
+    </None>
+    <None Include="CustomAction\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bd2cfc05-bf2d-4899-b8e7-516a3388e1d8}</SharePointProjectItemId>
     </None>
     <None Include="Features\TVMCORP.TVS.Feature\TVMCORP.TVS.Feature.feature">
       <FeatureId>{50b86f56-c6cc-4062-9557-4e8f67504c67}</FeatureId>
@@ -140,8 +150,8 @@
       <SharePointProjectItemId>{472dc5da-57bd-4ea6-aa11-189b37c799ee}</SharePointProjectItemId>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ListInstances\EmailTemplates\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{2085b108-5315-43d7-828b-b87b81178978}</SharePointProjectItemId>
+    <None Include="ListInstances\Discussions\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{753ea4f5-9737-4e15-ac6d-6701003af3b6}</SharePointProjectItemId>
     </None>
     <None Include="Package\Package.package">
       <PackageId>{09e80497-3297-4e4a-9494-d10b27df9c62}</PackageId>
@@ -173,6 +183,7 @@
     <Content Include="CustomActions\ListApproversSettings\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="CustomAction\Elements.xml" />
     <Content Include="Features\TVMCORP.TVS.Feature\TVMCORP.TVS.Feature.Template.xml">
       <DependentUpon>TVMCORP.TVS.Feature.feature</DependentUpon>
     </Content>
@@ -204,6 +215,9 @@
     <Content Include="Layouts\TVMCORP.TVS\ApproversSettings.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Content Include="Layouts\TVMCORP.TVS\DiscussionResolver.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="Libs\itextsharp.dll" />
     <Content Include="ListDefinitions\EmailTemplate\Elements.xml" />
     <Content Include="ListDefinitions\EmailTemplate\EmailTemplateInstance\Elements.xml" />
@@ -218,10 +232,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="Layouts\1033\jquery-1.8.2.min.js" />
-    <Content Include="ListInstances\EmailTemplates\Elements.xml" />
-    <Content Include="ListInstances\EmailTemplates\Schema.xml">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="ListInstances\Discussions\Elements.xml" />
     <EmbeddedResource Include="Webparts.xml" />
   </ItemGroup>
   <ItemGroup>
