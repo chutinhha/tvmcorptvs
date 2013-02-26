@@ -271,7 +271,7 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
 
             var purchaseList = Utility.GetListFromURL(Constants.PURCHASE_LIST_URL, SPContext.Current.Web);
             SPListItem purchaseItem = purchaseList.AddItem();
-            purchaseItem[SPBuiltInFieldId.Title] = Constants.PURCHASE_TITLE_PREFIX + literalUserRequestValue.Text;
+            purchaseItem[SPBuiltInFieldId.Title] = ffTitle.Value;//Constants.PURCHASE_TITLE_PREFIX + literalUserRequestValue.Text;
             purchaseItem["DateRequest"] = DateTime.Now;
             purchaseItem["UserRequest"] = SPContext.Current.Web.CurrentUser;
             purchaseItem["DepartmentRequest"] = literalDepartmentRequestValue.Text;

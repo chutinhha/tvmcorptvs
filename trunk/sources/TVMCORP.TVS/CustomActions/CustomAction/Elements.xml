@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <!-- Document Discussion ECB Link -->
-  <CustomAction
+  <!--<CustomAction
       Id="Document Discussions"
       RegistrationType="List"
       RegistrationId="101"
@@ -10,16 +10,16 @@
       Sequence="300"
       Title="Bình luận X">
     <UrlAction Url="~site/_layouts/TVMCORP.TVS/DiscussionResolver.aspx?List={ListId}&amp;ID={ItemId}" />
-  </CustomAction>
+  </CustomAction>-->
   <!-- Document Discussion ECB Link -->
   <CustomAction
     Id="Item Discussions"
     RegistrationType="List"
-    RegistrationId="100"
+    RegistrationId="11000"
     Location="EditControlBlock"
     ImageUrl="~site/_layouts/images/ICDISC.GIF"
     Sequence="300"
-    Title="Bình luận X">
+    Title="Bình luận">
     <UrlAction Url="~site/_layouts/TVMCORP.TVS/DiscussionResolver.aspx?List={ListId}&amp;ID={ItemId}" />
   </CustomAction>
   

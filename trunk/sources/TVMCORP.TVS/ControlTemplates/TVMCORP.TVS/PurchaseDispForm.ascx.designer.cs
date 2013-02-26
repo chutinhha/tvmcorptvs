@@ -76,6 +76,24 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::System.Web.UI.WebControls.Literal literalTitle;
         
         /// <summary>
+        /// literal1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literal1;
+        
+        /// <summary>
+        /// ffTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FormField ffTitle;
+        
+        /// <summary>
         /// literalDateRequest control.
         /// </summary>
         /// <remarks>
