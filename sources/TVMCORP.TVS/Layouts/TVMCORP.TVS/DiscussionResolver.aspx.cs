@@ -16,7 +16,7 @@ namespace TVMCORP.TVS.Layouts
 
             var threadIdStr = item.GetCustomProperty(Constants.THREAD_ID);
 
-            var discussionList = Utility.GetListFromURL(Constants.DISCUSSION_URL);
+            var discussionList = Utility.GetListFromURL(Constants.DISCUSSION_URL, SPContext.Current.Web);
 
             if (string.IsNullOrEmpty(threadIdStr))
             {
