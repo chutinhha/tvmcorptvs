@@ -7,6 +7,8 @@ namespace TVMCORP.TVS.UTIL
 {
    public class Constants
    {
+       public const string THREAD_ID = "ThreadID";
+       public const string DISCUSSION_URL = "/Lists/Thaoluan";
        #region Purchase
        public const string PURCHASE_LIST_URL = "/Lists/Purchase";
        public const string PURCHASE_DETAIL_LIST_URL = "/Lists/PurchaseDetail";
