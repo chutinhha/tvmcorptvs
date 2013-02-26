@@ -76,6 +76,10 @@
     </ContentTypes>
     <Fields>
 
+      <Field Type="Text" Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Tiêu đề" Sealed="TRUE" />
+      <Field Type="Text" Name="LinkTitleNoMenu" ID="{bc91a437-52e7-49e1-8c4e-4698904b2b6d}" DisplayName="Tiêu đề" Sealed="TRUE" />
+      <Field Type="Text" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" DisplayName="Tiêu đề" Sealed="TRUE" />
+
       <Field Type="DateTime" DisplayName="Ngày" ID="{CFE09400-F6DF-45f1-88FC-992343BA09CD}" Name="DateRequest" StaticName="DateRequest"
          Required="FALSE" Format="DateOnly" Group="[TVM-eOffice]">
       </Field>
@@ -174,6 +178,7 @@
 
       <Field Type="Text" DisplayName="Trạng thái" Required="FALSE" MaxLength="255"
                  ID="{F2A2782E-E2C2-4d8f-AE85-55FF5BEA4D95}" Name="Status" StaticName="Status" Group="[TVM-eOffice]">
+        <Default>Tạo mới</Default>
       </Field>
 
       <Field Type="Note" DisplayName="Lịch sử duyệt" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE"

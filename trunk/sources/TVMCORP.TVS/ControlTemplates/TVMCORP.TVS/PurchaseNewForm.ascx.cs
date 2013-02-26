@@ -277,11 +277,16 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             purchaseItem["DepartmentRequest"] = literalDepartmentRequestValue.Text;
             purchaseItem["TypeOfApproval"] = hiddenTypeOfApproval.Value;
             purchaseItem["PurchaseDetail"] = purchaseDetails;
-            purchaseItem["Chief"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peChief.ResolvedEntities[0]).Key); //ffChief.Value; //
-            purchaseItem["Buyer"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peBuyer.ResolvedEntities[0]).Key); //ffBuyer.Value; //
-            purchaseItem["Approver"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peApprover.ResolvedEntities[0]).Key); //ffApprover.Value; //
-            purchaseItem["Accountant"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peAccountant.ResolvedEntities[0]).Key); //ffAccountant.Value; //
-            purchaseItem["Confirmer"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peConfirmer.ResolvedEntities[0]).Key); //ffConfirmer.Value; //
+            if(peChief.IsValid && peChief.ResolvedEntities.Count > 0)
+                purchaseItem["Chief"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peChief.ResolvedEntities[0]).Key); //ffChief.Value; //
+            if (peBuyer.IsValid && peBuyer.ResolvedEntities.Count > 0)
+                purchaseItem["Buyer"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peBuyer.ResolvedEntities[0]).Key); //ffBuyer.Value; //
+            if (peApprover.IsValid && peApprover.ResolvedEntities.Count > 0)
+                purchaseItem["Approver"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peApprover.ResolvedEntities[0]).Key); //ffApprover.Value; //
+            if (peAccountant.IsValid && peAccountant.ResolvedEntities.Count > 0)
+                purchaseItem["Accountant"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peAccountant.ResolvedEntities[0]).Key); //ffAccountant.Value; //
+            if (peConfirmer.IsValid && peConfirmer.ResolvedEntities.Count > 0)
+                purchaseItem["Confirmer"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peConfirmer.ResolvedEntities[0]).Key); //ffConfirmer.Value; //
             purchaseItem.Update();
         }
 
