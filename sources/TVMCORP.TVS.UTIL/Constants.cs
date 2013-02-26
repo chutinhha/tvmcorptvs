@@ -7,12 +7,18 @@ namespace TVMCORP.TVS.UTIL
 {
    public class Constants
    {
-       public const string THREAD_ID = "ThreadID";
-       public const string DISCUSSION_URL = "/Lists/Thaoluan";
        #region Purchase
+       public const string THREAD_ID = "ThreadID";
+       public const string DISCUSSION_URL = "/Lists/Discussions";
+
        public const string PURCHASE_LIST_URL = "/Lists/Purchase";
        public const string PURCHASE_DETAIL_LIST_URL = "/Lists/PurchaseDetail";
        public const string PURCHASE_TITLE_PREFIX = "Yêu cầu mua hàng - ";
+
+       public const string DRAFT_STATUS = "Tạo mới";
+       public const string PENDING_STATUS = "Đợi duyệt";
+       public const string APPROVED_STATUS = "Đã duyệt";
+       public const string RIJECTED_STATUS = "Từ chối";
        #endregion Purchase
 
        #region Approval Status
