@@ -188,6 +188,8 @@ namespace TVMCORP.TVS.UTIL.MODELS
         }
         public string FieldId { get; set; }
         public string Value { get; set; }
+
+        public bool Append { get; set; }
     }
 
     [Serializable]
