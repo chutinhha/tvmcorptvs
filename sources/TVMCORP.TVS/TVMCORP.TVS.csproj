@@ -116,7 +116,7 @@
     <None Include="CustomActions\ListApproversSettings\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{03b227f1-ebb5-44a1-ad38-ec7970a3b582}</SharePointProjectItemId>
     </None>
-    <None Include="CustomAction\SharePointProjectItem.spdata">
+    <None Include="CustomActions\CustomAction\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{bd2cfc05-bf2d-4899-b8e7-516a3388e1d8}</SharePointProjectItemId>
     </None>
     <None Include="Features\TVMCORP.TVS.Feature\TVMCORP.TVS.Feature.feature">
@@ -183,7 +183,7 @@
     <Content Include="CustomActions\ListApproversSettings\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="CustomAction\Elements.xml" />
+    <Content Include="CustomActions\CustomAction\Elements.xml" />
     <Content Include="Features\TVMCORP.TVS.Feature\TVMCORP.TVS.Feature.Template.xml">
       <DependentUpon>TVMCORP.TVS.Feature.feature</DependentUpon>
     </Content>

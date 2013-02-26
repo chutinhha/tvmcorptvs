@@ -210,8 +210,8 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             {
                 rdbTypeOfApproval1.Checked = true;
             }
-            rdbTypeOfApproval1.Enabled = false;
-            rdbTypeOfApproval2.Enabled = false;
+            //rdbTypeOfApproval1.Enabled = false;
+            //rdbTypeOfApproval2.Enabled = false;
         }
 
         private void LoadApprovalSettings(string typeOfApprover)

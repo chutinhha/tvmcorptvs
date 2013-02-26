@@ -171,10 +171,10 @@
         <div class="container_form">
             <table width="100%" border="0" cellpadding="0" cellspacing="0">
                 <tr>
-                    <td width="100px">
+                    <td width="40%" align="right">
                         <img src="../../_layouts/images/TVMCORP.TVS/logo_form.png" alt="logo" align="absmiddle" />
                     </td>
-                    <td width="860px" class="title_company" align="center">
+                    <td width="60%" class="title_company" align="center">
                         <asp:Literal ID="literalCompany" Text="CÔNG TY CỔ PHẦN TRUYỀN THÔNG TRÍ VIỆT" runat="server"></asp:Literal>
                         <br />
                         <span>
@@ -194,6 +194,14 @@
                 </tr>
             </table>
             <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="request_column1" width="50%" align="right">
+                        <asp:Literal ID="literal1" Text="Tiêu đề :" runat="server"></asp:Literal>
+                    </td>
+                    <td class="request_column2" width="50%" align="left">
+                        <SharePoint:FormField FieldName="Title" ID="ffTitle" runat="server"> </SharePoint:FormField>
+                    </td>
+                </tr>
                 <tr>
                     <td class="request_column1" width="50%" align="right">
                         <asp:Literal ID="literalDateRequest" Text="Ngày :" runat="server"></asp:Literal>

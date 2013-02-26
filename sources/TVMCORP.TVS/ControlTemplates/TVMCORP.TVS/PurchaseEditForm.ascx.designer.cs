@@ -67,6 +67,15 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::System.Web.UI.WebControls.Literal literalCompanyEnglish;
         
         /// <summary>
+        /// literalRequestTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal literalRequestTitle;
+        
+        /// <summary>
         /// literalTitle control.
         /// </summary>
         /// <remarks>
@@ -74,6 +83,15 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal literalTitle;
+        
+        /// <summary>
+        /// ffTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FormField ffTitle;
         
         /// <summary>
         /// literalDateRequest control.

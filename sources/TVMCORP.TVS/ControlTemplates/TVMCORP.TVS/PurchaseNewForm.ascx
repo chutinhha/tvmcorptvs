@@ -173,10 +173,10 @@
         <div class="container_form">
             <table width="100%" border="0" cellpadding="0" cellspacing="0">
                 <tr>
-                    <td width="100px">
+                    <td width="40%" align="right">
                         <img src="../../_layouts/images/TVMCORP.TVS/logo_form.png" alt="logo" align="absmiddle" />
                     </td>
-                    <td width="860px" class="title_company" align="center">
+                    <td width="60%" class="title_company" align="center">
                         <asp:Literal ID="literalCompany" Text="CÔNG TY CỔ PHẦN TRUYỀN THÔNG TRÍ VIỆT" runat="server"></asp:Literal>
                         <br />
                         <span>
@@ -191,11 +191,19 @@
                 </tr>
                 <tr>
                     <td colspan="2" class="title_request" align="center">
-                        <asp:Literal ID="literalTitle" Text="ĐỀ NGHỊ MUA HÀNG" runat="server"></asp:Literal>
+                        <asp:Literal ID="literalRequestTitle" Text="ĐỀ NGHỊ MUA HÀNG" runat="server"></asp:Literal>
                     </td>
                 </tr>
             </table>
             <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="request_column1" width="50%" align="right">
+                        <asp:Literal ID="literalTitle" Text="Tiêu đề :" runat="server"></asp:Literal>
+                    </td>
+                    <td class="request_column2" width="50%" align="left">
+                        <SharePoint:FormField FieldName="Title" ID="ffTitle" runat="server"> </SharePoint:FormField>
+                    </td>
+                </tr>
                 <tr>
                     <td class="request_column1" width="50%" align="right">
                         <asp:Literal ID="literalDateRequest" Text="Ngày :" runat="server"></asp:Literal>
@@ -337,31 +345,31 @@
                                 
                             <tr class="row2">
                                 <td align="center" valign="middle" class="request_text_lable">
-                                    <SharePoint:PeopleEditor ID="peChief" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
+                                    <SharePoint:PeopleEditor ID="peChief" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="True"  
                                         ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />
                                     <%--<SharePoint:FormField FieldName="Chief" ID="ffChief" runat="server">
                                     </SharePoint:FormField>--%>
                                 </td>
                                 <td align="left" valign="middle" class="request_text_lable">
-                                    <SharePoint:PeopleEditor ID="peBuyer" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
+                                    <SharePoint:PeopleEditor ID="peBuyer" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="True"  
                                         ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />
                                     <%--<SharePoint:FormField FieldName="Buyer" ID="ffBuyer" runat="server">
                                     </SharePoint:FormField>--%>
                                 </td>
                                 <td align="center" valign="middle" class="request_text_lable">
-                                    <SharePoint:PeopleEditor ID="peAccountant" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
+                                    <SharePoint:PeopleEditor ID="peAccountant" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="True"  
                                         ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />
                                     <%--<SharePoint:FormField FieldName="Accountant" ID="ffAccountant" runat="server">
                                     </SharePoint:FormField>--%>
                                 </td>
                                 <td align="center" valign="middle" class="request_text_lable">
-                                    <SharePoint:PeopleEditor ID="peApprover" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
+                                    <SharePoint:PeopleEditor ID="peApprover" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="True"  
                                         ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />
                                     <%--<SharePoint:FormField FieldName="Approver" ID="ffApprover" runat="server">
                                     </SharePoint:FormField>--%>
                                 </td>
                                 <td align="left" valign="middle" class="request_text_lable">
-                                    <SharePoint:PeopleEditor ID="peConfirmer" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false" 
+                                    <SharePoint:PeopleEditor ID="peConfirmer" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="True" 
                                         ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />
                                     <%--<SharePoint:FormField FieldName="Confirmer" ID="ffConfirmer" runat="server">
                                     </SharePoint:FormField>--%>
