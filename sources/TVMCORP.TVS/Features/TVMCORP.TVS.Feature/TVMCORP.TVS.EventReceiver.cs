@@ -3,6 +3,12 @@ using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Security;
+using System.Reflection;
+using TVMCORP.TVS.UTIL.Helpers;
+using TVMCORP.TVS.UTIL.Extensions;
+using TVMCORP.TVS.UTIL.MODELS;
+using TVMCORP.TVS.UTIL;
+using TVMCORP.TVS.UTIL.Utilities;
 
 namespace TVMCORP.TVS.Features.TVMCORP.TVS.Feature
 {
@@ -18,9 +24,18 @@ namespace TVMCORP.TVS.Features.TVMCORP.TVS.Feature
     {
         // Uncomment the method below to handle the event raised after a feature has been activated.
 
-        //public override void FeatureActivated(SPFeatureReceiverProperties properties)
-        //{
-        //}
+        public override void FeatureActivated(SPFeatureReceiverProperties properties)
+        {
+             SPWeb web = (SPWeb)properties.Feature.Parent;
+             try
+             {
+                 ProvisionWebParts(web);
+             }
+             catch (Exception ex)
+             {
+                 
+             }
+        }
 
 
         // Uncomment the method below to handle the event raised before a feature is deactivated.
@@ -48,5 +63,23 @@ namespace TVMCORP.TVS.Features.TVMCORP.TVS.Feature
         //public override void FeatureUpgrading(SPFeatureReceiverProperties properties, string upgradeActionName, System.Collections.Generic.IDictionary<string, string> parameters)
         //{
         //}
+
+        #region Functions
+        private void ProvisionWebParts(SPWeb web)
+        {
+            try
+            {
+                Assembly assembly = Assembly.GetExecutingAssembly();
+                string xml = assembly.GetResourceTextFile("TVMCORP.TVS.Webparts.xml");
+
+                var webpartPages = SerializationHelper.DeserializeFromXml<WebpartPageDefinitionCollection>(xml);
+                WebPartHelper.ProvisionWebpart(web, webpartPages);
+            }
+            catch (Exception ex)
+            {
+                Utility.LogError(ex.Message, TVMCORPFeatures.TVS);
+            }
+        }
+        #endregion Functions
     }
 }

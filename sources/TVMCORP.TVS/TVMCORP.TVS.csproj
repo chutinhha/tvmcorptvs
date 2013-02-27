@@ -107,6 +107,14 @@
     <Compile Include="Layouts\TVMCORP.TVS\DiscussionResolver.aspx.designer.cs">
       <DependentUpon>DiscussionResolver.aspx.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilter.cs" />
+    <Compile Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilterUserControl.ascx.cs">
+      <DependentUpon>PurchaseFilterUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilterUserControl.ascx.designer.cs">
+      <DependentUpon>PurchaseFilterUserControl.ascx.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +130,9 @@
     <None Include="CustomActions\CustomAction\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{bd2cfc05-bf2d-4899-b8e7-516a3388e1d8}</SharePointProjectItemId>
     </None>
+    <None Include="Features\TVMCORP.TVS.Site.Feature\TVMCORP.TVS.Site.Feature.feature">
+      <FeatureId>{7c05c639-69e5-45ef-b058-eaa178bbf704}</FeatureId>
+    </None>
     <None Include="Features\TVMCORP.TVS.Feature\TVMCORP.TVS.Feature.feature">
       <FeatureId>{50b86f56-c6cc-4062-9557-4e8f67504c67}</FeatureId>
     </None>
@@ -133,6 +144,10 @@
     </None>
     <None Include="ListDefinitions\EmailTemplate\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{546d741b-7c88-48e7-af7d-23661a5d40f8}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilter.webpart" />
+    <None Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d636d529-0d3e-4fe6-a969-2b48f17c3efb}</SharePointProjectItemId>
     </None>
     <None Include="ListDefinitions\PurchaseDefinition\PurchaseInstance\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{bd02efba-053d-4ec6-b601-a6fd28f378bf}</SharePointProjectItemId>
@@ -190,6 +205,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="CustomActions\CustomAction\Elements.xml" />
+    <Content Include="Features\TVMCORP.TVS.Site.Feature\TVMCORP.TVS.Site.Feature.Template.xml">
+      <DependentUpon>TVMCORP.TVS.Site.Feature.feature</DependentUpon>
+    </Content>
     <Content Include="Features\TVMCORP.TVS.Feature\TVMCORP.TVS.Feature.Template.xml">
       <DependentUpon>TVMCORP.TVS.Feature.feature</DependentUpon>
     </Content>
@@ -229,6 +247,10 @@
     <Content Include="ListDefinitions\EmailTemplate\EmailTemplateInstance\Elements.xml" />
     <Content Include="ListDefinitions\EmailTemplate\Schema.xml" />
     <Content Include="ListDefinitions\PurchaseDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\Elements.xml" />
+    <Content Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilterUserControl.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="ListDefinitions\PurchaseDefinition\PurchaseInstance\Elements.xml" />
     <Content Include="ListDefinitions\PurchaseDefinition\Schema.xml" />
     <Content Include="ListDefinitions\PurchaseDetailDefinition\Elements.xml" />
@@ -240,7 +262,6 @@
     <Content Include="Layouts\1033\jquery-1.8.2.min.js" />
     <Content Include="ListInstances\Discussions\Elements.xml" />
     <Content Include="Modules\WebPartPages\Elements.xml" />
-    <Content Include="Modules\WebPartPages\Sample.txt" />
     <EmbeddedResource Include="Webparts.xml" />
   </ItemGroup>
   <ItemGroup>
