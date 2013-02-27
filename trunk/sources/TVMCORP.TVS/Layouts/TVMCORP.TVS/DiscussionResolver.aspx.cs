@@ -44,7 +44,7 @@ namespace TVMCORP.TVS.Layouts
                                 newThread.SystemUpdate();
 
                                 // Get the ID of the newly created thread;
-                                int threadId = newThread.ID;
+                                threadIdStr = newThread.ID.ToString();
 
                                 // Now update the document with the ID of the Discussion Thread.
                                 itemElevated.SetCustomProperty(Constants.THREAD_ID, newThread.ID.ToString());
