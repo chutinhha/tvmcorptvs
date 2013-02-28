@@ -44,7 +44,7 @@
 
   </WebpartPageDefinition>
   
-  <!--<WebpartPageDefinition>
+  <WebpartPageDefinition>
     <PageUrl>/Lists/Purchase/AllItems.aspx</PageUrl>
 
     <Webparts xsi:type="DefaultWP">
@@ -56,7 +56,7 @@
       <WebpartName>PurchaseFilter.webpart</WebpartName>
     </Webparts>
 
-  </WebpartPageDefinition>-->
+  </WebpartPageDefinition>
 
   <WebpartPageDefinition>
     <PageUrl>/Lists/Purchase/MyItems.aspx</PageUrl>
