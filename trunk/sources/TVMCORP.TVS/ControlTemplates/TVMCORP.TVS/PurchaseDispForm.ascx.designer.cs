@@ -301,15 +301,6 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::Microsoft.SharePoint.WebControls.FormField ffBuyerStatus;
         
         /// <summary>
-        /// ffAccountantStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FormField ffAccountantStatus;
-        
-        /// <summary>
         /// ffApproverStatus control.
         /// </summary>
         /// <remarks>
@@ -317,6 +308,15 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Microsoft.SharePoint.WebControls.FormField ffApproverStatus;
+        
+        /// <summary>
+        /// ffAccountantStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FormField ffAccountantStatus;
         
         /// <summary>
         /// ffConfirmerStatus control.
