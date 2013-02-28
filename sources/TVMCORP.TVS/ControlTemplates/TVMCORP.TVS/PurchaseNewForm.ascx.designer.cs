@@ -274,15 +274,6 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::Microsoft.SharePoint.WebControls.PeopleEditor peBuyer;
         
         /// <summary>
-        /// peAccountant control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peAccountant;
-        
-        /// <summary>
         /// peApprover control.
         /// </summary>
         /// <remarks>
@@ -290,6 +281,15 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Microsoft.SharePoint.WebControls.PeopleEditor peApprover;
+        
+        /// <summary>
+        /// peAccountant control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.PeopleEditor peAccountant;
         
         /// <summary>
         /// peConfirmer control.

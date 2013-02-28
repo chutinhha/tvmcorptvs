@@ -33,20 +33,57 @@
       </Properties>
     </Webparts>
 
-    <!--<Webparts xsi:type="XSLTListViewWP">
-      <Title>Duyệt đề nghị mua hàng</Title>
-      <ZoneId>RightColumn</ZoneId>
-      <Index>1</Index>
-      <Hidden>false</Hidden>
-      <AllowDuplicate>true</AllowDuplicate>
-      <ListName>Duyệt đề nghị mua hàng</ListName>
-      <ListUrl>/Lists/PurchaseApproval</ListUrl>
-      <ViewName>All Items</ViewName>
-      <CreateDefaultWP>false</CreateDefaultWP>
-      <Properties>
-        <Add Name="Title" Value="Duyệt đề nghị mua hàng" Type="string" />
-      </Properties>
-    </Webparts>-->
+    <Webparts xsi:type="DefaultWP">
+      <Title>PurchaseFilterWebPart</Title>
+      <ZoneId>Body</ZoneId>
+      <Index>3</Index>
+      <Hidden>true</Hidden>
+      <AllowDuplicate>false</AllowDuplicate>
+      <WebpartName>PurchaseFilter.webpart</WebpartName>
+    </Webparts>
 
   </WebpartPageDefinition>
+  
+  <!--<WebpartPageDefinition>
+    <PageUrl>/Lists/Purchase/AllItems.aspx</PageUrl>
+
+    <Webparts xsi:type="DefaultWP">
+      <Title>PurchaseFilterWebPart</Title>
+      <ZoneId>Body</ZoneId>
+      <Index>3</Index>
+      <Hidden>true</Hidden>
+      <AllowDuplicate>false</AllowDuplicate>
+      <WebpartName>PurchaseFilter.webpart</WebpartName>
+    </Webparts>
+
+  </WebpartPageDefinition>-->
+
+  <WebpartPageDefinition>
+    <PageUrl>/Lists/Purchase/MyItems.aspx</PageUrl>
+
+    <Webparts xsi:type="DefaultWP">
+      <Title>PurchaseFilterWebPart</Title>
+      <ZoneId>Body</ZoneId>
+      <Index>3</Index>
+      <Hidden>true</Hidden>
+      <AllowDuplicate>false</AllowDuplicate>
+      <WebpartName>PurchaseFilter.webpart</WebpartName>
+    </Webparts>
+
+  </WebpartPageDefinition>
+
+  <WebpartPageDefinition>
+    <PageUrl>/Lists/Purchase/MyDepartmentItems.aspx</PageUrl>
+
+    <Webparts xsi:type="DefaultWP">
+      <Title>PurchaseFilterWebPart</Title>
+      <ZoneId>Body</ZoneId>
+      <Index>3</Index>
+      <Hidden>true</Hidden>
+      <AllowDuplicate>false</AllowDuplicate>
+      <WebpartName>PurchaseFilter.webpart</WebpartName>
+    </Webparts>
+
+  </WebpartPageDefinition>
+  
 </ArrayOfWebpartPageDefinition>

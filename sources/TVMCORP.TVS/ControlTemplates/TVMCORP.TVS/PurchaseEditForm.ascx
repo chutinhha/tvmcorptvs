@@ -358,13 +358,13 @@
                                     </SharePoint:FormField>--%>
                                 </td>
                                 <td align="center" valign="middle" class="request_text_lable">
-                                    <SharePoint:PeopleEditor ID="peAccountant" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="True"  
+                                    <SharePoint:PeopleEditor ID="peApprover" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="True"  
                                         ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />
                                     <%--<SharePoint:FormField FieldName="Accountant" ID="ffAccountant" runat="server">
                                     </SharePoint:FormField>--%>
                                 </td>
                                 <td align="center" valign="middle" class="request_text_lable">
-                                    <SharePoint:PeopleEditor ID="peApprover" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="True"  
+                                    <SharePoint:PeopleEditor ID="peAccountant" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="True"  
                                         ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />
                                     <%--<SharePoint:FormField FieldName="Approver" ID="ffApprover" runat="server">
                                     </SharePoint:FormField>--%>
