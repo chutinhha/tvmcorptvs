@@ -41,9 +41,6 @@
     <AssemblyOriginatorKeyFile>Properties\TVMCORP.TVS.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="itextsharp">
-      <HintPath>E:\itextsharp.dll</HintPath>
-    </Reference>
     <Reference Include="microsoft.sharepoint.WorkflowActions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\ISAPI\microsoft.sharepoint.WorkflowActions.dll</HintPath>
@@ -248,9 +245,7 @@
     <Content Include="ListDefinitions\EmailTemplate\Schema.xml" />
     <Content Include="ListDefinitions\PurchaseDefinition\Elements.xml" />
     <Content Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\Elements.xml" />
-    <Content Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilterUserControl.ascx">
-      <SubType>ASPXCodeBehind</SubType>
-    </Content>
+    <Content Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilterUserControl.ascx" />
     <Content Include="ListDefinitions\PurchaseDefinition\PurchaseInstance\Elements.xml" />
     <Content Include="ListDefinitions\PurchaseDefinition\Schema.xml" />
     <Content Include="ListDefinitions\PurchaseDetailDefinition\Elements.xml" />

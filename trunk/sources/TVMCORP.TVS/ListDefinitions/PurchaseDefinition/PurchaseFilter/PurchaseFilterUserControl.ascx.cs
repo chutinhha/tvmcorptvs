@@ -7,19 +7,47 @@ using Microsoft.SharePoint.WebPartPages;
 using System.Collections.Generic;
 using TVMCORP.TVS.UTIL;
 using Microsoft.SharePoint;
+using System.Collections;
+using System.Linq;
 
 namespace TVMCORP.TVS.ListDefinitions.PurchaseDefinition.PurchaseFilter
 {
     public partial class PurchaseFilterUserControl : UserControl
     {
+        //private List<XsltListViewWebPart> xsltListViewWebParts;
+
         protected override void OnInit(EventArgs e)
         {
             base.OnInit(e);
-            UpdateFilterQuery();
+            //UpdateFilterQuery();
+            string pageUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;
+            ChangeListViewWebPart(pageUrl);
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+        }
+
+
+        protected XsltListViewWebPart FindListViewWebPart(Control control)
+        {
+            XsltListViewWebPart listview = null;
+            if (control is XsltListViewWebPart)
+            {
+                listview = control as XsltListViewWebPart;
+            }
+            else
+            {
+                foreach (Control child in control.Controls)
+                {
+                    listview = FindListViewWebPart(child);
+                    if (listview != null)
+                    {
+                        break;
+                    }
+                }
+            }
+            return listview;
         }
 
         protected void UpdateFilterQuery()
@@ -93,6 +121,34 @@ namespace TVMCORP.TVS.ListDefinitions.PurchaseDefinition.PurchaseFilter
             catch { throw; }
 
             return output;
+        }
+
+        private void ChangeListViewWebPart(string fullPageUrl)
+        {
+            SPSecurity.RunWithElevatedPrivileges(delegate()
+            {
+                using (SPSite site = new SPSite(SPContext.Current.Site.ID))
+                {
+                    using (SPWeb web = site.OpenWeb(SPContext.Current.Web.ID))
+                    {
+                        web.AllowUnsafeUpdates = true;
+                        SPLimitedWebPartManager webPartManager = web.GetLimitedWebPartManager(fullPageUrl, PersonalizationScope.Shared);
+                        foreach (System.Web.UI.WebControls.WebParts.WebPart webPart in webPartManager.WebParts)
+                        {
+                            if (webPart is XsltListViewWebPart)//|| webPart is ListViewWebPart)
+                            {
+                                var listViewWebPart = webPart as XsltListViewWebPart;
+                                if (listViewWebPart.ListUrl.Contains(Constants.PURCHASE_LIST_URL))
+                                {
+                                    SetCustomQuery(listViewWebPart, GetDepartmentOfCurrentUser());
+                                    web.Update();
+                                }
+                            }
+                        }
+                        web.AllowUnsafeUpdates = false;
+                    }
+                }
+            });
         }
 
     }
