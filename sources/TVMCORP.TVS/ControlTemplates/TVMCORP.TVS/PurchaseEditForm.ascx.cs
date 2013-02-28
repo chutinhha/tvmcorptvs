@@ -15,7 +15,7 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
     public partial class PurchaseEditForm : UserControl
     {
 
-        private bool isLockRequest = true;
+        //private bool isLockRequest = true;
 
         protected override void OnInit(EventArgs e)
         {
@@ -27,13 +27,13 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
                 ribbon.TrimById("Ribbon.ListForm.Edit.Commit");
             }
             //
-            if (SPContext.Current.ListItem["Status"] != null && 
-                SPContext.Current.ListItem["Status"].ToString() == Constants.DRAFT_STATUS)
-            {
-                isLockRequest = false;
-                btnSave.Click += new EventHandler(btnSave_Click);
-                linkButtonAdd.Click += new EventHandler(AddPurchaseDetail);
-            }
+            //if (SPContext.Current.ListItem["Status"] != null && 
+            //    SPContext.Current.ListItem["Status"].ToString() == Constants.DRAFT_STATUS)
+            //{
+            //    isLockRequest = false;
+            //    btnSave.Click += new EventHandler(btnSave_Click);
+            //    linkButtonAdd.Click += new EventHandler(AddPurchaseDetail);
+            //}
             //
             btnSave.Click += new EventHandler(btnSave_Click);
             linkButtonAdd.Click += new EventHandler(AddPurchaseDetail);
@@ -102,13 +102,13 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
                 TextBox txtDescription = e.Item.FindControl("txtDescription") as TextBox;
                 txtDescription.Text = rowView["Description"].ToString();
 
-                if (!isLockRequest)
-                {
-                    txtProductName.Enabled = false;
-                    txtQuantity.Enabled = false;
-                    txtPrice.Enabled = false;
-                    txtDescription.Enabled = false;
-                }
+                //if (!isLockRequest)
+                //{
+                //    txtProductName.Enabled = false;
+                //    txtQuantity.Enabled = false;
+                //    txtPrice.Enabled = false;
+                //    txtDescription.Enabled = false;
+                //}
             }
         }
 
@@ -220,19 +220,19 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             LoadApprovalSettings(typeOfApproval);
             hiddenTypeOfApproval.Value = typeOfApproval;
 
-            if (!isLockRequest)
-            {
-                linkButtonAdd.Enabled = false;
-                btnSave.Enabled = false;
-                rdbTypeOfApproval1.Enabled = false;
-                rdbTypeOfApproval2.Enabled = false;
-                ffTitle.ControlMode = SPControlMode.Display;
-                peChief.Enabled = false;
-                peBuyer.Enabled = false;
-                peApprover.Enabled = false;
-                peAccountant.Enabled = false;
-                peConfirmer.Enabled = false;
-            }
+            //if (!isLockRequest)
+            //{
+            //    linkButtonAdd.Enabled = false;
+            //    btnSave.Enabled = false;
+            //    rdbTypeOfApproval1.Enabled = false;
+            //    rdbTypeOfApproval2.Enabled = false;
+            //    ffTitle.ControlMode = SPControlMode.Display;
+            //    peChief.Enabled = false;
+            //    peBuyer.Enabled = false;
+            //    peApprover.Enabled = false;
+            //    peAccountant.Enabled = false;
+            //    peConfirmer.Enabled = false;
+            //}
         }
 
         private void LoadApprovalSettings(string typeOfApprover)
