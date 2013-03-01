@@ -235,7 +235,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
         #region Execute Code
         protected void Back()
         {
-            if (IsDialog)
+            if (((SPContext.Current != null) && SPContext.Current.IsPopUI) || IsDialog)
                 ClosePopup();
             else
                 if (string.IsNullOrEmpty(SourceUrl))

@@ -109,55 +109,59 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
                     try
                     {
                         string approver = this.workflowListItem[new Guid(data.ColumnName)] as string;
-                        if (this.workflowListItem[new Guid(data.ColumnName)].GetType().Name == Constants.ASSIGMENT_FIELD_NAME)
+
+                        if (!string.IsNullOrEmpty(approver))
                         {
-                            var names = approver.Split(new string[] { ";#" }, StringSplitOptions.RemoveEmptyEntries);
-                            List<string> loginAccounts = new List<string>();
-
-                            if (names.Length > 1)
+                            if (this.workflowListItem[new Guid(data.ColumnName)].GetType().Name == Constants.ASSIGMENT_FIELD_NAME)
                             {
-                                for (int i = 0; i < names.Length; i = i + 2)
+                                var names = approver.Split(new string[] { ";#" }, StringSplitOptions.RemoveEmptyEntries);
+                                List<string> loginAccounts = new List<string>();
+
+                                if (names.Length > 1)
                                 {
-                                    SPUser user = this.Web.AllUsers.GetByID(int.Parse(names[i]));
-                                    loginAccounts.Add(user.LoginName);
+                                    for (int i = 0; i < names.Length; i = i + 2)
+                                    {
+                                        SPUser user = this.Web.AllUsers.GetByID(int.Parse(names[i]));
+                                        loginAccounts.Add(user.LoginName);
+                                    }
+
+                                    BindPeoplePicker(peSpecificUsesGroup, loginAccounts);
+                                    isHidden = true;
                                 }
-
-                                BindPeoplePicker(peSpecificUsesGroup, loginAccounts);
-                                isHidden = true;
                             }
-                        }
-                        else
-                        {
-                            var field = this.workflowListItem.Fields[new Guid(data.ColumnName)];
-
-
-                            SPFieldUserValueCollection members = this.workflowListItem[new Guid(data.ColumnName)] == null ?
-                                                                    null : new SPFieldUserValueCollection(workflowListItem.Web, this.workflowListItem[new Guid(data.ColumnName)].ToString());
-
-                            
-                            if (members != null)
+                            else
                             {
-                                ArrayList entityArrayList = new ArrayList();
-                                for (int i = 0; i < members.Count; i++)
-                                {
-                                    PickerEntity entity = new PickerEntity();
-                                    if (members[i].User != null)
-                                    {
-                                        entity.Key = members[i].User.LoginName;
-                                    }
-                                    else
-                                    {
-                                        
-                                        entity.Key = members[i].LookupValue;
-                                        
-                                    }
-                                    entityArrayList.Add(entity);
-                                }
+                                var field = this.workflowListItem.Fields[new Guid(data.ColumnName)];
 
-                                peSpecificUsesGroup.UpdateEntities(entityArrayList);
-                                //isHidden = true;
+
+                                SPFieldUserValueCollection members = this.workflowListItem[new Guid(data.ColumnName)] == null ?
+                                                                        null : new SPFieldUserValueCollection(workflowListItem.Web, this.workflowListItem[new Guid(data.ColumnName)].ToString());
+
+
+                                if (members != null)
+                                {
+                                    ArrayList entityArrayList = new ArrayList();
+                                    for (int i = 0; i < members.Count; i++)
+                                    {
+                                        PickerEntity entity = new PickerEntity();
+                                        if (members[i].User != null)
+                                        {
+                                            entity.Key = members[i].User.LoginName;
+                                        }
+                                        else
+                                        {
+
+                                            entity.Key = members[i].LookupValue;
+
+                                        }
+                                        entityArrayList.Add(entity);
+                                    }
+
+                                    peSpecificUsesGroup.UpdateEntities(entityArrayList);
+                                    //isHidden = true;
+                                }
                             }
-                        }
+                        }    
                     }
                     catch (Exception ex) { }
                 }

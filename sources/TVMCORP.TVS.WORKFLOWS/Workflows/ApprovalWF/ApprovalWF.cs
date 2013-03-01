@@ -241,6 +241,11 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
             e.Result = changeByTaskForm;
         }
 
+        private void IsItemApproved(object sender, ConditionalEventArgs e)
+        {
+            e.Result = TaskOutcome == TaskApprovalStatus.Approved;
+        }
+
 
     }
 }

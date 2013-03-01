@@ -44,7 +44,7 @@
         sDialogUrl = sDialogUrl + "&eventOwner=" + eventOwner + "&timer=" + (new Date()).getTime();
         sDialogUrl = sDialogUrl + "&List="+listId;
         //commonShowModalDialog(sDialogUrl + "&timer=" + (new Date()).getTime(), getEventFormSize(), AssignTaskEventComplete_Callback);
-        
+
         var options = {
             url: sDialogUrl,
             width: 650,

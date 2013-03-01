@@ -78,6 +78,9 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
 
         private void UpdateCurrentItem()
         {
+            //temporary
+            return;
+
             if (updatedFieldsIterator.Visible == false) return;
            // var  item = updatedFieldsIterator.Item;
             updatedFieldsIterator.ListItem[TVSColumnIds.LastUpdatedByWF] = true;
