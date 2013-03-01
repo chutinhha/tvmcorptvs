@@ -29,13 +29,14 @@ namespace TVMCORP.TVS.Features.TVMCORP.TVS.Feature
              SPWeb web = (SPWeb)properties.Feature.Parent;
              try
              {
+                 SetListPermission(web);
                  RemoveXsltListViewWebPart(web.Site.MakeFullUrl(Constants.PURCHASE_MY_ITEM_VIEW_URL), web);
                  RemoveXsltListViewWebPart(web.Site.MakeFullUrl(Constants.PURCHASE_MY_DEPARTMENT_ITEM_VIEW_URL), web);
                  ProvisionWebParts(web, "TVMCORP.TVS.WebParts.xml");
              }
              catch (Exception ex)
              {
-                 
+                 Utility.LogError(ex.Message, TVMCORPFeatures.TVS);
              }
         }
 
@@ -67,6 +68,42 @@ namespace TVMCORP.TVS.Features.TVMCORP.TVS.Feature
         //}
 
         #region Functions
+
+        private void SetListPermission(SPWeb web)
+        {
+            try
+            {
+                SPSecurity.RunWithElevatedPrivileges(delegate()
+                {
+                    using (SPSite site = new SPSite(web.Site.ID))
+                    {
+                        using (SPWeb spWeb = site.OpenWeb(web.ID))
+                        {
+                            spWeb.AllowUnsafeUpdates = true;
+                            //Purchase list
+                            var purchaseList = Utility.GetListFromURL(Constants.PURCHASE_LIST_URL, spWeb);
+                            purchaseList.BreakRoleInheritance(false);
+                            purchaseList.SetPermissions(spWeb.EnsureUser(Constants.AUTHENTICATED_USERS), SPRoleType.Contributor);
+                            //Purchase Detail list
+                            var purchaseDetailList = Utility.GetListFromURL(Constants.PURCHASE_DETAIL_LIST_URL, spWeb);
+                            purchaseDetailList.BreakRoleInheritance(false);
+                            purchaseDetailList.SetPermissions(spWeb.EnsureUser(Constants.AUTHENTICATED_USERS), SPRoleType.Contributor);
+                            //Purchase Task List
+                            var purchaseTaskApprovalList = Utility.GetListFromURL(Constants.PURCHASE_TASK_LIST_URL, spWeb);
+                            purchaseTaskApprovalList.BreakRoleInheritance(false);
+                            purchaseTaskApprovalList.SetPermissions(spWeb.EnsureUser(Constants.AUTHENTICATED_USERS), SPRoleType.Reader);
+                            spWeb.AllowUnsafeUpdates = true;
+
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                Utility.LogError(ex.Message, TVMCORPFeatures.TVS);
+            }
+        }
+
 
         private void RemoveXsltListViewWebPart(string fullPageUrl, SPWeb spWeb)
         {
