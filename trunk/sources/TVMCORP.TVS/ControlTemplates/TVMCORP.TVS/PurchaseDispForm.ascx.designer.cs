@@ -256,15 +256,6 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::Microsoft.SharePoint.WebControls.FormField ffBuyer;
         
         /// <summary>
-        /// ffAccountant control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FormField ffAccountant;
-        
-        /// <summary>
         /// ffApprover control.
         /// </summary>
         /// <remarks>
@@ -272,6 +263,15 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Microsoft.SharePoint.WebControls.FormField ffApprover;
+        
+        /// <summary>
+        /// ffAccountant control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FormField ffAccountant;
         
         /// <summary>
         /// ffConfirmer control.
@@ -346,15 +346,6 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::Microsoft.SharePoint.WebControls.FormField ffBuyerComment;
         
         /// <summary>
-        /// ffAccountantComment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FormField ffAccountantComment;
-        
-        /// <summary>
         /// ffApproverComment control.
         /// </summary>
         /// <remarks>
@@ -362,6 +353,15 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Microsoft.SharePoint.WebControls.FormField ffApproverComment;
+        
+        /// <summary>
+        /// ffAccountantComment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FormField ffAccountantComment;
         
         /// <summary>
         /// ffConfirmerComment control.

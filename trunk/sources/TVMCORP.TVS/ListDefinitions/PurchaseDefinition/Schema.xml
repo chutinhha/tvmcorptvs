@@ -236,7 +236,7 @@
         </ParameterBindings>
       </View>
 
-      <View BaseViewID="2" Type="HTML" WebPartZoneID="Main" DisplayName="Đề nghị của tôi" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="MyItems.aspx">
+      <View BaseViewID="2" Type="HTML" WebPartZoneID="Main" DisplayName="Đề nghị của tôi"  DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\PurchaseViewPage.aspx" ImageUrl="/_layouts/images/generic.png" Url="MyItems.aspx">
         <Toolbar Type="Standard" />
         <XslLink Default="TRUE">main.xsl</XslLink>
         <RowLimit Paged="TRUE">30</RowLimit>

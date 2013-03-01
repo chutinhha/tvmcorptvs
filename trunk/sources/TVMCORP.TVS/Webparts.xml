@@ -33,18 +33,18 @@
       </Properties>
     </Webparts>
 
-    <Webparts xsi:type="DefaultWP">
+    <!--<Webparts xsi:type="DefaultWP">
       <Title>PurchaseFilterWebPart</Title>
       <ZoneId>Body</ZoneId>
       <Index>3</Index>
       <Hidden>true</Hidden>
       <AllowDuplicate>false</AllowDuplicate>
       <WebpartName>PurchaseFilter.webpart</WebpartName>
-    </Webparts>
+    </Webparts>-->
 
   </WebpartPageDefinition>
   
-  <WebpartPageDefinition>
+  <!--<WebpartPageDefinition>
     <PageUrl>/Lists/Purchase/AllItems.aspx</PageUrl>
 
     <Webparts xsi:type="DefaultWP">
@@ -56,9 +56,9 @@
       <WebpartName>PurchaseFilter.webpart</WebpartName>
     </Webparts>
 
-  </WebpartPageDefinition>
+  </WebpartPageDefinition>-->
 
-  <WebpartPageDefinition>
+  <!--<WebpartPageDefinition>
     <PageUrl>/Lists/Purchase/MyItems.aspx</PageUrl>
 
     <Webparts xsi:type="DefaultWP">
@@ -70,9 +70,9 @@
       <WebpartName>PurchaseFilter.webpart</WebpartName>
     </Webparts>
 
-  </WebpartPageDefinition>
+  </WebpartPageDefinition>-->
 
-  <WebpartPageDefinition>
+  <!--<WebpartPageDefinition>
     <PageUrl>/Lists/Purchase/MyDepartmentItems.aspx</PageUrl>
 
     <Webparts xsi:type="DefaultWP">
@@ -84,6 +84,6 @@
       <WebpartName>PurchaseFilter.webpart</WebpartName>
     </Webparts>
 
-  </WebpartPageDefinition>
+  </WebpartPageDefinition>-->
   
 </ArrayOfWebpartPageDefinition>

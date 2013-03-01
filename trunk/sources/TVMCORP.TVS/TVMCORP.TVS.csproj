@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SandboxedSolution>False</SandboxedSolution>
-    <ActiveDeploymentConfiguration>Default</ActiveDeploymentConfiguration>
+    <ActiveDeploymentConfiguration>No Activation</ActiveDeploymentConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -104,6 +104,7 @@
     <Compile Include="Layouts\TVMCORP.TVS\DiscussionResolver.aspx.designer.cs">
       <DependentUpon>DiscussionResolver.aspx.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListDefinitions\PurchaseDefinition\FilterWebPart\FilterWebPart.cs" />
     <Compile Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilter.cs" />
     <Compile Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilterUserControl.ascx.cs">
       <DependentUpon>PurchaseFilterUserControl.ascx</DependentUpon>
@@ -141,6 +142,10 @@
     </None>
     <None Include="ListDefinitions\EmailTemplate\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{546d741b-7c88-48e7-af7d-23661a5d40f8}</SharePointProjectItemId>
+    </None>
+    <None Include="ListDefinitions\PurchaseDefinition\FilterWebPart\FilterWebPart.webpart" />
+    <None Include="ListDefinitions\PurchaseDefinition\FilterWebPart\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f3963cc2-706d-497f-a7b6-5b64ed43ddaf}</SharePointProjectItemId>
     </None>
     <None Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilter.webpart" />
     <None Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\SharePointProjectItem.spdata">
@@ -244,8 +249,11 @@
     <Content Include="ListDefinitions\EmailTemplate\EmailTemplateInstance\Elements.xml" />
     <Content Include="ListDefinitions\EmailTemplate\Schema.xml" />
     <Content Include="ListDefinitions\PurchaseDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\PurchaseDefinition\FilterWebPart\Elements.xml" />
     <Content Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\Elements.xml" />
-    <Content Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilterUserControl.ascx" />
+    <Content Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilterUserControl.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="ListDefinitions\PurchaseDefinition\PurchaseInstance\Elements.xml" />
     <Content Include="ListDefinitions\PurchaseDefinition\Schema.xml" />
     <Content Include="ListDefinitions\PurchaseDetailDefinition\Elements.xml" />
@@ -257,6 +265,9 @@
     <Content Include="Layouts\1033\jquery-1.8.2.min.js" />
     <Content Include="ListInstances\Discussions\Elements.xml" />
     <Content Include="Modules\WebPartPages\Elements.xml" />
+    <Content Include="TEMPLATE\PAGES\PurchaseViewPage.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <EmbeddedResource Include="Webparts.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -266,7 +277,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="TEMPLATE\PAGES\" />
     <Folder Include="TimerJobs\" />
     <Folder Include="WebParts\" />
   </ItemGroup>
