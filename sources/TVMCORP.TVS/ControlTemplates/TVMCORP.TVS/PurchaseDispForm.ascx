@@ -352,13 +352,13 @@
                                 <td align="center" valign="middle" class="request_text_lable">
                                     <%--<SharePoint:PeopleEditor ID="peAccountant" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
                                         ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                    <SharePoint:FormField FieldName="Accountant" ID="ffAccountant" runat="server">
+                                        <SharePoint:FormField FieldName="Approver" ID="ffApprover" runat="server">
                                     </SharePoint:FormField>
                                 </td>
                                 <td align="center" valign="middle" class="request_text_lable">
                                     <%--<SharePoint:PeopleEditor ID="peApprover" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
                                         ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                    <SharePoint:FormField FieldName="Approver" ID="ffApprover" runat="server">
+                                    <SharePoint:FormField FieldName="Accountant" ID="ffAccountant" runat="server">
                                     </SharePoint:FormField>
                                 </td>
                                 <td align="left" valign="middle" class="request_text_lable">
@@ -385,7 +385,7 @@
                                 <td align="center" valign="middle" class="request_text_lable">
                                     <%--<SharePoint:PeopleEditor ID="peAccountant" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
                                         ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                        <SharePoint:FormField FieldName="ApproverStatus" ID="ffApproverStatus" runat="server">
+                                    <SharePoint:FormField FieldName="ApproverStatus" ID="ffApproverStatus" runat="server">
                                     </SharePoint:FormField>
                                 </td>
                                 <td align="center" valign="middle" class="request_text_lable">
@@ -418,13 +418,13 @@
                                 <td align="center" valign="middle" class="request_text_lable">
                                     <%--<SharePoint:PeopleEditor ID="peAccountant" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
                                         ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                    <SharePoint:FormField FieldName="AccountantComment" ID="ffAccountantComment" runat="server">
+                                    <SharePoint:FormField FieldName="ApproverComment" ID="ffApproverComment" runat="server">
                                     </SharePoint:FormField>
                                 </td>
                                 <td align="center" valign="middle" class="request_text_lable">
                                     <%--<SharePoint:PeopleEditor ID="peApprover" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
                                         ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                    <SharePoint:FormField FieldName="ApproverComment" ID="ffApproverComment" runat="server">
+                                     <SharePoint:FormField FieldName="AccountantComment" ID="ffAccountantComment" runat="server">
                                     </SharePoint:FormField>
                                 </td>
                                 <td align="left" valign="middle" class="request_text_lable">
