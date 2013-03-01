@@ -13,6 +13,8 @@ namespace TVMCORP.TVS.UTIL
 
        public const string PURCHASE_LIST_URL = "/Lists/Purchase";
        public const string PURCHASE_DETAIL_LIST_URL = "/Lists/PurchaseDetail";
+       public const string PURCHASE_TASK_LIST_URL = "/Lists/PurchaseTasks";
+       
        public const string PURCHASE_TITLE_PREFIX = "Yêu cầu mua hàng - ";
        public const string PURCHASE_MY_ITEM_VIEW_URL = "Lists/Purchase/MyItems.aspx";
        public const string PURCHASE_MY_DEPARTMENT_ITEM_VIEW_URL = "Lists/Purchase/MyDepartmentItems.aspx";
@@ -22,6 +24,10 @@ namespace TVMCORP.TVS.UTIL
        public const string APPROVED_STATUS = "Đã duyệt";
        public const string RIJECTED_STATUS = "Từ chối";
        public const string TERMINATE_STATUS = "Chấm dứt";
+
+
+       public const string AUTHENTICATED_USERS = "NT Authority\\Authenticated Users";
+
        #endregion Purchase
 
        #region Approval Status
