@@ -14,11 +14,14 @@ namespace TVMCORP.TVS.UTIL
        public const string PURCHASE_LIST_URL = "/Lists/Purchase";
        public const string PURCHASE_DETAIL_LIST_URL = "/Lists/PurchaseDetail";
        public const string PURCHASE_TITLE_PREFIX = "Yêu cầu mua hàng - ";
+       public const string PURCHASE_MY_ITEM_VIEW_URL = "Lists/Purchase/MyItems.aspx";
+       public const string PURCHASE_MY_DEPARTMENT_ITEM_VIEW_URL = "Lists/Purchase/MyDepartmentItems.aspx";
 
        public const string DRAFT_STATUS = "Tạo mới";
        public const string PENDING_STATUS = "Đợi duyệt";
        public const string APPROVED_STATUS = "Đã duyệt";
        public const string RIJECTED_STATUS = "Từ chối";
+       public const string TERMINATE_STATUS = "Chấm dứt";
        #endregion Purchase
 
        #region Approval Status
@@ -33,94 +36,28 @@ namespace TVMCORP.TVS.UTIL
        public const string SCHEDULED = "4";
        #endregion Approval Status
 
-       #region Permission Level
-       public const string APPROVER_PERMISSION_LEVEL = "IOffice Approver";
-       public const string APPROVER_PERMISSION_LEVEL_DESCRIPTION = "Can view, add, update, approve, and delete list items and documents.";
-       public const string CONTRIBUTE_NOT_DELETE_PERMISSION_LEVEL = "IOffice Contribute Not Delete";
-       public const string CONTRIBUTE_NOT_DELETE_PERMISSION_LEVEL_DESCRIPTION = "Can view, add, update, but NOT delete list items and documents.";
-       public const string NO_ACCESS_PERMISSION_LEVEL = "IOffice Limited Access";
-       public const string NO_ACCESS_PERMISSION_LEVEL_DESCRIPTION = "Can view specific lists, document libraries, list items, folders, or documents when given permissions.";
-       #endregion
-
-       #region Department Site
-       public const string DEPARTMENT_PREFIX_EMPLOYEE_GROUP = "Employee";
-       public const string DEPARTMENT_PREFIX_ADMIN_GROUP = "Admin";
-       public const string DEPARTMENT_PREFIX_MANAGER_GROUP = "Manager";
-       public const string DEPARTMENT_INFRASTRUCTURE_FEATURE_ID = "cabf828a-7396-46eb-888a-38fd264345db";
-       public const string DEPARTMENT_DOCUMENT_LIST_URL = "Documents";
-       public const string DEPARTMENT_DISCUSSIONBOARD_LIST_URL = "Lists/Discussions";
-       public const string DEPARTMENT_ANNOUNCEMENT_LIST_URL = "Lists/Announcements";
-       public const string DEPARTMENT_CALENDAR_LIST_URL = "Lists/Calendar";
-       public const string DEPARTMENT_CUSTOM_PROPERTIE_SITE_NAME = "DepartmentSiteName";
-       public const string DEPARTMENT_CUSTOM_PROPERTIE_DEPARTMENT_ITEM_ID = "DepartmentItemId";
-       public const string DEPARTMENT_CUSTOM_PROPERTIE_EMPLOYEE_GROUP = "DepartmentEmployeeGroup";
-       public const string DEPARTMENT_CUSTOM_PROPERTIE_MANAGER_GROUP = "DepartmentManagerGroup";
-       public const string DEPARTMENT_CUSTOM_PROPERTIE_ADMIN_GROUP = "DepartmentAdminGroup";
-       public const string DEPARTMENT_CUSTOM_PROPERTIE_SITE_NAVIGATION_KEY = "DepartmentSiteNavigationKey";
-       public const string DEPARTMENT_CUSTOM_PROPERTIE_SITE_DEPARTMENT_GUID = "DepartmentSiteGUID";
-       public const string DEPARTMENT_EMPLOYEE_VIEW = "DepartmentEmployeeView";
-       #endregion Department Site
-
-       #region Employees
-       public const string EMPLOYEE_TEMPLATE_NAME = "EmployeeTemplate";
-       public const string EMPLOYEE_CONTENT_TYPE = "[I-Office] - Employee Content Type";
-       public const string EMPLOYEE_CUSTOM_PROPERTIE_DOCUMENT_NAME = "EmployeeDocumentGui";
-       #endregion Employees
-
-       #region News
-       public const string NEWS_HOME_PAGE = "/Pages/Home.aspx"; //create List.aspx
-       public const string NEWS_LISTPAGE = "List"; //create List.aspx
-       public const string NEWS_DISPLAYPAGE = "View"; //create View.aspx
-
-       #endregion News
-
-       #region RoomBookingSystem
-       public const string RBS_HOME_PAGE = "/SitePages/General.aspx"; //create List.aspx
-       #endregion RoomBookingSystem
-
-       #region Projects
-       public const string PROJECT_LIST_URL = "/Lists/Projects";
-       public const string PROJECT_STATUS_LIST_URL = "/Lists/ProjectStatus";
-       public const string PROJECT_CUSTOM_PROPERTIE_DOCUMENT_ID = "ProjectDocumentsGui";
-       public const string PROJECT_CUSTOM_PROPERTIE_DERIVED_EXPENSES_ID = "ProjectDerivedExpensesGui";
-       public const string PROJECT_REDIRECT_PAGE_DOCUMENT_URL = "{SiteUrl}/_layouts/Hypertek.IOffice.Infrastructure/RedirectPage.aspx?ID={ItemId}&List={ListId}&Type=ProjectDocuments";
-       public const string PROJECT_REDIRECT_PAGE_DERIVED_EXPENSES_URL = "{SiteUrl}/_layouts/Hypertek.IOffice.Infrastructure/RedirectPage.aspx?ID={ItemId}&List={ListId}&Type=ProjectDerivedExpenses";
-       #endregion Projects
-
-       #region Picture, Video
        
-       #endregion Picture, Video
 
-       #region WebPart Zone
-       public const string WEBPART_ZONE_HEADER = "Header";
-       public const string WEBPART_ZONE_FOOTER = "Footer";
-       public const string WEBPART_ZONE_BODY = "Body";
-       public const string WEBPART_ZONE_RIGHT_COLUMN = "RightColumn";
-       public const string WEBPART_PAGE_DEFAULT = "Pages/Default.aspx";
-       #endregion WebPart Zone
+       
 
-       #region Task
-       public const string TASK_LIST_URL = "/Lists/ITasks";
-       public const string TASK_CONTENT_TYPE_PRIVATE = "0x0108008a8b86f25451dfb96e65a47187c7f295";
-       public const string TASK_CONTENT_TYPE_DEPARTMENT = "0x0108008a8b86f25d157fbe9664174a8ac7f297";
-       public const string TASK_CONTENT_TYPE_PROJECT = "0x0108008a8b862f5d157fb9e661474a8ac7f729";
-       #endregion Task
+       
 
-       #region Timesheet
-       public const string TIMESHEET_LIST_TEMPLATE_FEATURE_ID = "00bfea71-ec85-4903-972d-ebe475780106";
-       public const string TIMESHEET_WEB_FEATURE_GUID = "45d6afed-0165-4d75-9b77-e77dddba8448";
-       public const string TIMESHEET_LIST_GUI_CUSTOM_PROPERTIE = "TIMESHEET_LIST_GUID";
-       public const string TIMESHEET_SITE_URL = "/Timesheets";
-       public const string TIMESHEET_LIST_URL = "/Lists/Timesheets";
-       public const string TIMESHEET_CONTENT_TYPE_ID = "0x0102007b2a803acf714e46a8718b4066ada225";
-       #endregion Timesheet
-       public const string CAT_ID = "CatID";
+       
 
-       #region Stationery
-       public const string STATIONERY_CATEGORY_LIST_URL = "/Lists/StationeryCategory";
-       public const string STATIONERY_LIST_URL = "/Lists/Stationery";
-       public const string STATIONERY_APPROVAL_LIST_URL = "/Lists/StationeryApproval";
-       #endregion Stationery
+       
+
+       
+
+       
+
+       
+
+       
+
+       
+
+
+       
 
        public const string DATA_INFRASTRUCTURE_FEATURE_ID = "6f3122af-6a20-4aa5-8e3a-02a65a20d548";
        public const string FORUM_USER_PAGE_URL = "ForumUserURL";
@@ -394,35 +331,6 @@ namespace TVMCORP.TVS.UTIL
            public const string ASSEMBLIES = "assemblies";
        }
 
-       public class Infrastructure
-       {
-           public const string ADGroup = "ADGroup";
-           public const string ViewItems = "All Items";
-           public const string ReportTemplate = "ReportTemplate.xls";
-           public const string ReportTemplatePath = @"TEMPLATE\LAYOUTS\";
-           public const string NewForm = "NewForm.aspx";
-           public const string EditForm = "EditForm.aspx";
-           public const string NULL = "NULL";
-           public const string LookupType = "Lookup";
-           public const string REMINDER_TIMERJOB_NAME = "RemiderBirthDay";
-           public const string FeatureID = "ef6ad61c-e4a8-4f5a-87d4-9e7b8665e680";
-           public const string DisplayAttachments = "{0}/_layouts/Hypertek.IOffice.Infrastructure/DisplayAttachments.ashx?item={0}/Lists/Employees/&ID={1}&List={2}";
-           public const string DepartmentSiteTemplateName = "STS#1";
-           //custom list properties
-           public const string SendNotifyEmailProperty = "SendNotifyEmail";
-           public const string WebIdProperty = "WebId";
-           public const string ListIdProperty = "ListId";
-           public const string ColumnNameProperty = "ColumnName";
-
-       }
-
-       //Official Document
-       public class OfficialDocument
-       {
-           public static string HomepageUrl = "/Pages/Home.aspx";
-           public static string LegislationTypesListUrl = "/Lists/LegislationTypes";
-
-       }
     }
    public static class CCIappWorkflowTaskView
    {
