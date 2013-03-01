@@ -14,6 +14,9 @@
 <%@ Register TagPrefix="wssuc" TagName="ToolBar" Src="~/_controltemplates/ToolBar.ascx" %>
 <%@ Register TagPrefix="wssuc" TagName="ToolBarButton" Src="~/_controltemplates/ToolBarButton.ascx" %>
 
+<asp:Content ID="PageHead" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" runat="server">
+    <script src="/_layouts/1033/jquery-1.8.2.min.js" type="text/javascript"></script>
+</asp:Content>
 
 <asp:content id="Main" contentplaceholderid="PlaceHolderMain" runat="server">
     <SharePoint:CssRegistration ID="CssRegistration3" Name="/_layouts/1033/styles/Themable/layouts.css" runat="server" />

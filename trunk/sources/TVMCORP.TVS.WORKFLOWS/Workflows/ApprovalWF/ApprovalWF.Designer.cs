@@ -52,6 +52,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
             System.Workflow.Activities.CodeCondition codecondition5 = new System.Workflow.Activities.CodeCondition();
             System.Workflow.Activities.CodeCondition codecondition6 = new System.Workflow.Activities.CodeCondition();
             System.Workflow.Activities.CodeCondition codecondition7 = new System.Workflow.Activities.CodeCondition();
+            System.Workflow.Activities.CodeCondition codecondition8 = new System.Workflow.Activities.CodeCondition();
             System.Workflow.ComponentModel.ActivityBind activitybind17 = new System.Workflow.ComponentModel.ActivityBind();
             System.Workflow.ComponentModel.ActivityBind activitybind18 = new System.Workflow.ComponentModel.ActivityBind();
             System.Workflow.ComponentModel.ActivityBind activitybind20 = new System.Workflow.ComponentModel.ActivityBind();
@@ -74,14 +75,15 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
             this.sequenceActivity3 = new System.Workflow.Activities.SequenceActivity();
             this.sequenceActivity1 = new System.Workflow.Activities.SequenceActivity();
             this.WFRejectedEvent = new TVMCORP.TVS.WORKFLOWS.Activities.TaskEventHandler();
-            this.SetWFRejectedEventParameter = new System.Workflow.Activities.CodeActivity();
             this.WFApprovedEvent = new TVMCORP.TVS.WORKFLOWS.Activities.TaskEventHandler();
-            this.SetWFApprovedEventParameter = new System.Workflow.Activities.CodeActivity();
+            this.SetWFRejectedEventParameter = new System.Workflow.Activities.CodeActivity();
             this.ifElseActivity1 = new System.Workflow.Activities.IfElseActivity();
             this.SetItemApproval = new TVMCORP.TVS.WORKFLOWS.Activities.PublishItemActivity();
             this.SetItemApprovalData = new System.Workflow.Activities.CodeActivity();
             this.conditionedActivityGroup1 = new System.Workflow.Activities.ConditionedActivityGroup();
             this.DeplayOnStart = new Microsoft.SharePoint.WorkflowActions.DelayForActivity();
+            this.ifElseBranchActivity9 = new System.Workflow.Activities.IfElseBranchActivity();
+            this.ifElseBranchActivity8 = new System.Workflow.Activities.IfElseBranchActivity();
             this.ifElseBranchActivity2 = new System.Workflow.Activities.IfElseBranchActivity();
             this.IfEnableContentApprovalAndDocumentAppvoed = new System.Workflow.Activities.IfElseBranchActivity();
             this.ifElseBranchActivity5 = new System.Workflow.Activities.IfElseBranchActivity();
@@ -89,6 +91,8 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
             this.ifElseBranchActivity3 = new System.Workflow.Activities.IfElseBranchActivity();
             this.ifElseBranchActivity1 = new System.Workflow.Activities.IfElseBranchActivity();
             this.WorkfowEndedEvent = new TVMCORP.TVS.WORKFLOWS.Activities.TaskEventHandler();
+            this.ifElseActivity3 = new System.Workflow.Activities.IfElseActivity();
+            this.SetWFApprovedEventParameter = new System.Workflow.Activities.CodeActivity();
             this.ContentApproval = new System.Workflow.Activities.IfElseActivity();
             this.CheckStartingCondition = new System.Workflow.Activities.IfElseActivity();
             this.WorkflowStartedEvent = new TVMCORP.TVS.WORKFLOWS.Activities.TaskEventHandler();
@@ -237,11 +241,6 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
             activitybind10.Path = "WFApprovedEvent_Parameter";
             this.WFRejectedEvent.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.TaskEventHandler.ParameterProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind10)));
             // 
-            // SetWFRejectedEventParameter
-            // 
-            this.SetWFRejectedEventParameter.Name = "SetWFRejectedEventParameter";
-            this.SetWFRejectedEventParameter.ExecuteCode += new System.EventHandler(this.SetWFApprovedEventParameter_ExecuteCode);
-            // 
             // WFApprovedEvent
             // 
             this.WFApprovedEvent.EventType = TVMCORP.TVS.UTIL.MODELS.TaskEventTypes.WFApproved;
@@ -250,10 +249,11 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
             activitybind11.Path = "WFApprovedEvent_Parameter";
             this.WFApprovedEvent.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.TaskEventHandler.ParameterProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind11)));
             // 
-            // SetWFApprovedEventParameter
+            // SetWFRejectedEventParameter
             // 
-            this.SetWFApprovedEventParameter.Name = "SetWFApprovedEventParameter";
-            this.SetWFApprovedEventParameter.ExecuteCode += new System.EventHandler(this.SetWFApprovedEventParameter_ExecuteCode);
+            this.SetWFRejectedEventParameter.Enabled = false;
+            this.SetWFRejectedEventParameter.Name = "SetWFRejectedEventParameter";
+            this.SetWFRejectedEventParameter.ExecuteCode += new System.EventHandler(this.SetWFApprovedEventParameter_ExecuteCode);
             // 
             // ifElseActivity1
             // 
@@ -300,10 +300,21 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
             this.DeplayOnStart.Name = "DeplayOnStart";
             this.DeplayOnStart.SetBinding(Microsoft.SharePoint.WorkflowActions.DelayForActivity.MinutesProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind16)));
             // 
+            // ifElseBranchActivity9
+            // 
+            this.ifElseBranchActivity9.Activities.Add(this.WFRejectedEvent);
+            this.ifElseBranchActivity9.Name = "ifElseBranchActivity9";
+            // 
+            // ifElseBranchActivity8
+            // 
+            this.ifElseBranchActivity8.Activities.Add(this.WFApprovedEvent);
+            codecondition5.Condition += new System.EventHandler<System.Workflow.Activities.ConditionalEventArgs>(this.IsItemApproved);
+            this.ifElseBranchActivity8.Condition = codecondition5;
+            this.ifElseBranchActivity8.Name = "ifElseBranchActivity8";
+            // 
             // ifElseBranchActivity2
             // 
             this.ifElseBranchActivity2.Activities.Add(this.SetWFRejectedEventParameter);
-            this.ifElseBranchActivity2.Activities.Add(this.WFRejectedEvent);
             this.ifElseBranchActivity2.Name = "ifElseBranchActivity2";
             // 
             // IfEnableContentApprovalAndDocumentAppvoed
@@ -311,10 +322,8 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
             this.IfEnableContentApprovalAndDocumentAppvoed.Activities.Add(this.SetItemApprovalData);
             this.IfEnableContentApprovalAndDocumentAppvoed.Activities.Add(this.SetItemApproval);
             this.IfEnableContentApprovalAndDocumentAppvoed.Activities.Add(this.ifElseActivity1);
-            this.IfEnableContentApprovalAndDocumentAppvoed.Activities.Add(this.SetWFApprovedEventParameter);
-            this.IfEnableContentApprovalAndDocumentAppvoed.Activities.Add(this.WFApprovedEvent);
-            codecondition5.Condition += new System.EventHandler<System.Workflow.Activities.ConditionalEventArgs>(this.IsEnableContentApproval);
-            this.IfEnableContentApprovalAndDocumentAppvoed.Condition = codecondition5;
+            codecondition6.Condition += new System.EventHandler<System.Workflow.Activities.ConditionalEventArgs>(this.IsEnableContentApproval);
+            this.IfEnableContentApprovalAndDocumentAppvoed.Condition = codecondition6;
             this.IfEnableContentApprovalAndDocumentAppvoed.Name = "IfEnableContentApprovalAndDocumentAppvoed";
             // 
             // ifElseBranchActivity5
@@ -324,8 +333,8 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
             // IfByPass
             // 
             this.IfByPass.Activities.Add(this.conditionedActivityGroup1);
-            codecondition6.Condition += new System.EventHandler<System.Workflow.Activities.ConditionalEventArgs>(this.IfStartApproval);
-            this.IfByPass.Condition = codecondition6;
+            codecondition7.Condition += new System.EventHandler<System.Workflow.Activities.ConditionalEventArgs>(this.IfStartApproval);
+            this.IfByPass.Condition = codecondition7;
             this.IfByPass.Name = "IfByPass";
             // 
             // ifElseBranchActivity3
@@ -335,8 +344,8 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
             // ifElseBranchActivity1
             // 
             this.ifElseBranchActivity1.Activities.Add(this.DeplayOnStart);
-            codecondition7.Condition += new System.EventHandler<System.Workflow.Activities.ConditionalEventArgs>(this.IfDeplayOnStart);
-            this.ifElseBranchActivity1.Condition = codecondition7;
+            codecondition8.Condition += new System.EventHandler<System.Workflow.Activities.ConditionalEventArgs>(this.IfDeplayOnStart);
+            this.ifElseBranchActivity1.Condition = codecondition8;
             this.ifElseBranchActivity1.Name = "ifElseBranchActivity1";
             // 
             // WorkfowEndedEvent
@@ -346,6 +355,17 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
             activitybind17.Name = "ApprovalWF";
             activitybind17.Path = "WorkfowEndedEvent_Parameter";
             this.WorkfowEndedEvent.SetBinding(TVMCORP.TVS.WORKFLOWS.Activities.TaskEventHandler.ParameterProperty, ((System.Workflow.ComponentModel.ActivityBind)(activitybind17)));
+            // 
+            // ifElseActivity3
+            // 
+            this.ifElseActivity3.Activities.Add(this.ifElseBranchActivity8);
+            this.ifElseActivity3.Activities.Add(this.ifElseBranchActivity9);
+            this.ifElseActivity3.Name = "ifElseActivity3";
+            // 
+            // SetWFApprovedEventParameter
+            // 
+            this.SetWFApprovedEventParameter.Name = "SetWFApprovedEventParameter";
+            this.SetWFApprovedEventParameter.ExecuteCode += new System.EventHandler(this.SetWFApprovedEventParameter_ExecuteCode);
             // 
             // ContentApproval
             // 
@@ -399,6 +419,8 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
             this.Activities.Add(this.WorkflowStartedEvent);
             this.Activities.Add(this.CheckStartingCondition);
             this.Activities.Add(this.ContentApproval);
+            this.Activities.Add(this.SetWFApprovedEventParameter);
+            this.Activities.Add(this.ifElseActivity3);
             this.Activities.Add(this.WorkfowEndedEvent);
             this.Name = "ApprovalWF";
             this.CanModifyActivities = false;
@@ -406,6 +428,12 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
         }
 
         #endregion
+
+        private IfElseBranchActivity ifElseBranchActivity9;
+
+        private IfElseBranchActivity ifElseBranchActivity8;
+
+        private IfElseActivity ifElseActivity3;
 
         private WhileActivity DocumentNotChangeByUser;
 
@@ -429,7 +457,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
 
         private CodeActivity codeActivity2;
 
-        private Activities.UpdatePermissionActivity updatePermissionActivity1;
+        private UpdatePermissionActivity updatePermissionActivity1;
 
         private IfElseBranchActivity ifElseBranchActivity6;
 
@@ -457,7 +485,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
 
         private CodeActivity SetItemApprovalData;
 
-        private Activities.PublishItemActivity SetItemApproval;
+        private PublishItemActivity SetItemApproval;
 
         private IfElseBranchActivity ifElseBranchActivity2;
 
@@ -465,7 +493,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
 
         private IfElseActivity ContentApproval;
 
-        private Activities.ApprovalLevel approvalLevel;
+        private ApprovalLevel approvalLevel;
 
         private CodeActivity UpdateApprovalStatus;
 
@@ -484,6 +512,11 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
         private Microsoft.SharePoint.WorkflowActions.OnWorkflowItemChanged onWorkflowItemChanged1;
 
         private Microsoft.SharePoint.WorkflowActions.OnWorkflowActivated onWorkflowActivated1;
+
+
+
+
+
 
 
 

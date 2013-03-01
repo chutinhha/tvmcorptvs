@@ -469,7 +469,9 @@
     <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateTaskItemWithItemPropertyEditor.ascx" />
     <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateTaskPermissionEditor.ascx" />
     <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateWFItemPermissionEditor.ascx" />
-    <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateWorkflowItemMetaDataEditor.ascx" />
+    <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateWorkflowItemMetaDataEditor.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateWorkflowItemWithKeywordEditor.ascx" />
     <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateWorkflowItemWithTaskPropertyEditor.ascx" />
     <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateWorkflowTaskMetaDataEditor.ascx" />
@@ -500,7 +502,9 @@
     <Content Include="Workflows\ApprovalWF\ApprovalWFTaskForm.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
-    <Content Include="Workflows\ApprovalWF\ApprovalWFAssociation.aspx" />
+    <Content Include="Workflows\ApprovalWF\ApprovalWFAssociation.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="Workflows\ApprovalWF\ApprovalWFInitiation.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>

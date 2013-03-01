@@ -13,7 +13,32 @@
 <%@ Page Language="C#" DynamicMasterPageFile="~masterurl/default.master" AutoEventWireup="true"
     Inherits="TVMCORP.TVS.WORKFLOWS.Workflows.ApprovalWFInitiation" CodeBehind="ApprovalWFInitiation.aspx.cs" %>
 
-    
+<asp:Content ID="PageHead" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" runat="server">
+    <script src="/_layouts/1033/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".hidden-duedate-column").each(function () {
+                var $obj = $(this);
+                if ($(":text", $obj).val() == "12/31/9999" && $(":text", $obj).val() == "31/12/9999") {
+                    $obj.show();
+                }
+            });
+
+            $(".hidden-duration-column").each(function () {
+                var $obj = $(this);
+                if ($(":text", $obj).val() != "") {
+                    $obj.show();
+                }
+            });
+        });
+    </script>
+    <style type="text/css">
+        .hidden-duedate-column, .hidden-duration-column
+        {
+            display: none;
+        }
+    </style>
+</asp:Content>
 
 <asp:Content ID="Main" ContentPlaceHolderID="PlaceHolderMain" runat="server">
     <SharePoint:CssRegistration ID="CssRegistration3" Name="/_layouts/1033/styles/Themable/layouts.css" runat="server" />
@@ -54,7 +79,7 @@
                                     <SharePoint:PeopleEditor runat="server" ID="peSpecificUsesGroup" ValidatorEnabled="true" SelectionSet="User,SecGroup,SPGroup" ForceClaims="true" width='400px' />
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="hidden-duedate-column">
                                 <td width="30%" valign="top" class="ms-formlabel">
                                     <H3 class="ms-standardheader"><%= Resources.ApprovalWorkflowResources.ApprovalWF_InitPage_TaskDueDate%></H3>
                                 </td>
@@ -62,7 +87,7 @@
                                     <asp:TextBox runat="server" ID="txtDueDate" CssClass="ms-long ms-spellcheck-true" ></asp:TextBox>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="hidden-duration-column">
                                 <td width="30%" valign="top" class="ms-formlabel">
                                     <H3 class="ms-standardheader"><%= Resources.ApprovalWorkflowResources.ApprovalWF_InitPage_TaskDuration%></H3>
                                 </td>
