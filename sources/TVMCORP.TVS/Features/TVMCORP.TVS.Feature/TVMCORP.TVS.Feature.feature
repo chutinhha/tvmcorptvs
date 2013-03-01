@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feature xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0e672897-197b-4002-ba06-4e946122c497" featureId="0e672897-197b-4002-ba06-4e946122c497" imageUrl="" receiverAssembly="$SharePoint.Project.AssemblyFullName$" receiverClass="$SharePoint.Type.f044f39b-9a9f-4cb3-947a-6fe7425a2223.FullName$" solutionId="00000000-0000-0000-0000-000000000000" title="TVMCORP.TVS Feature1" version="" deploymentPath="$SharePoint.Project.FileNameWithoutExtension$_$SharePoint.Feature.FileNameWithoutExtension$" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/FeatureModel">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feature xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0e672897-197b-4002-ba06-4e946122c497" featureId="0e672897-197b-4002-ba06-4e946122c497" imageUrl="" receiverAssembly="$SharePoint.Project.AssemblyFullName$" receiverClass="TVMCORP.TVS.Features.TVMCORP.TVS.Feature.TVMCORPTVSEventReceiver" solutionId="00000000-0000-0000-0000-000000000000" title="TVMCORP.TVS Feature1" version="" deploymentPath="$SharePoint.Project.FileNameWithoutExtension$_$SharePoint.Feature.FileNameWithoutExtension$" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/FeatureModel">
   <projectItems>
     <projectItemReference itemId="6e8c6874-7473-48d0-9fec-55bf34d2dc10" />
     <projectItemReference itemId="d669ad8f-12c4-48ca-8731-e503824368ae" />

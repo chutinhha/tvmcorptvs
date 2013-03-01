@@ -29,9 +29,9 @@ namespace TVMCORP.TVS.Features.TVMCORP.TVS.Feature
              SPWeb web = (SPWeb)properties.Feature.Parent;
              try
              {
-                 //RemoveXsltListViewWebPart(web.Site.MakeFullUrl(Constants.PURCHASE_MY_ITEM_VIEW_URL), web);
-                 //RemoveXsltListViewWebPart(web.Site.MakeFullUrl(Constants.PURCHASE_MY_DEPARTMENT_ITEM_VIEW_URL), web);
-                 //ProvisionWebParts(web, "TVMCORP.TVS.WebParts.xml");
+                 RemoveXsltListViewWebPart(web.Site.MakeFullUrl(Constants.PURCHASE_MY_ITEM_VIEW_URL), web);
+                 RemoveXsltListViewWebPart(web.Site.MakeFullUrl(Constants.PURCHASE_MY_DEPARTMENT_ITEM_VIEW_URL), web);
+                 ProvisionWebParts(web, "TVMCORP.TVS.WebParts.xml");
              }
              catch (Exception ex)
              {

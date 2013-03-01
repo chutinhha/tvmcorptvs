@@ -55,8 +55,7 @@
                 <Type>ItemAdded</Type>
                 <SequenceNumber>10000</SequenceNumber>
                 <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
-                <Class>$SharePoint.Type.3f414e0d-5138-48dd-b29d-a3270ae1070b.FullName$</Class>
-                <SolutionId>$SharePoint.Package.Id$</SolutionId>
+                <Class>TVMCORP.TVS.ContentTypes.PurchaseContentTypeEventReceiverEventReceiver</Class>
                 <Data></Data>
                 <Filter></Filter>
               </Receiver>
@@ -236,7 +235,7 @@
         </ParameterBindings>
       </View>
 
-      <View BaseViewID="2" Type="HTML" WebPartZoneID="Main" DisplayName="Đề nghị của tôi"  DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\PurchaseViewPage.aspx" ImageUrl="/_layouts/images/generic.png" Url="MyItems.aspx">
+      <View BaseViewID="2" Type="HTML" WebPartZoneID="Main" DisplayName="Đề nghị của tôi"  DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="MyItems.aspx">
         <Toolbar Type="Standard" />
         <XslLink Default="TRUE">main.xsl</XslLink>
         <RowLimit Paged="TRUE">30</RowLimit>
@@ -254,6 +253,9 @@
         </ViewFields>
         
         <Query>
+          <GroupBy Collapse="TRUE">
+            <FieldRef Name="Status" />
+          </GroupBy>
           <OrderBy>
             <FieldRef Name="DateRequest" />
             <FieldRef Name="ID" Ascending="FALSE" />
@@ -289,6 +291,78 @@
           </FieldRef>
           <FieldRef Name="DepartmentRequest">
           </FieldRef>
+        </ViewFields>
+        <Query>
+          <GroupBy Collapse="TRUE">
+            <FieldRef Name="Status" />
+          </GroupBy>
+          <OrderBy>
+            <FieldRef Name="DateRequest" />
+            <FieldRef Name="ID" Ascending="FALSE" />
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View>
+
+      <View BaseViewID="4" Type="HTML" WebPartZoneID="Main" DisplayName="Đề nghị của tôi(2)"  Hidden="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="MyPurchases.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="Attachments">
+          </FieldRef>
+          <FieldRef Name="LinkTitle">
+          </FieldRef>
+          <FieldRef Name="DateRequest">
+          </FieldRef>
+          <FieldRef Name="UserRequest">
+          </FieldRef>
+          <FieldRef Name="DepartmentRequest">
+          </FieldRef>
+          <FieldRef Name="Status" />
+        </ViewFields>
+
+        <Query>
+          
+          <OrderBy>
+            <FieldRef Name="DateRequest" />
+            <FieldRef Name="ID" Ascending="FALSE" />
+          </OrderBy>
+          <Where>
+            <Eq>
+              <FieldRef Name="Author" />
+              <Value Type="Integer">
+                <UserID Type="Integer" />
+              </Value>
+            </Eq>
+          </Where>
+        </Query>
+
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View>
+
+      <View BaseViewID="5" Type="HTML" WebPartZoneID="Main" DisplayName="Đề nghị của đơn vị tôi(2)" Hidden="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="MyDepartmentPurchases.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="Attachments">
+          </FieldRef>
+          <FieldRef Name="LinkTitle">
+          </FieldRef>
+          <FieldRef Name="DateRequest">
+          </FieldRef>
+          <FieldRef Name="UserRequest">
+          </FieldRef>
+          <FieldRef Name="DepartmentRequest">
+          </FieldRef>
+          <FieldRef Name="Status" />
         </ViewFields>
         <Query>
           <OrderBy>

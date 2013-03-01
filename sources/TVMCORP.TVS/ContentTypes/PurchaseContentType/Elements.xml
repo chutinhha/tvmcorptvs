@@ -156,8 +156,7 @@
             <Type>ItemAdded</Type>
             <SequenceNumber>10000</SequenceNumber>
             <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
-            <Class>$SharePoint.Type.3f414e0d-5138-48dd-b29d-a3270ae1070b.FullName$</Class>
-            <SolutionId>$SharePoint.Package.Id$</SolutionId>
+            <Class>TVMCORP.TVS.ContentTypes.PurchaseContentTypeEventReceiverEventReceiver</Class>
             <Data></Data>
             <Filter></Filter>
           </Receiver>
