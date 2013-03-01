@@ -7,21 +7,24 @@
     <Webparts xsi:type="DefaultWP">
       <Title>PurchaseFilterWebPart</Title>
       <ZoneId>Body</ZoneId>
-      <Index>3</Index>
+      <Index>2</Index>
       <Hidden>true</Hidden>
       <AllowDuplicate>false</AllowDuplicate>
       <WebpartName>FilterWebPart.webpart</WebpartName>
+      <Properties>
+        <Add Name="Hidden" Value="True" Type="string" />
+      </Properties>
     </Webparts>
 
     <Webparts xsi:type="XSLTListViewWP">
       <Title>Đề nghị của tôi</Title>
       <ZoneId>Body</ZoneId>
-      <Index>1</Index>
+      <Index>0</Index>
       <Hidden>false</Hidden>
       <AllowDuplicate>true</AllowDuplicate>
       <ListName>Đề nghị mua hàng</ListName>
       <ListUrl>/Lists/Purchase</ListUrl>
-      <ViewName>Đề nghị của tôi</ViewName>
+      <ViewName>Đề nghị của tôi(2)</ViewName>
       <CreateDefaultWP>false</CreateDefaultWP>
       <Properties>
         <Add Name="Title" Value="Đề nghị của tôi" Type="string" />
@@ -31,17 +34,33 @@
     <Webparts xsi:type="XSLTListViewWP">
       <Title>Đề nghị của đơn vị tôi</Title>
       <ZoneId>Body</ZoneId>
-      <Index>2</Index>
+      <Index>0</Index>
       <Hidden>false</Hidden>
       <AllowDuplicate>true</AllowDuplicate>
       <ListName>Đề nghị mua hàng</ListName>
       <ListUrl>/Lists/Purchase</ListUrl>
-      <ViewName>Đề nghị của đơn vị tôi</ViewName>
+      <ViewName>Đề nghị của đơn vị tôi(2)</ViewName>
       <CreateDefaultWP>false</CreateDefaultWP>
       <Properties>
         <Add Name="Title" Value="Đề nghị của đơn vị tôi" Type="string" />
       </Properties>
     </Webparts>
+
+    <Webparts xsi:type="XSLTListViewWP">
+      <Title>Duyệt đề nghị mua hàng</Title>
+      <ZoneId>RightColumn</ZoneId>
+      <Index>0</Index>
+      <Hidden>false</Hidden>
+      <AllowDuplicate>true</AllowDuplicate>
+      <ListName>Duyệt đề nghị mua hàng</ListName>
+      <ListUrl>/Lists/PurchaseTasks</ListUrl>
+      <ViewName>All Tasks</ViewName>
+      <CreateDefaultWP>false</CreateDefaultWP>
+      <Properties>
+        <Add Name="Title" Value="Duyệt đề nghị mua hàng" Type="string" />
+      </Properties>
+    </Webparts>
+    
   </WebpartPageDefinition>
 
   <WebpartPageDefinition>
@@ -54,17 +73,20 @@
       <Hidden>true</Hidden>
       <AllowDuplicate>false</AllowDuplicate>
       <WebpartName>FilterWebPart.webpart</WebpartName>
+      <Properties>
+        <Add Name="Hidden" Value="True" Type="string" />
+      </Properties>
     </Webparts>
 
     <Webparts xsi:type="XSLTListViewWP">
       <Title>Đề nghị của tôi</Title>
       <ZoneId>Body</ZoneId>
-      <Index>2</Index>
+      <Index>0</Index>
       <Hidden>false</Hidden>
-      <AllowDuplicate>true</AllowDuplicate>
+      <AllowDuplicate>false</AllowDuplicate>
       <ListName>Đề nghị mua hàng</ListName>
       <ListUrl>/Lists/Purchase</ListUrl>
-      <ViewName>All Items</ViewName>
+      <ViewName>Đề nghị của tôi(2)</ViewName>
       <CreateDefaultWP>false</CreateDefaultWP>
       <Properties>
         <Add Name="Title" Value="Đề nghị của tôi" Type="string" />
@@ -83,6 +105,9 @@
       <Hidden>true</Hidden>
       <AllowDuplicate>false</AllowDuplicate>
       <WebpartName>FilterWebPart.webpart</WebpartName>
+      <Properties>
+        <Add Name="Hidden" Value="True" Type="string" />
+      </Properties>
     </Webparts>
 
     <Webparts xsi:type="XSLTListViewWP">
@@ -90,10 +115,10 @@
       <ZoneId>Body</ZoneId>
       <Index>2</Index>
       <Hidden>false</Hidden>
-      <AllowDuplicate>true</AllowDuplicate>
+      <AllowDuplicate>false</AllowDuplicate>
       <ListName>Đề nghị mua hàng</ListName>
       <ListUrl>/Lists/Purchase</ListUrl>
-      <ViewName>All Items</ViewName>
+      <ViewName>Đề nghị của đơn vị tôi(2)</ViewName>
       <CreateDefaultWP>false</CreateDefaultWP>
       <Properties>
         <Add Name="Title" Value="Đề nghị của đơn vị tôi" Type="string" />
@@ -103,3 +128,5 @@
   </WebpartPageDefinition>
   
 </ArrayOfWebpartPageDefinition>
+
+
