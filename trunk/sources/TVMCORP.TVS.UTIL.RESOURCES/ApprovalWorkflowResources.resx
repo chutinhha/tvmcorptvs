@@ -138,6 +138,9 @@
   <data name="ApprovalWF_InitPage_TaskDuration" xml:space="preserve">
     <value>Thời gian hiệu lực trên mỗi yêu cầu</value>
   </data>
+  <data name="PurchaseTaskListName" xml:space="preserve">
+    <value>Purchase Tasks</value>
+  </data>
   <data name="RadioListApproverType_Manager" xml:space="preserve">
     <value>Direct Manager</value>
   </data>

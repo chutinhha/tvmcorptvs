@@ -176,6 +176,9 @@
     <None Include="Modules\WebPartPages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{654fa44e-cbb4-4543-9679-dfea75becc22}</SharePointProjectItemId>
     </None>
+    <None Include="ListInstances\PurchaseTaskListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1f05a374-6689-4a53-8344-c46eac36f1d9}</SharePointProjectItemId>
+    </None>
     <None Include="Package\Package.package">
       <PackageId>{09e80497-3297-4e4a-9494-d10b27df9c62}</PackageId>
     </None>
@@ -210,8 +213,10 @@
     <Content Include="Features\TVMCORP.TVS.Site.Feature\TVMCORP.TVS.Site.Feature.Template.xml">
       <DependentUpon>TVMCORP.TVS.Site.Feature.feature</DependentUpon>
     </Content>
+    <Content Include="DummyFormatXML.xml" />
     <Content Include="Features\TVMCORP.TVS.Feature\TVMCORP.TVS.Feature.Template.xml">
       <DependentUpon>TVMCORP.TVS.Feature.feature</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Images\TVMCORP.TVS\css\style.css" />
     <Content Include="Images\TVMCORP.TVS\images\bgcontainer_form.png" />
@@ -246,7 +251,9 @@
     </Content>
     <Content Include="Libs\itextsharp.dll" />
     <Content Include="ListDefinitions\EmailTemplate\Elements.xml" />
-    <Content Include="ListDefinitions\EmailTemplate\EmailTemplateInstance\Elements.xml" />
+    <Content Include="ListDefinitions\EmailTemplate\EmailTemplateInstance\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ListDefinitions\EmailTemplate\Schema.xml" />
     <Content Include="ListDefinitions\PurchaseDefinition\Elements.xml" />
     <Content Include="ListDefinitions\PurchaseDefinition\FilterWebPart\Elements.xml" />
@@ -268,6 +275,8 @@
     <Content Include="TEMPLATE\PAGES\PurchaseViewPage.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Content Include="ListInstances\PurchaseTaskListInstance\Elements.xml" />
+    <EmbeddedResource Include="XMLSettings\ApprovalWorkflowSettings_Purchase.xml" />
     <EmbeddedResource Include="Webparts.xml" />
   </ItemGroup>
   <ItemGroup>

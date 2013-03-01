@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ApprovalWFAssociationData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Permissions>
+  </Permissions>
+  <ApproverData>
+    <ApprovalWFApprover>
+      <TaskEvents>
+        <Events>
+          <TaskEventSetting>
+            <Type>TaskApproved</Type>
+            <Actions>
+              <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+                <Type>UpdateWorkflowItemMetadata</Type>
+                <Order>0</Order>
+                <FieldId>a37416ee-c82f-4d98-9427-6ed614161977</FieldId>
+                <Value>Trưởng bộ phận đã duyệt</Value>
+              </TaskActionSettings>
+            </Actions>
+          </TaskEventSetting>
+          <TaskEventSetting>
+            <Type>TaskCreated</Type>
+            <Actions />
+          </TaskEventSetting>
+          <TaskEventSetting>
+            <Type>TaskRejected</Type>
+            <Actions>
+              <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+                <Type>UpdateWorkflowItemMetadata</Type>
+                <Order>0</Order>
+                <FieldId>a37416ee-c82f-4d98-9427-6ed614161977</FieldId>
+                <Value>Trưởng bộ phận đã từ chối duyệt</Value>
+              </TaskActionSettings>
+            </Actions>
+          </TaskEventSetting>
+        </Events>
+      </TaskEvents>
+      <ApprovalLevelName>Cấp duyệt của Trưởng bộ phận</ApprovalLevelName>
+      <ColumnName>dc1e8fcf-2f61-4bd8-be52-c9e7a6b9851d</ColumnName>
+      <SpecificUserGroup />
+      <ManagerApprove>false</ManagerApprove>
+      <ExpendGroup>false</ExpendGroup>
+      <TaskSequenceType>Sequence</TaskSequenceType>
+      <DueDate />
+      <DurationPerTask>0</DurationPerTask>
+      <EnableEmail>true</EnableEmail>
+      <EmailTemplate>
+        <Url>/Lists/EmailTemplates</Url>
+        <Name>Yêu cầu duyệt</Name>
+      </EmailTemplate>
+      <AllowChangeMessage>false</AllowChangeMessage>
+      <TaskContenType>0x01080100E6FA232BCA3B4B25B9DF4B2E3791D3DD</TaskContenType>
+      <TaskTitle />
+      <EnableChangeApprovers>false</EnableChangeApprovers>
+      <AppendTitle>true</AppendTitle>
+      <UpdateProperties>
+        <string>16cc0de3-825d-4520-b8db-067d49d68244</string>
+      </UpdateProperties>
+    </ApprovalWFApprover>
+    <ApprovalWFApprover>
+      <TaskEvents>
+        <Events>
+          <TaskEventSetting>
+            <Type>TaskApproved</Type>
+            <Actions>
+              <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+                <Type>UpdateWorkflowItemMetadata</Type>
+                <Order>0</Order>
+                <FieldId>a37416ee-c82f-4d98-9427-6ed614161977</FieldId>
+                <Value>Người mua hàng đã duyệt</Value>
+              </TaskActionSettings>
+            </Actions>
+          </TaskEventSetting>
+          <TaskEventSetting>
+            <Type>TaskRejected</Type>
+            <Actions>
+              <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+                <Type>UpdateWorkflowItemMetadata</Type>
+                <Order>0</Order>
+                <FieldId>a37416ee-c82f-4d98-9427-6ed614161977</FieldId>
+                <Value>Người mua hàng đã từ chối duyệt</Value>
+              </TaskActionSettings>
+            </Actions>
+          </TaskEventSetting>
+        </Events>
+      </TaskEvents>
+      <ApprovalLevelName>Cấp duyệt của Người mua hàng</ApprovalLevelName>
+      <ColumnName>981de36c-6d92-42e3-8e6d-2be0770ac827</ColumnName>
+      <SpecificUserGroup />
+      <ManagerApprove>false</ManagerApprove>
+      <ExpendGroup>false</ExpendGroup>
+      <TaskSequenceType>Sequence</TaskSequenceType>
+      <DueDate />
+      <DurationPerTask>0</DurationPerTask>
+      <EnableEmail>true</EnableEmail>
+      <EmailTemplate>
+        <Url>/Lists/EmailTemplates</Url>
+        <Name>Yêu cầu duyệt</Name>
+      </EmailTemplate>
+      <AllowChangeMessage>false</AllowChangeMessage>
+      <TaskContenType>0x01080100E6FA232BCA3B4B25B9DF4B2E3791D3DD</TaskContenType>
+      <TaskTitle />
+      <EnableChangeApprovers>false</EnableChangeApprovers>
+      <AppendTitle>true</AppendTitle>
+      <UpdateProperties>
+        <string>35b56725-4aeb-403e-bb15-b6496fa4bebb</string>
+      </UpdateProperties>
+    </ApprovalWFApprover>
+    <ApprovalWFApprover>
+      <TaskEvents>
+        <Events>
+          <TaskEventSetting>
+            <Type>TaskApproved</Type>
+            <Actions>
+              <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+                <Type>UpdateWorkflowItemMetadata</Type>
+                <Order>0</Order>
+                <FieldId>a37416ee-c82f-4d98-9427-6ed614161977</FieldId>
+                <Value>Người duyệt đã duyệt</Value>
+              </TaskActionSettings>
+            </Actions>
+          </TaskEventSetting>
+          <TaskEventSetting>
+            <Type>TaskRejected</Type>
+            <Actions>
+              <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+                <Type>UpdateWorkflowItemMetadata</Type>
+                <Order>0</Order>
+                <FieldId>a37416ee-c82f-4d98-9427-6ed614161977</FieldId>
+                <Value>Người duyệt đã từ chối duyệt</Value>
+              </TaskActionSettings>
+            </Actions>
+          </TaskEventSetting>
+        </Events>
+      </TaskEvents>
+      <ApprovalLevelName>Cấp duyệt của Người duyệt</ApprovalLevelName>
+      <ColumnName>58059bc3-40d1-4371-bb22-b5b424198e86</ColumnName>
+      <SpecificUserGroup />
+      <ManagerApprove>false</ManagerApprove>
+      <ExpendGroup>false</ExpendGroup>
+      <TaskSequenceType>Sequence</TaskSequenceType>
+      <DueDate />
+      <DurationPerTask>0</DurationPerTask>
+      <EnableEmail>true</EnableEmail>
+      <EmailTemplate>
+        <Url>/Lists/EmailTemplates</Url>
+        <Name>Yêu cầu duyệt</Name>
+      </EmailTemplate>
+      <AllowChangeMessage>false</AllowChangeMessage>
+      <TaskContenType>0x01080100E6FA232BCA3B4B25B9DF4B2E3791D3DD</TaskContenType>
+      <TaskTitle />
+      <EnableChangeApprovers>false</EnableChangeApprovers>
+      <AppendTitle>true</AppendTitle>
+      <UpdateProperties>
+        <string>a2adcaaa-90c0-4869-823b-e9af74b90b87</string>
+      </UpdateProperties>
+    </ApprovalWFApprover>
+    <ApprovalWFApprover>
+      <TaskEvents>
+        <Events>
+          <TaskEventSetting>
+            <Type>TaskApproved</Type>
+            <Actions>
+              <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+                <Type>UpdateWorkflowItemMetadata</Type>
+                <Order>0</Order>
+                <FieldId>a37416ee-c82f-4d98-9427-6ed614161977</FieldId>
+                <Value>Phòng kế toán đã duyệt</Value>
+              </TaskActionSettings>
+            </Actions>
+          </TaskEventSetting>
+          <TaskEventSetting>
+            <Type>TaskRejected</Type>
+            <Actions>
+              <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+                <Type>UpdateWorkflowItemMetadata</Type>
+                <Order>0</Order>
+                <FieldId>a37416ee-c82f-4d98-9427-6ed614161977</FieldId>
+                <Value>Phòng kế toán đã từ chối duyệt</Value>
+              </TaskActionSettings>
+            </Actions>
+          </TaskEventSetting>
+        </Events>
+      </TaskEvents>
+      <ApprovalLevelName>Cấp duyệt của Phòng kế toán</ApprovalLevelName>
+      <ColumnName>c56ac49f-d5f4-4a02-9c92-42cdbb1a0449</ColumnName>
+      <SpecificUserGroup />
+      <ManagerApprove>false</ManagerApprove>
+      <ExpendGroup>false</ExpendGroup>
+      <TaskSequenceType>Sequence</TaskSequenceType>
+      <DueDate />
+      <DurationPerTask>0</DurationPerTask>
+      <EnableEmail>true</EnableEmail>
+      <EmailTemplate>
+        <Url>/Lists/EmailTemplates</Url>
+        <Name>Yêu cầu duyệt</Name>
+      </EmailTemplate>
+      <AllowChangeMessage>false</AllowChangeMessage>
+      <TaskContenType>0x01080100E6FA232BCA3B4B25B9DF4B2E3791D3DD</TaskContenType>
+      <TaskTitle />
+      <EnableChangeApprovers>false</EnableChangeApprovers>
+      <AppendTitle>true</AppendTitle>
+      <UpdateProperties>
+        <string>29287230-fd40-4298-8ff4-01daa2b09a68</string>
+      </UpdateProperties>
+    </ApprovalWFApprover>
+    <ApprovalWFApprover>
+      <TaskEvents>
+        <Events>
+          <TaskEventSetting>
+            <Type>TaskApproved</Type>
+            <Actions>
+              <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+                <Type>UpdateWorkflowItemMetadata</Type>
+                <Order>0</Order>
+                <FieldId>a37416ee-c82f-4d98-9427-6ed614161977</FieldId>
+                <Value>Người xác nhận đã duyệt</Value>
+              </TaskActionSettings>
+            </Actions>
+          </TaskEventSetting>
+          <TaskEventSetting>
+            <Type>TaskRejected</Type>
+            <Actions>
+              <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+                <Type>UpdateWorkflowItemMetadata</Type>
+                <Order>0</Order>
+                <FieldId>a37416ee-c82f-4d98-9427-6ed614161977</FieldId>
+                <Value>Người xác nhận đã từ chối duyệt</Value>
+              </TaskActionSettings>
+            </Actions>
+          </TaskEventSetting>
+        </Events>
+      </TaskEvents>
+      <ApprovalLevelName>Cấp duyệt của Người xác nhận</ApprovalLevelName>
+      <ColumnName>1caae119-5949-49db-b158-11c9f3e4e681</ColumnName>
+      <SpecificUserGroup />
+      <ManagerApprove>false</ManagerApprove>
+      <ExpendGroup>false</ExpendGroup>
+      <TaskSequenceType>Sequence</TaskSequenceType>
+      <DueDate />
+      <DurationPerTask>0</DurationPerTask>
+      <EnableEmail>true</EnableEmail>
+      <EmailTemplate>
+        <Url>/Lists/EmailTemplates</Url>
+        <Name>Yêu cầu duyệt</Name>
+      </EmailTemplate>
+      <AllowChangeMessage>false</AllowChangeMessage>
+      <TaskContenType>0x01080100E6FA232BCA3B4B25B9DF4B2E3791D3DD</TaskContenType>
+      <TaskTitle />
+      <EnableChangeApprovers>false</EnableChangeApprovers>
+      <AppendTitle>true</AppendTitle>
+      <UpdateProperties>
+        <string>35b3b2d4-7356-4f1a-81e2-0b46e311516f</string>
+      </UpdateProperties>
+    </ApprovalWFApprover>
+  </ApproverData>
+  <EndOnFirstReject>true</EndOnFirstReject>
+  <EndOnItemDocumentChange>false</EndOnItemDocumentChange>
+  <EnableContentApproval>false</EnableContentApproval>
+  <DelayOnStart>0</DelayOnStart>
+  <StartNotification>false</StartNotification>
+  <EmailTemplate>
+    <Url />
+    <Name />
+  </EmailTemplate>
+  <ColumnName />
+  <UseSpecificUserGroup>false</UseSpecificUserGroup>
+  <UseMetaData>false</UseMetaData>
+  <SpecificUserGroup />
+  <EnableVerboseLog>false</EnableVerboseLog>
+  <EnableReassign>false</EnableReassign>
+  <EnableHoldOn>false</EnableHoldOn>
+  <EnableRequestChange>false</EnableRequestChange>
+  <EnableApprove>true</EnableApprove>
+  <EnableReject>true</EnableReject>
+  <TaskFormOption>
+    <ApproveLabel>Approve</ApproveLabel>
+    <RejectLabel>Reject</RejectLabel>
+    <RequestInformationLabel>Request Info</RequestInformationLabel>
+    <RequestChangeLabel>Request Change</RequestChangeLabel>
+    <OnHoldLabel>Hold</OnHoldLabel>
+    <ReassignLabel>Reassign</ReassignLabel>
+    <EnableApprove>true</EnableApprove>
+    <EnableReject>true</EnableReject>
+    <EnableHoldOn>false</EnableHoldOn>
+    <EnableRequestChange>false</EnableRequestChange>
+    <EnableRequestInf>false</EnableRequestInf>
+    <EnableReassign>false</EnableReassign>
+  </TaskFormOption>
+  <EnableStartingCondition>false</EnableStartingCondition>
+  <ConditionFieldId>fa564e0f-0c70-4ab9-b863-0177e6ddd247</ConditionFieldId>
+  <ConditionFieldValue />
+  <ApproveIfByPass>false</ApproveIfByPass>
+  <EnableUpdatePermission>false</EnableUpdatePermission>
+  <KeepCurrentPermissions>false</KeepCurrentPermissions>
+  <WFEvents>
+    <Events>
+      <TaskEventSetting>
+        <Type>WFStarted</Type>
+        <Actions>
+          <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+            <Type>UpdateWorkflowItemMetadata</Type>
+            <Order>0</Order>
+            <FieldId>a37416ee-c82f-4d98-9427-6ed614161977</FieldId>
+            <Value>Item đang chờ duyệt</Value>
+          </TaskActionSettings>
+          <TaskActionSettings xsi:type="UpdateWFItemPermissionSettings">
+            <Type>UpdateWFPermission</Type>
+            <Order>0</Order>
+            <RoleId>1073741826</RoleId>
+            <KeepExisting>false</KeepExisting>
+            <Columns>
+              <string>1df5e554-ec7e-46a6-901d-d85a3881cb18</string>
+            </Columns>
+            <AllParticipiants>false</AllParticipiants>
+            <StaticUsers />
+          </TaskActionSettings>
+          <TaskActionSettings xsi:type="UpdateWFItemPermissionSettings">
+            <Type>UpdateWFPermission</Type>
+            <Order>0</Order>
+            <RoleId>1073741827</RoleId>
+            <KeepExisting>true</KeepExisting>
+            <Columns>
+              <string>dc1e8fcf-2f61-4bd8-be52-c9e7a6b9851d</string>
+              <string>362533bd-4768-4979-9fbd-d2794915e626</string>
+              <string>981de36c-6d92-42e3-8e6d-2be0770ac827</string>
+              <string>c56ac49f-d5f4-4a02-9c92-42cdbb1a0449</string>
+              <string>1caae119-5949-49db-b158-11c9f3e4e681</string>
+            </Columns>
+            <AllParticipiants>false</AllParticipiants>
+            <StaticUsers />
+          </TaskActionSettings>
+        </Actions>
+      </TaskEventSetting>
+      <TaskEventSetting>
+        <Type>WFApproved</Type>
+        <Actions>
+          <TaskActionSettings xsi:type="SendEmailToWfItemUserColumnSettings">
+            <Type>SendEmailToWorkflowItemUserColumn</Type>
+            <Order>0</Order>
+            <EmailTemplateUrl>/Lists/EmailTemplates</EmailTemplateUrl>
+            <EmailTemplateName>Thông báo item đã được duyệt</EmailTemplateName>
+            <TaskId>0</TaskId>
+            <AttachTaskLink>false</AttachTaskLink>
+            <StaticUsers />
+            <FieldId>1df5e554-ec7e-46a6-901d-d85a3881cb18</FieldId>
+          </TaskActionSettings>
+          <TaskActionSettings xsi:type="UpdateWFItemPermissionSettings">
+            <Type>UpdateWFPermission</Type>
+            <Order>0</Order>
+            <RoleId>1073741826</RoleId>
+            <KeepExisting>false</KeepExisting>
+            <Columns>
+              <string>1df5e554-ec7e-46a6-901d-d85a3881cb18</string>
+              <string>362533bd-4768-4979-9fbd-d2794915e626</string>
+              <string>981de36c-6d92-42e3-8e6d-2be0770ac827</string>
+              <string>1caae119-5949-49db-b158-11c9f3e4e681</string>
+              <string>c56ac49f-d5f4-4a02-9c92-42cdbb1a0449</string>
+              <string>dc1e8fcf-2f61-4bd8-be52-c9e7a6b9851d</string>
+            </Columns>
+            <AllParticipiants>false</AllParticipiants>
+            <StaticUsers />
+          </TaskActionSettings>
+        </Actions>
+      </TaskEventSetting>
+      <TaskEventSetting>
+        <Type>WFRejected</Type>
+        <Actions>
+          <TaskActionSettings xsi:type="SendEmailToWfItemUserColumnSettings">
+            <Type>SendEmailToWorkflowItemUserColumn</Type>
+            <Order>0</Order>
+            <EmailTemplateUrl>/Lists/EmailTemplates</EmailTemplateUrl>
+            <EmailTemplateName>Thông báo item bị từ chối duyệt</EmailTemplateName>
+            <TaskId>0</TaskId>
+            <AttachTaskLink>false</AttachTaskLink>
+            <StaticUsers />
+            <FieldId>1df5e554-ec7e-46a6-901d-d85a3881cb18</FieldId>
+          </TaskActionSettings>
+          <TaskActionSettings xsi:type="UpdateWFItemPermissionSettings">
+            <Type>UpdateWFPermission</Type>
+            <Order>0</Order>
+            <RoleId>1073741827</RoleId>
+            <KeepExisting>false</KeepExisting>
+            <Columns>
+              <string>1df5e554-ec7e-46a6-901d-d85a3881cb18</string>
+            </Columns>
+            <AllParticipiants>false</AllParticipiants>
+            <StaticUsers />
+          </TaskActionSettings>
+          <TaskActionSettings xsi:type="UpdateWFItemPermissionSettings">
+            <Type>UpdateWFPermission</Type>
+            <Order>0</Order>
+            <RoleId>1073741826</RoleId>
+            <KeepExisting>true</KeepExisting>
+            <Columns>
+              <string>362533bd-4768-4979-9fbd-d2794915e626</string>
+              <string>981de36c-6d92-42e3-8e6d-2be0770ac827</string>
+              <string>1caae119-5949-49db-b158-11c9f3e4e681</string>
+              <string>c56ac49f-d5f4-4a02-9c92-42cdbb1a0449</string>
+              <string>dc1e8fcf-2f61-4bd8-be52-c9e7a6b9851d</string>
+            </Columns>
+            <AllParticipiants>false</AllParticipiants>
+            <StaticUsers />
+          </TaskActionSettings>
+        </Actions>
+      </TaskEventSetting>
+      <TaskEventSetting>
+        <Type>WorkflowTerminated</Type>
+        <Actions>
+          <TaskActionSettings xsi:type="SendEmailToWfItemUserColumnSettings">
+            <Type>SendEmailToWorkflowItemUserColumn</Type>
+            <Order>0</Order>
+            <EmailTemplateUrl>/Lists/EmailTemplates</EmailTemplateUrl>
+            <EmailTemplateName>Thông báo quy trình duyệt bị hủy</EmailTemplateName>
+            <TaskId>0</TaskId>
+            <AttachTaskLink>false</AttachTaskLink>
+            <StaticUsers />
+            <FieldId>1df5e554-ec7e-46a6-901d-d85a3881cb18</FieldId>
+          </TaskActionSettings>
+          <TaskActionSettings xsi:type="UpdateWFItemPermissionSettings">
+            <Type>UpdateWFPermission</Type>
+            <Order>0</Order>
+            <RoleId>1073741827</RoleId>
+            <KeepExisting>false</KeepExisting>
+            <Columns>
+              <string>1df5e554-ec7e-46a6-901d-d85a3881cb18</string>
+            </Columns>
+            <AllParticipiants>false</AllParticipiants>
+            <StaticUsers />
+          </TaskActionSettings>
+          <TaskActionSettings xsi:type="UpdateWFItemPermissionSettings">
+            <Type>UpdateWFPermission</Type>
+            <Order>0</Order>
+            <RoleId>1073741826</RoleId>
+            <KeepExisting>true</KeepExisting>
+            <Columns>
+              <string>362533bd-4768-4979-9fbd-d2794915e626</string>
+              <string>981de36c-6d92-42e3-8e6d-2be0770ac827</string>
+              <string>1caae119-5949-49db-b158-11c9f3e4e681</string>
+              <string>c56ac49f-d5f4-4a02-9c92-42cdbb1a0449</string>
+              <string>dc1e8fcf-2f61-4bd8-be52-c9e7a6b9851d</string>
+            </Columns>
+            <AllParticipiants>false</AllParticipiants>
+            <StaticUsers />
+          </TaskActionSettings>
+        </Actions>
+      </TaskEventSetting>
+    </Events>
+  </WFEvents>
+</ApprovalWFAssociationData>
