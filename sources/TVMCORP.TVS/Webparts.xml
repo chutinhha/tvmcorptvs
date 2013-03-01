@@ -28,6 +28,12 @@
       <CreateDefaultWP>false</CreateDefaultWP>
       <Properties>
         <Add Name="Title" Value="Đề nghị của tôi" Type="string" />
+        <Add Name="AllowMinimize" Value="False" Type="string" />
+        <Add Name="AllowClose" Value="False" Type="string" />
+        <Add Name="AllowHide" Value="False" Type="string" />
+        <Add Name="AllowZoneChange" Value="False" Type="string" />
+        <Add Name="AllowEdit" Value="False" Type="string" />
+        <Add Name="AllowConnect" Value="False" Type="string" />
       </Properties>
     </Webparts>
 
@@ -43,6 +49,12 @@
       <CreateDefaultWP>false</CreateDefaultWP>
       <Properties>
         <Add Name="Title" Value="Đề nghị của đơn vị tôi" Type="string" />
+        <Add Name="AllowMinimize" Value="False" Type="string" />
+        <Add Name="AllowClose" Value="False" Type="string" />
+        <Add Name="AllowHide" Value="False" Type="string" />
+        <Add Name="AllowZoneChange" Value="False" Type="string" />
+        <Add Name="AllowEdit" Value="False" Type="string" />
+        <Add Name="AllowConnect" Value="False" Type="string" />
       </Properties>
     </Webparts>
 
@@ -58,6 +70,7 @@
       <CreateDefaultWP>false</CreateDefaultWP>
       <Properties>
         <Add Name="Title" Value="Duyệt đề nghị mua hàng" Type="string" />
+        <Add Name="TitleUrl" Value="#" Type="string" />
       </Properties>
     </Webparts>
     
