@@ -29,7 +29,9 @@ namespace TVMCORP.TVS.Features.TVMCORP.TVS.Feature
              SPWeb web = (SPWeb)properties.Feature.Parent;
              try
              {
-                 ProvisionWebParts(web);
+                 //RemoveXsltListViewWebPart(web.Site.MakeFullUrl(Constants.PURCHASE_MY_ITEM_VIEW_URL), web);
+                 //RemoveXsltListViewWebPart(web.Site.MakeFullUrl(Constants.PURCHASE_MY_DEPARTMENT_ITEM_VIEW_URL), web);
+                 //ProvisionWebParts(web, "TVMCORP.TVS.WebParts.xml");
              }
              catch (Exception ex)
              {
@@ -65,12 +67,42 @@ namespace TVMCORP.TVS.Features.TVMCORP.TVS.Feature
         //}
 
         #region Functions
-        private void ProvisionWebParts(SPWeb web)
+
+        private void RemoveXsltListViewWebPart(string fullPageUrl, SPWeb spWeb)
+        {
+            SPSecurity.RunWithElevatedPrivileges(delegate()
+            {
+                using (SPSite site = new SPSite(spWeb.Site.ID))
+                {
+                    using (SPWeb web = site.OpenWeb(spWeb.ID))
+                    {
+                        web.AllowUnsafeUpdates = true;
+                        Microsoft.SharePoint.WebPartPages.SPLimitedWebPartManager webPartManager = web.GetLimitedWebPartManager(fullPageUrl, System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared);
+                        
+                        foreach (System.Web.UI.WebControls.WebParts.WebPart webPart in webPartManager.WebParts)
+                        {
+                            if (webPart is Microsoft.SharePoint.WebPartPages.XsltListViewWebPart)//|| webPart is ListViewWebPart)
+                            {
+                                //webPartManager.MoveWebPart(webPart, "Main", 0);
+                                webPartManager.DeleteWebPart(webPart);
+                                //webPart.Hidden = true;
+                                //webPartManager.SaveChanges(webPart);
+                                web.Update();
+                                break;
+                            }
+                        }
+                        web.AllowUnsafeUpdates = false;
+                    }
+                }
+            });
+        }
+
+        private void ProvisionWebParts(SPWeb web, string xmlFile)
         {
             try
             {
                 Assembly assembly = Assembly.GetExecutingAssembly();
-                string xml = assembly.GetResourceTextFile("TVMCORP.TVS.Webparts.xml");
+                string xml = assembly.GetResourceTextFile(xmlFile);
 
                 var webpartPages = SerializationHelper.DeserializeFromXml<WebpartPageDefinitionCollection>(xml);
                 WebPartHelper.ProvisionWebpart(web, webpartPages);

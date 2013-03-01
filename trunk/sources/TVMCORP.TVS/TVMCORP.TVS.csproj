@@ -114,6 +114,8 @@
       <DependentUpon>PurchaseFilterUserControl.ascx.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewDelegateControl\CustomViewSelectorMenu.cs" />
+    <Compile Include="ViewDelegateControl\PageHeadDelegateControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ContentTypes\PurchaseContentType\SharePointProjectItem.spdata">
@@ -121,6 +123,9 @@
     </None>
     <None Include="ContentTypes\PurchaseDetailContentType\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{d669ad8f-12c4-48ca-8731-e503824368ae}</SharePointProjectItemId>
+    </None>
+    <None Include="CustomActions\BreadcrumbViewDelegate\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{14ef5dc6-26a4-4165-a8e8-40c7621d403d}</SharePointProjectItemId>
     </None>
     <None Include="CustomActions\ListApproversSettings\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{03b227f1-ebb5-44a1-ad38-ec7970a3b582}</SharePointProjectItemId>
@@ -206,6 +211,7 @@
     <Content Include="ControlTemplates\TVMCORP.TVS\PurchaseNewForm.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Content Include="CustomActions\BreadcrumbViewDelegate\Elements.xml" />
     <Content Include="CustomActions\ListApproversSettings\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -275,9 +281,9 @@
     <Content Include="TEMPLATE\PAGES\PurchaseViewPage.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <EmbeddedResource Include="WebParts.xml" />
     <Content Include="ListInstances\PurchaseTaskListInstance\Elements.xml" />
     <EmbeddedResource Include="XMLSettings\ApprovalWorkflowSettings_Purchase.xml" />
-    <EmbeddedResource Include="Webparts.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TVMCORP.TVS.UTIL\TVMCORP.TVS.UTIL.csproj">

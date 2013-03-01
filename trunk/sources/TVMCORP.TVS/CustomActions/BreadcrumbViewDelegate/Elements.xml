@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Control Id="AdditionalPageHead" ControlAssembly="TVMCORP.TVS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=44dc3ce128de1979" ControlClass="TVMCORP.TVS.PageHeadDelegateControl" />
+</Elements>

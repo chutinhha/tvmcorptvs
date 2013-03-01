@@ -252,12 +252,22 @@
           <FieldRef Name="DepartmentRequest">
           </FieldRef>
         </ViewFields>
+        
         <Query>
           <OrderBy>
-            <FieldRef Name="ID">
-            </FieldRef>
+            <FieldRef Name="DateRequest" />
+            <FieldRef Name="ID" Ascending="FALSE" />
           </OrderBy>
+          <Where>
+            <Eq>
+              <FieldRef Name="Author" />
+              <Value Type="Integer">
+                <UserID Type="Integer" />
+              </Value>
+            </Eq>
+          </Where>
         </Query>
+        
         <ParameterBindings>
           <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
           <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
@@ -282,8 +292,8 @@
         </ViewFields>
         <Query>
           <OrderBy>
-            <FieldRef Name="ID">
-            </FieldRef>
+            <FieldRef Name="DateRequest" />
+            <FieldRef Name="ID" Ascending="FALSE" />
           </OrderBy>
         </Query>
         <ParameterBindings>
