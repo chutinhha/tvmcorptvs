@@ -373,6 +373,15 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::Microsoft.SharePoint.WebControls.FormField ffConfirmerComment;
         
         /// <summary>
+        /// hyperLinkViewDiscussion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hyperLinkViewDiscussion;
+        
+        /// <summary>
         /// FormComponent1 control.
         /// </summary>
         /// <remarks>
