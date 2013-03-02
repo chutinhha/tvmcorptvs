@@ -382,6 +382,13 @@
                 </tr>
 
                 <tr>
+                    <td style="padding: 5px 5px 5px 5px;" colspan="2">
+                        <%--<asp:LinkButton ID="linkViewDiscussion" CausesValidation="false" runat="server"><i>Xem thảo luận</i></asp:LinkButton>--%>
+                        <asp:HyperLink ID="hyperLinkViewDiscussion" Target="_blank" runat="server"><i>Xem thảo luận</i></asp:HyperLink>
+                    </td>
+                </tr>
+
+                <tr>
                     <td colspan="2">
                         &nbsp;&nbsp;
                         <br />
