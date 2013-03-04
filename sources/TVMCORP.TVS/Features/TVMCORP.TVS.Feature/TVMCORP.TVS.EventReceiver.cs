@@ -33,6 +33,8 @@ namespace TVMCORP.TVS.Features.TVMCORP.TVS.Feature
                  RemoveXsltListViewWebPart(web.Site.MakeFullUrl(Constants.PURCHASE_MY_ITEM_VIEW_URL), web);
                  RemoveXsltListViewWebPart(web.Site.MakeFullUrl(Constants.PURCHASE_MY_DEPARTMENT_ITEM_VIEW_URL), web);
                  ProvisionWebParts(web, "TVMCORP.TVS.WebParts.xml");
+
+                 ConfigLists(web);
              }
              catch (Exception ex)
              {
@@ -152,6 +154,75 @@ namespace TVMCORP.TVS.Features.TVMCORP.TVS.Feature
             {
                 Utility.LogError(ex.Message, TVMCORPFeatures.TVS);
             }
+        }
+
+        private void ConfigLists(SPWeb web)
+        {
+            try
+            {
+                web.AllowUnsafeUpdates = true;
+
+                SPList listPurchase = web.GetList(web.ServerRelativeUrl.TrimEnd('/') + "/Lists/Purchase");
+                if (listPurchase != null)
+                {
+                    //SetListProperties(listPurchase, true);
+                    CreateApprovalWorkflow(listPurchase, "[TVS] Approval Workflow", "Purchase Approval", "TVMCORP.TVS.XMLSettings.ApprovalWorkflowSettings_Purchase.xml");
+                }
+            }
+            catch (Exception ex)
+            {
+                Utility.LogError(ex.Message, TVMCORPFeatures.TVS);
+            }
+            finally
+            {
+                web.AllowUnsafeUpdates = false;
+            }
+        }
+
+        private void SetListProperties(SPList list, bool enableContentApproval)
+        {
+            try
+            {
+                list.ParentWeb.AllowUnsafeUpdates = true;
+
+                list.ContentTypesEnabled = true;
+                list.EnableVersioning = true;
+
+                if (enableContentApproval)
+                    list.EnableModeration = true; //enable Content Approval, Approval Status column will be added to default view
+
+                list.Update();
+
+                if (enableContentApproval)
+                {
+                    SPView view = list.DefaultView;
+                    view.ViewFields.Delete("_ModerationStatus");
+                    view.Update();
+                }
+            }
+            catch (Exception ex)
+            {
+                Utility.LogError(ex.Message, TVMCORPFeatures.TVS);
+            }
+            finally
+            {
+                list.ParentWeb.AllowUnsafeUpdates = false;
+            }
+        }
+
+        private void CreateApprovalWorkflow(SPList list, string workflowTemplateName, string workflowName, string fileSettings)
+        {
+            string association = string.Empty;
+
+            if (!string.IsNullOrEmpty(fileSettings))
+            {
+                Assembly assembly = Assembly.GetExecutingAssembly();
+                string xml = assembly.GetResourceTextFile(fileSettings);
+
+                association = SerializationHelper.SerializeToXml(SerializationHelper.DeserializeFromXml<ApprovalWFAssociationData>(xml));
+            }
+
+            list.AssociateWorkflow(workflowTemplateName, workflowName, association, "Purchase Tasks");
         }
         #endregion Functions
     }
