@@ -87,9 +87,7 @@
     <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseNewForm.ascx.designer.cs">
       <DependentUpon>PurchaseNewForm.ascx.cs</DependentUpon>
     </Compile>
-    <Compile Include="Features\TVMCORP.TVS.Feature\TVMCORP.TVS.EventReceiver.cs">
-      <DependentUpon>TVMCORP.TVS.Feature.feature</DependentUpon>
-    </Compile>
+    <Compile Include="Features\TVMCORP.TVS.Feature\TVMCORP.TVS.EventReceiver.cs" />
     <Compile Include="Layouts\TVMCORP.TVS\ApproversSettings.aspx.cs">
       <DependentUpon>ApproversSettings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -133,11 +131,11 @@
     <None Include="CustomActions\CustomAction\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{bd2cfc05-bf2d-4899-b8e7-516a3388e1d8}</SharePointProjectItemId>
     </None>
+    <None Include="Features\TVMCORP.TVS.Feature\TVMCORP.TVS.Feature.feature">
+      <FeatureId>{c2447b90-9c3c-4f1f-848c-3f1d31df470c}</FeatureId>
+    </None>
     <None Include="Features\TVMCORP.TVS.Site.Feature\TVMCORP.TVS.Site.Feature.feature">
       <FeatureId>{7c05c639-69e5-45ef-b058-eaa178bbf704}</FeatureId>
-    </None>
-    <None Include="Features\TVMCORP.TVS.Feature\TVMCORP.TVS.Feature.feature">
-      <FeatureId>{50b86f56-c6cc-4062-9557-4e8f67504c67}</FeatureId>
     </None>
     <None Include="Images\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{b46a8b12-6299-4515-8912-9cd7a5e66392}</SharePointProjectItemId>
@@ -218,14 +216,13 @@
     <Content Include="CustomActions\CustomAction\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Features\TVMCORP.TVS.Feature\TVMCORP.TVS.Feature.Template.xml">
+      <DependentUpon>TVMCORP.TVS.Feature.feature</DependentUpon>
+    </Content>
     <Content Include="Features\TVMCORP.TVS.Site.Feature\TVMCORP.TVS.Site.Feature.Template.xml">
       <DependentUpon>TVMCORP.TVS.Site.Feature.feature</DependentUpon>
     </Content>
     <Content Include="DummyFormatXML.xml" />
-    <Content Include="Features\TVMCORP.TVS.Feature\TVMCORP.TVS.Feature.Template.xml">
-      <DependentUpon>TVMCORP.TVS.Feature.feature</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Images\TVMCORP.TVS\css\style.css" />
     <Content Include="Images\TVMCORP.TVS\images\bgcontainer_form.png" />
     <Content Include="Images\TVMCORP.TVS\images\bgfieldset.png" />
