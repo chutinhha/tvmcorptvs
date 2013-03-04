@@ -14,6 +14,7 @@ namespace TVMCORP.TVS.UTIL
        public const string PURCHASE_LIST_URL = "/Lists/Purchase";
        public const string PURCHASE_DETAIL_LIST_URL = "/Lists/PurchaseDetail";
        public const string PURCHASE_TASK_LIST_URL = "/Lists/PurchaseTasks";
+       public const string DISCUSSIONS_LIST_URL = "/Lists/Discussions";
        
        public const string PURCHASE_TITLE_PREFIX = "Yêu cầu mua hàng - ";
        public const string PURCHASE_MY_ITEM_VIEW_URL = "Lists/Purchase/MyItems.aspx";
