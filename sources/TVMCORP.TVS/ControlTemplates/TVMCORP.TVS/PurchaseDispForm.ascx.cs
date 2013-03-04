@@ -65,7 +65,7 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             rdbTypeOfApproval2.Enabled = false;
 
             //Set discussion link url
-            hyperLinkViewDiscussion.NavigateUrl = SPContext.Current.Site.MakeFullUrl(string.Format("_layouts/TVMCORP.TVS/DiscussionResolver.aspx?List={0}&amp;ID={1}", SPContext.Current.ListId, SPContext.Current.ListItem.ID));
+            hyperLinkViewDiscussion.NavigateUrl = SPContext.Current.Site.MakeFullUrl(string.Format("_layouts/TVMCORP.TVS/DiscussionResolver.aspx?List={0}&ID={1}", SPContext.Current.ListId, SPContext.Current.ListItem.ID));
         }
 
         private DataTable LoadPurchaseDetail()

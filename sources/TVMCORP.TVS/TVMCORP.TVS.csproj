@@ -215,7 +215,9 @@
     <Content Include="CustomActions\ListApproversSettings\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="CustomActions\CustomAction\Elements.xml" />
+    <Content Include="CustomActions\CustomAction\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Features\TVMCORP.TVS.Site.Feature\TVMCORP.TVS.Site.Feature.Template.xml">
       <DependentUpon>TVMCORP.TVS.Site.Feature.feature</DependentUpon>
     </Content>

@@ -93,7 +93,11 @@ namespace TVMCORP.TVS.Features.TVMCORP.TVS.Feature
                             purchaseTaskApprovalList.BreakRoleInheritance(false);
                             purchaseTaskApprovalList.SetPermissions(spWeb.EnsureUser(Constants.AUTHENTICATED_USERS), SPRoleType.Reader);
                             spWeb.AllowUnsafeUpdates = true;
-
+                            //Discussion List
+                            var discussionlList = Utility.GetListFromURL(Constants.DISCUSSIONS_LIST_URL, spWeb);
+                            discussionlList.BreakRoleInheritance(false);
+                            discussionlList.SetPermissions(spWeb.EnsureUser(Constants.AUTHENTICATED_USERS), SPRoleType.Contributor);
+                            spWeb.AllowUnsafeUpdates = true;
                         }
                     }
                 });
