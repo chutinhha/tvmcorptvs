@@ -116,7 +116,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Controls
             {
                 fields = SPContext.Current.Web.AvailableFields.Cast<SPField>();
             }
-            return fields.Where(p => !p.Hidden && p.Title != "Predecessors" && p.Title != "Related Issues" && p.Hidden == false && (p.Type == SPFieldType.User || p.Type == SPFieldType.DateTime))
+            return fields.Where(p => !p.Hidden && p.Title != "Predecessors" && p.Title != "Related Issues" && p.Hidden == false && (p.Type == SPFieldType.User || p.Type == SPFieldType.DateTime || p.Type == SPFieldType.Text))
                 .OrderBy(p => p.Title)
                 .ToList(); ;
 
@@ -137,7 +137,8 @@ namespace TVMCORP.TVS.WORKFLOWS.Controls
             return new UpdateWorkflowItemWithKeywordSettings()
             {
                 FieldId = ddlItemColumn.SelectedValue,                
-                Value = (control as TextBox).Text.Trim()
+                Value = (control as TextBox).Text.Trim(),
+                Append = chkAppend.Checked
             };
         }
         private void displayActionData()
@@ -147,6 +148,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Controls
             UpdateWorkflowItemWithKeywordSettings savedAction = (UpdateWorkflowItemWithKeywordSettings)Action;            
             ddlItemColumn.SelectedValue = savedAction.FieldId;
             ShowCurrentSelector(savedAction.Value);
+            chkAppend.Checked = savedAction.Append;
         }
 
     }

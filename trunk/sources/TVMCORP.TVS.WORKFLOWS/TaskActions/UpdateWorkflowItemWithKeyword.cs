@@ -16,7 +16,7 @@ namespace TVMCORP.TVS.WORKFLOWS.TaskActions
         public void Execute(TaskActionArgs actionData)
         {
             UpdateWorkflowItemWithKeywordSettings updateWFItemSettings = actionData.GetActionData<UpdateWorkflowItemWithKeywordSettings>();
-
+            
             if (!actionData.WorkflowProperties.Item.Fields.ContainFieldId(new Guid(updateWFItemSettings.FieldId)))
                 return;
 
@@ -52,6 +52,8 @@ namespace TVMCORP.TVS.WORKFLOWS.TaskActions
                             }
                             break;
 
+                        case SPFieldType.Text:
+                            break;
                     }
 
                     item[SPBuiltInFieldId.WorkflowVersion] = 1;

@@ -8,10 +8,9 @@
 //------------------------------------------------------------------------------
 
 namespace TVMCORP.TVS.WORKFLOWS.Controls {
-
-
-    public partial class UpdateWorkflowItemWithKeywordEditor
-    {
+    
+    
+    public partial class UpdateWorkflowItemWithKeywordEditor {
         
         /// <summary>
         /// FormDigest control.
@@ -66,6 +65,15 @@ namespace TVMCORP.TVS.WORKFLOWS.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder ltrHolder;
+        
+        /// <summary>
+        /// chkAppend control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkAppend;
         
         /// <summary>
         /// chkRemoveAction control.

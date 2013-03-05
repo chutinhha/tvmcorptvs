@@ -42,7 +42,8 @@
 			<Template_Control>
 			
             <asp:PlaceHolder runat="server" ID="ltrHolder" />
-           
+            <br />
+            <asp:CheckBox runat="server" ID="chkAppend" Text="Append to existing value" />
 			</Template_Control>
 			</wssuc:InputFormControl>
 			<wssuc:InputFormControl runat="server">

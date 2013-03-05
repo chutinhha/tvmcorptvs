@@ -162,6 +162,13 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
             {
                 UpdateFormButtons();
                 if (this.Request.RawUrl.Contains("ApprovalWFViewOnlyTaskForm")) return;
+
+                if (!Utility.CheckPermissions(SPContext.Current.Web.CurrentUser, SPContext.Current.Item, SPBasePermissions.EditListItems))
+                {
+                    Response.Redirect(this.Request.RawUrl.Replace("ApprovalWFTaskForm", "ApprovalWFViewOnlyTaskForm"));
+
+                };
+
                 if (Status == TaskApprovalStatus.Approved ||
                     Status == TaskApprovalStatus.Rejected ||
                      Status == TaskApprovalStatus.Canceled)
