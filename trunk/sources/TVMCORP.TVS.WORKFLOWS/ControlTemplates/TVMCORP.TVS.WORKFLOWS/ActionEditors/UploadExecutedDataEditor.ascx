@@ -54,10 +54,7 @@
 														    Runat="server"
 														    ValidationGroup="SubmitValidate"/>
 
-                    <br />
-                    <asp:CheckBox Text="Copy Metadata" runat="server"  ID="CheckBox1"/>
-                    <br />
-                    <asp:CheckBox Text="Copy permission" runat="server" ID="CheckBox2" />
+                   
                     
 			    </Template_Control>
 			</wssuc:InputFormControl>
