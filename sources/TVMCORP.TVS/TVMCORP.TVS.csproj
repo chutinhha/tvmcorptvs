@@ -176,6 +176,13 @@
     <None Include="ListInstances\Discussions\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{753ea4f5-9737-4e15-ac6d-6701003af3b6}</SharePointProjectItemId>
     </None>
+    <None Include="ListInstances\FormTemplates\DoxTemplates_Module\PHIEUMUAHANG_TEMPLATE.docx" />
+    <None Include="ListInstances\FormTemplates\DoxTemplates_Module\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6169048c-c87b-45c9-8d9c-c84b3319d8cb}</SharePointProjectItemId>
+    </None>
+    <None Include="ListInstances\FormTemplates\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f4e679c6-8c7d-485d-8ae9-732bf85d6857}</SharePointProjectItemId>
+    </None>
     <None Include="Modules\WebPartPages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{654fa44e-cbb4-4543-9679-dfea75becc22}</SharePointProjectItemId>
     </None>
@@ -276,6 +283,9 @@
     </Content>
     <Content Include="Layouts\1033\jquery-1.8.2.min.js" />
     <Content Include="ListInstances\Discussions\Elements.xml" />
+    <Content Include="ListInstances\FormTemplates\DoxTemplates_Module\Elements.xml" />
+    <Content Include="ListInstances\FormTemplates\DoxTemplates_Module\Sample.txt" />
+    <Content Include="ListInstances\FormTemplates\Elements.xml" />
     <Content Include="Modules\WebPartPages\Elements.xml" />
     <Content Include="TEMPLATE\PAGES\PurchaseViewPage.aspx">
       <SubType>ASPXCodeBehind</SubType>
