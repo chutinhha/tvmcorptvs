@@ -11,6 +11,9 @@ namespace TVMCORP.TVS.WORKFLOWS.TaskActions
         {
             switch (actionType)
             {
+                case TaskActionTypes.UploadExecuted:
+                    return new UploadExecuted();
+
                 case TaskActionTypes.SendEmailToStaticAddresses:
                     return new SendEmailToStaticAddresses();
 

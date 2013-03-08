@@ -22,6 +22,7 @@ namespace TVMCORP.TVS.UTIL.MODELS
     [XmlInclude(typeof(UpdateWFItemPermissionSettings))]
     [XmlInclude(typeof(CreatUnreadTaskSettings))]
     [XmlInclude(typeof(UpdateTaskPermissionSettings))]
+    [XmlInclude(typeof(UploadExecutedSettings))]
 
     public class TaskActionSettings
     {
@@ -169,6 +170,21 @@ namespace TVMCORP.TVS.UTIL.MODELS
     //}
 
     [Serializable]
+    public class UploadExecutedSettings : TaskActionSettings
+    {
+        public UploadExecutedSettings()
+        {
+            Type = TaskActionTypes.UploadExecuted;
+        }
+        public string TemplateFile { get; set; }
+        public bool CopyMetadata { get; set; }
+        public bool CopyPermission { get; set; }
+        public string DocumentFormat { get; set; }
+
+        public string DestinationLib { get; set; }
+    }
+
+    [Serializable]
     public class UpdateWorkflowItemMetadataSettings : TaskActionSettings
     {
         public UpdateWorkflowItemMetadataSettings()
@@ -289,6 +305,7 @@ namespace TVMCORP.TVS.UTIL.MODELS
         UpdateTaskItemWithItemProperty,
         UpdateWFPermission,
         CreateUnreadTask,
-        UpdateTaskPermission
+        UpdateTaskPermission,
+        UploadExecuted
     }
 }

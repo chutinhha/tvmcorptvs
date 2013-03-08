@@ -48,6 +48,10 @@
     <AssemblyOriginatorKeyFile>Properties\TVMCORP.TVS.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TVMCORP.TVS.UTIL\Libs\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="microsoft.sharepoint.WorkflowActions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -223,6 +227,13 @@
     <Compile Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\ActionEditorControl.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UploadExecutedDataEditor.ascx.cs">
+      <DependentUpon>UploadExecutedDataEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UploadExecutedDataEditor.ascx.designer.cs">
+      <DependentUpon>UploadExecutedDataEditor.ascx.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\CreateUnreadTaskEditor.ascx.cs">
       <DependentUpon>CreateUnreadTaskEditor.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -345,6 +356,10 @@
     <Compile Include="Layouts\TVMCORP.TVS.WORKFLOWS\TaskEvent.aspx.designer.cs">
       <DependentUpon>TaskEvent.aspx.cs</DependentUpon>
     </Compile>
+    <Compile Include="TaskActions\DocxGenerator\BaseDoxGenerator.cs" />
+    <Compile Include="TaskActions\DocxGenerator\MySampleDocumentWithTableGenerator.cs" />
+    <Compile Include="TaskActions\GeneratorFactory.cs" />
+    <Compile Include="TaskActions\UploadExecuted.cs" />
     <Compile Include="TaskActions\UpdateTaskPermission.cs" />
     <Compile Include="TaskActions\UpdateWFItemPermission.cs" />
     <Compile Include="Workflows\ApprovalWF\ApprovalWFTaskForm.aspx.cs">
@@ -460,6 +475,9 @@
     <Content Include="Content Types\Approval WF task\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UploadExecutedDataEditor.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\CreateUnreadTaskEditor.ascx" />
     <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\SendEmailToStaticAddressEditor.ascx" />
     <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\SendEmailToWfItemUserColumnEditor.ascx" />
@@ -526,6 +544,10 @@
     <ProjectReference Include="..\TVMCORP.TVS.Util\TVMCORP.TVS.UTIL.csproj">
       <Project>{2AA028FD-D27B-4DA5-BFC8-27F61FC5EFD9}</Project>
       <Name>TVMCORP.TVS.UTIL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WordDocumentGenerator.Library\WordDocumentGenerator.Library.csproj">
+      <Project>{C041C8C6-AC4E-4F74-A827-7F3D790E1ACE}</Project>
+      <Name>WordDocumentGenerator.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

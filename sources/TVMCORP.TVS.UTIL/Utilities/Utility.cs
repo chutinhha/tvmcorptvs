@@ -19,6 +19,99 @@ namespace TVMCORP.TVS.UTIL.Utilities
 {
     public class Utility
     {
+        public static bool CheckPermissions(SPUser user, ISecurableObject securableObject, SPBasePermissions perms)
+        {
+
+            var ret = false;
+            SPWeb soWeb;
+            var soListId = Guid.Empty;
+            var soListItemId = 0;
+
+            if (securableObject as SPList == null)
+            {
+
+                if (securableObject as SPListItem == null)
+                {
+
+                    if (securableObject as SPWeb == null)
+
+                        throw new ArgumentException("securableObject must be an SPWeb, SPList or SPListItem", "securableObject");
+
+                    soWeb = (SPWeb)securableObject;
+
+                }
+
+                else
+                {
+
+                    var li = (SPListItem)securableObject;
+
+                    var pl = li.ParentList;
+
+                    soWeb = pl.ParentWeb;
+
+                    soListId = pl.ID;
+
+                    soListItemId = li.ID;
+
+                }
+
+            }
+
+            else
+            {
+
+                var pl = (SPList)securableObject;
+
+                soWeb = pl.ParentWeb;
+
+                soListId = pl.ID;
+
+            }
+
+            var soSite = soWeb.Site;
+
+
+
+            using (var esite = new SPSite(soSite.ID, SPContext.Current.Site.SystemAccount.UserToken))
+
+            using (var eweb = esite.OpenWeb(soWeb.ID))
+            {
+
+                if (securableObject is SPListItem)
+                {
+
+                    var l = eweb.Lists[soListId];
+
+                    var li = l.GetItemById(soListItemId);
+
+                    ret = li.DoesUserHavePermissions(user, perms);
+
+                }
+
+                else if (securableObject is SPList)
+                {
+
+                    var l = eweb.Lists[soListId];
+
+                    ret = l.DoesUserHavePermissions(user, perms);
+
+                }
+
+                else if (securableObject is SPWeb)
+                {
+
+                    ret = eweb.DoesUserHavePermissions(user.LoginName, perms);
+
+                }
+
+            }
+
+            return ret;
+
+        }
+
+
         public static void TransferToErrorPage(string message, string linkText, string linkURL)
         {
             if (!string.IsNullOrEmpty(linkURL))

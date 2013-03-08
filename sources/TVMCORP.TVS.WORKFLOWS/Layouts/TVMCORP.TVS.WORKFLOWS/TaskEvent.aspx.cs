@@ -255,7 +255,10 @@ namespace TVMCORP.TVS.WORKFLOWS.Layouts
                     vitualPath = "~/_controltemplates/TVMCORP.TVS.WORKFLOWS/ActionEditors/UpdateTaskPermissionEditor.ascx";
                     break;
 
-
+                     case TaskActionTypes.UploadExecuted:
+                    vitualPath = "~/_controltemplates/TVMCORP.TVS.WORKFLOWS/ActionEditors/UploadExecutedDataEditor.ascx";
+                    break;
+                    
                 default:
                     return string.Empty;
             }
@@ -305,6 +308,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Layouts
             items.Add(new ListItem() { Value = TaskActionTypes.UpdateWFPermission.ToString(), Text = "Update item permissions" });
             items.Add(new ListItem() { Value = TaskActionTypes.UpdateTaskPermission.ToString(), Text = "Update task permissions" });
             items.Add(new ListItem() { Value = TaskActionTypes.CreateUnreadTask.ToString(), Text = "Create unread task" });
+            items.Add(new ListItem() { Value = TaskActionTypes.UploadExecuted.ToString(), Text = "Create & Upload executed document" });
             TaskEventTypes editType = (TaskEventTypes)Enum.Parse(typeof(TaskEventTypes), Request["type"] as string);
             //not create task, so no task to do
             if (editType != TaskEventTypes.ByPassTask)
