@@ -2,6 +2,6 @@
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   
   <Module Name="DoxTemplates_Module" Url="DocxFormTemplates">
-  <File Path="DoxTemplates_Module\PHIEUMUAHANG_TEMPLATE.docx" Url="DocxFormTemplates/PHIEUMUAHANG_TEMPLATE.docx" Type="GhostableInLibrary" />
+  <File Path="DoxTemplates_Module\PHIEUMUAHANG_TEMPLATE.docx" Url="PHIEUMUAHANG_TEMPLATE.docx" Type="GhostableInLibrary" />
 </Module>
 </Elements>

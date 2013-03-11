@@ -190,6 +190,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
             // 
             this.ifElseActivity2.Activities.Add(this.ifElseBranchActivity4);
             this.ifElseActivity2.Activities.Add(this.ifElseBranchActivity7);
+            this.ifElseActivity2.Enabled = false;
             this.ifElseActivity2.Name = "ifElseActivity2";
             // 
             // UpdateApprovalStatus
@@ -512,6 +513,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Workflows
         private Microsoft.SharePoint.WorkflowActions.OnWorkflowItemChanged onWorkflowItemChanged1;
 
         private Microsoft.SharePoint.WorkflowActions.OnWorkflowActivated onWorkflowActivated1;
+
 
 
 

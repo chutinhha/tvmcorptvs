@@ -357,7 +357,10 @@
       <DependentUpon>TaskEvent.aspx.cs</DependentUpon>
     </Compile>
     <Compile Include="TaskActions\DocxGenerator\BaseDoxGenerator.cs" />
+    <Compile Include="TaskActions\DocxGenerator\DataContextBase.cs" />
     <Compile Include="TaskActions\DocxGenerator\MySampleDocumentWithTableGenerator.cs" />
+    <Compile Include="TaskActions\DocxGenerator\PhieuMuaHangDataContext.cs" />
+    <Compile Include="TaskActions\DocxGenerator\PhieuMuaHangGenerator.cs" />
     <Compile Include="TaskActions\GeneratorFactory.cs" />
     <Compile Include="TaskActions\UploadExecuted.cs" />
     <Compile Include="TaskActions\UpdateTaskPermission.cs" />
@@ -485,7 +488,9 @@
     <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateExecutedDocumentMetaDataEditor.ascx" />
     <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateTaskItemWithItemPropertyEditor.ascx" />
     <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateTaskPermissionEditor.ascx" />
-    <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateWFItemPermissionEditor.ascx" />
+    <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateWFItemPermissionEditor.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="ControlTemplates\TVMCORP.TVS.WORKFLOWS\ActionEditors\UpdateWorkflowItemMetaDataEditor.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>

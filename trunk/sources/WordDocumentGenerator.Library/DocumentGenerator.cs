@@ -512,7 +512,12 @@ namespace WordDocumentGenerator.Library
                 {
                     if (element is OpenXmlCompositeElement)
                     {
-                        this.SetContentInPlaceholders(new OpenXmlElementDataContext() { Element = element, DataContext = openXmlElementDataContext.DataContext });
+                        try
+                        {
+                            this.SetContentInPlaceholders(new OpenXmlElementDataContext() { Element = element, DataContext = openXmlElementDataContext.DataContext });
+                        }
+                        catch (Exception ex)
+                        { }
                     }
                 }
             }

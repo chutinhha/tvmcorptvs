@@ -8,6 +8,7 @@ using TVMCORP.TVS.UTIL.Extensions;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Workflow;
 using WordDocumentGenerator.Library;
+using TVMCORP.TVS.UTIL.Utilities;
 
 namespace TVMCORP.TVS.WORKFLOWS.TaskActions
 {
@@ -22,9 +23,33 @@ namespace TVMCORP.TVS.WORKFLOWS.TaskActions
                 var item = actionData.WorkflowProperties.Item;
                 DocumentGenerator generator = GeneratorFactory.GetGenerator(item, setting.TemplateFile);
 
-                var document   = generator.GenerateDocument();
+                var documentBytes   = generator.GenerateDocument();
 
-                
+                //TODO: save to Target Lib
+
+                SPSecurity.RunWithElevatedPrivileges(delegate()
+                {
+                    using (SPSite site = new SPSite(actionData.WorkflowProperties.SiteId))
+                    {
+                        using (SPWeb web = site.OpenWeb(actionData.WorkflowProperties.WebId))
+                        {
+                            SPList exportLibrary = Utility.GetListFromURL(setting.DestinationLib, web);
+
+                            if (exportLibrary != null)
+                            {
+                                SPFile exportedFile = exportLibrary.RootFolder.Files.Add(exportLibrary.RootFolder.Url + "/" + item.Title + ".docx", documentBytes, true);
+
+                                SPListItem expItem = exportedFile.Item;
+
+                                item["Title"] = item.Title;
+                                item.Update();
+
+                                exportLibrary.Update();
+                            }
+                        }
+                    }
+                    
+                });
             }
             catch (Exception ex)
             {
