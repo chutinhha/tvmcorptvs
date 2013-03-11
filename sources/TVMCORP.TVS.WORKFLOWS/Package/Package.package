@@ -2,6 +2,7 @@
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ca9ab544-a78f-4d24-a332-09db2f5fdc93" solutionId="ca9ab544-a78f-4d24-a332-09db2f5fdc93" resetWebServer="false" name="Hypertek.IOffice.Workflows.Core" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
   <assemblies>
     <projectOutputAssembly location="TVMCORP.TVS.UTIL.RESOURCES.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\TVMCORP.TVS.UTIL.RESOURCES\TVMCORP.TVS.UTIL.RESOURCES.csproj" />
+    <projectOutputAssembly location="WordDocumentGenerator.Library.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\WordDocumentGenerator.Library\WordDocumentGenerator.Library.csproj" />
   </assemblies>
   <features>
     <featureReference itemId="aa778f3e-676d-4fce-b3f6-35d75bf4902b" />

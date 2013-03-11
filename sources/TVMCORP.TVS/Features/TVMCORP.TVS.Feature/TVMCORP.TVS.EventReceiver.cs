@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using Microsoft.SharePoint;
@@ -222,7 +222,7 @@ namespace TVMCORP.TVS.Features.TVMCORP.TVS.Feature
                 association = SerializationHelper.SerializeToXml(SerializationHelper.DeserializeFromXml<ApprovalWFAssociationData>(xml));
             }
 
-            list.AssociateWorkflow(workflowTemplateName, workflowName, association, "Purchase Tasks");
+            list.AssociateWorkflow(workflowTemplateName, workflowName, association, "Duyệt đề nghị mua hàng");
         }
         #endregion Functions
     }

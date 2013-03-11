@@ -19,7 +19,30 @@
           </TaskEventSetting>
           <TaskEventSetting>
             <Type>TaskCreated</Type>
-            <Actions />
+            <Actions>
+              <TaskActionSettings xsi:type="UpdateTaskPermissionSettings">
+                <Type>UpdateTaskPermission</Type>
+                <Order>0</Order>
+                <RoleId>1073741827</RoleId>
+                <KeepExisting>false</KeepExisting>
+                <Columns>
+                  <string>53101f38-dd2e-458c-b245-0c236cc13d1a</string>
+                </Columns>
+                <AllParticipiants>false</AllParticipiants>
+                <StaticUsers />
+                <TaskId>0</TaskId>
+              </TaskActionSettings>
+              <TaskActionSettings xsi:type="SendEmailToWfItemUserColumnSettings">
+                <Type>SendEmailToWorkflowItemUserColumn</Type>
+                <Order>0</Order>
+                <EmailTemplateUrl>/Lists/EmailTemplates</EmailTemplateUrl>
+                <EmailTemplateName>Yêu cầu duyệt</EmailTemplateName>
+                <TaskId>0</TaskId>
+                <AttachTaskLink>true</AttachTaskLink>
+                <StaticUsers />
+                <FieldId>53101f38-dd2e-458c-b245-0c236cc13d1a</FieldId>
+              </TaskActionSettings>
+            </Actions>
           </TaskEventSetting>
           <TaskEventSetting>
             <Type>TaskRejected</Type>
@@ -42,7 +65,7 @@
       <TaskSequenceType>Sequence</TaskSequenceType>
       <DueDate />
       <DurationPerTask>0</DurationPerTask>
-      <EnableEmail>true</EnableEmail>
+      <EnableEmail>false</EnableEmail>
       <EmailTemplate>
         <Url>/Lists/EmailTemplates</Url>
         <Name>Yêu cầu duyệt</Name>
@@ -81,6 +104,33 @@
               </TaskActionSettings>
             </Actions>
           </TaskEventSetting>
+          <TaskEventSetting>
+            <Type>TaskCreated</Type>
+            <Actions>
+              <TaskActionSettings xsi:type="UpdateTaskPermissionSettings">
+                <Type>UpdateTaskPermission</Type>
+                <Order>0</Order>
+                <RoleId>1073741827</RoleId>
+                <KeepExisting>false</KeepExisting>
+                <Columns>
+                  <string>53101f38-dd2e-458c-b245-0c236cc13d1a</string>
+                </Columns>
+                <AllParticipiants>false</AllParticipiants>
+                <StaticUsers />
+                <TaskId>0</TaskId>
+              </TaskActionSettings>
+              <TaskActionSettings xsi:type="SendEmailToWfItemUserColumnSettings">
+                <Type>SendEmailToWorkflowItemUserColumn</Type>
+                <Order>0</Order>
+                <EmailTemplateUrl>/Lists/EmailTemplates</EmailTemplateUrl>
+                <EmailTemplateName>Yêu cầu duyệt</EmailTemplateName>
+                <TaskId>0</TaskId>
+                <AttachTaskLink>true</AttachTaskLink>
+                <StaticUsers />
+                <FieldId>53101f38-dd2e-458c-b245-0c236cc13d1a</FieldId>
+              </TaskActionSettings>
+            </Actions>
+          </TaskEventSetting>
         </Events>
       </TaskEvents>
       <ApprovalLevelName>Cấp duyệt của Người mua hàng</ApprovalLevelName>
@@ -91,7 +141,7 @@
       <TaskSequenceType>Sequence</TaskSequenceType>
       <DueDate />
       <DurationPerTask>0</DurationPerTask>
-      <EnableEmail>true</EnableEmail>
+      <EnableEmail>false</EnableEmail>
       <EmailTemplate>
         <Url>/Lists/EmailTemplates</Url>
         <Name>Yêu cầu duyệt</Name>
@@ -130,6 +180,33 @@
               </TaskActionSettings>
             </Actions>
           </TaskEventSetting>
+          <TaskEventSetting>
+            <Type>TaskCreated</Type>
+            <Actions>
+              <TaskActionSettings xsi:type="UpdateTaskPermissionSettings">
+                <Type>UpdateTaskPermission</Type>
+                <Order>0</Order>
+                <RoleId>1073741827</RoleId>
+                <KeepExisting>false</KeepExisting>
+                <Columns>
+                  <string>53101f38-dd2e-458c-b245-0c236cc13d1a</string>
+                </Columns>
+                <AllParticipiants>false</AllParticipiants>
+                <StaticUsers />
+                <TaskId>0</TaskId>
+              </TaskActionSettings>
+              <TaskActionSettings xsi:type="SendEmailToWfItemUserColumnSettings">
+                <Type>SendEmailToWorkflowItemUserColumn</Type>
+                <Order>0</Order>
+                <EmailTemplateUrl>/Lists/EmailTemplates</EmailTemplateUrl>
+                <EmailTemplateName>Yêu cầu duyệt</EmailTemplateName>
+                <TaskId>0</TaskId>
+                <AttachTaskLink>true</AttachTaskLink>
+                <StaticUsers />
+                <FieldId>53101f38-dd2e-458c-b245-0c236cc13d1a</FieldId>
+              </TaskActionSettings>
+            </Actions>
+          </TaskEventSetting>
         </Events>
       </TaskEvents>
       <ApprovalLevelName>Cấp duyệt của Người duyệt</ApprovalLevelName>
@@ -140,7 +217,7 @@
       <TaskSequenceType>Sequence</TaskSequenceType>
       <DueDate />
       <DurationPerTask>0</DurationPerTask>
-      <EnableEmail>true</EnableEmail>
+      <EnableEmail>false</EnableEmail>
       <EmailTemplate>
         <Url>/Lists/EmailTemplates</Url>
         <Name>Yêu cầu duyệt</Name>
@@ -179,6 +256,33 @@
               </TaskActionSettings>
             </Actions>
           </TaskEventSetting>
+          <TaskEventSetting>
+            <Type>TaskCreated</Type>
+            <Actions>
+              <TaskActionSettings xsi:type="UpdateTaskPermissionSettings">
+                <Type>UpdateTaskPermission</Type>
+                <Order>0</Order>
+                <RoleId>1073741827</RoleId>
+                <KeepExisting>false</KeepExisting>
+                <Columns>
+                  <string>53101f38-dd2e-458c-b245-0c236cc13d1a</string>
+                </Columns>
+                <AllParticipiants>false</AllParticipiants>
+                <StaticUsers />
+                <TaskId>0</TaskId>
+              </TaskActionSettings>
+              <TaskActionSettings xsi:type="SendEmailToWfItemUserColumnSettings">
+                <Type>SendEmailToWorkflowItemUserColumn</Type>
+                <Order>0</Order>
+                <EmailTemplateUrl>/Lists/EmailTemplates</EmailTemplateUrl>
+                <EmailTemplateName>Yêu cầu duyệt</EmailTemplateName>
+                <TaskId>0</TaskId>
+                <AttachTaskLink>true</AttachTaskLink>
+                <StaticUsers />
+                <FieldId>53101f38-dd2e-458c-b245-0c236cc13d1a</FieldId>
+              </TaskActionSettings>
+            </Actions>
+          </TaskEventSetting>
         </Events>
       </TaskEvents>
       <ApprovalLevelName>Cấp duyệt của Phòng kế toán</ApprovalLevelName>
@@ -189,7 +293,7 @@
       <TaskSequenceType>Sequence</TaskSequenceType>
       <DueDate />
       <DurationPerTask>0</DurationPerTask>
-      <EnableEmail>true</EnableEmail>
+      <EnableEmail>false</EnableEmail>
       <EmailTemplate>
         <Url>/Lists/EmailTemplates</Url>
         <Name>Yêu cầu duyệt</Name>
@@ -228,6 +332,33 @@
               </TaskActionSettings>
             </Actions>
           </TaskEventSetting>
+          <TaskEventSetting>
+            <Type>TaskCreated</Type>
+            <Actions>
+              <TaskActionSettings xsi:type="UpdateTaskPermissionSettings">
+                <Type>UpdateTaskPermission</Type>
+                <Order>0</Order>
+                <RoleId>1073741827</RoleId>
+                <KeepExisting>false</KeepExisting>
+                <Columns>
+                  <string>53101f38-dd2e-458c-b245-0c236cc13d1a</string>
+                </Columns>
+                <AllParticipiants>false</AllParticipiants>
+                <StaticUsers />
+                <TaskId>0</TaskId>
+              </TaskActionSettings>
+              <TaskActionSettings xsi:type="SendEmailToWfItemUserColumnSettings">
+                <Type>SendEmailToWorkflowItemUserColumn</Type>
+                <Order>0</Order>
+                <EmailTemplateUrl>/Lists/EmailTemplates</EmailTemplateUrl>
+                <EmailTemplateName>Yêu cầu duyệt</EmailTemplateName>
+                <TaskId>0</TaskId>
+                <AttachTaskLink>true</AttachTaskLink>
+                <StaticUsers />
+                <FieldId>53101f38-dd2e-458c-b245-0c236cc13d1a</FieldId>
+              </TaskActionSettings>
+            </Actions>
+          </TaskEventSetting>
         </Events>
       </TaskEvents>
       <ApprovalLevelName>Cấp duyệt của Người xác nhận</ApprovalLevelName>
@@ -238,7 +369,7 @@
       <TaskSequenceType>Sequence</TaskSequenceType>
       <DueDate />
       <DurationPerTask>0</DurationPerTask>
-      <EnableEmail>true</EnableEmail>
+      <EnableEmail>false</EnableEmail>
       <EmailTemplate>
         <Url>/Lists/EmailTemplates</Url>
         <Name>Yêu cầu duyệt</Name>
@@ -309,10 +440,12 @@
             <RoleId>1073741826</RoleId>
             <KeepExisting>false</KeepExisting>
             <Columns>
-              <string>1df5e554-ec7e-46a6-901d-d85a3881cb18</string>
+              <string>362533bd-4768-4979-9fbd-d2794915e626</string>
             </Columns>
             <AllParticipiants>false</AllParticipiants>
-            <StaticUsers />
+            <StaticUsers>
+              <string>NT AUTHORITYauthenticated users</string>
+            </StaticUsers>
           </TaskActionSettings>
           <TaskActionSettings xsi:type="UpdateWFItemPermissionSettings">
             <Type>UpdateWFPermission</Type>
@@ -321,13 +454,19 @@
             <KeepExisting>true</KeepExisting>
             <Columns>
               <string>dc1e8fcf-2f61-4bd8-be52-c9e7a6b9851d</string>
-              <string>362533bd-4768-4979-9fbd-d2794915e626</string>
               <string>981de36c-6d92-42e3-8e6d-2be0770ac827</string>
               <string>c56ac49f-d5f4-4a02-9c92-42cdbb1a0449</string>
               <string>1caae119-5949-49db-b158-11c9f3e4e681</string>
+              <string>58059bc3-40d1-4371-bb22-b5b424198e86</string>
             </Columns>
             <AllParticipiants>false</AllParticipiants>
             <StaticUsers />
+          </TaskActionSettings>
+          <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+            <Type>UpdateWorkflowItemMetadata</Type>
+            <Order>0</Order>
+            <FieldId>f2a2782e-e2c2-4d8f-ae85-55ff5bea4d95</FieldId>
+            <Value>Đợi duyệt</Value>
           </TaskActionSettings>
         </Actions>
       </TaskEventSetting>
@@ -350,15 +489,36 @@
             <RoleId>1073741826</RoleId>
             <KeepExisting>false</KeepExisting>
             <Columns>
-              <string>1df5e554-ec7e-46a6-901d-d85a3881cb18</string>
-              <string>362533bd-4768-4979-9fbd-d2794915e626</string>
               <string>981de36c-6d92-42e3-8e6d-2be0770ac827</string>
               <string>1caae119-5949-49db-b158-11c9f3e4e681</string>
               <string>c56ac49f-d5f4-4a02-9c92-42cdbb1a0449</string>
               <string>dc1e8fcf-2f61-4bd8-be52-c9e7a6b9851d</string>
+              <string>362533bd-4768-4979-9fbd-d2794915e626</string>
             </Columns>
             <AllParticipiants>false</AllParticipiants>
-            <StaticUsers />
+            <StaticUsers>
+              <string>NT AUTHORITYauthenticated users</string>
+            </StaticUsers>
+          </TaskActionSettings>
+          <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+            <Type>UpdateWorkflowItemMetadata</Type>
+            <Order>0</Order>
+            <FieldId>a37416ee-c82f-4d98-9427-6ed614161977</FieldId>
+            <Value>Item đã được duyệt</Value>
+          </TaskActionSettings>
+          <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+            <Type>UpdateWorkflowItemMetadata</Type>
+            <Order>0</Order>
+            <FieldId>f2a2782e-e2c2-4d8f-ae85-55ff5bea4d95</FieldId>
+            <Value>Đã duyệt</Value>
+          </TaskActionSettings>
+          <TaskActionSettings xsi:type="UploadExecutedSettings">
+            <Type>UploadExecuted</Type>
+            <Order>0</Order>
+            <TemplateFile>/DocxFormTemplates/PHIEUMUAHANG_TEMPLATE.docx</TemplateFile>
+            <CopyMetadata>false</CopyMetadata>
+            <CopyPermission>false</CopyPermission>
+            <DestinationLib>/PurchaseArchive</DestinationLib>
           </TaskActionSettings>
         </Actions>
       </TaskEventSetting>
@@ -381,7 +541,7 @@
             <RoleId>1073741827</RoleId>
             <KeepExisting>false</KeepExisting>
             <Columns>
-              <string>1df5e554-ec7e-46a6-901d-d85a3881cb18</string>
+              <string>362533bd-4768-4979-9fbd-d2794915e626</string>
             </Columns>
             <AllParticipiants>false</AllParticipiants>
             <StaticUsers />
@@ -392,14 +552,28 @@
             <RoleId>1073741826</RoleId>
             <KeepExisting>true</KeepExisting>
             <Columns>
-              <string>362533bd-4768-4979-9fbd-d2794915e626</string>
               <string>981de36c-6d92-42e3-8e6d-2be0770ac827</string>
               <string>1caae119-5949-49db-b158-11c9f3e4e681</string>
               <string>c56ac49f-d5f4-4a02-9c92-42cdbb1a0449</string>
               <string>dc1e8fcf-2f61-4bd8-be52-c9e7a6b9851d</string>
+              <string>58059bc3-40d1-4371-bb22-b5b424198e86</string>
             </Columns>
             <AllParticipiants>false</AllParticipiants>
-            <StaticUsers />
+            <StaticUsers>
+              <string>NT AUTHORITYauthenticated users</string>
+            </StaticUsers>
+          </TaskActionSettings>
+          <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+            <Type>UpdateWorkflowItemMetadata</Type>
+            <Order>0</Order>
+            <FieldId>a37416ee-c82f-4d98-9427-6ed614161977</FieldId>
+            <Value>Item đã bị từ chối duyệt</Value>
+          </TaskActionSettings>
+          <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+            <Type>UpdateWorkflowItemMetadata</Type>
+            <Order>0</Order>
+            <FieldId>f2a2782e-e2c2-4d8f-ae85-55ff5bea4d95</FieldId>
+            <Value>Từ chối duyệt</Value>
           </TaskActionSettings>
         </Actions>
       </TaskEventSetting>
@@ -440,7 +614,21 @@
               <string>dc1e8fcf-2f61-4bd8-be52-c9e7a6b9851d</string>
             </Columns>
             <AllParticipiants>false</AllParticipiants>
-            <StaticUsers />
+            <StaticUsers>
+              <string>NT AUTHORITYauthenticated users</string>
+            </StaticUsers>
+          </TaskActionSettings>
+          <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+            <Type>UpdateWorkflowItemMetadata</Type>
+            <Order>0</Order>
+            <FieldId>a37416ee-c82f-4d98-9427-6ed614161977</FieldId>
+            <Value>Quy trình duyệt đã bị hủy</Value>
+          </TaskActionSettings>
+          <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
+            <Type>UpdateWorkflowItemMetadata</Type>
+            <Order>0</Order>
+            <FieldId>f2a2782e-e2c2-4d8f-ae85-55ff5bea4d95</FieldId>
+            <Value>Bị hủy quy trình duyệt</Value>
           </TaskActionSettings>
         </Actions>
       </TaskEventSetting>

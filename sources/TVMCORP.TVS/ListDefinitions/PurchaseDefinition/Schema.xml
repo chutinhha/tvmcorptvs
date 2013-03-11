@@ -46,6 +46,8 @@
           <FieldRef ID="{F2A2782E-E2C2-4d8f-AE85-55FF5BEA4D95}" Name="Status" />
           <FieldRef ID="{A37416EE-C82F-4d98-9427-6ED614161977}" Name="ApprovalHistory" />
           <FieldRef ID="{C473A101-AD26-460c-86F7-752E04BBB0FB}" Name="References" />
+
+          <FieldRef ID="{D6C5F133-5FE2-47DC-A135-FEB28DA3903C}" Name="LinkToViewItem"/>
         </FieldRefs>
         <XmlDocuments>
           
@@ -187,7 +189,8 @@
       <Field Type="LookupMulti" DisplayName="Đề nghị tham chiếu" Required="FALSE" EnforceUniqueValues="FALSE" List="Lists/Purchase"
          ShowField="Title" Mult="TRUE" Sortable="FALSE" UnlimitedLengthInDocumentLibrary="FALSE" RelationshipDeleteBehavior="None" ID="{C473A101-AD26-460c-86F7-752E04BBB0FB}" Name="References"
          StaticName="References" />
-      
+
+      <Field Type="LinkToItem" DisplayName="Xem chi tiết" Required="FALSE" EnforceUniqueValues="FALSE" ID="{D6C5F133-5FE2-47DC-A135-FEB28DA3903C}" StaticName="LinkToViewItem" Name="LinkToViewItem" ShowInDisplayForm="FALSE" ShowInEditForm="FALSE" ShowInNewForm="FALSE" ShowInVersionHistory="FALSE" />
     </Fields>
     <Views>
       

@@ -6,7 +6,7 @@
 using System.Collections.Generic;
 using DocumentFormat.OpenXml.Wordprocessing;
 using WordDocumentGenerator.Library;
-using TVMCORP.TVS.WORKFLOWS.TaskActions.DocxGenerator;
+using TVMCORP.TVS.WORKFLOWS.TaskActions;
 using System;
 
 namespace TVMCORP.TVS.WORKFLOWS.TaskActions

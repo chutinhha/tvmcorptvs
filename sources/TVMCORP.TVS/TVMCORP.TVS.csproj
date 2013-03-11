@@ -190,6 +190,9 @@
     <None Include="ListInstances\FormTemplates\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{f4e679c6-8c7d-485d-8ae9-732bf85d6857}</SharePointProjectItemId>
     </None>
+    <None Include="ListInstances\PurchaseArchiveListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{df2948ff-d137-4944-b46e-242b5d5e4633}</SharePointProjectItemId>
+    </None>
     <None Include="Modules\WebPartPages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{654fa44e-cbb4-4543-9679-dfea75becc22}</SharePointProjectItemId>
     </None>
@@ -293,17 +296,22 @@
     </Content>
     <Content Include="Layouts\1033\jquery-1.8.2.min.js" />
     <Content Include="ListInstances\Discussions\Elements.xml" />
-    <Content Include="ListInstances\FormTemplates\DoxTemplates_Module\Elements.xml" />
+    <Content Include="ListInstances\FormTemplates\DoxTemplates_Module\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ListInstances\FormTemplates\DoxTemplates_Module\Sample.txt" />
     <Content Include="ListInstances\FormTemplates\Elements.xml" />
     <Content Include="ListInstances\PurchaseTaskListInstance\Schema.xml" />
+    <Content Include="ListInstances\PurchaseArchiveListInstance\Elements.xml" />
     <Content Include="Modules\WebPartPages\Elements.xml" />
     <Content Include="TEMPLATE\PAGES\PurchaseViewPage.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <EmbeddedResource Include="WebParts.xml" />
     <Content Include="ListInstances\PurchaseTaskListInstance\Elements.xml" />
-    <EmbeddedResource Include="XMLSettings\ApprovalWorkflowSettings_Purchase.xml" />
+    <EmbeddedResource Include="XMLSettings\ApprovalWorkflowSettings_Purchase.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TVMCORP.TVS.UTIL\TVMCORP.TVS.UTIL.csproj">
