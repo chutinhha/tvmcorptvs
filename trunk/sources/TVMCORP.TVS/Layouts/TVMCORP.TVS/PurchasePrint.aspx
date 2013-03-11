@@ -212,7 +212,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Main" ContentPlaceHolderID="PlaceHolderMain" runat="server">
-    <div class="container_form">
+    <div id="print_content" class="container_form">
         <table width="100%" border="0" cellpadding="0" cellspacing="0">
             <tr>
                 <td width="40%" align="right">
@@ -224,11 +224,6 @@
                     <span>
                         <asp:Literal ID="literalCompanyEnglish" Text="TRI VIET MEDIA CORP.(TVM)" runat="server"></asp:Literal>
                     </span>
-                    <%--<br /> 
-                        <span>
-                            <asp:Literal ID="literalMonthRequest" runat="server"></asp:Literal>
-                            <asp:Literal ID="literalMonthYear" runat="server"></asp:Literal>
-                        </span>--%>
                 </td>
             </tr>
             <tr>

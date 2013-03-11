@@ -106,6 +106,7 @@ namespace TVMCORP.TVS.Layouts.TVMCORP.TVS
             dataTable.Columns.AddRange(dataColumn);
 
             var purchaseDetailList = Utility.GetListFromURL(Constants.PURCHASE_DETAIL_LIST_URL, SPContext.Current.Web);
+            purchaseDetailList = Utility.GetListFromURL(Constants.PURCHASE_DETAIL_LIST_URL, SPContext.Current.Web);
             SPFieldLookupValueCollection purchaseDetails = SPContext.Current.ListItem["PurchaseDetail"] as SPFieldLookupValueCollection;
             foreach (var purchaseDetail in purchaseDetails)
             {
