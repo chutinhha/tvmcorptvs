@@ -115,9 +115,9 @@ namespace TVMCORP.TVS.Layouts.TVMCORP.TVS
                 {
                     DataRow row = dataTable.NewRow();
                     row[0] = listItem[SPBuiltInFieldId.Title].ToString();
-                    row[1] = listItem["Quantity"].ToString();
-                    row[2] = listItem["Price"].ToString();
-                    row[3] = listItem["Description"].ToString();
+                    row[1] = listItem["Quantity"] != null ? listItem["Quantity"].ToString() : string.Empty;
+                    row[2] = listItem["Price"] != null ? listItem["Price"].ToString() : string.Empty;
+                    row[3] = listItem["Description"] != null ? listItem["Description"].ToString() : string.Empty;
                     dataTable.Rows.Add(row);
                 }
             }
