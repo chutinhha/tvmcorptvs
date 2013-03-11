@@ -202,22 +202,31 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::System.Web.UI.WebControls.LinkButton linkButtonAdd;
         
         /// <summary>
-        /// literalPurechaseReferences control.
+        /// literalReferenceTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal literalPurechaseReferences;
+        protected global::System.Web.UI.WebControls.Literal literalReferenceTitle;
         
         /// <summary>
-        /// repeaterPurchaseReference control.
+        /// literalReferences control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repeaterPurchaseReference;
+        protected global::System.Web.UI.WebControls.Literal literalReferences;
+        
+        /// <summary>
+        /// ffReferences control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.FormField ffReferences;
         
         /// <summary>
         /// literalApprovalTitle control.

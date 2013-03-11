@@ -38,7 +38,7 @@
 
         <CommandUIHandler
          Command="TVMCORP.TVS.ExportPurchase"
-         CommandAction="javascript:OpenPopUpPageWithTitle('{SiteUrl}/_layouts/TVMCORP.TVS/PurchasePrint.aspx?ID={SelectedItemId}&amp;List={ListId}',RefreshOnDialogClose,980,850,'Xem trang in')"
+         CommandAction="javascript:OpenPopUpPageWithTitle('{SiteUrl}/_layouts/TVMCORP.TVS/PurchasePrint.aspx?ID={SelectedItemId}&amp;List={ListId}',RefreshOnDialogClose,1000,850,'Xem trang in')"
          EnabledScript="javascript:
           function enableExportReservation()
           {

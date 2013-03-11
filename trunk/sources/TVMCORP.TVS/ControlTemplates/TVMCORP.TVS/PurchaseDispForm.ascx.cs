@@ -75,10 +75,10 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
                 literaltProductName.Text = rowView["ProductName"].ToString();
 
                 Label lableQuantity = e.Item.FindControl("lableQuantity") as Label;
-                lableQuantity.Text = rowView["Quantity"].ToString();
+                lableQuantity.Text = string.IsNullOrEmpty(rowView["Quantity"].ToString()) ? string.Empty : Convert.ToDouble(rowView["Quantity"]).ToString("#,###");
 
                 Label lablePrice = e.Item.FindControl("lablePrice") as Label;
-                lablePrice.Text = rowView["Price"].ToString();
+                lablePrice.Text = string.IsNullOrEmpty(rowView["Price"].ToString()) ? string.Empty : Convert.ToDouble(rowView["Price"]).ToString("#,###");
 
                 Literal literaltDescription = e.Item.FindControl("literaltDescription") as Literal;
                 literaltDescription.Text = rowView["Description"].ToString();

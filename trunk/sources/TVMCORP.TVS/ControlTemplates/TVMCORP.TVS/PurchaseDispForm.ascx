@@ -24,6 +24,7 @@
             }
         });
         $("#total_price").text(formatNumber(total, ",", 3, 0));
+        $("#total_price_text").text(DocTienBangChu(total));
     });
    
 </script>
@@ -321,6 +322,8 @@
                                             <b>Tổng cộng : &nbsp;&nbsp;
                                             <span id="total_price"></span>&nbsp;
                                             đồng
+                                            <br />
+                                            <i>(<span id="total_price_text"></span> đồng)</i>
                                             </b>
                                         </td>
                                     </tr>
