@@ -61,6 +61,7 @@ namespace TVMCORP.TVS.WORKFLOWS.TaskActions
 
             // Handle recursive placeholders            
             placeHolderTagToTypeCollection.Add(PurchaseDetail, PlaceHolderType.Recursive);
+            placeHolderTagToTypeCollection.Add(ReferencePurchase, PlaceHolderType.Recursive);
 
             // Handle non recursive placeholders
             placeHolderTagToTypeCollection.Add(DateRequest, PlaceHolderType.NonRecursive);

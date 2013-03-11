@@ -208,7 +208,7 @@ namespace TVMCORP.TVS.WORKFLOWS.TaskActions
                             rp.DateRequest = Convert.ToDateTime(listItem["DateRequest"]);
 
                         if (listItem["UserRequest"] != null)
-                            rp.UserRequest = listItem["UserRequest"].ToString();
+                            rp.UserRequest = listItem["UserRequest"].ToString().Split(new string[] { ";#" }, StringSplitOptions.RemoveEmptyEntries)[1];
                         else
                             rp.UserRequest = string.Empty;
 
