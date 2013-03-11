@@ -102,6 +102,13 @@
     <Compile Include="Layouts\TVMCORP.TVS\DiscussionResolver.aspx.designer.cs">
       <DependentUpon>DiscussionResolver.aspx.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layouts\TVMCORP.TVS\PurchasePrint.aspx.cs">
+      <DependentUpon>PurchasePrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\TVMCORP.TVS\PurchasePrint.aspx.designer.cs">
+      <DependentUpon>PurchasePrint.aspx.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListDefinitions\PurchaseDefinition\FilterWebPart\FilterWebPart.cs" />
     <Compile Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilter.cs" />
     <Compile Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilterUserControl.ascx.cs">
@@ -243,7 +250,7 @@
     <Content Include="Images\TVMCORP.TVS\Printer-icon-32.png" />
     <Content Include="Images\TVMCORP.TVS\Printer-icon-48.png" />
     <Content Include="Layouts\1033\colour-calendar.js" />
-    <Content Include="Layouts\1033\fixed-calendar.js" />
+    <Content Include="Layouts\1033\purchase.js" />
     <Content Include="Layouts\1033\public\css\calendar-disabled.png" />
     <Content Include="Layouts\1033\public\css\calendar.png" />
     <Content Include="Layouts\1033\public\css\metallic\default-date.png" />
@@ -259,6 +266,9 @@
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="Layouts\TVMCORP.TVS\DiscussionResolver.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Layouts\TVMCORP.TVS\PurchasePrint.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="Libs\itextsharp.dll" />

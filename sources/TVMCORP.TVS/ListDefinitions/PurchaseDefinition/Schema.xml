@@ -45,6 +45,7 @@
 
           <FieldRef ID="{F2A2782E-E2C2-4d8f-AE85-55FF5BEA4D95}" Name="Status" />
           <FieldRef ID="{A37416EE-C82F-4d98-9427-6ED614161977}" Name="ApprovalHistory" />
+          <FieldRef ID="{C473A101-AD26-460c-86F7-752E04BBB0FB}" Name="References" />
         </FieldRefs>
         <XmlDocuments>
           
@@ -183,6 +184,10 @@
       <Field Type="Note" DisplayName="Lịch sử duyệt" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE"
               Sortable="FALSE" ID="{A37416EE-C82F-4d98-9427-6ED614161977}" Name="ApprovalHistory" StaticName="ApprovalHistory" />
 
+      <Field Type="LookupMulti" DisplayName="Đề nghị tham chiếu" Required="FALSE" EnforceUniqueValues="FALSE" List="Lists/Purchase"
+         ShowField="Title" Mult="TRUE" Sortable="FALSE" UnlimitedLengthInDocumentLibrary="FALSE" RelationshipDeleteBehavior="None" ID="{C473A101-AD26-460c-86F7-752E04BBB0FB}" Name="References"
+         StaticName="References" />
+      
     </Fields>
     <Views>
       
@@ -207,7 +212,7 @@
         </ParameterBindings>
       </View>
       
-      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" Hidden="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="AllItems.aspx">
+      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\PurchaseViewPage.aspx" ImageUrl="/_layouts/images/generic.png" Url="AllItems.aspx">
         <Toolbar Type="Standard" />
         <XslLink Default="TRUE">main.xsl</XslLink>
         <RowLimit Paged="TRUE">30</RowLimit>

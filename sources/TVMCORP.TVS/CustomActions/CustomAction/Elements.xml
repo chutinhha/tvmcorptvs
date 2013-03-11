@@ -1,17 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <!-- Document Discussion ECB Link -->
-  <!--<CustomAction
-      Id="Document Discussions"
-      RegistrationType="List"
-      RegistrationId="101"
-      Location="EditControlBlock"
-      ImageUrl="~site/_layouts/images/ICDISC.GIF"
-      Sequence="300"
-      Title="Bình luận X">
-    <UrlAction Url="~site/_layouts/TVMCORP.TVS/DiscussionResolver.aspx?List={ListId}&amp;ID={ItemId}" />
-  </CustomAction>-->
-  <!-- Document Discussion ECB Link -->
   <CustomAction
     Id="Item Discussions"
     RegistrationType="List"
@@ -21,6 +10,46 @@
     Sequence="300"
     Title="Bình luận">
     <UrlAction Url="~site/_layouts/TVMCORP.TVS/DiscussionResolver.aspx?List={ListId}&amp;ID={ItemId}" />
+  </CustomAction>
+
+  <CustomAction
+    Id="ExportPurchase"
+    RegistrationType="List"
+    RegistrationId="11000"
+    Location="CommandUI.Ribbon">
+
+    <CommandUIExtension>
+      <CommandUIDefinitions>
+        <CommandUIDefinition
+         Location="Ribbon.ListItem.Actions.Controls._children">
+          <Button
+           Id="Ribbon.ListItem.Actions.Controls.ExportPurchase"
+           Alt="Export Purchase"
+           Sequence="10"
+           Image32by32="/_layouts/images/TVMCORP.TVS/Printer-icon-32.png"
+           Command="TVMCORP.TVS.ExportPurchase"
+           LabelText="Xem trang in"
+           TemplateAlias="o2"/>
+        </CommandUIDefinition>
+
+      </CommandUIDefinitions>
+
+      <CommandUIHandlers>
+
+        <CommandUIHandler
+         Command="TVMCORP.TVS.ExportPurchase"
+         CommandAction="javascript:OpenPopUpPageWithTitle('{SiteUrl}/_layouts/TVMCORP.TVS/PurchasePrint.aspx?ID={SelectedItemId}&amp;List={ListId}',RefreshOnDialogClose,980,850,'Xem trang in')"
+         EnabledScript="javascript:
+          function enableExportReservation()
+          {
+            var items = SP.ListOperation.Selection.getSelectedItems();
+            return (items.length > 0);
+          }
+          enableExportReservation();"/>
+
+      </CommandUIHandlers>
+    </CommandUIExtension>
+
   </CustomAction>
   
 </Elements>

@@ -260,8 +260,8 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
                 {
                     SPListItem purchaseDetailItem = purchaseDetailList.AddItem();
                     purchaseDetailItem[SPBuiltInFieldId.Title] = txtProductName.Text;
-                    purchaseDetailItem["Quantity"] = txtQuantity.Text;
-                    purchaseDetailItem["Price"] = txtPrice.Text;
+                    purchaseDetailItem["Quantity"] = txtQuantity.Text.Replace(",", string.Empty);
+                    purchaseDetailItem["Price"] = txtPrice.Text.Replace(",", string.Empty);
                     purchaseDetailItem["Description"] = txtDescription.Text;
                     purchaseDetailItem.Update();
                     SPFieldLookupValue spFieldLookupValue = new SPFieldLookupValue(purchaseDetailItem.ID, purchaseDetailItem.Title);
@@ -270,13 +270,14 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             }
 
             var purchaseList = Utility.GetListFromURL(Constants.PURCHASE_LIST_URL, SPContext.Current.Web);
-            SPListItem purchaseItem = purchaseList.AddItem();
+            SPListItem purchaseItem = SPContext.Current.ListItem;
             purchaseItem[SPBuiltInFieldId.Title] = ffTitle.Value;//Constants.PURCHASE_TITLE_PREFIX + literalUserRequestValue.Text;
             purchaseItem["DateRequest"] = DateTime.Now;
             purchaseItem["UserRequest"] = SPContext.Current.Web.CurrentUser;
             purchaseItem["DepartmentRequest"] = literalDepartmentRequestValue.Text;
             purchaseItem["TypeOfApproval"] = hiddenTypeOfApproval.Value;
             purchaseItem["PurchaseDetail"] = purchaseDetails;
+            purchaseItem["References"] = ffReferences.Value;
             if(peChief.IsValid && peChief.ResolvedEntities.Count > 0)
                 purchaseItem["Chief"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peChief.ResolvedEntities[0]).Key); //ffChief.Value; //
             if (peBuyer.IsValid && peBuyer.ResolvedEntities.Count > 0)
@@ -287,7 +288,8 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
                 purchaseItem["Accountant"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peAccountant.ResolvedEntities[0]).Key); //ffAccountant.Value; //
             if (peConfirmer.IsValid && peConfirmer.ResolvedEntities.Count > 0)
                 purchaseItem["Confirmer"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peConfirmer.ResolvedEntities[0]).Key); //ffConfirmer.Value; //
-            purchaseItem.Update();
+
+            SaveButton.SaveItem(SPContext.Current, false, "");
         }
 
         #endregion Private Functions

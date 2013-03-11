@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
 using Microsoft.SharePoint;
-using TVMCORP.TVS.UTIL;
+using Microsoft.SharePoint.WebControls;
 using System.Data;
+using System.Web.UI.WebControls;
+using TVMCORP.TVS.UTIL;
 using TVMCORP.TVS.UTIL.Utilities;
 
-namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
+namespace TVMCORP.TVS.Layouts.TVMCORP.TVS
 {
-    public partial class PurchaseDispForm : UserControl
+    public partial class PurchasePrint : LayoutsPageBase
     {
-
-        private string viewUrl = string.Format(@"javascript:NewItem2(event,'{0}/{1}?ListId={2}{3}');javascript:return false;",  SPContext.Current.Web.Url, SPContext.Current.List.Forms[PAGETYPE.PAGE_DISPLAYFORM].Url, SPContext.Current.List.ID, "&ID={0}");
+        private string viewUrl = string.Format(@"javascript:NewItem2(event,'{0}/{1}?ListId={2}{3}');javascript:return false;", SPContext.Current.Web.Url, SPContext.Current.List.Forms[PAGETYPE.PAGE_DISPLAYFORM].Url, SPContext.Current.List.ID, "&ID={0}");
 
         protected override void OnInit(EventArgs e)
         {
@@ -21,7 +19,7 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             repeaterPurchaseDetail.ItemDataBound += new RepeaterItemEventHandler(repeaterPurchaseDetail_ItemDataBound);
             repeaterPurchaseReference.ItemDataBound += new RepeaterItemEventHandler(repeaterPurchaseReference_ItemDataBound);
             //
-            InitData();          
+            InitData();
 
         }
 
@@ -94,9 +92,6 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             }
             rdbTypeOfApproval1.Enabled = false;
             rdbTypeOfApproval2.Enabled = false;
-
-            //Set discussion link url
-            hyperLinkViewDiscussion.NavigateUrl = SPContext.Current.Site.MakeFullUrl(string.Format("_layouts/TVMCORP.TVS/DiscussionResolver.aspx?List={0}&ID={1}", SPContext.Current.ListId, SPContext.Current.ListItem.ID));
         }
 
         private DataTable LoadPurchaseDetail()

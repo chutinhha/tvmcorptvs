@@ -15,26 +15,31 @@ namespace TVMCORP.TVS.ListDefinitions.PurchaseDefinition.PurchaseFilter
 {
     public partial class PurchaseFilterUserControl : UserControl
     {
-        private List<XsltListViewWebPart> xsltListViewWebParts = new List<XsltListViewWebPart>();
+        private List<Microsoft.SharePoint.WebPartPages.XsltListViewWebPart> xsltListViewWebParts = new List<Microsoft.SharePoint.WebPartPages.XsltListViewWebPart>();
+
+        protected override void OnInit(EventArgs e)
+        {
+            SetCustomQuery();
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Button1_Click(Button1, new EventArgs());
-            if (Page.Request.Params["__EVENTTARGET"] == Button1.UniqueID)
-            {
-                SetCustomQuery();
-            }
+        }
+
+        protected override void CreateChildControls()
+        {
+            
         }
 
         protected void FindListViewWebParts(Control control, Guid listId)
         {
-            XsltListViewWebPart listview = null;
-            if (control is XsltListViewWebPart)
+            Microsoft.SharePoint.WebPartPages.XsltListViewWebPart listview = null;
+            if (control is Microsoft.SharePoint.WebPartPages.XsltListViewWebPart)
             {
-                listview = control as XsltListViewWebPart;
+                listview = control as Microsoft.SharePoint.WebPartPages.XsltListViewWebPart;
                 if (listview.ListId == listId)
                 {
-                    xsltListViewWebParts.Add(listview);   
+                    xsltListViewWebParts.Add(listview);
                 }
             }
             else
@@ -113,42 +118,6 @@ namespace TVMCORP.TVS.ListDefinitions.PurchaseDefinition.PurchaseFilter
             catch { throw; }
 
             return output;
-        }
-
-
-        private List<XsltListViewWebPart> GetXsltListViewWebParts()
-        {
-            string pageUrl = System.Web.HttpContext.Current.Request.Url.AbsoluteUri;
-            //xsltListViewWebParts = new List<XsltListViewWebPart>();
-            SPSecurity.RunWithElevatedPrivileges(delegate()
-            {
-                using (SPSite site = new SPSite(SPContext.Current.Site.ID))
-                {
-                    using (SPWeb web = site.OpenWeb(SPContext.Current.Web.ID))
-                    {
-                        var purchaseList = Utility.GetListFromURL(Constants.PURCHASE_LIST_URL, web);
-
-                        SPLimitedWebPartManager webPartManager = web.GetLimitedWebPartManager(pageUrl, PersonalizationScope.Shared);
-                        foreach (System.Web.UI.WebControls.WebParts.WebPart webPart in webPartManager.WebParts)
-                        {
-                            if (webPart is XsltListViewWebPart)//|| webPart is ListViewWebPart)
-                            {
-                                var listViewWebPart = webPart as XsltListViewWebPart;
-                                if (listViewWebPart.ListId == purchaseList.ID)
-                                {
-                                    xsltListViewWebParts.Add(listViewWebPart);
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-            return xsltListViewWebParts;
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            SetCustomQuery();
         }
 
     }
