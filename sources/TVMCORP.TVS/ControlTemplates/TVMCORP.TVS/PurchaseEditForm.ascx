@@ -309,6 +309,65 @@
                     </td>
                 </tr>
 
+                
+                <tr>
+                    <td colspan="2">
+                        &nbsp;&nbsp;
+                        <br />
+                        &nbsp;&nbsp;
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <table width="100%" cellspacing="0" cellpadding="0" class="tablelist" border="2" style="border-collapse: collapse" >
+                            <tr>
+                                <td style="border: 1px solid #45aefe; padding: 5px 0px 5px 0px; text-transform: uppercase; font: bold 16px Arial, Helvetica, sans-serif;" colspan="5">
+                                    <asp:Literal ID="literalPurechaseReferences" Text="Đề nghị tham chiếu" runat="server"></asp:Literal>        
+                                </td>
+                            </tr>
+                            <tr class="row_title">
+                                <td style="border: 1px solid #45aefe;" width="5%" align="center" valign="middle">
+                                    STT
+                                </td>
+                                <td style="border: 1px solid #45aefe;" width="45%" align="center" valign="middle">
+                                    Tiêu đề
+                                </td>
+                                <td style="border: 1px solid #45aefe;" width="15%" align="center" valign="middle">
+                                    Ngày
+                                </td>
+                                <td style="border: 1px solid #45aefe;" width="20%" align="center" valign="middle">
+                                    Người đề nghị
+                                </td>
+                                <td style="border: 1px solid #45aefe;" width="15%" align="center" valign="middle">
+                                    Bộ phận
+                                </td>
+                            </tr>
+                            <asp:Repeater ID="repeaterPurchaseReference" runat="server">
+                                <ItemTemplate>
+                                    <tr class="row2">
+                                        <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
+                                            <asp:Literal ID="literalOrder" runat="server"></asp:Literal>
+                                        </td>
+                                        <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
+                                            <asp:LinkButton ID="linkButtonReferenceTitle" runat="server"></asp:LinkButton>
+                                        </td>
+                                        <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
+                                            <asp:Literal ID="literalReferenceDate" runat="server"></asp:Literal>
+                                        </td>
+                                        <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
+                                            <asp:Literal ID="literalReferenceUser" runat="server"></asp:Literal>
+                                        </td>
+                                        <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
+                                            <asp:Literal ID="literalReferenceDepartment" runat="server"></asp:Literal>
+                                        </td>
+                                    </tr>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </table>
+                    </td>
+                </tr>
+
                 <tr>
                     <td colspan="2">
                         &nbsp;&nbsp;
