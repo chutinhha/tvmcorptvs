@@ -9,6 +9,25 @@
 
 <%@ Register TagPrefix="wssuc" TagName="ToolBar" Src="~/_controltemplates/ToolBar.ascx" %>
 <%@ Register TagPrefix="wssuc" TagName="ToolBarButton" Src="~/_controltemplates/ToolBarButton.ascx" %>
+
+<script src="/_layouts/1033/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script src="/_layouts/1033/purchase.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var total = 0;
+        $(".table_purchase_detail tr.row2").each(function (e) {
+            var quantity = $(this).find('span.purchase_detail_quantity').text();
+            var price = $(this).find('span.purchase_detail_price').text();
+            if (quantity != undefined && price != undefined && quantity != '' & price != '') {
+                total += removeComma(quantity) * removeComma(price);
+            }
+        });
+        $("#total_price").text(formatNumber(total, ",", 3, 0));
+    });
+   
+</script>
+
 <style type="text/css">
     .container_form
     {
@@ -199,7 +218,7 @@
                         <asp:Literal ID="literal1" Text="Tiêu đề :" runat="server"></asp:Literal>
                     </td>
                     <td class="request_column2" width="50%" align="left">
-                        <SharePoint:FormField FieldName="Title" ID="ffTitle" runat="server"> </SharePoint:FormField>
+                        <SharePoint:FormField FieldName="Title" ID="ffTitle" ControlMode="Display" runat="server"> </SharePoint:FormField>
                     </td>
                 </tr>
                 <tr>
@@ -217,7 +236,7 @@
                     </td>
                     <td class="request_column2" width="50%" align="left">
                         <%--<asp:Literal ID="literalUserRequestValue" Text="Trần Anh Tuấn" runat="server"></asp:Literal>--%>
-                        <SharePoint:FormField FieldName="UserRequest" ID="ffUserRequest" runat="server"> </SharePoint:FormField>
+                        <SharePoint:FormField FieldName="UserRequest" ID="ffUserRequest" ControlMode="Display" runat="server"> </SharePoint:FormField>
                     </td>
                 </tr>
 
@@ -227,7 +246,7 @@
                     </td>
                     <td class="request_column2" width="50%" align="left">
                         <%--<asp:Literal ID="literalDepartmentRequestValue" Text="Dịch Vụ - Kỹ Thuật" runat="server"></asp:Literal>--%>
-                        <SharePoint:FormField FieldName="DepartmentRequest" ID="ffDepartmentRequest" runat="server"> </SharePoint:FormField>
+                        <SharePoint:FormField FieldName="DepartmentRequest" ID="ffDepartmentRequest" ControlMode="Display" runat="server"> </SharePoint:FormField>
                     </td>
                 </tr>
 
@@ -251,48 +270,120 @@
 
                 <tr>
                     <td colspan="2">
-                        <table width="100%" cellspacing="0" cellpadding="0" class="tablelist" border="2" style="border-collapse: collapse" >
+                        <table width="100%" cellspacing="0" cellpadding="0" class="tablelist table_purchase_detail" border="2" style="border-collapse: collapse" >
                             <tr>
-                                <td style="padding: 5px 0px 5px 0px; text-transform: uppercase; font: bold 16px Arial, Helvetica, sans-serif;" colspan="5">
+                                <td style="border: 1px solid #45aefe; padding: 5px 0px 5px 0px; text-transform: uppercase; font: bold 16px Arial, Helvetica, sans-serif;" colspan="5">
                                     <asp:Literal ID="literalPurchaseDetail" Text="Nội dung mua hàng" runat="server"></asp:Literal>        
                                 </td>
                             </tr>
                             <asp:Repeater ID="repeaterPurchaseDetail" runat="server">
                                 <HeaderTemplate>
                                     <tr class="row_title">
-                                        <td width="5%" align="center" valign="middle">
+                                        <td style="border: 1px solid #45aefe;" width="5%" align="center" valign="middle">
                                             <asp:Literal ID="literalOrder" Text="STT" runat="server"></asp:Literal>
                                         </td>
-                                        <td width="45%" align="center" valign="middle">
+                                        <td style="border: 1px solid #45aefe;" width="45%" align="center" valign="middle">
                                             <asp:Literal ID="literalProductName" Text="Mô tả" runat="server"></asp:Literal>
                                         </td>
-                                        <td width="10%" align="center" valign="middle">
+                                        <td style="border: 1px solid #45aefe;" width="10%" align="center" valign="middle">
                                             <asp:Literal ID="literalQuantity" Text="Số lượng" runat="server"></asp:Literal>
                                         </td>
-                                        <td width="10%" align="center" valign="middle">
+                                        <td style="border: 1px solid #45aefe;" width="10%" align="center" valign="middle">
                                             <asp:Literal ID="literalPrice" Text="Đơn giá" runat="server"></asp:Literal>
                                         </td>
-                                        <td width="30%" align="center" valign="middle">
+                                        <td style="border: 1px solid #45aefe;" width="30%" align="center" valign="middle">
                                             <asp:Literal ID="literalDescription" Text="Mục đích" runat="server"></asp:Literal>
                                         </td>
                                     </tr>
                                 </HeaderTemplate>
                                 <ItemTemplate>
                                     <tr class="row2">
-                                        <td align="center" valign="middle" class="request_text_lable">
+                                        <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
                                             <asp:Literal ID="literalOrderValue" runat="server"></asp:Literal>
                                         </td>
-                                        <td align="left" valign="middle" class="request_text_lable">
+                                        <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
                                             <asp:Literal ID="literaltProductName" runat="server"></asp:Literal>
                                         </td>
-                                        <td align="center" valign="middle" class="request_text_lable">
-                                            <asp:Literal ID="literaltQuantity" runat="server"></asp:Literal>
+                                        <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
+                                            <asp:Label ID="lableQuantity" CssClass="purchase_detail_quantity" runat="server" Text=""></asp:Label>
                                         </td>
-                                        <td align="center" valign="middle" class="request_text_lable">
-                                            <asp:Literal ID="literaltPrice" runat="server"></asp:Literal>
+                                        <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
+                                            <asp:Label ID="lablePrice" CssClass="purchase_detail_price" runat="server" Text=""></asp:Label>
                                         </td>
-                                        <td align="left" valign="middle" class="request_text_lable">
+                                        <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
                                             <asp:Literal ID="literaltDescription" runat="server"></asp:Literal>
+                                        </td>
+                                    </tr>
+                                </ItemTemplate>
+                                <FooterTemplate>
+                                    <tr>
+                                        <td style="border: 1px solid #45aefe;" align="right" valign="middle" colspan="5">
+                                            <b>Tổng cộng : &nbsp;&nbsp;
+                                            <span id="total_price"></span>&nbsp;
+                                            đồng
+                                            </b>
+                                        </td>
+                                    </tr>
+                                </FooterTemplate>
+                            </asp:Repeater>
+                        </table>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td colspan="2">
+                        &nbsp;&nbsp;
+                        <br />
+                        &nbsp;&nbsp;
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <table width="100%" cellspacing="0" cellpadding="0" class="tablelist" border="2" style="border-collapse: collapse" >
+                            <tr>
+                                <td style="border: 1px solid #45aefe; padding: 5px 0px 5px 0px; text-transform: uppercase; font: bold 16px Arial, Helvetica, sans-serif;" colspan="5">
+                                    <asp:Literal ID="literalPurechaseReferences" Text="Đề nghị tham chiếu" runat="server"></asp:Literal>        
+                                </td>
+                            </tr>
+
+                            <asp:Repeater ID="repeaterPurchaseReference" runat="server">
+                                <HeaderTemplate>
+                                    <tr class="row_title">
+                                        <td style="border: 1px solid #45aefe;" width="5%" align="center" valign="middle">
+                                            STT
+                                        </td>
+                                        <td style="border: 1px solid #45aefe;" width="45%" align="center" valign="middle">
+                                            Tiêu đề
+                                        </td>
+                                        <td style="border: 1px solid #45aefe;" width="15%" align="center" valign="middle">
+                                            Ngày
+                                        </td>
+                                        <td style="border: 1px solid #45aefe;" width="20%" align="center" valign="middle">
+                                            Người đề nghị
+                                        </td>
+                                        <td style="border: 1px solid #45aefe;" width="15%" align="center" valign="middle">
+                                            Bộ phận
+                                        </td>
+                                    </tr>
+                                </HeaderTemplate>
+                                <ItemTemplate>
+                                    <tr class="row2">
+                                        <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
+                                            <asp:Literal ID="literalOrder" runat="server"></asp:Literal>
+                                        </td>
+                                        <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
+                                            <asp:LinkButton ID="linkButtonReferenceTitle" runat="server"></asp:LinkButton>
+                                        </td>
+                                        <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
+                                            <asp:Literal ID="literalReferenceDate" runat="server"></asp:Literal>
+                                        </td>
+                                        <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
+                                            <asp:Literal ID="literalReferenceUser" runat="server"></asp:Literal>
+                                        </td>
+                                        <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
+                                            <asp:Literal ID="literalReferenceDepartment" runat="server"></asp:Literal>
                                         </td>
                                     </tr>
                                 </ItemTemplate>
@@ -313,124 +404,94 @@
                     <td colspan="2">
                         <table width="100%" cellspacing="0" cellpadding="0" class="tablelist" border="2" style="border-collapse: collapse" >
                             <tr>
-                                <td style="padding: 5px 0px 5px 0px; text-transform: uppercase; font: bold 16px Arial, Helvetica, sans-serif;" colspan="5">
+                                <td style="border: 1px solid #45aefe; padding: 5px 0px 5px 0px; text-transform: uppercase; font: bold 16px Arial, Helvetica, sans-serif;" colspan="5">
                                     <asp:Literal ID="literalApprovalTitle" Text="Thông tin duyệt" runat="server"></asp:Literal>        
                                 </td>
                             </tr>
 
                             <tr class="row_title">
-                                <td width="20%" align="center" valign="middle">
+                                <td style="border: 1px solid #45aefe;" width="20%" align="center" valign="middle">
                                     <asp:Literal ID="literalChief" Text="Trưởng bộ phận" runat="server"></asp:Literal>
                                 </td>
-                                <td width="20%" align="center" valign="middle">
+                                <td style="border: 1px solid #45aefe;" width="20%" align="center" valign="middle">
                                     <asp:Literal ID="literalBuyer" Text="Người mua hàng" runat="server"></asp:Literal>
                                 </td>
-                                <td width="20%" align="center" valign="middle">
+                                <td style="border: 1px solid #45aefe;" width="20%" align="center" valign="middle">
                                     <asp:Literal ID="literalApprover" Text="Duyệt" runat="server"></asp:Literal>
                                 </td>
-                                <td width="20%" align="center" valign="middle">
+                                <td style="border: 1px solid #45aefe;" width="20%" align="center" valign="middle">
                                     <asp:Literal ID="literalAccountant" Text="Phòng kế toán" runat="server"></asp:Literal>
                                 </td>
-                                <td width="20%" align="center" valign="middle">
+                                <td style="border: 1px solid #45aefe;" width="20%" align="center" valign="middle">
                                     <asp:Literal ID="literalConfirmer" Text="Người xác nhận" runat="server"></asp:Literal>
                                 </td>
                             </tr>
                                 
                             <tr class="row2">
-                                <td align="center" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peChief" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
-                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                    <SharePoint:FormField FieldName="Chief" ID="ffChief" runat="server">
+                                <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
+                                    <SharePoint:FormField FieldName="Chief" ID="ffChief" ControlMode="Display" runat="server">
                                     </SharePoint:FormField>
                                 </td>
-                                <td align="left" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peBuyer" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
-                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                    <SharePoint:FormField FieldName="Buyer" ID="ffBuyer" runat="server">
+                                <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
+                                    <SharePoint:FormField FieldName="Buyer" ID="ffBuyer" ControlMode="Display" runat="server">
                                     </SharePoint:FormField>
                                 </td>
-                                <td align="center" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peAccountant" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
-                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                        <SharePoint:FormField FieldName="Approver" ID="ffApprover" runat="server">
+                                <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
+                                    <SharePoint:FormField FieldName="Approver" ID="ffApprover" ControlMode="Display" runat="server">
                                     </SharePoint:FormField>
                                 </td>
-                                <td align="center" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peApprover" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
-                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                    <SharePoint:FormField FieldName="Accountant" ID="ffAccountant" runat="server">
+                                <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
+                                    <SharePoint:FormField FieldName="Accountant" ID="ffAccountant" ControlMode="Display" runat="server">
                                     </SharePoint:FormField>
                                 </td>
-                                <td align="left" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peConfirmer" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false" 
-                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                    <SharePoint:FormField FieldName="Confirmer" ID="ffConfirmer" runat="server">
+                                <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
+                                    <SharePoint:FormField FieldName="Confirmer" ID="ffConfirmer" ControlMode="Display" runat="server">
                                     </SharePoint:FormField>
                                 </td>
                             </tr>
 
                             <tr class="row2">
-                                <td align="center" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peChief" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
-                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                    <SharePoint:FormField FieldName="ChiefStatus" ID="ffChiefStatus" runat="server">
+                                <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
+                                    <SharePoint:FormField FieldName="ChiefStatus" ID="ffChiefStatus" ControlMode="Display" runat="server">
                                     </SharePoint:FormField>
                                 </td>
-                                <td align="left" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peBuyer" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
-                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                    <SharePoint:FormField FieldName="BuyerStatus" ID="ffBuyerStatus" runat="server">
+                                <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
+                                    <SharePoint:FormField FieldName="BuyerStatus" ID="ffBuyerStatus" ControlMode="Display" runat="server">
                                     </SharePoint:FormField>
                                 </td>
-                                <td align="center" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peAccountant" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
-                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                    <SharePoint:FormField FieldName="ApproverStatus" ID="ffApproverStatus" runat="server">
+                                <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
+                                    <SharePoint:FormField FieldName="ApproverStatus" ID="ffApproverStatus" ControlMode="Display" runat="server">
                                     </SharePoint:FormField>
                                 </td>
-                                <td align="center" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peApprover" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
-                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                    <SharePoint:FormField FieldName="AccountantStatus" ID="ffAccountantStatus" runat="server">
+                                <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
+                                    <SharePoint:FormField FieldName="AccountantStatus" ID="ffAccountantStatus" ControlMode="Display" runat="server">
                                     </SharePoint:FormField>
                                 </td>
-                                <td align="left" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peConfirmer" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false" 
-                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                    <SharePoint:FormField FieldName="ConfirmerStatus" ID="ffConfirmerStatus" runat="server">
+                                <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
+                                    <SharePoint:FormField FieldName="ConfirmerStatus" ID="ffConfirmerStatus" ControlMode="Display" runat="server">
                                     </SharePoint:FormField>
                                 </td>
                             </tr>
 
                             <tr class="row2">
-                                <td align="center" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peChief" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
-                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                    <SharePoint:FormField FieldName="ChiefComment" ID="ffChiefComment" runat="server">
+                                <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
+                                    <SharePoint:FormField FieldName="ChiefComment" ID="ffChiefComment" ControlMode="Display" runat="server">
                                     </SharePoint:FormField>
                                 </td>
-                                <td align="left" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peBuyer" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
-                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                    <SharePoint:FormField FieldName="BuyerComment" ID="ffBuyerComment" runat="server">
+                                <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
+                                    <SharePoint:FormField FieldName="BuyerComment" ID="ffBuyerComment" ControlMode="Display" runat="server">
                                     </SharePoint:FormField>
                                 </td>
                                 <td align="center" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peAccountant" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
-                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                    <SharePoint:FormField FieldName="ApproverComment" ID="ffApproverComment" runat="server">
+                                    <SharePoint:FormField FieldName="ApproverComment" ID="ffApproverComment" ControlMode="Display" runat="server">
                                     </SharePoint:FormField>
                                 </td>
-                                <td align="center" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peApprover" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false"  
-                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                     <SharePoint:FormField FieldName="AccountantComment" ID="ffAccountantComment" runat="server">
+                                <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
+                                    <SharePoint:FormField FieldName="AccountantComment" ID="ffAccountantComment" ControlMode="Display" runat="server">
                                     </SharePoint:FormField>
                                 </td>
-                                <td align="left" valign="middle" class="request_text_lable">
-                                    <%--<SharePoint:PeopleEditor ID="peConfirmer" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="false" 
-                                        ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />--%>
-                                    <SharePoint:FormField FieldName="ConfirmerComment" ID="ffConfirmerComment" runat="server">
+                                <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
+                                    <SharePoint:FormField FieldName="ConfirmerComment" ID="ffConfirmerComment" ControlMode="Display" runat="server">
                                     </SharePoint:FormField>
                                 </td>
                             </tr>
@@ -441,7 +502,6 @@
 
                 <tr>
                     <td style="padding: 5px 5px 5px 5px;" colspan="2">
-                        <%--<asp:LinkButton ID="linkViewDiscussion" CausesValidation="false" runat="server"><i>Xem thảo luận</i></asp:LinkButton>--%>
                         <asp:HyperLink ID="hyperLinkViewDiscussion" Target="_blank" runat="server"><i>Xem thảo luận</i></asp:HyperLink>
                     </td>
                 </tr>

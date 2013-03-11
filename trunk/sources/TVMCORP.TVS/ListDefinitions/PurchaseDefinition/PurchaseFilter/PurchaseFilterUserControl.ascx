@@ -6,7 +6,6 @@
 <%@ Import Namespace="Microsoft.SharePoint" %> 
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PurchaseFilterUserControl.ascx.cs" Inherits="TVMCORP.TVS.ListDefinitions.PurchaseDefinition.PurchaseFilter.PurchaseFilterUserControl" %>
-<asp:Button ID="Button1" runat="server" Text="Button" onclick="Button1_Click" />
 
 
 

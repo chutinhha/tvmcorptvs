@@ -11,6 +11,28 @@
     Inherits="TVMCORP.TVS.ControlTemplates.TVMCORP.TVS.PurchaseNewForm" %>
 <%@ Register TagPrefix="wssuc" TagName="ToolBar" Src="~/_controltemplates/ToolBar.ascx" %>
 <%@ Register TagPrefix="wssuc" TagName="ToolBarButton" Src="~/_controltemplates/ToolBarButton.ascx" %>
+
+<script src="../../_layouts/1033/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script src="/_layouts/1033/purchase.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //Call events
+        callUSEvents();
+    });
+    //caculate
+    function caculateTotal() {
+        var total = 0;
+        $(".table_purchase_detail tr.row2").each(function (e) {
+            var quantity = $(this).find('input.purchase_detail_quantity').val();
+            var price = $(this).find('input.purchase_detail_price').val();
+            if (quantity != undefined && price != undefined && quantity != '' & price != '') {
+                total += removeComma(quantity) * removeComma(price);
+            }
+        });
+        $("#total_price").text(formatNumber(total, ",", 3, 0));
+    }
+</script>
+
 <style type="text/css">
     .container_form
     {
@@ -87,7 +109,7 @@
         padding: 5px;
         font: normal 11px Arial,Helvetica, sans-serif;
         color: #4d4d4d;
-        border: 1px solid #45aefe !important;
+        /*border: 1px solid #45aefe !important;*/
     }
     table.tablelist tr.row_title td
     {
@@ -150,6 +172,13 @@
         width: 100% !important;
     }
     
+    table.tablelist tr td.ms-input {
+        border: 0px solid #45AEFE !important;
+        color: #4D4D4D;
+        font: 11px Arial,Helvetica,sans-serif;
+        padding: 5px;
+    }
+    
 </style>
 <span id='part1'>
     <SharePoint:InformationBar ID="InformationBar1" runat="server" />
@@ -182,11 +211,6 @@
                         <span>
                             <asp:Literal ID="literalCompanyEnglish" Text="TRI VIET MEDIA CORP.(TVM)" runat="server"></asp:Literal>
                         </span>
-                        <%--<br /> 
-                        <span>
-                            <asp:Literal ID="literalMonthRequest" runat="server"></asp:Literal>
-                            <asp:Literal ID="literalMonthYear" runat="server"></asp:Literal>
-                        </span>--%>
                     </td>
                 </tr>
                 <tr>
@@ -252,55 +276,64 @@
 
                 <tr>
                     <td colspan="2">
-                        <table width="100%" cellspacing="0" cellpadding="0" class="tablelist" border="2" style="border-collapse: collapse" >
+                        <table width="100%" cellspacing="0" cellpadding="0" class="tablelist table_purchase_detail" border="2" style="border-collapse: collapse" >
                             <tr>
-                                <td style="padding: 5px 0px 5px 0px; text-transform: uppercase; font: bold 16px Arial, Helvetica, sans-serif;" colspan="5">
+                                <td style="border: 1px solid #45aefe; padding: 5px 0px 5px 0px; text-transform: uppercase; font: bold 16px Arial, Helvetica, sans-serif;" colspan="5">
                                     <asp:Literal ID="literalPurchaseDetail" Text="Nội dung mua hàng" runat="server"></asp:Literal>        
                                 </td>
                             </tr>
                             <asp:Repeater ID="repeaterPurchaseDetail" runat="server">
                                 <HeaderTemplate>
                                     <tr class="row_title">
-                                        <td width="5%" align="center" valign="middle">
+                                        <td style="border: 1px solid #45aefe;" width="5%" align="center" valign="middle">
                                             <asp:Literal ID="literalOrder" Text="STT" runat="server"></asp:Literal>
                                         </td>
-                                        <td width="45%" align="center" valign="middle">
+                                        <td style="border: 1px solid #45aefe;" width="45%" align="center" valign="middle">
                                             <asp:Literal ID="literalProductName" Text="Mô tả" runat="server"></asp:Literal>
                                         </td>
-                                        <td width="10%" align="center" valign="middle">
+                                        <td style="border: 1px solid #45aefe;" width="10%" align="center" valign="middle">
                                             <asp:Literal ID="literalQuantity" Text="Số lượng" runat="server"></asp:Literal>
                                         </td>
-                                        <td width="10%" align="center" valign="middle">
+                                        <td style="border: 1px solid #45aefe;" width="10%" align="center" valign="middle">
                                             <asp:Literal ID="literalPrice" Text="Đơn giá" runat="server"></asp:Literal>
                                         </td>
-                                        <td width="30%" align="center" valign="middle">
+                                        <td style="border: 1px solid #45aefe;" width="30%" align="center" valign="middle">
                                             <asp:Literal ID="literalDescription" Text="Mục đích" runat="server"></asp:Literal>
                                         </td>
                                     </tr>
                                 </HeaderTemplate>
                                 <ItemTemplate>
                                     <tr class="row2">
-                                        <td align="center" valign="middle" class="request_text_lable">
+                                        <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
                                             <asp:Literal ID="literalOrderValue" runat="server"></asp:Literal>
                                         </td>
-                                        <td align="left" valign="middle" class="request_text_lable">
+                                        <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
                                             <asp:TextBox ID="txtProductName" Width="100%" MaxLength="255" runat="server"></asp:TextBox>
                                         </td>
-                                        <td align="center" valign="middle" class="request_text_lable">
-                                            <asp:TextBox ID="txtQuantity" Width="100%" MaxLength="3" runat="server"></asp:TextBox>
+                                        <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
+                                            <asp:TextBox ID="txtQuantity" CssClass="purchase_detail_input_number purchase_detail_quantity" Width="100%" MaxLength="3" runat="server"></asp:TextBox>
                                         </td>
-                                        <td align="center" valign="middle" class="request_text_lable">
-                                            <asp:TextBox ID="txtPrice" Width="100%" runat="server"></asp:TextBox>
+                                        <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
+                                            <asp:TextBox ID="txtPrice" CssClass="purchase_detail_input_number purchase_detail_price" Width="100%" runat="server"></asp:TextBox>
                                         </td>
-                                        <td align="left" valign="middle" class="request_text_lable">
+                                        <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
                                             <asp:TextBox ID="txtDescription" Width="100%" MaxLength="255" runat="server"></asp:TextBox>
                                         </td>
                                     </tr>
                                 </ItemTemplate>
+                                <FooterTemplate>
+                                    <tr>
+                                        <td style="border: 1px solid #45aefe;" align="right" valign="middle" colspan="5">
+                                            <b>Tổng cộng : &nbsp;&nbsp;
+                                            <span id="total_price"></span>&nbsp;
+                                            đồng
+                                            </b>
+                                        </td>
+                                    </tr>
+                                </FooterTemplate>
                             </asp:Repeater>
                             <tr>
-                                <td style="padding: 5px 5px 5px 5px;" colspan="5">
-                                    <%--<asp:Button ID="btnAddPurchaseDetail" CausesValidation="false" runat="server" Text="Thêm dòng" />--%> 
+                                <td  style="border: 1px solid #45aefe; padding: 5px 5px 5px 5px;" colspan="5">
                                     <asp:LinkButton ID="linkButtonAdd" CausesValidation="false" runat="server"><i>Thêm dòng</i></asp:LinkButton>
                                 </td>
                             </tr>
@@ -320,55 +353,89 @@
                     <td colspan="2">
                         <table width="100%" cellspacing="0" cellpadding="0" class="tablelist" border="2" style="border-collapse: collapse" >
                             <tr>
-                                <td style="padding: 5px 0px 5px 0px; text-transform: uppercase; font: bold 16px Arial, Helvetica, sans-serif;" colspan="5">
+                                <td style="border: 1px solid #45aefe; padding: 5px 0px 5px 0px; text-transform: uppercase; font: bold 16px Arial, Helvetica, sans-serif;" colspan="2">
+                                    <asp:Literal ID="literalReferenceTitle" Text="Đề nghị tham chiếu" runat="server"></asp:Literal>        
+                                </td>
+                            </tr>
+
+                            <tr class="row_title">
+                                <td style="border: 1px solid #45aefe;" width="100%" align="center" valign="middle">
+                                    <asp:Literal ID="literalReferences" Text="Chọn đề nghị tham chiếu" runat="server"></asp:Literal>
+                                </td>
+                            </tr>
+                                
+                            <tr class="row2">
+                                <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
+                                    <SharePoint:FormField FieldName="References" ID="ffReferences" runat="server">
+                                    </SharePoint:FormField>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        &nbsp;&nbsp;
+                        <br />
+                        &nbsp;&nbsp;
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <table width="100%" cellspacing="0" cellpadding="0" class="tablelist" border="2" style="border-collapse: collapse" >
+                            <tr>
+                                <td style="border: 1px solid #45aefe; padding: 5px 0px 5px 0px; text-transform: uppercase; font: bold 16px Arial, Helvetica, sans-serif;" colspan="5">
                                     <asp:Literal ID="literalApprovalTitle" Text="Thông tin duyệt" runat="server"></asp:Literal>        
                                 </td>
                             </tr>
 
                             <tr class="row_title">
-                                <td width="20%" align="center" valign="middle">
+                                <td style="border: 1px solid #45aefe;" width="20%" align="center" valign="middle">
                                     <asp:Literal ID="literalChief" Text="Trưởng bộ phận" runat="server"></asp:Literal>
                                 </td>
-                                <td width="20%" align="center" valign="middle">
+                                <td style="border: 1px solid #45aefe;" width="20%" align="center" valign="middle">
                                     <asp:Literal ID="literalBuyer" Text="Người mua hàng" runat="server"></asp:Literal>
                                 </td>
-                                <td width="20%" align="center" valign="middle">
+                                <td style="border: 1px solid #45aefe;" width="20%" align="center" valign="middle">
                                     <asp:Literal ID="literalApprover" Text="Duyệt" runat="server"></asp:Literal>
                                 </td>
-                                <td width="20%" align="center" valign="middle">
+                                <td style="border: 1px solid #45aefe;" width="20%" align="center" valign="middle">
                                     <asp:Literal ID="literalAccountant" Text="Phòng kế toán" runat="server"></asp:Literal>
                                 </td>
-                                <td width="20%" align="center" valign="middle">
+                                <td style="border: 1px solid #45aefe;" width="20%" align="center" valign="middle">
                                     <asp:Literal ID="literalConfirmer" Text="Người xác nhận" runat="server"></asp:Literal>
                                 </td>
                             </tr>
                                 
                             <tr class="row2">
-                                <td align="center" valign="middle" class="request_text_lable">
+                                <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
                                     <SharePoint:PeopleEditor ID="peChief" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="True"  
                                         ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />
                                     <%--<SharePoint:FormField FieldName="Chief" ID="ffChief" runat="server">
                                     </SharePoint:FormField>--%>
                                 </td>
-                                <td align="left" valign="middle" class="request_text_lable">
+                                <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
                                     <SharePoint:PeopleEditor ID="peBuyer" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="True"  
                                         ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />
                                     <%--<SharePoint:FormField FieldName="Buyer" ID="ffBuyer" runat="server">
                                     </SharePoint:FormField>--%>
                                 </td>
-                                <td align="center" valign="middle" class="request_text_lable">
+                                <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
                                     <SharePoint:PeopleEditor ID="peApprover" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="True"  
                                         ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />
                                     <%--<SharePoint:FormField FieldName="Accountant" ID="ffAccountant" runat="server">
                                     </SharePoint:FormField>--%>
                                 </td>
-                                <td align="center" valign="middle" class="request_text_lable">
+                                <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
                                     <SharePoint:PeopleEditor ID="peAccountant" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="True"  
                                         ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />
                                     <%--<SharePoint:FormField FieldName="Approver" ID="ffApprover" runat="server">
                                     </SharePoint:FormField>--%>
                                 </td>
-                                <td align="left" valign="middle" class="request_text_lable">
+                                <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
                                     <SharePoint:PeopleEditor ID="peConfirmer" runat="server" SelectionSet="User" CssClass="ms-usereditor" MultiSelect="false" AllowEmpty="True" 
                                         ShowDataValidationErrorBorder="False" ValidatorEnabled="True" ValidateResolvedEntity="True" />
                                     <%--<SharePoint:FormField FieldName="Confirmer" ID="ffConfirmer" runat="server">

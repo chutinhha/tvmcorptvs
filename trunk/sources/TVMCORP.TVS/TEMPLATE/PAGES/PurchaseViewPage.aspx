@@ -1,11 +1,14 @@
-﻿<%@ Page language="C#" MasterPageFile="~masterurl/default.master"    Inherits="Microsoft.SharePoint.WebPartPages.WebPartPage,Microsoft.SharePoint,Version=14.0.0.0,Culture=neutral,PublicKeyToken=71e9bce111e9429c"  %> 
+﻿<%@ Page language="C#" MasterPageFile="~masterurl/default.master" Inherits="Microsoft.SharePoint.WebPartPages.WebPartPage,Microsoft.SharePoint,Version=14.0.0.0,Culture=neutral,PublicKeyToken=71e9bce111e9429c"  %> 
 <%@ Register Tagprefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %> 
 <%@ Register Tagprefix="Utilities" Namespace="Microsoft.SharePoint.Utilities" Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %> 
 <%@ Import Namespace="Microsoft.SharePoint" %> 
 <%@ Assembly Name="Microsoft.Web.CommandUI, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %> 
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Register Tagprefix="ApplicationPages" Namespace="Microsoft.SharePoint.ApplicationPages.WebControls" Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
-<%@ Register TagPrefix="TVMCorp" Namespace="TVMCORP.TVS.ListDefinitions.PurchaseDefinition.FilterWebPart" Assembly="TVMCORP.TVS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=44dc3ce128de1979"%>
+
+<%@ Register TagPrefix="uc" TagName="PurchaseFilterControl" Src="~/_CONTROLTEMPLATES/TVMCORP.TVS.ListDefinitions.PurchaseDefinition/PurchaseFilter/PurchaseFilterUserControl.ascx" %>
+
+
 <asp:Content ContentPlaceHolderId="PlaceHolderPageTitle" runat="server"><SharePoint:ListProperty Property="TitleOrFolder" runat="server"/> - <SharePoint:ListProperty Property="CurrentViewTitle" runat="server"/></asp:Content>
 <asp:Content ContentPlaceHolderId="PlaceHolderPageTitleInTitleArea" runat="server">
 	<SharePoint:ListProperty Property="TitleBreadcrumb" runat="server"/>
@@ -31,16 +34,8 @@
 <asp:Content ContentPlaceHolderId="PlaceHolderMain" runat="server">
 		<WebPartPages:WebPartZone runat="server" FrameType="None" ID="Main" Title="loc:Main" />
 
-        <div class="div-purchase-filter" style="display:none;">
-            <TVMCorp:FilterWebPart runat="server" 
-                Description="Support WebPart" 
-                chrometype="None" 
-                Title="FilterWebPart" 
-                __MarkupType="vsattributemarkup" 
-                __WebPartId="{9de69b78-fba2-4d93-9162-dd069242d055}" 
-                WebPart="true" __designer:IsClosed="false" 
-                id="g_9de69b78_fba2_4d93_9162_dd069242d055">
-            </TVMCorp:FilterWebPart>
+        <div class="div-purchase-filter">
+            <uc:PurchaseFilterControl ID="purchaseFilterUC" runat="server" />
         </div>
 
 </asp:Content>
