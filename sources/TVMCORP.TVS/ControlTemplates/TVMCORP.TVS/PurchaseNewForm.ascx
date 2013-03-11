@@ -16,6 +16,7 @@
 <script src="/_layouts/1033/purchase.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+        caculateTotal();
         //Call events
         callUSEvents();
     });
@@ -30,6 +31,7 @@
             }
         });
         $("#total_price").text(formatNumber(total, ",", 3, 0));
+        $("#total_price_text").text(DocTienBangChu(total));
     }
 </script>
 
@@ -233,25 +235,25 @@
                         <asp:Literal ID="literalDateRequest" Text="Ngày :" runat="server"></asp:Literal>
                     </td>
                     <td class="request_column2" width="50%" align="left">
-                        <asp:Literal ID="literalDateRequestValue" Text="17/03/2013" runat="server"></asp:Literal>
+                        <asp:Literal ID="literalDateRequestValue" Text="" runat="server"></asp:Literal>
                     </td>
                 </tr>
 
                 <tr>
                     <td class="request_column1" width="50%" align="right">
-                        <asp:Literal ID="literalUserRequest" Text="Người đề nghị :" runat="server"></asp:Literal>
+                        <asp:Literal ID="literalUserRequest" Text="" runat="server"></asp:Literal>
                     </td>
                     <td class="request_column2" width="50%" align="left">
-                        <asp:Literal ID="literalUserRequestValue" Text="Trần Anh Tuấn" runat="server"></asp:Literal>
+                        <asp:Literal ID="literalUserRequestValue" Text="" runat="server"></asp:Literal>
                     </td>
                 </tr>
 
                 <tr>
                     <td class="request_column1" width="50%" align="right">
-                        <asp:Literal ID="literalDepartmentRequest" Text="Bộ phận :" runat="server"></asp:Literal>
+                        <asp:Literal ID="literalDepartmentRequest" Text="" runat="server"></asp:Literal>
                     </td>
                     <td class="request_column2" width="50%" align="left">
-                        <asp:Literal ID="literalDepartmentRequestValue" Text="Dịch Vụ - Kỹ Thuật" runat="server"></asp:Literal>
+                        <asp:Literal ID="literalDepartmentRequestValue" Text="" runat="server"></asp:Literal>
                     </td>
                 </tr>
 
@@ -327,6 +329,8 @@
                                             <b>Tổng cộng : &nbsp;&nbsp;
                                             <span id="total_price"></span>&nbsp;
                                             đồng
+                                            <br />
+                                            <i>(<span id="total_price_text"></span> đồng)</i>
                                             </b>
                                         </td>
                                     </tr>

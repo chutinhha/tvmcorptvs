@@ -25,6 +25,7 @@
                 }
             });
             $("#total_price").text(formatNumber(total, ",", 3, 0));
+            $("#total_price_text").text(DocTienBangChu(total));
         });
 
         var win = null;
@@ -342,7 +343,10 @@
                             <FooterTemplate>
                                 <tr>
                                     <td style="border: 1px solid #45aefe;" align="right" valign="middle" colspan="5">
-                                        <b>Tổng cộng : &nbsp;&nbsp; <span id="total_price"></span>&nbsp; đồng </b>
+                                        <b>Tổng cộng : &nbsp;&nbsp; <span id="total_price"></span>&nbsp; đồng 
+                                        <br />
+                                        <i>(<span id="total_price_text"></span> đồng)</i>
+                                        </b>
                                     </td>
                                 </tr>
                             </FooterTemplate>

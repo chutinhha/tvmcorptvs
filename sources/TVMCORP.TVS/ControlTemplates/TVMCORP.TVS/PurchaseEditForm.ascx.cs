@@ -37,7 +37,7 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             btnSave.Click += new EventHandler(btnSave_Click);
             linkButtonAdd.Click += new EventHandler(AddPurchaseDetail);
             repeaterPurchaseDetail.ItemDataBound +=new RepeaterItemEventHandler(repeaterPurchaseDetail_ItemDataBound);
-            repeaterPurchaseReference.ItemDataBound +=new RepeaterItemEventHandler(repeaterPurchaseReference_ItemDataBound);
+            //repeaterPurchaseReference.ItemDataBound +=new RepeaterItemEventHandler(repeaterPurchaseReference_ItemDataBound);
             rdbTypeOfApproval1.AutoPostBack = true;
             rdbTypeOfApproval2.AutoPostBack = true;
             rdbTypeOfApproval1.CheckedChanged += new EventHandler(ChangeApprovalSettings);
@@ -118,10 +118,10 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
                 txtProductName.Text = rowView["ProductName"].ToString();
 
                 TextBox txtQuantity = e.Item.FindControl("txtQuantity") as TextBox;
-                txtQuantity.Text = rowView["Quantity"].ToString();
+                txtQuantity.Text = string.IsNullOrEmpty(rowView["Quantity"].ToString()) ? string.Empty : Convert.ToDouble(rowView["Quantity"]).ToString("#,###");
 
                 TextBox txtPrice = e.Item.FindControl("txtPrice") as TextBox;
-                txtPrice.Text = rowView["Price"].ToString();
+                txtPrice.Text = string.IsNullOrEmpty(rowView["Price"].ToString()) ? string.Empty : Convert.ToDouble(rowView["Price"]).ToString("#,###");
 
                 TextBox txtDescription = e.Item.FindControl("txtDescription") as TextBox;
                 txtDescription.Text = rowView["Description"].ToString();
@@ -145,9 +145,9 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
                 repeaterPurchaseDetail.DataSource = purchaseDetail;
                 repeaterPurchaseDetail.DataBind();
                 //Load purchase references
-                DataTable purchaseReferences = LoadPurchaseReferences();
-                repeaterPurchaseReference.DataSource = purchaseReferences;
-                repeaterPurchaseReference.DataBind();
+                //DataTable purchaseReferences = LoadPurchaseReferences();
+                //repeaterPurchaseReference.DataSource = purchaseReferences;
+                //repeaterPurchaseReference.DataBind();
             }
         }
 
@@ -197,6 +197,7 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             SPContext.Current.ListItem[SPBuiltInFieldId.Title] = ffTitle.Value;
             SPContext.Current.ListItem["TypeOfApproval"] = hiddenTypeOfApproval.Value;
             SPContext.Current.ListItem["PurchaseDetail"] = purchaseDetails;
+            SPContext.Current.ListItem["References"] = ffReferences.Value;
 
             if (peChief.IsValid && peChief.ResolvedEntities.Count > 0)
                 SPContext.Current.ListItem["Chief"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peChief.ResolvedEntities[0]).Key); //ffChief.Value; //
