@@ -296,6 +296,7 @@
     <Content Include="ListInstances\FormTemplates\DoxTemplates_Module\Elements.xml" />
     <Content Include="ListInstances\FormTemplates\DoxTemplates_Module\Sample.txt" />
     <Content Include="ListInstances\FormTemplates\Elements.xml" />
+    <Content Include="ListInstances\PurchaseTaskListInstance\Schema.xml" />
     <Content Include="Modules\WebPartPages\Elements.xml" />
     <Content Include="TEMPLATE\PAGES\PurchaseViewPage.aspx">
       <SubType>ASPXCodeBehind</SubType>
