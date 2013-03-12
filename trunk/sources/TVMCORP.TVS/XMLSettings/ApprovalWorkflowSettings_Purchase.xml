@@ -32,8 +32,8 @@
                 <StaticUsers />
                 <TaskId>0</TaskId>
               </TaskActionSettings>
-              <TaskActionSettings xsi:type="SendEmailToWfItemUserColumnSettings">
-                <Type>SendEmailToWorkflowItemUserColumn</Type>
+              <TaskActionSettings xsi:type="SendEmailtoWorkflowTaskUserColumnSettings">
+                <Type>SendEmailToWorkflowTaskUserColumn</Type>
                 <Order>0</Order>
                 <EmailTemplateUrl>/Lists/EmailTemplates</EmailTemplateUrl>
                 <EmailTemplateName>Yêu cầu duyệt</EmailTemplateName>
@@ -72,7 +72,7 @@
       </EmailTemplate>
       <AllowChangeMessage>false</AllowChangeMessage>
       <TaskContenType>0x01080100E6FA232BCA3B4B25B9DF4B2E3791D3DD</TaskContenType>
-      <TaskTitle />
+      <TaskTitle>Vui lòng duyệt </TaskTitle>
       <EnableChangeApprovers>false</EnableChangeApprovers>
       <AppendTitle>true</AppendTitle>
       <UpdateProperties>
@@ -119,8 +119,8 @@
                 <StaticUsers />
                 <TaskId>0</TaskId>
               </TaskActionSettings>
-              <TaskActionSettings xsi:type="SendEmailToWfItemUserColumnSettings">
-                <Type>SendEmailToWorkflowItemUserColumn</Type>
+              <TaskActionSettings xsi:type="SendEmailtoWorkflowTaskUserColumnSettings">
+                <Type>SendEmailToWorkflowTaskUserColumn</Type>
                 <Order>0</Order>
                 <EmailTemplateUrl>/Lists/EmailTemplates</EmailTemplateUrl>
                 <EmailTemplateName>Yêu cầu duyệt</EmailTemplateName>
@@ -148,7 +148,7 @@
       </EmailTemplate>
       <AllowChangeMessage>false</AllowChangeMessage>
       <TaskContenType>0x01080100E6FA232BCA3B4B25B9DF4B2E3791D3DD</TaskContenType>
-      <TaskTitle />
+      <TaskTitle>Vui lòng duyệt </TaskTitle>
       <EnableChangeApprovers>false</EnableChangeApprovers>
       <AppendTitle>true</AppendTitle>
       <UpdateProperties>
@@ -195,8 +195,8 @@
                 <StaticUsers />
                 <TaskId>0</TaskId>
               </TaskActionSettings>
-              <TaskActionSettings xsi:type="SendEmailToWfItemUserColumnSettings">
-                <Type>SendEmailToWorkflowItemUserColumn</Type>
+              <TaskActionSettings xsi:type="SendEmailtoWorkflowTaskUserColumnSettings">
+                <Type>SendEmailToWorkflowTaskUserColumn</Type>
                 <Order>0</Order>
                 <EmailTemplateUrl>/Lists/EmailTemplates</EmailTemplateUrl>
                 <EmailTemplateName>Yêu cầu duyệt</EmailTemplateName>
@@ -224,7 +224,7 @@
       </EmailTemplate>
       <AllowChangeMessage>false</AllowChangeMessage>
       <TaskContenType>0x01080100E6FA232BCA3B4B25B9DF4B2E3791D3DD</TaskContenType>
-      <TaskTitle />
+      <TaskTitle>Vui lòng duyệt </TaskTitle>
       <EnableChangeApprovers>false</EnableChangeApprovers>
       <AppendTitle>true</AppendTitle>
       <UpdateProperties>
@@ -271,8 +271,8 @@
                 <StaticUsers />
                 <TaskId>0</TaskId>
               </TaskActionSettings>
-              <TaskActionSettings xsi:type="SendEmailToWfItemUserColumnSettings">
-                <Type>SendEmailToWorkflowItemUserColumn</Type>
+              <TaskActionSettings xsi:type="SendEmailtoWorkflowTaskUserColumnSettings">
+                <Type>SendEmailToWorkflowTaskUserColumn</Type>
                 <Order>0</Order>
                 <EmailTemplateUrl>/Lists/EmailTemplates</EmailTemplateUrl>
                 <EmailTemplateName>Yêu cầu duyệt</EmailTemplateName>
@@ -300,7 +300,7 @@
       </EmailTemplate>
       <AllowChangeMessage>false</AllowChangeMessage>
       <TaskContenType>0x01080100E6FA232BCA3B4B25B9DF4B2E3791D3DD</TaskContenType>
-      <TaskTitle />
+      <TaskTitle>Vui lòng duyệt </TaskTitle>
       <EnableChangeApprovers>false</EnableChangeApprovers>
       <AppendTitle>true</AppendTitle>
       <UpdateProperties>
@@ -347,8 +347,8 @@
                 <StaticUsers />
                 <TaskId>0</TaskId>
               </TaskActionSettings>
-              <TaskActionSettings xsi:type="SendEmailToWfItemUserColumnSettings">
-                <Type>SendEmailToWorkflowItemUserColumn</Type>
+              <TaskActionSettings xsi:type="SendEmailtoWorkflowTaskUserColumnSettings">
+                <Type>SendEmailToWorkflowTaskUserColumn</Type>
                 <Order>0</Order>
                 <EmailTemplateUrl>/Lists/EmailTemplates</EmailTemplateUrl>
                 <EmailTemplateName>Yêu cầu duyệt</EmailTemplateName>
@@ -376,7 +376,7 @@
       </EmailTemplate>
       <AllowChangeMessage>false</AllowChangeMessage>
       <TaskContenType>0x01080100E6FA232BCA3B4B25B9DF4B2E3791D3DD</TaskContenType>
-      <TaskTitle />
+      <TaskTitle>Vui lòng duyệt </TaskTitle>
       <EnableChangeApprovers>false</EnableChangeApprovers>
       <AppendTitle>true</AppendTitle>
       <UpdateProperties>
@@ -444,7 +444,7 @@
             </Columns>
             <AllParticipiants>false</AllParticipiants>
             <StaticUsers>
-              <string>NT AUTHORITYauthenticated users</string>
+              <string>NT AUTHORITY\\authenticated users</string>
             </StaticUsers>
           </TaskActionSettings>
           <TaskActionSettings xsi:type="UpdateWFItemPermissionSettings">
@@ -497,7 +497,7 @@
             </Columns>
             <AllParticipiants>false</AllParticipiants>
             <StaticUsers>
-              <string>NT AUTHORITYauthenticated users</string>
+              <string>NT AUTHORITY\\authenticated users</string>
             </StaticUsers>
           </TaskActionSettings>
           <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
@@ -560,7 +560,7 @@
             </Columns>
             <AllParticipiants>false</AllParticipiants>
             <StaticUsers>
-              <string>NT AUTHORITYauthenticated users</string>
+              <string>NT AUTHORITY\\authenticated users</string>
             </StaticUsers>
           </TaskActionSettings>
           <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
@@ -615,7 +615,7 @@
             </Columns>
             <AllParticipiants>false</AllParticipiants>
             <StaticUsers>
-              <string>NT AUTHORITYauthenticated users</string>
+              <string>NT AUTHORITY\\authenticated users</string>
             </StaticUsers>
           </TaskActionSettings>
           <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
