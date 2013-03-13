@@ -1,2 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="5d26af66-13ce-4aee-98ea-c5ffc43de3b5" solutionId="5d26af66-13ce-4aee-98ea-c5ffc43de3b5" resetWebServer="false" name="TVMCORP.TVS.UTIL" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" />
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="5d26af66-13ce-4aee-98ea-c5ffc43de3b5" solutionId="5d26af66-13ce-4aee-98ea-c5ffc43de3b5" resetWebServer="false" name="TVMCORP.TVS.UTIL" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <customAssembly location="DocumentFormat.OpenXml.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Libs\DocumentFormat.OpenXml.dll" />
+  </assemblies>
+</package>

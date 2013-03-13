@@ -12,6 +12,13 @@
 <%@ Register TagPrefix="wssuc" TagName="InputFormControl" src="~/_controltemplates/InputFormControl.ascx" %>
 <%@ Register TagPrefix="wssuc" TagName="ButtonSection" src="~/_controltemplates/ButtonSection.ascx" %>
 
+<style type="text/css">
+    .rblFormat td label
+    {
+        padding: 0 15px 0 5px;
+    }
+</style>
+
 <wssawc:FormDigest runat="server" id="FormDigest" />
 <div style="color:red" id="errorMessageHolder" enableviewstate="false" runat="server"></div>
 <script type="text/javascript">        
@@ -27,43 +34,49 @@
 		<Template_InputFormControls>
 		
 			<wssuc:InputFormControl runat="server" LabelText="Document template">
-			    <Template_Control>
-                    <asp:TextBox runat="server" id="txtTemplate" CssClass="ms-long"/>
-				     <wssawc:InputFormRequiredFieldValidator ID="ddlItemColumnValidator" 
-														    ControlToValidate="txtTemplate"
-														    Display="Dynamic" 
-														    ErrorMessage="Please enter the url to document template" 
-														    Runat="server"
-														    ValidationGroup="SubmitValidate"/>
+				<Template_Control>
+					<asp:TextBox runat="server" id="txtTemplate" CssClass="ms-long"/>
+					 <wssawc:InputFormRequiredFieldValidator ID="ddlItemColumnValidator" 
+															ControlToValidate="txtTemplate"
+															Display="Dynamic" 
+															ErrorMessage="Please enter the url to document template" 
+															Runat="server"
+															ValidationGroup="SubmitValidate"/>
 
-                    <br />
-                    <asp:CheckBox Text="Copy Metadata" runat="server"  ID="chkCopyMetadata"/>
-                    <br />
-                    <asp:CheckBox Text="Copy permission" runat="server" ID="chkCopyPermission" />
-                    
-			    </Template_Control>
+					<br />
+					<asp:CheckBox Text="Copy Metadata" runat="server"  ID="chkCopyMetadata"/>
+					<br />
+					<asp:CheckBox Text="Copy permission" runat="server" ID="chkCopyPermission" />
+					<br /><br />
+					Document Format:
+					<br />
+					<asp:RadioButtonList ID="rblDocumentFormat" runat="server" RepeatDirection="Horizontal" CssClass="rblFormat">
+						<asp:ListItem Value="docx" Text="docx" Selected="True"></asp:ListItem>
+						<asp:ListItem Value="pdf" Text="pdf"></asp:ListItem>
+					</asp:RadioButtonList>
+				</Template_Control>
 			</wssuc:InputFormControl>
 			
 			<wssuc:InputFormControl ID="InputFormControl1" runat="server" LabelText="Target Library">
-			    <Template_Control>
-                    <asp:TextBox runat="server" id="txtDestination" CssClass="ms-long"/>
-				     <wssawc:InputFormRequiredFieldValidator ID="InputFormRequiredFieldValidator1" 
-														    ControlToValidate="txtDestination"
-														    Display="Dynamic" 
-														    ErrorMessage="Please enter the url to document library" 
-														    Runat="server"
-														    ValidationGroup="SubmitValidate"/>
+				<Template_Control>
+					<asp:TextBox runat="server" id="txtDestination" CssClass="ms-long"/>
+					 <wssawc:InputFormRequiredFieldValidator ID="InputFormRequiredFieldValidator1" 
+															ControlToValidate="txtDestination"
+															Display="Dynamic" 
+															ErrorMessage="Please enter the url to document library" 
+															Runat="server"
+															ValidationGroup="SubmitValidate"/>
 
-                   
-                    
-			    </Template_Control>
+				   
+					
+				</Template_Control>
 			</wssuc:InputFormControl>
 
 
 			<wssuc:InputFormControl runat="server">
-			    <Template_Control>
-				    <asp:CheckBox ID="chkRemoveAction" Text="Remove this action" runat="server" />
-			    </Template_Control>
+				<Template_Control>
+					<asp:CheckBox ID="chkRemoveAction" Text="Remove this action" runat="server" />
+				</Template_Control>
 			</wssuc:InputFormControl>
 
 		</Template_InputFormControls>

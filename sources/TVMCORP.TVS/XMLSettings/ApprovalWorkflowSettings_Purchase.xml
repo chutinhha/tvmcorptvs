@@ -444,7 +444,7 @@
             </Columns>
             <AllParticipiants>false</AllParticipiants>
             <StaticUsers>
-              <string>NT AUTHORITY\\authenticated users</string>
+              <string>NT AUTHORITY\authenticated users</string>
             </StaticUsers>
           </TaskActionSettings>
           <TaskActionSettings xsi:type="UpdateWFItemPermissionSettings">
@@ -497,7 +497,7 @@
             </Columns>
             <AllParticipiants>false</AllParticipiants>
             <StaticUsers>
-              <string>NT AUTHORITY\\authenticated users</string>
+              <string>NT AUTHORITY\authenticated users</string>
             </StaticUsers>
           </TaskActionSettings>
           <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
@@ -560,7 +560,7 @@
             </Columns>
             <AllParticipiants>false</AllParticipiants>
             <StaticUsers>
-              <string>NT AUTHORITY\\authenticated users</string>
+              <string>NT AUTHORITY\authenticated users</string>
             </StaticUsers>
           </TaskActionSettings>
           <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">
@@ -615,7 +615,7 @@
             </Columns>
             <AllParticipiants>false</AllParticipiants>
             <StaticUsers>
-              <string>NT AUTHORITY\\authenticated users</string>
+              <string>NT AUTHORITY\authenticated users</string>
             </StaticUsers>
           </TaskActionSettings>
           <TaskActionSettings xsi:type="UpdateWorkflowItemMetadataSettings">

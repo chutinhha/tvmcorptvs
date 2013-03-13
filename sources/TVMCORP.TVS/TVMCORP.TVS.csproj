@@ -199,6 +199,9 @@
     <None Include="ListInstances\PurchaseArchiveListInstance\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{df2948ff-d137-4944-b46e-242b5d5e4633}</SharePointProjectItemId>
     </None>
+    <None Include="ListInstances\TempDocsListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{346aa3fa-e743-49bc-90bc-26499add0c1a}</SharePointProjectItemId>
+    </None>
     <None Include="Modules\WebPartPages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{654fa44e-cbb4-4543-9679-dfea75becc22}</SharePointProjectItemId>
     </None>
@@ -323,6 +326,7 @@
     <Content Include="ListInstances\FormTemplates\Elements.xml" />
     <Content Include="ListInstances\PurchaseTaskListInstance\Schema.xml" />
     <Content Include="ListInstances\PurchaseArchiveListInstance\Elements.xml" />
+    <Content Include="ListInstances\TempDocsListInstance\Elements.xml" />
     <Content Include="Modules\WebPartPages\Elements.xml" />
     <Content Include="Receivers\DiscussionEvents\Elements.xml" />
     <Content Include="Receivers\UpdateLinkViewItemReceiver\Elements.xml" />
