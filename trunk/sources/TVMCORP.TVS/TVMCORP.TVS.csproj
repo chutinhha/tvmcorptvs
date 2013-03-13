@@ -67,6 +67,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContentTypes\PurchaseContentType\PurchaseContentTypeEventReceiver.cs" />
+    <Compile Include="ControlTemplates\TVMCORP.TVS\LookupFieldWithPickerEditor.ascx.cs">
+      <DependentUpon>LookupFieldWithPickerEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\TVMCORP.TVS\LookupFieldWithPickerEditor.ascx.designer.cs">
+      <DependentUpon>LookupFieldWithPickerEditor.ascx.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseDispForm.ascx.cs">
       <DependentUpon>PurchaseDispForm.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -91,6 +98,14 @@
     </Compile>
     <Compile Include="CustomFields\LinkViewItemField.cs" />
     <Compile Include="CustomFields\LinkViewItemFieldControl.cs" />
+    <Compile Include="CustomFields\LookupFieldWithPicker\LookupFieldWithPicker.cs" />
+    <Compile Include="CustomFields\LookupFieldWithPicker\LookupFieldWithPickerControl.cs" />
+    <Compile Include="CustomFields\LookupFieldWithPicker\LookupFieldWithPickerDialog.cs" />
+    <Compile Include="CustomFields\LookupFieldWithPicker\LookupFieldWithPickerEntityEditor.cs" />
+    <Compile Include="CustomFields\LookupFieldWithPicker\LookupFieldWithPickerHelper.cs" />
+    <Compile Include="CustomFields\LookupFieldWithPicker\LookupFieldWithPickerPropertyBag.cs" />
+    <Compile Include="CustomFields\LookupFieldWithPicker\LookupFieldWithPickerQuery.cs" />
+    <Compile Include="CustomFields\LookupFieldWithPicker\MultiLookupFieldWithPickerControl.cs" />
     <Compile Include="Features\TVMCORP.TVS.Feature\TVMCORP.TVS.EventReceiver.cs" />
     <Compile Include="Layouts\TVMCORP.TVS\ApproversSettings.aspx.cs">
       <DependentUpon>ApproversSettings.aspx</DependentUpon>
@@ -129,6 +144,9 @@
     <Compile Include="ViewDelegateControl\PageHeadDelegateControl.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AppGlobalResources\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{77aeb70e-bde4-41ab-8f71-a29ca97c6608}</SharePointProjectItemId>
+    </None>
     <None Include="ContentTypes\PurchaseContentType\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{6e8c6874-7473-48d0-9fec-55bf34d2dc10}</SharePointProjectItemId>
     </None>
@@ -220,6 +238,9 @@
     <None Include="Receivers\UpdateLinkViewItemReceiver\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{554c4a0d-2544-46fc-ab90-85dc773f7253}</SharePointProjectItemId>
     </None>
+    <None Include="Resources\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1addcef8-b066-49ad-b7e5-111e64c15c69}</SharePointProjectItemId>
+    </None>
     <None Include="SiteColumns\TVMColumns\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{dada26b9-a939-4214-8b04-314d5bd41a25}</SharePointProjectItemId>
     </None>
@@ -235,11 +256,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AppGlobalResources\Elements.xml" />
     <Content Include="ContentTypes\PurchaseContentType\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ContentTypes\PurchaseDetailContentType\Elements.xml">
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ControlTemplates\TVMCORP.TVS\LookupFieldWithPickerEditor.ascx">
+      <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="ControlTemplates\TVMCORP.TVS\PurchaseDispForm.ascx">
       <SubType>ASPXCodeBehind</SubType>
@@ -335,7 +360,14 @@
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="XML\fldtypes_LinkViewItemField.xml" />
+    <Content Include="XML\fldtypes_LookupFieldWithPicker.xml" />
     <Content Include="XSL\fldtypes_LinkViewItemField.xsl" />
+    <Content Include="Resources\TVMCORP.TVS.CustomFields.LookupFieldWithPicker.de-DE.resx" />
+    <Content Include="Resources\TVMCORP.TVS.CustomFields.LookupFieldWithPicker.en-US.resx" />
+    <Content Include="Resources\TVMCORP.TVS.CustomFields.LookupFieldWithPicker.resx" />
+    <Content Include="AppGlobalResources\TVMCORP.TVS.CustomFields.LookupFieldWithPicker.de-DE.resx" />
+    <Content Include="AppGlobalResources\TVMCORP.TVS.CustomFields.LookupFieldWithPicker.en-US.resx" />
+    <Content Include="AppGlobalResources\TVMCORP.TVS.CustomFields.LookupFieldWithPicker.resx" />
     <EmbeddedResource Include="WebParts.xml" />
     <Content Include="ListInstances\PurchaseTaskListInstance\Elements.xml" />
     <EmbeddedResource Include="XMLSettings\ApprovalWorkflowSettings_Purchase.xml">

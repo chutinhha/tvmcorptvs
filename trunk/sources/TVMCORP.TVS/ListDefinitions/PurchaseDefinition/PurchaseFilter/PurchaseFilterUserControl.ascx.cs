@@ -17,13 +17,18 @@ namespace TVMCORP.TVS.ListDefinitions.PurchaseDefinition.PurchaseFilter
     {
         private List<Microsoft.SharePoint.WebPartPages.XsltListViewWebPart> xsltListViewWebParts = new List<Microsoft.SharePoint.WebPartPages.XsltListViewWebPart>();
 
-        protected override void OnInit(EventArgs e)
+        protected override void OnDataBinding(EventArgs e)
         {
             SetCustomQuery();
+        }
+        protected override void OnInit(EventArgs e)
+        {
+           // SetCustomQuery();
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            SetCustomQuery();
         }
 
         protected override void CreateChildControls()
