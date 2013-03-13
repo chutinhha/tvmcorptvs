@@ -346,78 +346,58 @@
                     </td>
                 </tr>
 
-                <%--<tr>
-                    <td colspan="2">
-                        <table width="100%" cellspacing="0" cellpadding="0" class="tablelist" border="2" style="border-collapse: collapse" >
-                            <tr>
-                                <td style="border: 1px solid #45aefe; padding: 5px 0px 5px 0px; text-transform: uppercase; font: bold 16px Arial, Helvetica, sans-serif;" colspan="5">
-                                    <asp:Literal ID="literalPurechaseReferences" Text="Đề nghị tham chiếu" runat="server"></asp:Literal>        
-                                </td>
-                            </tr>
-                            <tr class="row_title">
-                                <td style="border: 1px solid #45aefe;" width="5%" align="center" valign="middle">
-                                    STT
-                                </td>
-                                <td style="border: 1px solid #45aefe;" width="45%" align="center" valign="middle">
-                                    Tiêu đề
-                                </td>
-                                <td style="border: 1px solid #45aefe;" width="15%" align="center" valign="middle">
-                                    Ngày
-                                </td>
-                                <td style="border: 1px solid #45aefe;" width="20%" align="center" valign="middle">
-                                    Người đề nghị
-                                </td>
-                                <td style="border: 1px solid #45aefe;" width="15%" align="center" valign="middle">
-                                    Bộ phận
-                                </td>
-                            </tr>
-                            <asp:Repeater ID="repeaterPurchaseReference" runat="server">
-                                <ItemTemplate>
-                                    <tr class="row2">
-                                        <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
-                                            <asp:Literal ID="literalOrder" runat="server"></asp:Literal>
-                                        </td>
-                                        <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
-                                            <asp:LinkButton ID="linkButtonReferenceTitle" runat="server"></asp:LinkButton>
-                                        </td>
-                                        <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
-                                            <asp:Literal ID="literalReferenceDate" runat="server"></asp:Literal>
-                                        </td>
-                                        <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
-                                            <asp:Literal ID="literalReferenceUser" runat="server"></asp:Literal>
-                                        </td>
-                                        <td style="border: 1px solid #45aefe;" align="left" valign="middle" class="request_text_lable">
-                                            <asp:Literal ID="literalReferenceDepartment" runat="server"></asp:Literal>
-                                        </td>
-                                    </tr>
-                                </ItemTemplate>
-                            </asp:Repeater>
-                        </table>
-                    </td>
-                </tr>--%>
-
                 <tr>
                     <td colspan="2">
-                        <table width="100%" cellspacing="0" cellpadding="0" class="tablelist" border="2" style="border-collapse: collapse" >
+                        <%--<uc:ReferencesUC runat="server" id="ctlReference" ReadOnly="true" />--%>
+                        <table width="100%" cellspacing="0" cellpadding="0" class="tablelist" border="2"
+                            style="border-collapse: collapse">
                             <tr>
-                                <td style="border: 1px solid #45aefe; padding: 5px 0px 5px 0px; text-transform: uppercase; font: bold 16px Arial, Helvetica, sans-serif;" colspan="2">
-                                    <asp:Literal ID="literalReferenceTitle" Text="Đề nghị tham chiếu" runat="server"></asp:Literal>        
+                                <td style="border: 1px solid #45aefe; padding: 5px 0px 5px 0px; text-transform: uppercase;
+                                    font: bold 16px Arial, Helvetica, sans-serif;" colspan="2">
+                                    <asp:Literal ID="literalReferenceTitle" Text="Đề nghị tham chiếu" runat="server"></asp:Literal>
                                 </td>
                             </tr>
-
                             <tr class="row_title">
                                 <td style="border: 1px solid #45aefe;" width="100%" align="center" valign="middle">
                                     <asp:Literal ID="literalReferences" Text="Chọn đề nghị tham chiếu" runat="server"></asp:Literal>
                                 </td>
                             </tr>
-                                
                             <tr class="row2">
                                 <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
-                                    <SharePoint:FormField FieldName="References" ID="ffReferences" runat="server">
-                                    </SharePoint:FormField>
+                                    <SharePoint:GroupedItemPicker ID="purchaseReferences" runat="server" CandidateControlId="SelectCandidate"
+                                        ResultControlId="SelectResult" AddButtonId="AddButton" RemoveButtonId="RemoveButton"
+                                        GroupControlId="SellectGroup" />
+                                    <table class="ms-long" cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td class='ms-authoringcontrols' colspan='3'>
+                                                <SharePoint:SPHtmlSelect ID="SellectGroup" Width="200" Height="20" runat="server" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ms-input">
+                                                <SharePoint:SPHtmlSelect ID="SelectCandidate" Width="143" Height="125" runat="server"
+                                                    multiple="true" />
+                                            </td>
+                                            <td align="center" valign="middle" class="ms-input">
+                                                <button class="ms-ButtonHeightWidth" id="AddButton" runat="server">
+                                                    <SharePoint:EncodedLiteral ID="EncodedLiteral1" runat="server" Text="<%$Resources:wss,multipages_gip_add%>"
+                                                        EncodeMethod='HtmlEncode' />
+                                                </button>
+                                                <br />
+                                                <br />
+                                                <button class="ms-ButtonHeightWidth" id="RemoveButton" runat="server">
+                                                    <SharePoint:EncodedLiteral ID="EncodedLiteral2" runat="server" Text="<%$Resources:wss,multipages_gip_remove%>"
+                                                        EncodeMethod='HtmlEncode' />
+                                                </button>
+                                            </td>
+                                            <td class="ms-input">
+                                                <SharePoint:SPHtmlSelect ID="SelectResult" Width="143" Height="125" runat="server"
+                                                    multiple="true" />
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </td>
                             </tr>
-
                         </table>
                     </td>
                 </tr>

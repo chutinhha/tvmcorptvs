@@ -58,8 +58,6 @@ namespace TVMCORP.TVS.Layouts
                         }
                     }
                 });
-
-                
             }
             var threadItem = discussionList.GetItemById(int.Parse(threadIdStr));
             Response.Redirect(item.Web.Site.MakeFullUrl(threadItem.Url));
@@ -76,6 +74,18 @@ namespace TVMCORP.TVS.Layouts
             body.Append(@"<br/><div>Reply to this post to start a discussion around this item.</div>");
 
             return body.ToString();
+        }
+
+
+        private void SetItemPermission(SPWeb web, Guid listId, int itemId, SPFieldUserValueCollection userValueCollections)
+        {
+            SPList list = web.Lists[listId];
+            SPListItem listItem = list.GetItemById(itemId);
+            listItem.RemoveAllPermissions();
+            foreach (SPFieldUserValue userValue in userValueCollections)
+            {
+                listItem.SetPermissions(userValue.User, SPRoleType.Contributor);
+            }
         }
        
     }

@@ -220,13 +220,76 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::System.Web.UI.WebControls.Literal literalReferences;
         
         /// <summary>
-        /// ffReferences control.
+        /// purchaseReferences control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.SharePoint.WebControls.FormField ffReferences;
+        protected global::Microsoft.SharePoint.WebControls.GroupedItemPicker purchaseReferences;
+        
+        /// <summary>
+        /// SellectGroup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.SPHtmlSelect SellectGroup;
+        
+        /// <summary>
+        /// SelectCandidate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.SPHtmlSelect SelectCandidate;
+        
+        /// <summary>
+        /// AddButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton AddButton;
+        
+        /// <summary>
+        /// EncodedLiteral1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.EncodedLiteral EncodedLiteral1;
+        
+        /// <summary>
+        /// RemoveButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton RemoveButton;
+        
+        /// <summary>
+        /// EncodedLiteral2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.EncodedLiteral EncodedLiteral2;
+        
+        /// <summary>
+        /// SelectResult control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.SharePoint.WebControls.SPHtmlSelect SelectResult;
         
         /// <summary>
         /// literalApprovalTitle control.
