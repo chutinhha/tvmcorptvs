@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FieldTypes>
+  <FieldType>
+    <Field Name="TypeName">LinkViewItem</Field>
+    <Field Name="ParentType">Text</Field>
+    <Field Name="TypeDisplayName">[TVM-eOffice] Link View Item</Field>
+    <Field Name="TypeShortDescription">Email Link View Item</Field>
+    <Field Name="UserCreatable">TRUE</Field>
+    <Field Name="ShowOnListCreate">TRUE</Field>
+    <Field Name="ShowOnSurveyCreate">TRUE</Field>
+    <Field Name="ShowOnDocumentLibraryCreate">TRUE</Field>
+    <Field Name="ShowOnColumnTemplateCreate">TRUE</Field>
+    <Field Name="FieldTypeClass">TVMCORP.TVS.CustomFields.LinkViewItemField, TVMCORP.TVS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=44dc3ce128de1979</Field>
+  </FieldType>
+</FieldTypes>

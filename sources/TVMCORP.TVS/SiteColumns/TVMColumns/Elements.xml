@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Field Type="LinkViewItem" DisplayName="Xem đề nghị" Required="FALSE" EnforceUniqueValues="FALSE" 
+         Group="[TVM-eOffice]" ID="{02314040-ACFB-4a7a-9E82-18DB9883E1F8}" StaticName="LinkViewItem" Name="LinkViewItem" 
+         ShowInDisplayForm="FALSE" ShowInEditForm="FALSE" ShowInNewForm="FALSE" ShowInVersionHistory="FALSE" />
+
+</Elements>

@@ -10,6 +10,7 @@ using TVMCORP.TVS.UTIL.Extensions;
 using Microsoft.SharePoint;
 using System.Collections.Generic;
 using TVMCORP.TVS.UTIL.Models;
+using TVMCORP.TVS.UTIL.Utilities.Camlex;
 
 namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
 {
@@ -35,8 +36,8 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             rdbTypeOfApproval2.CheckedChanged += new EventHandler(ChangeApprovalSettings);
             //
             GetUserInfo();
+            PurchaseHelper.GetReferences(purchaseReferences);
         }
-
 
         void ChangeApprovalSettings(object sender, EventArgs e)
         {
@@ -277,7 +278,7 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             purchaseItem["DepartmentRequest"] = literalDepartmentRequestValue.Text;
             purchaseItem["TypeOfApproval"] = hiddenTypeOfApproval.Value;
             purchaseItem["PurchaseDetail"] = purchaseDetails;
-            purchaseItem["References"] = ffReferences.Value;
+            purchaseItem["References"] = PurchaseHelper.GetMultipleItemSelectionValues(purchaseReferences);
             if(peChief.IsValid && peChief.ResolvedEntities.Count > 0)
                 purchaseItem["Chief"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peChief.ResolvedEntities[0]).Key); //ffChief.Value; //
             if (peBuyer.IsValid && peBuyer.ResolvedEntities.Count > 0)

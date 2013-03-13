@@ -49,6 +49,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\ISAPI\Microsoft.Web.CommandUI.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -80,6 +81,7 @@
     <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseEditForm.ascx.designer.cs">
       <DependentUpon>PurchaseEditForm.ascx.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseHelper.cs" />
     <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseNewForm.ascx.cs">
       <DependentUpon>PurchaseNewForm.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -87,6 +89,8 @@
     <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseNewForm.ascx.designer.cs">
       <DependentUpon>PurchaseNewForm.ascx.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomFields\LinkViewItemField.cs" />
+    <Compile Include="CustomFields\LinkViewItemFieldControl.cs" />
     <Compile Include="Features\TVMCORP.TVS.Feature\TVMCORP.TVS.EventReceiver.cs" />
     <Compile Include="Layouts\TVMCORP.TVS\ApproversSettings.aspx.cs">
       <DependentUpon>ApproversSettings.aspx</DependentUpon>
@@ -120,6 +124,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receivers\DiscussionEvents\DiscussionEvents.cs" />
+    <Compile Include="Receivers\UpdateLinkViewItemReceiver\UpdateLinkViewItemReceiver.cs" />
     <Compile Include="ViewDelegateControl\CustomViewSelectorMenu.cs" />
     <Compile Include="ViewDelegateControl\PageHeadDelegateControl.cs" />
   </ItemGroup>
@@ -209,10 +214,22 @@
     <None Include="Receivers\DiscussionEvents\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{68f30c77-e69b-4650-8604-6467d8e69b19}</SharePointProjectItemId>
     </None>
+    <None Include="Receivers\UpdateLinkViewItemReceiver\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{554c4a0d-2544-46fc-ab90-85dc773f7253}</SharePointProjectItemId>
+    </None>
+    <None Include="SiteColumns\TVMColumns\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{dada26b9-a939-4214-8b04-314d5bd41a25}</SharePointProjectItemId>
+    </None>
     <None Include="TEMPLATE\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{75012795-b088-476a-830c-87ba1937b360}</SharePointProjectItemId>
     </None>
     <None Include="Properties\TVMCORP.TVS.snk" />
+    <None Include="XML\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d75b5494-db5c-4594-8133-500038cb5295}</SharePointProjectItemId>
+    </None>
+    <None Include="XSL\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c58d007b-ea1d-4be4-a643-990671200cb8}</SharePointProjectItemId>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="ContentTypes\PurchaseContentType\Elements.xml">
@@ -308,9 +325,13 @@
     <Content Include="ListInstances\PurchaseArchiveListInstance\Elements.xml" />
     <Content Include="Modules\WebPartPages\Elements.xml" />
     <Content Include="Receivers\DiscussionEvents\Elements.xml" />
+    <Content Include="Receivers\UpdateLinkViewItemReceiver\Elements.xml" />
+    <Content Include="SiteColumns\TVMColumns\Elements.xml" />
     <Content Include="TEMPLATE\PAGES\PurchaseViewPage.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Content Include="XML\fldtypes_LinkViewItemField.xml" />
+    <Content Include="XSL\fldtypes_LinkViewItemField.xsl" />
     <EmbeddedResource Include="WebParts.xml" />
     <Content Include="ListInstances\PurchaseTaskListInstance\Elements.xml" />
     <EmbeddedResource Include="XMLSettings\ApprovalWorkflowSettings_Purchase.xml">
