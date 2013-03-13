@@ -71,6 +71,7 @@
     <Compile Include="Extensions\SPContentTypeExtensions.cs" />
     <Compile Include="Extensions\SPFieldCollectionExtensions.cs" />
     <Compile Include="Extensions\SPFieldExtensions.cs" />
+    <Compile Include="Extensions\SPFieldLookupExtensions.cs" />
     <Compile Include="Extensions\SPListExtensions.cs" />
     <Compile Include="Extensions\SPListItemExtensions.cs" />
     <Compile Include="Extensions\SPSiteExtensions.cs" />

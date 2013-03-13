@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.SharePoint;
 
-namespace Hypertek.IOffice.Common.Extensions
+namespace TVMCORP.TVS.UTIL.Extensions
 {
     public static class SPFieldLookupExtensions
     {
