@@ -118,6 +118,7 @@ namespace TVMCORP.TVS.WORKFLOWS.Controls
              CopyMetadata = chkCopyMetadata.Checked,
              CopyPermission = chkCopyPermission.Checked,
              DestinationLib = txtDestination.Text,
+             DocumentFormat = rblDocumentFormat.SelectedValue
             };
         }
 
@@ -133,6 +134,15 @@ namespace TVMCORP.TVS.WORKFLOWS.Controls
             chkCopyMetadata.Checked = savedAction.CopyMetadata;
             txtDestination.Text = savedAction.DestinationLib;
 
+            try
+            {
+                if (!string.IsNullOrEmpty(savedAction.DocumentFormat))
+                {
+                    rblDocumentFormat.SelectedValue = savedAction.DocumentFormat;
+                }
+                
+            }
+            catch { }
         }
 
     }
