@@ -20,6 +20,7 @@
         //Call events
         callUSEvents();
     });
+
     //caculate
     function caculateTotal() {
         var total = 0;
@@ -37,7 +38,7 @@
 <style type="text/css">
     .container_form
     {
-        width: 960px;
+        width: 960px !important;
         margin: 0 auto;
         align: center;
         margin: 0px 10px 10px 10px;
@@ -182,23 +183,10 @@
 </style>
 <span id='part1'>
     <SharePoint:InformationBar ID="InformationBar1" runat="server" />
-    <%--<div id="listFormToolBarTop">
-        <wssuc:ToolBar CssClass="ms-formtoolbar" ID="toolBarTbltop" RightButtonSeparator="&amp;#160;"
-            runat="server">
-            <Template_RightButtons>
-                <SharePoint:NextPageButton ID="NextPageButton1" runat="server" />
-                <SharePoint:SaveButton ID="SaveButton1" runat="server" />
-                <SharePoint:GoBackButton ID="GoBackButton1" runat="server" />
-            </Template_RightButtons>
-        </wssuc:ToolBar>
-    </div>--%>
     <SharePoint:FormToolBar ID="FormToolBar1" runat="server" />
     <SharePoint:ItemValidationFailedMessage ID="ItemValidationFailedMessage1" runat="server" />
-    <table class="ms-formtable" style="margin-top: 8px;" border="0" cellpadding="0" cellspacing="0"
-        width="100%">
-        <%--<SharePoint:ChangeContentType ID="ChangeContentType1" runat="server" />--%>
-        <SharePoint:FolderFormFields ID="FolderFormFields1" runat="server" />
-        <%--<SharePoint:ListFieldIterator ID="ListFieldIterator1" runat="server" />--%>
+    <table class="ms-formtable" style="margin-top: 8px;" border="0" cellpadding="0" cellspacing="0" width="960px">
+        <SharePoint:FolderFormFields ID="FolderFormFields1" runat="server" />        
         <div class="container_form">
             <table width="100%" border="0" cellpadding="0" cellspacing="0">
                 <tr>
@@ -239,7 +227,7 @@
                 </tr>
                 <tr>
                     <td class="request_column1" width="50%" align="right">
-                        <asp:Literal ID="literalUserRequest" Text="" runat="server"></asp:Literal>
+                        <asp:Literal ID="literalUserRequest" Text="Người đề nghị :" runat="server"></asp:Literal>
                     </td>
                     <td class="request_column2" width="50%" align="left">
                         <asp:Literal ID="literalUserRequestValue" Text="" runat="server"></asp:Literal>
@@ -247,7 +235,7 @@
                 </tr>
                 <tr>
                     <td class="request_column1" width="50%" align="right">
-                        <asp:Literal ID="literalDepartmentRequest" Text="" runat="server"></asp:Literal>
+                        <asp:Literal ID="literalDepartmentRequest" Text="Bộ phận :" runat="server"></asp:Literal>
                     </td>
                     <td class="request_column2" width="50%" align="left">
                         <asp:Literal ID="literalDepartmentRequestValue" Text="" runat="server"></asp:Literal>
@@ -349,7 +337,6 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <%--<uc:ReferencesUC runat="server" id="ctlReference" ReadOnly="true" />--%>
                         <table width="100%" cellspacing="0" cellpadding="0" class="tablelist" border="2"
                             style="border-collapse: collapse">
                             <tr>
@@ -364,8 +351,8 @@
                                 </td>
                             </tr>
                             <tr class="row2">
-                                <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
-                                    <SharePoint:GroupedItemPicker ID="purchaseReferences" runat="server" CandidateControlId="SelectCandidate"
+                                <td style="border: 1px solid #45aefe; padding:0px 0px 0px 0px;" align="center" valign="middle" class="request_text_lable">
+                                    <%--<SharePoint:GroupedItemPicker ID="purchaseReferences" runat="server" CandidateControlId="SelectCandidate"
                                         ResultControlId="SelectResult" AddButtonId="AddButton" RemoveButtonId="RemoveButton"
                                         GroupControlId="SellectGroup" />
                                     <table class="ms-long" cellpadding="0" cellspacing="0" border="0">
@@ -396,7 +383,9 @@
                                                     multiple="true" />
                                             </td>
                                         </tr>
-                                    </table>
+                                    </table>--%>
+                                    <SharePoint:FormField FieldName="References" ID="ffReferences" runat="server" CssClass="ctl_reference">
+                                    </SharePoint:FormField>
                                 </td>
                             </tr>
                         </table>
@@ -501,7 +490,6 @@
                         <SharePoint:CreatedModifiedInfo ID="CreatedModifiedInfo1" runat="server" />
                     </Template_Buttons>
                     <Template_RightButtons>
-                        <%--<SharePoint:SaveButton ID="SaveButton2" runat="server" />--%>
                         <asp:Button ID="btnSave" runat="server" CssClass="ms-ButtonHeightWidth" Text="Save" />
                         <SharePoint:GoBackButton ID="GoBackButton2" runat="server" />
                     </Template_RightButtons>

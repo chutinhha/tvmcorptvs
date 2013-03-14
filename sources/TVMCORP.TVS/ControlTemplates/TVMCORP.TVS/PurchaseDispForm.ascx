@@ -183,7 +183,7 @@
     </div>--%>
     <SharePoint:FormToolBar ID="FormToolBar1" runat="server" />
     <SharePoint:ItemValidationFailedMessage ID="ItemValidationFailedMessage1" runat="server" />
-    <table class="ms-formtable" style="margin-top: 8px;" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <table class="ms-formtable" style="margin-top: 8px;" border="0" cellpadding="0" cellspacing="0" width="960px">
         <%--<SharePoint:ChangeContentType ID="ChangeContentType1" runat="server" />--%>
         <SharePoint:FolderFormFields ID="FolderFormFields1" runat="server" />
         <%--<SharePoint:ListFieldIterator ID="ListFieldIterator1" runat="server" />--%>

@@ -8,6 +8,7 @@
 
 <%@ Register TagPrefix="uc" TagName="PurchaseFilterControl" Src="~/_CONTROLTEMPLATES/TVMCORP.TVS.ListDefinitions.PurchaseDefinition/PurchaseFilter/PurchaseFilterUserControl.ascx" %>
 
+<%@ Register TagPrefix="uc" TagName="RequestFilterControl" Src="~/_controltemplates/TVMCORP.TVS/RequestFilterUC.ascx" %>
 
 <asp:Content ContentPlaceHolderId="PlaceHolderPageTitle" runat="server"><SharePoint:ListProperty Property="TitleOrFolder" runat="server"/> - <SharePoint:ListProperty Property="CurrentViewTitle" runat="server"/></asp:Content>
 <asp:Content ContentPlaceHolderId="PlaceHolderPageTitleInTitleArea" runat="server">
@@ -34,8 +35,8 @@
 <asp:Content ContentPlaceHolderId="PlaceHolderMain" runat="server">
 		<WebPartPages:WebPartZone runat="server" FrameType="None" ID="Main" Title="loc:Main" />
 
-        <div class="div-purchase-filter">
-            <uc:PurchaseFilterControl ID="purchaseFilterUC" runat="server" />
+        <div class="div-purchase-filter" style="display:none;" >
+            <uc:PurchaseFilterControl ID="RequestFilterControl" runat="server" />
         </div>
 
 </asp:Content>

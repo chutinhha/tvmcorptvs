@@ -223,9 +223,20 @@ function checkForEnter(event) {
 }
 
 
+/* Maximizes the pop-up dialog */
+function maximizeWindow() {
+    var currentDialog = SP.UI.ModalDialog.get_childDialog();
+    if (currentDialog != null) {
+        if (!currentDialog.$S_0) {
+            currentDialog.$z();
+        }
+    }
+}
+
+
 //Begin Call event
 function callUSEvents() {
-    
+
     if ($.browser.msie) {
         $(".purchase_detail_input_number").blur(function () {
             caculateTotal();

@@ -2,20 +2,31 @@
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
-using System.Xml;
-using Microsoft.SharePoint.WebPartPages;
-using System.Collections.Generic;
-using TVMCORP.TVS.UTIL;
 using Microsoft.SharePoint;
-using System.Collections;
-using System.Linq;
+using TVMCORP.TVS.UTIL;
 using TVMCORP.TVS.UTIL.Utilities;
+using System.Collections.Generic;
+using System.Xml;
+using Microsoft.SharePoint.WebControls;
 
-namespace TVMCORP.TVS.ListDefinitions.PurchaseDefinition.PurchaseFilter
+namespace TVMCORP.TVS.WebParts.RequestFilter
 {
-    public partial class PurchaseFilterUserControl : UserControl
+    public partial class RequestFilterUserControl : UserControl
     {
+
+        public string RequestContentType { get; set; }
+
         private List<Microsoft.SharePoint.WebPartPages.XsltListViewWebPart> xsltListViewWebParts = new List<Microsoft.SharePoint.WebPartPages.XsltListViewWebPart>();
+
+        protected override void OnInit(EventArgs e)
+        {
+            base.OnInit(e);
+            SPRibbon ribbon = SPRibbon.GetCurrent(this.Page);
+            if (ribbon != null)
+            {
+                ribbon.TrimById("Ribbon.ListItem.New");
+            }
+        }
 
         protected override void OnDataBinding(EventArgs e)
         {
@@ -25,6 +36,12 @@ namespace TVMCORP.TVS.ListDefinitions.PurchaseDefinition.PurchaseFilter
         protected void Page_Load(object sender, EventArgs e)
         {
             SetCustomQuery();
+            if (!IsPostBack)
+            {
+                var purchaseList = Utility.GetListFromURL(Constants.PURCHASE_LIST_URL, SPContext.Current.Web);
+                string url = string.Format(@"javascript:NewItem2(event,'{0}/{1}?ContentTypeId={2}&IsDlg=1');javascript:return false;", SPContext.Current.Web.Url, purchaseList.Forms[PAGETYPE.PAGE_NEWFORM].Url, RequestContentType);
+                linkButtonAdd.OnClientClick = url;
+            }
         }
 
         protected void FindListViewWebParts(Control control, Guid listId)
@@ -115,9 +132,5 @@ namespace TVMCORP.TVS.ListDefinitions.PurchaseDefinition.PurchaseFilter
 
             return output;
         }
-
     }
 }
-
-
-

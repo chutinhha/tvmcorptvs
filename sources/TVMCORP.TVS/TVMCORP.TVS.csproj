@@ -66,7 +66,7 @@
     <Reference Include="Microsoft.SharePoint.Security" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContentTypes\PurchaseContentType\PurchaseContentTypeEventReceiver.cs" />
+    <Compile Include="ContentTypes\RequestContentType\RequestContentTypeEventReceiver.cs" />
     <Compile Include="ControlTemplates\TVMCORP.TVS\LookupFieldWithPickerEditor.ascx.cs">
       <DependentUpon>LookupFieldWithPickerEditor.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -102,6 +102,13 @@
     </Compile>
     <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseNewForm.ascx.designer.cs">
       <DependentUpon>PurchaseNewForm.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlTemplates\TVMCORP.TVS\RequestFilterUC.ascx.cs">
+      <DependentUpon>RequestFilterUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\TVMCORP.TVS\RequestFilterUC.ascx.designer.cs">
+      <DependentUpon>RequestFilterUC.ascx.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomFields\LinkViewItemField.cs" />
     <Compile Include="CustomFields\LinkViewItemFieldControl.cs" />
@@ -150,12 +157,20 @@
     <Compile Include="Receivers\UpdateLinkViewItemReceiver\UpdateLinkViewItemReceiver.cs" />
     <Compile Include="ViewDelegateControl\CustomViewSelectorMenu.cs" />
     <Compile Include="ViewDelegateControl\PageHeadDelegateControl.cs" />
+    <Compile Include="WebParts\RequestFilter\RequestFilter.cs" />
+    <Compile Include="WebParts\RequestFilter\RequestFilterUserControl.ascx.cs">
+      <DependentUpon>RequestFilterUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebParts\RequestFilter\RequestFilterUserControl.ascx.designer.cs">
+      <DependentUpon>RequestFilterUserControl.ascx.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="AppGlobalResources\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{77aeb70e-bde4-41ab-8f71-a29ca97c6608}</SharePointProjectItemId>
     </None>
-    <None Include="ContentTypes\PurchaseContentType\SharePointProjectItem.spdata">
+    <None Include="ContentTypes\RequestContentType\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{6e8c6874-7473-48d0-9fec-55bf34d2dc10}</SharePointProjectItemId>
     </None>
     <None Include="ContentTypes\PurchaseDetailContentType\SharePointProjectItem.spdata">
@@ -256,6 +271,10 @@
       <SharePointProjectItemId>{75012795-b088-476a-830c-87ba1937b360}</SharePointProjectItemId>
     </None>
     <None Include="Properties\TVMCORP.TVS.snk" />
+    <None Include="WebParts\RequestFilter\RequestFilter.webpart" />
+    <None Include="WebParts\RequestFilter\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f0688348-34d2-4ef6-9c53-0294cf4372e6}</SharePointProjectItemId>
+    </None>
     <None Include="XML\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{d75b5494-db5c-4594-8133-500038cb5295}</SharePointProjectItemId>
     </None>
@@ -265,7 +284,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppGlobalResources\Elements.xml" />
-    <Content Include="ContentTypes\PurchaseContentType\Elements.xml">
+    <Content Include="ContentTypes\RequestContentType\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ContentTypes\PurchaseDetailContentType\Elements.xml">
@@ -284,6 +303,9 @@
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="ControlTemplates\TVMCORP.TVS\PurchaseNewForm.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="ControlTemplates\TVMCORP.TVS\RequestFilterUC.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="CustomActions\BreadcrumbViewDelegate\Elements.xml" />
@@ -346,7 +368,9 @@
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="ListDefinitions\PurchaseDefinition\PurchaseInstance\Elements.xml" />
-    <Content Include="ListDefinitions\PurchaseDefinition\Schema.xml" />
+    <Content Include="ListDefinitions\PurchaseDefinition\Schema.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ListDefinitions\PurchaseDetailDefinition\Elements.xml" />
     <Content Include="ListDefinitions\PurchaseDetailDefinition\PurchaseDetailInstance\Elements.xml" />
     <Content Include="ListDefinitions\PurchaseDetailDefinition\Schema.xml" />
@@ -367,7 +391,9 @@
     <Content Include="Receivers\DiscussionEvents\Elements.xml" />
     <Content Include="Receivers\UpdateLinkViewItemReceiver\Elements.xml" />
     <Content Include="SiteColumns\TVMColumns\Elements.xml" />
-    <Content Include="TEMPLATE\PAGES\PurchaseViewPage.aspx">
+    <Content Include="TEMPLATE\PAGES\RequestViewPage.aspx" />
+    <Content Include="WebParts\RequestFilter\Elements.xml" />
+    <Content Include="WebParts\RequestFilter\RequestFilterUserControl.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="XML\fldtypes_LinkViewItemField.xml" />
@@ -393,7 +419,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TimerJobs\" />
-    <Folder Include="WebParts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" />
