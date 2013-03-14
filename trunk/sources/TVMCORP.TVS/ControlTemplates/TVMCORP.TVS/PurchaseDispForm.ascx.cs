@@ -149,21 +149,23 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
 
             var purchaseList = SPContext.Current.List;
             SPFieldLookupValueCollection purchaseReferences = SPContext.Current.ListItem["References"] as SPFieldLookupValueCollection;
-            foreach (var purchaseReference in purchaseReferences)
+            if (purchaseReferences != null && purchaseReferences.Count > 0)
             {
-                SPListItem listItem = purchaseList.GetItemById(purchaseReference.LookupId);
-                if (listItem != null)
+                foreach (var purchaseReference in purchaseReferences)
                 {
-                    DataRow row = dataTable.NewRow();
-                    row[0] = listItem[SPBuiltInFieldId.Title].ToString();
-                    row[1] = listItem["DateRequest"].ToString();
-                    row[2] = listItem["UserRequest"].ToString();
-                    row[3] = listItem["DepartmentRequest"] != null ? listItem["DepartmentRequest"].ToString() : string.Empty;
-                    row[4] = listItem.ID;
-                    dataTable.Rows.Add(row);
+                    SPListItem listItem = purchaseList.GetItemById(purchaseReference.LookupId);
+                    if (listItem != null)
+                    {
+                        DataRow row = dataTable.NewRow();
+                        row[0] = listItem[SPBuiltInFieldId.Title].ToString();
+                        row[1] = listItem["DateRequest"].ToString();
+                        row[2] = listItem["UserRequest"].ToString();
+                        row[3] = listItem["DepartmentRequest"] != null ? listItem["DepartmentRequest"].ToString() : string.Empty;
+                        row[4] = listItem.ID;
+                        dataTable.Rows.Add(row);
+                    }
                 }
             }
-
             return dataTable;
         }
     }

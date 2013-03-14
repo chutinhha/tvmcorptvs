@@ -187,7 +187,7 @@
     </div>--%>
     <SharePoint:FormToolBar ID="FormToolBar1" runat="server" />
     <SharePoint:ItemValidationFailedMessage ID="ItemValidationFailedMessage1" runat="server" />
-    <table class="ms-formtable" style="margin-top: 8px;" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <table class="ms-formtable" style="margin-top: 8px;" border="0" cellpadding="0" cellspacing="0" width="960px">
         <%--<SharePoint:ChangeContentType ID="ChangeContentType1" runat="server" />--%>
         <SharePoint:FolderFormFields ID="FolderFormFields1" runat="server" />
         <%--<SharePoint:ListFieldIterator ID="ListFieldIterator1" runat="server" />--%>
@@ -348,7 +348,6 @@
 
                 <tr>
                     <td colspan="2">
-                        <%--<uc:ReferencesUC runat="server" id="ctlReference" ReadOnly="true" />--%>
                         <table width="100%" cellspacing="0" cellpadding="0" class="tablelist" border="2"
                             style="border-collapse: collapse">
                             <tr>
@@ -364,7 +363,7 @@
                             </tr>
                             <tr class="row2">
                                 <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
-                                    <SharePoint:GroupedItemPicker ID="purchaseReferences" runat="server" CandidateControlId="SelectCandidate"
+                                    <%--<SharePoint:GroupedItemPicker ID="purchaseReferences" runat="server" CandidateControlId="SelectCandidate"
                                         ResultControlId="SelectResult" AddButtonId="AddButton" RemoveButtonId="RemoveButton"
                                         GroupControlId="SellectGroup" />
                                     <table class="ms-long" cellpadding="0" cellspacing="0" border="0">
@@ -395,7 +394,9 @@
                                                     multiple="true" />
                                             </td>
                                         </tr>
-                                    </table>
+                                    </table>--%>
+                                    <SharePoint:FormField FieldName="References" ID="ffReferences" runat="server">
+                                    </SharePoint:FormField>
                                 </td>
                             </tr>
                         </table>

@@ -4,6 +4,12 @@
 
     <File Url="Purchase.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" Path="spstd4.aspx">
       <Property Name="ContentType" Value="Web Part Page" />
+      <Property Name="Title">Đề nghị mua hàng</Property>
+    </File>
+
+    <File Url="Payment.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" Path="spstd4.aspx">
+      <Property Name="ContentType" Value="Web Part Page" />
+      <Property Name="Title">Đề nghị thanh toán</Property>
     </File>
 
   </Module>

@@ -36,7 +36,7 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             rdbTypeOfApproval2.CheckedChanged += new EventHandler(ChangeApprovalSettings);
             //
             GetUserInfo();
-            PurchaseHelper.GetReferences(purchaseReferences);
+            //PurchaseHelper.GetReferences(purchaseReferences);
         }
 
         void ChangeApprovalSettings(object sender, EventArgs e)
@@ -278,7 +278,7 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             purchaseItem["DepartmentRequest"] = literalDepartmentRequestValue.Text;
             purchaseItem["TypeOfApproval"] = hiddenTypeOfApproval.Value;
             purchaseItem["PurchaseDetail"] = purchaseDetails;
-            purchaseItem["References"] = PurchaseHelper.GetMultipleItemSelectionValues(purchaseReferences);
+            purchaseItem["References"] = ffReferences.Value; //PurchaseHelper.GetMultipleItemSelectionValues(purchaseReferences);
             if(peChief.IsValid && peChief.ResolvedEntities.Count > 0)
                 purchaseItem["Chief"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peChief.ResolvedEntities[0]).Key); //ffChief.Value; //
             if (peBuyer.IsValid && peBuyer.ResolvedEntities.Count > 0)

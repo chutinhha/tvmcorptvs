@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Xml;
-using Microsoft.SharePoint.WebPartPages;
 using System.Collections.Generic;
-using TVMCORP.TVS.UTIL;
+using System.Web.UI;
+using System.Xml;
 using Microsoft.SharePoint;
-using System.Collections;
-using System.Linq;
+using TVMCORP.TVS.UTIL;
 using TVMCORP.TVS.UTIL.Utilities;
 
-namespace TVMCORP.TVS.ListDefinitions.PurchaseDefinition.PurchaseFilter
+namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
 {
-    public partial class PurchaseFilterUserControl : UserControl
+    public partial class RequestFilterUC : UserControl
     {
         private List<Microsoft.SharePoint.WebPartPages.XsltListViewWebPart> xsltListViewWebParts = new List<Microsoft.SharePoint.WebPartPages.XsltListViewWebPart>();
 
@@ -115,9 +110,5 @@ namespace TVMCORP.TVS.ListDefinitions.PurchaseDefinition.PurchaseFilter
 
             return output;
         }
-
     }
 }
-
-
-

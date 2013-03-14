@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TVMCORP.TVS.ListDefinitions.PurchaseDefinition.PurchaseFilter {
+namespace TVMCORP.TVS.WebParts.RequestFilter {
     
     
-    public partial class PurchaseFilterUserControl {
+    public partial class RequestFilterUserControl {
         
         /// <summary>
         /// linkButtonAdd control.
