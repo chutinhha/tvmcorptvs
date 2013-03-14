@@ -12,6 +12,7 @@
 
 
     <script language="javascript" type="text/javascript">
+        window.resizeTo(800, 520);
         function executeQuery() {
             
                    var operators=document.getElementById('queryOperators');
