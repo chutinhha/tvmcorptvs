@@ -10,9 +10,10 @@ namespace TVMCORP.TVS.CustomFields
     public class LookupFieldWithPickerDialog : PickerDialog
     {
         public LookupFieldWithPickerDialog()
-            : base(new LookupFieldWithPickerQuery(), new TableResultControl(), new LookupFieldWithPickerEntityEditor())
+            : base(new LookupFieldWithPickerQueryEx(), new TableResultControl(), new LookupFieldWithPickerEntityEditor())
         {
         }
+        
 
         protected override void OnLoad(EventArgs e)
         {

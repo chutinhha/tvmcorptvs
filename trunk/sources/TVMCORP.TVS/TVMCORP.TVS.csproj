@@ -74,6 +74,13 @@
     <Compile Include="ControlTemplates\TVMCORP.TVS\LookupFieldWithPickerEditor.ascx.designer.cs">
       <DependentUpon>LookupFieldWithPickerEditor.ascx.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlTemplates\TVMCORP.TVS\PickerFilter.ascx.cs">
+      <DependentUpon>PickerFilter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\TVMCORP.TVS\PickerFilter.ascx.designer.cs">
+      <DependentUpon>PickerFilter.ascx.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlTemplates\TVMCORP.TVS\PurchaseDispForm.ascx.cs">
       <DependentUpon>PurchaseDispForm.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -98,6 +105,7 @@
     </Compile>
     <Compile Include="CustomFields\LinkViewItemField.cs" />
     <Compile Include="CustomFields\LinkViewItemFieldControl.cs" />
+    <Compile Include="CustomFields\LookupFieldWithPicker\LookupFieldWithPickerQueryEx.cs" />
     <Compile Include="CustomFields\LookupFieldWithPicker\LookupFieldWithPicker.cs" />
     <Compile Include="CustomFields\LookupFieldWithPicker\LookupFieldWithPickerControl.cs" />
     <Compile Include="CustomFields\LookupFieldWithPicker\LookupFieldWithPickerDialog.cs" />
@@ -264,6 +272,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ControlTemplates\TVMCORP.TVS\LookupFieldWithPickerEditor.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="ControlTemplates\TVMCORP.TVS\PickerFilter.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="ControlTemplates\TVMCORP.TVS\PurchaseDispForm.ascx">
