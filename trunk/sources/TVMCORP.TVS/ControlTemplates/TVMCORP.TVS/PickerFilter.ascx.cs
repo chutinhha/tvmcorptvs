@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
@@ -49,10 +50,23 @@ namespace TVMCORP.TVS.Controls
                 formField.ControlMode = SPControlMode.New;
                 formField.ListId = field.ParentList.ID;
                 formField.FieldName = field.InternalName;
-
+                switch (field.Type)
+                {
+                    
+                    case SPFieldType.Calculated:
+                        plhControl.Controls.Add(new TextBox() { 
+                            CssClass="ms-long",
+                            ID= field.InternalName,
+                        });
+                        break;
+                    
+                    default:
+                        plhControl.Controls.Add(formField);
+                        break;
+                }
                 //fieldControl.ListId = SPContext.Current.List.ID;
 
-                plhControl.Controls.Add(formField);
+                
                 ControlHelper.LoadOperatorDropdown(field, ddlQUeryOpt);
             }
         }
@@ -82,14 +96,32 @@ namespace TVMCORP.TVS.Controls
                 HiddenField fieldId = item.FindControl("fieldId") as HiddenField;
 
                 FormField formField = plhControl.Controls[0] as FormField;
-                if (formField.Value != null && ddlQUeryOpt.SelectedValue != Constants.NOT_APPLY_VALUE)
+                if (formField != null)
                 {
-                    Expression<Func<SPListItem, bool>> exp = GetSearchExp(formField.Value, formField.Field, ddlQUeryOpt.SelectedValue);
-                    if (exp != null)
+                    if (formField.Value != null && ddlQUeryOpt.SelectedValue != Constants.NOT_APPLY_VALUE)
                     {
-                        expressions.Add(exp);
-                    }
-                };
+                        Expression<Func<SPListItem, bool>> exp = GetSearchExp(formField.Value, formField.Field, ddlQUeryOpt.SelectedValue);
+                        if (exp != null)
+                        {
+                            expressions.Add(exp);
+                        }
+                    };
+                }
+                else
+                {
+                    TextBox textbox = plhControl.Controls[0] as TextBox;
+
+                    if (!string.IsNullOrEmpty(textbox.Text) && ddlQUeryOpt.SelectedValue != Constants.NOT_APPLY_VALUE)
+                    {
+                        
+                        Expression<Func<SPListItem, bool>> exp = GetSearchExp(textbox.Text, SearchableFields[item.ItemIndex], ddlQUeryOpt.SelectedValue);
+                        if (exp != null)
+                        {
+                            expressions.Add(exp);
+                        }
+                    };
+
+                }
 
             }
             if(expressions.Count ==0) return string.Empty;
@@ -104,7 +136,16 @@ namespace TVMCORP.TVS.Controls
             switch (op)
             {
                 case Operators.Equal:
-                    func = (y => (string)y[field.Id] == searchValue.ToString());
+                    switch (field.Type)
+                    {
+                        case SPFieldType.Calculated:
+                            func = (y => y[field.Id] == (DataTypes.Calculated)searchValue.ToString());
+                            break;
+                        default:
+                            func = (y => (string)y[field.Id] == searchValue.ToString());
+                            break;
+                    }
+                    
                     break;
                 case Operators.NotEqual:
                     func = (y => (string)y[field.Id] != searchValue.ToString());
