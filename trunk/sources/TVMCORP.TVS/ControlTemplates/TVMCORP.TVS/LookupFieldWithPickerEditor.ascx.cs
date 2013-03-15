@@ -413,6 +413,7 @@ namespace TVMCORP.TVS.CustomFields
                         || field.TypeAsString == "TaxonomyFieldTypeMulti"
                         || field.TypeAsString == "TaxonomyFieldType"
                         || (field.Type == SPFieldType.Calculated && ((SPFieldCalculated)field).OutputType == SPFieldType.Text))
+                        || field.InternalName == "ContentType"
                         );
         }
 
