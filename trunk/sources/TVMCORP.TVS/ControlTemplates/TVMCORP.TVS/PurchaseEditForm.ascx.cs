@@ -459,9 +459,9 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
                     DataRow row = dataTable.NewRow();
                     row[0] = listItem[SPBuiltInFieldId.ID].ToString();
                     row[1] = listItem[SPBuiltInFieldId.Title].ToString();
-                    row[2] = listItem["Quantity"].ToString();
-                    row[3] = listItem["Price"].ToString();
-                    row[4] = listItem["Description"].ToString();
+                    row[2] = listItem["Quantity"] != null ? listItem["Quantity"].ToString() : string.Empty;
+                    row[3] = listItem["Price"] != null ? listItem["Price"].ToString() : string.Empty;
+                    row[4] = listItem["Description"] != null ? listItem["Description"].ToString() : string.Empty;
                     dataTable.Rows.Add(row);
                 }
             }

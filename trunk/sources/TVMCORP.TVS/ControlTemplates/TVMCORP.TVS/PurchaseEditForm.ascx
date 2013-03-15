@@ -82,7 +82,7 @@
     
     table.tablelist tr td
     {
-        padding: 5px;
+        /*padding: 5px;*/
         font: normal 11px Arial,Helvetica, sans-serif;
         color: #4d4d4d;
         /*border: 1px solid #45aefe !important;*/
@@ -140,6 +140,8 @@
     {
         padding: 3px 0px 3px 15px;
     }
+    
+    
     
     
     /*--People Editor--*/

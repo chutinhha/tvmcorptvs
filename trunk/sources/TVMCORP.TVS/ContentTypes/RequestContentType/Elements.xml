@@ -102,7 +102,7 @@
       <ArrayOfProperty>
         <Property>
           <Name>SearchableFields</Name>
-          <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">Title,DepartmentRequest,Status,MonthRequest,YearRequest</Value>
+          <Value>Title,DepartmentRequest,Status,MonthRequest,YearRequest</Value>
         </Property>
       </ArrayOfProperty>
     </Customization>
@@ -158,7 +158,6 @@
 
   <Field Type="Note" DisplayName="Ghi chú (trưởng phòng kế toán)" Required="FALSE"  EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="6" RichText="FALSE"
          Sortable="FALSE" ID="{CCAD9654-3664-46a5-A2EE-1138C4EDB4D0}" Name="HeadAccountantComment" StaticName="HeadAccountantComment" Group="[TVM-eOffice]" />
-
 
   <!-- Parent ContentType: Item (0x01) Đề nghị mua hàng -->
   <ContentType ID="0x0100ded6f23a2f434302b5583a6b55451f61"

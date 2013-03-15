@@ -13,6 +13,17 @@
   </CustomAction>
 
   <CustomAction
+    Id="Item Print"
+    RegistrationType="List"
+    RegistrationId="11000"
+    Location="EditControlBlock"
+    ImageUrl="~site/_layouts/images/TVMCORP.TVS/Printer-icon.png"
+    Sequence="300"
+    Title="Xem trang in">
+    <UrlAction Url="javascript:OpenPopUpPageWithTitle('{SiteUrl}/_layouts/TVMCORP.TVS/PurchasePrint.aspx?ID={ItemId}&amp;List={ListId}',RefreshOnDialogClose,1000,850,'Xem trang in')" />
+  </CustomAction>
+
+  <CustomAction
     Id="ExportPurchase"
     RegistrationType="List"
     RegistrationId="11000"

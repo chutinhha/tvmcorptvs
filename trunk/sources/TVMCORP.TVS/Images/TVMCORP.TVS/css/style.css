@@ -351,7 +351,7 @@ table.tablelist {
 	 }
 	 	
 table.tablelist tr td {
-	 padding:5px;
+	 /*padding:5px;*/
 	 font:bold 11px Arial,Helvetica, sans-serif;
 	 color: #4d4d4d;
 	 border:1px solid #d7ebf7 !important; 
@@ -384,7 +384,7 @@ table.tablelist_view {
 	 }
 	
 table.tablelist_view tr td {
-	 padding:5px;
+	 /*padding:5px;*/
 	 font:bold 11px Arial,Helvetica, sans-serif;
 	 color: #4d4d4d;
 	 border:1px solid #d7ebf7 !important; 

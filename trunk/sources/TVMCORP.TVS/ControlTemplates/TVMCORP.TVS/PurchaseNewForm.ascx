@@ -108,9 +108,10 @@
     
     table.tablelist tr td
     {
-        padding: 5px;
+        /*padding: 5px;*/
         font: normal 11px Arial,Helvetica, sans-serif;
-        color: #4d4d4d; /*border: 1px solid #45aefe !important;*/
+        color: #4d4d4d; 
+        /*border: 1px solid #45aefe !important;*/
     }
     table.tablelist tr.row_title td
     {
@@ -351,7 +352,7 @@
                                 </td>
                             </tr>
                             <tr class="row2">
-                                <td style="border: 1px solid #45aefe; padding:0px 0px 0px 0px;" align="center" valign="middle" class="request_text_lable">
+                                <td style="border: 1px solid #45aefe;" align="center" valign="middle" class="request_text_lable">
                                     <%--<SharePoint:GroupedItemPicker ID="purchaseReferences" runat="server" CandidateControlId="SelectCandidate"
                                         ResultControlId="SelectResult" AddButtonId="AddButton" RemoveButtonId="RemoveButton"
                                         GroupControlId="SellectGroup" />
