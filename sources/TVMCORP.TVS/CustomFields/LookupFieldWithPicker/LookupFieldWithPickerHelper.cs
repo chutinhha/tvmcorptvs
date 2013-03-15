@@ -11,7 +11,8 @@ namespace TVMCORP.TVS.CustomFields
         public static bool IsSearchableField(SPField field)
         {
             return (field.Id==SPBuiltInFieldId.FileLeafRef || field.Hidden == false && 
-                       (field.Type == SPFieldType.Counter
+                       (field.Type == SPFieldType.Counter ||
+                       field.InternalName == "ContentType"
                         || field.Type == SPFieldType.Boolean
                         || field.Type == SPFieldType.Integer
                         || field.Type == SPFieldType.Currency
@@ -23,7 +24,7 @@ namespace TVMCORP.TVS.CustomFields
                         || field.Type == SPFieldType.Choice
                         || field.Type == SPFieldType.MultiChoice
                         || field.Type == SPFieldType.Lookup
-                        || (field.Type == SPFieldType.Calculated && ((SPFieldCalculated) field).OutputType == SPFieldType.Text))
+                        || (field.Type == SPFieldType.Calculated))
                         );
         }
 

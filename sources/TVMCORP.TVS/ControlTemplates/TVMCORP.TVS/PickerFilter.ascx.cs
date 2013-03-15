@@ -59,7 +59,26 @@ namespace TVMCORP.TVS.Controls
                             ID= field.InternalName,
                         });
                         break;
-                    
+                    case SPFieldType.Computed:
+                        if (field.InternalName == "ContentType")
+                        {
+                            var ddlCt = new DropDownList()
+                            {
+
+                                ID = field.InternalName,
+                            };
+
+                            foreach (SPContentType item in field.ParentList.ContentTypes)
+                            {
+                                if (!item.Hidden)
+                                {
+                                    ddlCt.Items.Add(new ListItem() { Text = item.Name, Value = item.Name.ToString() });
+                                }
+                            }
+                            plhControl.Controls.Add(ddlCt);
+                        }
+
+                        break;
                     default:
                         plhControl.Controls.Add(formField);
                         break;
@@ -84,11 +103,11 @@ namespace TVMCORP.TVS.Controls
             //expressions.Add(x => (int)x["ID"] == 1);
             //expressions.Add(y => (string)y["Title"] == "Hello world");
 
-            
+
 
             foreach (RepeaterItem item in rptFilterCriteria.Items)
             {
-                SPField field = item.DataItem as SPField;
+
 
                 Literal ltrFieldName = item.FindControl("ltrFieldName") as Literal;
                 DropDownList ddlQUeryOpt = item.FindControl("ddlQUeryOpt") as DropDownList;
@@ -96,31 +115,49 @@ namespace TVMCORP.TVS.Controls
                 HiddenField fieldId = item.FindControl("fieldId") as HiddenField;
 
                 FormField formField = plhControl.Controls[0] as FormField;
-                if (formField != null)
-                {
-                    if (formField.Value != null && ddlQUeryOpt.SelectedValue != Constants.NOT_APPLY_VALUE)
-                    {
-                        Expression<Func<SPListItem, bool>> exp = GetSearchExp(formField.Value, formField.Field, ddlQUeryOpt.SelectedValue);
-                        if (exp != null)
-                        {
-                            expressions.Add(exp);
-                        }
-                    };
-                }
-                else
-                {
-                    TextBox textbox = plhControl.Controls[0] as TextBox;
+                var field = SearchableFields[item.ItemIndex];
 
-                    if (!string.IsNullOrEmpty(textbox.Text) && ddlQUeryOpt.SelectedValue != Constants.NOT_APPLY_VALUE)
-                    {
-                        
-                        Expression<Func<SPListItem, bool>> exp = GetSearchExp(textbox.Text, SearchableFields[item.ItemIndex], ddlQUeryOpt.SelectedValue);
-                        if (exp != null)
-                        {
-                            expressions.Add(exp);
-                        }
-                    };
+                switch (field.Type)
+                {
+                    case SPFieldType.Calculated:
+                        TextBox textbox = plhControl.Controls[0] as TextBox;
 
+                        if (!string.IsNullOrEmpty(textbox.Text) && ddlQUeryOpt.SelectedValue != Constants.NOT_APPLY_VALUE)
+                        {
+
+                            Expression<Func<SPListItem, bool>> exp = GetSearchExp(textbox.Text, field, ddlQUeryOpt.SelectedValue);
+                            if (exp != null)
+                            {
+                                expressions.Add(exp);
+                            }
+                        };
+                        break;
+                    case SPFieldType.Computed:
+                        if (field.InternalName == "ContentType")
+                        {
+                            DropDownList ddl = plhControl.Controls[0] as DropDownList;
+
+                            if (!string.IsNullOrEmpty(ddl.SelectedValue) && ddlQUeryOpt.SelectedValue != Constants.NOT_APPLY_VALUE)
+                            {
+
+                                Expression<Func<SPListItem, bool>> exp = GetSearchExp(ddl.SelectedValue, field, ddlQUeryOpt.SelectedValue);
+                                if (exp != null)
+                                {
+                                    expressions.Add(exp);
+                                }
+                            };
+                        }
+                        break;
+                    default:
+                        if (formField.Value != null && ddlQUeryOpt.SelectedValue != Constants.NOT_APPLY_VALUE)
+                        {
+                            Expression<Func<SPListItem, bool>> exp = GetSearchExp(formField.Value, formField.Field, ddlQUeryOpt.SelectedValue);
+                            if (exp != null)
+                            {
+                                expressions.Add(exp);
+                            }
+                        };
+                        break;
                 }
 
             }
@@ -138,8 +175,27 @@ namespace TVMCORP.TVS.Controls
                 case Operators.Equal:
                     switch (field.Type)
                     {
+                        case SPFieldType.Computed:
+                                if(field.InternalName == "ContentType") {
+                                     func = (y => y[field.Id] == (DataTypes.Computed)searchValue.ToString());
+                                }
+                            break;
                         case SPFieldType.Calculated:
-                            func = (y => y[field.Id] == (DataTypes.Calculated)searchValue.ToString());
+                            var calField = field as SPFieldCalculated;
+                            switch (calField.OutputType)
+	                            {
+                                    case SPFieldType.Number:
+                                        func = (y => y[field.Id] == (DataTypes.Number)searchValue.ToString());
+                                        break;
+                                    case SPFieldType.Text:
+                                        func = (y => (string)y[field.Id] == searchValue.ToString());
+                                        break;
+
+                                default:
+                                        func = (y => y[field.Id] == (DataTypes.Calculated)searchValue.ToString());
+
+                                        break;
+	                            }
                             break;
                         default:
                             func = (y => (string)y[field.Id] == searchValue.ToString());
@@ -148,7 +204,31 @@ namespace TVMCORP.TVS.Controls
                     
                     break;
                 case Operators.NotEqual:
-                    func = (y => (string)y[field.Id] != searchValue.ToString());
+                    switch (field.Type)
+                    {
+                        case SPFieldType.Calculated:
+                           var calField = field as SPFieldCalculated;
+                            switch (calField.OutputType)
+	                            {
+                                    case SPFieldType.Number:
+                                        func = (y => y[field.Id] != (DataTypes.Number)searchValue.ToString());
+                                        break;
+                                    case SPFieldType.Text:
+                                        func = (y => (string)y[field.Id] != searchValue.ToString());
+                                        break;
+
+                                default:
+                                        func = (y => y[field.Id] != (DataTypes.Calculated)searchValue.ToString());
+
+                                        break;
+	                            }
+                            break;
+
+                            break;
+                        default:
+                            func = (y => (string)y[field.Id] != searchValue.ToString());
+                            break;
+                    }
                     break;
                 case Operators.EarlierThan:
                     break;
