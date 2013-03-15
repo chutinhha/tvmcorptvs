@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <ListInstance Title="Đề nghị"
-                OnQuickLaunch="TRUE"
-                TemplateType="11000"
-                Url="Lists/Purchase"
-                Description="[TVM-eOffice] - Purchase">
-  </ListInstance>
-</Elements>
