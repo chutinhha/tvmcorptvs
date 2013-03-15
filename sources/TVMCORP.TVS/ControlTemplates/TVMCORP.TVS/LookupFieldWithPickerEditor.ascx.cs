@@ -397,7 +397,7 @@ namespace TVMCORP.TVS.CustomFields
 
         public static bool CanBeUsedAsSearchableField(SPField field)
         {
-            return (field.Id == SPBuiltInFieldId.FileLeafRef || field.Hidden == false &&
+            return field.Id == SPBuiltInFieldId.FileLeafRef || field.Hidden == false &&
                        (field.Type == SPFieldType.Counter
                         || field.Type == SPFieldType.Boolean
                         || field.Type == SPFieldType.Integer
@@ -412,9 +412,9 @@ namespace TVMCORP.TVS.CustomFields
                         || field.Type == SPFieldType.Lookup
                         || field.TypeAsString == "TaxonomyFieldTypeMulti"
                         || field.TypeAsString == "TaxonomyFieldType"
-                        || (field.Type == SPFieldType.Calculated && ((SPFieldCalculated)field).OutputType == SPFieldType.Text))
-                        || field.InternalName == "ContentType"
-                        );
+                        || field.Type == SPFieldType.Calculated
+                        || field.InternalName == "ContentType");
+                        
         }
 
         private static bool CanBeUsedAsDependentLookupField(SPField field)
