@@ -27,8 +27,8 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
                 ribbon.TrimById("Ribbon.ListForm.Edit.Commit");
             }
             //
-            repeaterPurchaseDetail.ItemDataBound += new RepeaterItemEventHandler(repeaterPurchaseDetail_ItemDataBound);
-            linkButtonAdd.Click += new EventHandler(AddPurchaseDetail);
+            repeaterRequestDetail.ItemDataBound += new RepeaterItemEventHandler(repeaterRequestDetail_ItemDataBound);
+            linkButtonAdd.Click += new EventHandler(AddRequestDetail);
             btnSave.Click += new EventHandler(btnSave_Click);
             rdbTypeOfApproval1.AutoPostBack = true;
             rdbTypeOfApproval2.AutoPostBack = true;
@@ -65,14 +65,14 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             this.Page.Response.End();
         }
 
-        void AddPurchaseDetail(object sender, EventArgs e)
+        void AddRequestDetail(object sender, EventArgs e)
         {
-            DataTable dataTable = MakePurchaseDetail();
-            repeaterPurchaseDetail.DataSource = dataTable;
-            repeaterPurchaseDetail.DataBind();
+            DataTable dataTable = MakeRequestDetail();
+            repeaterRequestDetail.DataSource = dataTable;
+            repeaterRequestDetail.DataBind();
         }
 
-        void repeaterPurchaseDetail_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        void repeaterRequestDetail_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             DataRowView rowView = (DataRowView)e.Item.DataItem;
             if (rowView != null)
@@ -104,9 +104,9 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
                 hiddenTypeOfApproval.Value = ApproversGroups.HanhChinh;
                 LoadApprovalSettings(ApproversGroups.HanhChinh);
                 //Load purchase detail
-                DataTable purchaseDetail = MakePurchaseDetail();
-                repeaterPurchaseDetail.DataSource = purchaseDetail;
-                repeaterPurchaseDetail.DataBind();
+                DataTable RequestDetail = MakeRequestDetail();
+                repeaterRequestDetail.DataSource = RequestDetail;
+                repeaterRequestDetail.DataBind();
             }
         }
 
@@ -200,10 +200,10 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             return output;
         }
 
-        private DataTable MakePurchaseDetail()
+        private DataTable MakeRequestDetail()
         {
             DataTable dataTable = null;
-            if (ViewState["PurchaseDetail"] == null)
+            if (ViewState["RequestDetail"] == null)
             {
                 dataTable = new DataTable();
                 DataColumn[] dataColumn = new DataColumn[]{
@@ -216,15 +216,15 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             }
             else
             {
-                dataTable = ViewState["PurchaseDetail"] as DataTable;
+                dataTable = ViewState["RequestDetail"] as DataTable;
                 dataTable.Clear();
 
-                foreach (RepeaterItem purchaseDetail in repeaterPurchaseDetail.Items)
+                foreach (RepeaterItem RequestDetail in repeaterRequestDetail.Items)
                 {
-                    TextBox txtProductName = purchaseDetail.FindControl("txtProductName") as TextBox;
-                    TextBox txtQuantity = purchaseDetail.FindControl("txtQuantity") as TextBox;
-                    TextBox txtPrice = purchaseDetail.FindControl("txtPrice") as TextBox;
-                    TextBox txtDescription = purchaseDetail.FindControl("txtDescription") as TextBox;
+                    TextBox txtProductName = RequestDetail.FindControl("txtProductName") as TextBox;
+                    TextBox txtQuantity = RequestDetail.FindControl("txtQuantity") as TextBox;
+                    TextBox txtPrice = RequestDetail.FindControl("txtPrice") as TextBox;
+                    TextBox txtDescription = RequestDetail.FindControl("txtDescription") as TextBox;
                     
                     DataRow row = dataTable.NewRow();
                     row[0] = txtProductName.Text;
@@ -241,43 +241,43 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             emptyRow[2] = string.Empty;
             emptyRow[3] = string.Empty;
             dataTable.Rows.Add(emptyRow);
-            ViewState["PurchaseDetail"] = dataTable;
+            ViewState["RequestDetail"] = dataTable;
 
             return dataTable;
         }
 
         private void AddPurchase()
         {
-            SPFieldLookupValueCollection purchaseDetails = new SPFieldLookupValueCollection();
+            SPFieldLookupValueCollection RequestDetails = new SPFieldLookupValueCollection();
 
-            var purchaseDetailList = Utility.GetListFromURL(Constants.PURCHASE_DETAIL_LIST_URL, SPContext.Current.Web);
-            foreach (RepeaterItem purchaseDetail in repeaterPurchaseDetail.Items)
+            var RequestDetailList = Utility.GetListFromURL(Constants.REQUEST_DETAIL_LIST_URL, SPContext.Current.Web);
+            foreach (RepeaterItem RequestDetail in repeaterRequestDetail.Items)
             {
-                TextBox txtProductName = purchaseDetail.FindControl("txtProductName") as TextBox;
-                TextBox txtQuantity = purchaseDetail.FindControl("txtQuantity") as TextBox;
-                TextBox txtPrice = purchaseDetail.FindControl("txtPrice") as TextBox;
-                TextBox txtDescription = purchaseDetail.FindControl("txtDescription") as TextBox;
+                TextBox txtProductName = RequestDetail.FindControl("txtProductName") as TextBox;
+                TextBox txtQuantity = RequestDetail.FindControl("txtQuantity") as TextBox;
+                TextBox txtPrice = RequestDetail.FindControl("txtPrice") as TextBox;
+                TextBox txtDescription = RequestDetail.FindControl("txtDescription") as TextBox;
                 if (!string.IsNullOrEmpty(txtProductName.Text))
                 {
-                    SPListItem purchaseDetailItem = purchaseDetailList.AddItem();
-                    purchaseDetailItem[SPBuiltInFieldId.Title] = txtProductName.Text;
-                    purchaseDetailItem["Quantity"] = txtQuantity.Text.Replace(",", string.Empty);
-                    purchaseDetailItem["Price"] = txtPrice.Text.Replace(",", string.Empty);
-                    purchaseDetailItem["Description"] = txtDescription.Text;
-                    purchaseDetailItem.Update();
-                    SPFieldLookupValue spFieldLookupValue = new SPFieldLookupValue(purchaseDetailItem.ID, purchaseDetailItem.Title);
-                    purchaseDetails.Add(spFieldLookupValue);
+                    SPListItem RequestDetailItem = RequestDetailList.AddItem();
+                    RequestDetailItem[SPBuiltInFieldId.Title] = txtProductName.Text;
+                    RequestDetailItem["Quantity"] = txtQuantity.Text.Replace(",", string.Empty);
+                    RequestDetailItem["Price"] = txtPrice.Text.Replace(",", string.Empty);
+                    RequestDetailItem["Description"] = txtDescription.Text;
+                    RequestDetailItem.Update();
+                    SPFieldLookupValue spFieldLookupValue = new SPFieldLookupValue(RequestDetailItem.ID, RequestDetailItem.Title);
+                    RequestDetails.Add(spFieldLookupValue);
                 }
             }
 
-            var purchaseList = Utility.GetListFromURL(Constants.PURCHASE_LIST_URL, SPContext.Current.Web);
+            var purchaseList = Utility.GetListFromURL(Constants.REQUEST_LIST_URL, SPContext.Current.Web);
             SPListItem purchaseItem = SPContext.Current.ListItem;
             purchaseItem[SPBuiltInFieldId.Title] = ffTitle.Value;//Constants.PURCHASE_TITLE_PREFIX + literalUserRequestValue.Text;
             purchaseItem["DateRequest"] = DateTime.Now;
             purchaseItem["UserRequest"] = SPContext.Current.Web.CurrentUser;
             purchaseItem["DepartmentRequest"] = literalDepartmentRequestValue.Text;
             purchaseItem["TypeOfApproval"] = hiddenTypeOfApproval.Value;
-            purchaseItem["PurchaseDetail"] = purchaseDetails;
+            purchaseItem["RequestDetail"] = RequestDetails;
             purchaseItem["References"] = ffReferences.Value; //PurchaseHelper.GetMultipleItemSelectionValues(purchaseReferences);
             if(peChief.IsValid && peChief.ResolvedEntities.Count > 0)
                 purchaseItem["Chief"] = SPContext.Current.Web.EnsureUser(((PickerEntity)peChief.ResolvedEntities[0]).Key); //ffChief.Value; //

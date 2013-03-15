@@ -1,26 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
 using System.Xml;
-using Microsoft.SharePoint;
+using Microsoft.SharePoint.WebPartPages;
+using System.Collections.Generic;
 using TVMCORP.TVS.UTIL;
+using Microsoft.SharePoint;
+using System.Collections;
+using System.Linq;
 using TVMCORP.TVS.UTIL.Utilities;
+using System.ComponentModel;
 
-namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
+namespace TVMCORP.TVS.ListDefinitions.PurchaseDefinition.PurchaseFilter
 {
-    public partial class RequestFilterUC : UserControl
+    [ToolboxItemAttribute(false)]
+    public class PurchaseFilter : System.Web.UI.WebControls.WebParts.WebPart
     {
-        private List<Microsoft.SharePoint.WebPartPages.XsltListViewWebPart> xsltListViewWebParts = new List<Microsoft.SharePoint.WebPartPages.XsltListViewWebPart>();
-
-        protected override void OnDataBinding(EventArgs e)
-        {
-            SetCustomQuery();
-        }
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            SetCustomQuery();
-        }
+        // Visual Studio might automatically update this path when you change the Visual Web Part project item.
+        private const string _ascxPath = @"~/_CONTROLTEMPLATES/TVMCORP.TVS.ListDefinitions.PurchaseDefinition/PurchaseFilter/PurchaseFilterUserControl.ascx";
 
         protected void FindListViewWebParts(Control control, Guid listId)
         {
@@ -45,14 +43,14 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
                 }
             }
         }
-
+        private List<Microsoft.SharePoint.WebPartPages.XsltListViewWebPart> xsltListViewWebParts = new List<Microsoft.SharePoint.WebPartPages.XsltListViewWebPart>();
         private void SetCustomQuery()
         {
             var query = string.Format(@"<Eq>
                                             <FieldRef Name='DepartmentRequest' />
                                             <Value Type='Text'>{0}</Value>
                                         </Eq>", GetDepartmentOfCurrentUser());
-            var purchaseList = Utility.GetListFromURL(Constants.REQUEST_LIST_URL, SPContext.Current.Web);
+            var purchaseList = Utility.GetListFromURL(Constants.PURCHASE_LIST_URL, SPContext.Current.Web);
             FindListViewWebParts(this.Page, purchaseList.ID);
             if (xsltListViewWebParts.Count > 0)
             {
@@ -109,6 +107,24 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             catch { throw; }
 
             return output;
+        }
+        protected override void OnPreRender(EventArgs e)
+        {
+            SetCustomQuery();
+            base.OnPreRender(e);
+        }
+        
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            SetCustomQuery();
+        }
+        
+        protected override void CreateChildControls()
+        {
+            SetCustomQuery();
+            //Control control = Page.LoadControl(_ascxPath);
+            //Controls.Add(control);
         }
     }
 }

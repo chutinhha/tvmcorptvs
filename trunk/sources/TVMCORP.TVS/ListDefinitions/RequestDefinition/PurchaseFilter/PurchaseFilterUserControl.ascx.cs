@@ -1,14 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
 using System.Xml;
-using Microsoft.SharePoint;
+using Microsoft.SharePoint.WebPartPages;
+using System.Collections.Generic;
 using TVMCORP.TVS.UTIL;
+using Microsoft.SharePoint;
+using System.Collections;
+using System.Linq;
 using TVMCORP.TVS.UTIL.Utilities;
 
-namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
+namespace TVMCORP.TVS.ListDefinitions.PurchaseDefinition.PurchaseFilter
 {
-    public partial class RequestFilterUC : UserControl
+    public partial class PurchaseFilterUserControl : UserControl
     {
         private List<Microsoft.SharePoint.WebPartPages.XsltListViewWebPart> xsltListViewWebParts = new List<Microsoft.SharePoint.WebPartPages.XsltListViewWebPart>();
 
@@ -52,7 +57,7 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
                                             <FieldRef Name='DepartmentRequest' />
                                             <Value Type='Text'>{0}</Value>
                                         </Eq>", GetDepartmentOfCurrentUser());
-            var purchaseList = Utility.GetListFromURL(Constants.REQUEST_LIST_URL, SPContext.Current.Web);
+            var purchaseList = Utility.GetListFromURL(Constants.PURCHASE_LIST_URL, SPContext.Current.Web);
             FindListViewWebParts(this.Page, purchaseList.ID);
             if (xsltListViewWebParts.Count > 0)
             {
@@ -110,5 +115,9 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
 
             return output;
         }
+
     }
 }
+
+
+

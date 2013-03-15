@@ -147,7 +147,7 @@ namespace TVMCORP.TVS.WORKFLOWS.TaskActions
             int total = 0;
             if (item["PurchaseDetail"] != null)
             {
-                SPList listPurchaseDetail = Utility.GetListFromURL(Constants.PURCHASE_DETAIL_LIST_URL, item.Web);
+                SPList listPurchaseDetail = Utility.GetListFromURL(Constants.REQUEST_DETAIL_LIST_URL, item.Web);
                 SPFieldLookupValueCollection purchaseDetails = item["PurchaseDetail"] as SPFieldLookupValueCollection;
                 for (int i = 0; i < purchaseDetails.Count; i++ )
                 {

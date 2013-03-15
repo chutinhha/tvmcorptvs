@@ -31,12 +31,12 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             //{
             //    isLockRequest = false;
             //    btnSave.Click += new EventHandler(btnSave_Click);
-            //    linkButtonAdd.Click += new EventHandler(AddPurchaseDetail);
+            //    linkButtonAdd.Click += new EventHandler(AddRequestDetail);
             //}
             //
             btnSave.Click += new EventHandler(btnSave_Click);
-            linkButtonAdd.Click += new EventHandler(AddPurchaseDetail);
-            repeaterPurchaseDetail.ItemDataBound +=new RepeaterItemEventHandler(repeaterPurchaseDetail_ItemDataBound);
+            linkButtonAdd.Click += new EventHandler(AddRequestDetail);
+            repeaterRequestDetail.ItemDataBound +=new RepeaterItemEventHandler(repeaterRequestDetail_ItemDataBound);
             //repeaterPurchaseReference.ItemDataBound +=new RepeaterItemEventHandler(repeaterPurchaseReference_ItemDataBound);
             rdbTypeOfApproval1.AutoPostBack = true;
             rdbTypeOfApproval2.AutoPostBack = true;
@@ -74,11 +74,11 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             this.Page.Response.End();
         }
 
-        void AddPurchaseDetail(object sender, EventArgs e)
+        void AddRequestDetail(object sender, EventArgs e)
         {
-            DataTable dataTable = MakePurchaseDetail();
-            repeaterPurchaseDetail.DataSource = dataTable;
-            repeaterPurchaseDetail.DataBind();
+            DataTable dataTable = MakeRequestDetail();
+            repeaterRequestDetail.DataSource = dataTable;
+            repeaterRequestDetail.DataBind();
         }
 
         void repeaterPurchaseReference_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -105,7 +105,7 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             }
         }
 
-        void repeaterPurchaseDetail_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        void repeaterRequestDetail_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             DataRowView rowView = (DataRowView)e.Item.DataItem;
             if (rowView != null)
@@ -143,9 +143,9 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             if (!IsPostBack)
             {
                 //Load purchase detail
-                DataTable purchaseDetail = LoadPurchaseDetail();
-                repeaterPurchaseDetail.DataSource = purchaseDetail;
-                repeaterPurchaseDetail.DataBind();
+                DataTable RequestDetail = LoadRequestDetail();
+                repeaterRequestDetail.DataSource = RequestDetail;
+                repeaterRequestDetail.DataBind();
                 //Load purchase references
                 //DataTable purchaseReferences = LoadPurchaseReferences();
                 //repeaterPurchaseReference.DataSource = purchaseReferences;
@@ -157,48 +157,48 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
 
         private void UpdatePurchase()
         {
-            SPFieldLookupValueCollection purchaseDetails = new SPFieldLookupValueCollection();
-            var purchaseDetailList = Utility.GetListFromURL(Constants.PURCHASE_DETAIL_LIST_URL, SPContext.Current.Web);
-            foreach (RepeaterItem purchaseDetail in repeaterPurchaseDetail.Items)
+            SPFieldLookupValueCollection RequestDetails = new SPFieldLookupValueCollection();
+            var RequestDetailList = Utility.GetListFromURL(Constants.REQUEST_DETAIL_LIST_URL, SPContext.Current.Web);
+            foreach (RepeaterItem RequestDetail in repeaterRequestDetail.Items)
             {
-                HiddenField hiddenFieldId = purchaseDetail.FindControl("hiddenFieldId") as HiddenField;
-                TextBox txtProductName = purchaseDetail.FindControl("txtProductName") as TextBox;
-                TextBox txtQuantity = purchaseDetail.FindControl("txtQuantity") as TextBox;
-                TextBox txtPrice = purchaseDetail.FindControl("txtPrice") as TextBox;
-                TextBox txtDescription = purchaseDetail.FindControl("txtDescription") as TextBox;
+                HiddenField hiddenFieldId = RequestDetail.FindControl("hiddenFieldId") as HiddenField;
+                TextBox txtProductName = RequestDetail.FindControl("txtProductName") as TextBox;
+                TextBox txtQuantity = RequestDetail.FindControl("txtQuantity") as TextBox;
+                TextBox txtPrice = RequestDetail.FindControl("txtPrice") as TextBox;
+                TextBox txtDescription = RequestDetail.FindControl("txtDescription") as TextBox;
 
                 if (!string.IsNullOrEmpty(hiddenFieldId.Value))
                 {
                     if (!string.IsNullOrEmpty(txtProductName.Text))
                     {
-                        var spFieldLookupValue = UpdatePurchaseDetail(purchaseDetailList, int.Parse(hiddenFieldId.Value), txtProductName.Text, txtQuantity.Text, txtPrice.Text, txtDescription.Text);
-                        purchaseDetails.Add(spFieldLookupValue);
+                        var spFieldLookupValue = UpdateRequestDetail(RequestDetailList, int.Parse(hiddenFieldId.Value), txtProductName.Text, txtQuantity.Text, txtPrice.Text, txtDescription.Text);
+                        RequestDetails.Add(spFieldLookupValue);
                     }
                     else
                     {
-                        SPListItem purchaseDetailItem = purchaseDetailList.GetItemById(int.Parse(hiddenFieldId.Value));
-                        purchaseDetailItem.Delete();
+                        SPListItem RequestDetailItem = RequestDetailList.GetItemById(int.Parse(hiddenFieldId.Value));
+                        RequestDetailItem.Delete();
                     }
                 }
                 else
                 {
                     if (!string.IsNullOrEmpty(txtProductName.Text))
                     {
-                        SPListItem purchaseDetailItem = purchaseDetailList.AddItem();
-                        purchaseDetailItem[SPBuiltInFieldId.Title] = txtProductName.Text;
-                        purchaseDetailItem["Quantity"] = txtQuantity.Text;
-                        purchaseDetailItem["Price"] = txtPrice.Text;
-                        purchaseDetailItem["Description"] = txtDescription.Text;
-                        purchaseDetailItem.Update();
-                        SPFieldLookupValue spFieldLookupValue = new SPFieldLookupValue(purchaseDetailItem.ID, purchaseDetailItem.Title);
-                        purchaseDetails.Add(spFieldLookupValue);
+                        SPListItem RequestDetailItem = RequestDetailList.AddItem();
+                        RequestDetailItem[SPBuiltInFieldId.Title] = txtProductName.Text;
+                        RequestDetailItem["Quantity"] = txtQuantity.Text;
+                        RequestDetailItem["Price"] = txtPrice.Text;
+                        RequestDetailItem["Description"] = txtDescription.Text;
+                        RequestDetailItem.Update();
+                        SPFieldLookupValue spFieldLookupValue = new SPFieldLookupValue(RequestDetailItem.ID, RequestDetailItem.Title);
+                        RequestDetails.Add(spFieldLookupValue);
                     }
                 }
             }
 
             SPContext.Current.ListItem[SPBuiltInFieldId.Title] = ffTitle.Value;
             SPContext.Current.ListItem["TypeOfApproval"] = hiddenTypeOfApproval.Value;
-            SPContext.Current.ListItem["PurchaseDetail"] = purchaseDetails;
+            SPContext.Current.ListItem["RequestDetail"] = RequestDetails;
             SPContext.Current.ListItem["References"] = ffReferences.Value;//PurchaseHelper.GetMultipleItemSelectionValues(purchaseReferences);
 
             if (peChief.IsValid && peChief.ResolvedEntities.Count > 0)
@@ -215,20 +215,20 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             SPContext.Current.ListItem.Update();
         }
 
-        private SPFieldLookupValue UpdatePurchaseDetail(SPList purchaseDetailList, int id, string productName, string quantity, string price, string description)
+        private SPFieldLookupValue UpdateRequestDetail(SPList RequestDetailList, int id, string productName, string quantity, string price, string description)
         {
             try
             {
                 SPFieldLookupValue spFieldLookupValue = null;
-                SPListItem purchaseDetailItem = purchaseDetailList.GetItemById(id);
-                if (purchaseDetailItem != null)
+                SPListItem RequestDetailItem = RequestDetailList.GetItemById(id);
+                if (RequestDetailItem != null)
                 {
-                    purchaseDetailItem[SPBuiltInFieldId.Title] = productName;
-                    purchaseDetailItem["Quantity"] = quantity;
-                    purchaseDetailItem["Price"] = price;
-                    purchaseDetailItem["Description"] = description;
-                    purchaseDetailItem.Update();
-                    spFieldLookupValue = new SPFieldLookupValue(purchaseDetailItem.ID, purchaseDetailItem.Title);
+                    RequestDetailItem[SPBuiltInFieldId.Title] = productName;
+                    RequestDetailItem["Quantity"] = quantity;
+                    RequestDetailItem["Price"] = price;
+                    RequestDetailItem["Description"] = description;
+                    RequestDetailItem.Update();
+                    spFieldLookupValue = new SPFieldLookupValue(RequestDetailItem.ID, RequestDetailItem.Title);
                 }
                 return spFieldLookupValue;
             }
@@ -396,7 +396,7 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             }
         }
 
-        private DataTable MakePurchaseDetail()
+        private DataTable MakeRequestDetail()
         {
             DataTable dataTable = new DataTable();
             DataColumn[] dataColumn = new DataColumn[]{
@@ -408,13 +408,13 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             };
             dataTable.Columns.AddRange(dataColumn);
             
-            foreach (RepeaterItem purchaseDetail in repeaterPurchaseDetail.Items)
+            foreach (RepeaterItem RequestDetail in repeaterRequestDetail.Items)
             {
-                HiddenField hiddenFieldId = purchaseDetail.FindControl("hiddenFieldId") as HiddenField;
-                TextBox txtProductName = purchaseDetail.FindControl("txtProductName") as TextBox;
-                TextBox txtQuantity = purchaseDetail.FindControl("txtQuantity") as TextBox;
-                TextBox txtPrice = purchaseDetail.FindControl("txtPrice") as TextBox;
-                TextBox txtDescription = purchaseDetail.FindControl("txtDescription") as TextBox;
+                HiddenField hiddenFieldId = RequestDetail.FindControl("hiddenFieldId") as HiddenField;
+                TextBox txtProductName = RequestDetail.FindControl("txtProductName") as TextBox;
+                TextBox txtQuantity = RequestDetail.FindControl("txtQuantity") as TextBox;
+                TextBox txtPrice = RequestDetail.FindControl("txtPrice") as TextBox;
+                TextBox txtDescription = RequestDetail.FindControl("txtDescription") as TextBox;
 
                 DataRow row = dataTable.NewRow();
                 row[0] = hiddenFieldId.Value;
@@ -432,12 +432,12 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             emptyRow[3] = string.Empty;
             emptyRow[4] = string.Empty;
             dataTable.Rows.Add(emptyRow);
-            ViewState["PurchaseDetail"] = dataTable;
+            ViewState["RequestDetail"] = dataTable;
 
             return dataTable;
         }
 
-        private DataTable LoadPurchaseDetail()
+        private DataTable LoadRequestDetail()
         {
             DataTable dataTable = dataTable = new DataTable();
             DataColumn[] dataColumn = new DataColumn[]{
@@ -449,11 +449,11 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
             };
             dataTable.Columns.AddRange(dataColumn);
 
-            var purchaseDetailList = Utility.GetListFromURL(Constants.PURCHASE_DETAIL_LIST_URL, SPContext.Current.Web);
-            SPFieldLookupValueCollection purchaseDetails = SPContext.Current.ListItem["PurchaseDetail"] as SPFieldLookupValueCollection;
-            foreach (var purchaseDetail in purchaseDetails)
+            var RequestDetailList = Utility.GetListFromURL(Constants.REQUEST_DETAIL_LIST_URL, SPContext.Current.Web);
+            SPFieldLookupValueCollection RequestDetails = SPContext.Current.ListItem["RequestDetail"] as SPFieldLookupValueCollection;
+            foreach (var RequestDetail in RequestDetails)
             {
-                SPListItem listItem = purchaseDetailList.GetItemById(purchaseDetail.LookupId);
+                SPListItem listItem = RequestDetailList.GetItemById(RequestDetail.LookupId);
                 if (listItem != null)
                 {
                     DataRow row = dataTable.NewRow();

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Chi tiết đề nghị"
+                OnQuickLaunch="TRUE"
+                TemplateType="11001"
+                Hidden="TRUE"
+                Url="Lists/RequestDetail"
+                Description="[TVM-eOffice] - Request Detail">
+  </ListInstance>
+</Elements>
