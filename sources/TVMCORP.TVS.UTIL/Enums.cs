@@ -19,6 +19,12 @@ namespace TVMCORP.TVS.UTIL
         public const string Canceled = "$";
     }
 
+    public enum RequestContentType 
+    { 
+        Purchase, 
+        Berlin
+    };
+
     public enum TypeStatistic
     {
         Task,
