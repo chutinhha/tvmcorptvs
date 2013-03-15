@@ -14,6 +14,7 @@ namespace TVMCORP.TVS.UTIL
        public const string REQUEST_LIST_URL = "/Lists/Request";
        public const string REQUEST_DETAIL_LIST_URL = "/Lists/RequestDetail";
        public const string REQUEST_TASK_LIST_URL = "/Lists/RequestTasks";
+       public const string PURCHASE_ARCHIVE_LIST_URL = "/PurchaseArchive";
        public const string DISCUSSIONS_LIST_URL = "/Lists/Discussions";
        
        public const string REQUEST_MY_ITEM_VIEW_URL = "Lists/Request/MyItems.aspx";

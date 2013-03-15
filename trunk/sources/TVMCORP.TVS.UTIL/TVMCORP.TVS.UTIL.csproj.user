@@ -2,6 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
-    <SharePointSiteUrl>http://spioffice/sites/tvm/</SharePointSiteUrl>
+    <SharePointSiteUrl>http://sp2010:70/</SharePointSiteUrl>
   </PropertyGroup>
 </Project>

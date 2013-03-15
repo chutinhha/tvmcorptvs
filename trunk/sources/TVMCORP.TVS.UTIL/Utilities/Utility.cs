@@ -522,5 +522,89 @@ namespace TVMCORP.TVS.UTIL.Utilities
                    .SetValue(selectorMenu, true);
             }
         }
+
+        public static void CopyListItemRoleAssignments(SPListItem sourceListItem, SPListItem destinationListItem)
+        {
+            //First check if the Source List has Unique permissions
+            if (sourceListItem.HasUniqueRoleAssignments)
+            {
+
+                //Break List permission inheritance first
+                destinationListItem.BreakRoleInheritance(true);
+                destinationListItem.Update();
+
+                //Remove current role assignemnts
+                while (destinationListItem.RoleAssignments.Count > 0)
+                {
+                    destinationListItem.RoleAssignments.Remove(0);
+                }
+                destinationListItem.Update();
+
+                //Copy Role Assignments from source to destination list.
+                foreach (SPRoleAssignment sourceRoleAsg in sourceListItem.RoleAssignments)
+                {
+                    SPRoleAssignment destinationRoleAsg = null;
+
+                    //Get the source member object
+                    SPPrincipal member = sourceRoleAsg.Member;
+
+                    //Check if the member is a user 
+                    try
+                    {
+                        SPUser sourceUser = (SPUser)member;
+                        SPUser destinationUser = destinationListItem.ParentList.ParentWeb.AllUsers[sourceUser.LoginName];
+                        if (destinationUser != null)
+                        {
+                            destinationRoleAsg = new SPRoleAssignment(destinationUser);
+                        }
+                    }
+                    catch
+                    { }
+
+                    //Not a user, try check if the member is a Group
+                    if (destinationRoleAsg == null)
+                    {
+                        //Check if the member is a group
+                        try
+                        {
+                            SPGroup sourceGroup = (SPGroup)member;
+                            SPGroup destinationGroup = destinationListItem.ParentList.ParentWeb.SiteGroups[sourceGroup.Name];
+                            if (destinationGroup != null)
+                            {
+                                destinationRoleAsg = new SPRoleAssignment(destinationGroup);
+                            }
+                        }
+                        catch
+                        { }
+                    }
+
+                    //At this state we should have the role assignment established either by user or group
+                    if (destinationRoleAsg != null)
+                    {
+
+                        foreach (SPRoleDefinition sourceRoleDefinition in sourceRoleAsg.RoleDefinitionBindings)
+                        {
+                            try { destinationRoleAsg.RoleDefinitionBindings.Add(destinationListItem.ParentList.ParentWeb.RoleDefinitions[sourceRoleDefinition.Name]); }
+                            catch { }
+                        }
+
+                        if (destinationRoleAsg.RoleDefinitionBindings.Count > 0)
+                        {
+                            //handle additon of an existing  permission assignment error
+                            try { destinationListItem.RoleAssignments.Add(destinationRoleAsg); }
+                            catch (ArgumentException) { }
+                        }
+
+                    }
+
+                }
+
+                //Ensure item update metadata is not affected.
+                destinationListItem.SystemUpdate(false);
+            }
+            else
+                //No need to assign permissions
+                return;
+        }
     }
 }

@@ -7,6 +7,9 @@ namespace TVMCORP.TVS.UTIL
 {
     public static class TMVCorpContentType
     {
+        public const string PURCHASE_CONTENT_TYPE = "0x0100ded6f23a2f434302b5583a6b55451f61";
+        public const string PURCHASE_DOCUMENT_CONTENT_TYPE = "0x0101000eb48c669bfa4de5ab4ed4b201329e93";
+
         public const string APPROVAL_WF_TASK = "0x01080100e6fa232bca3b4b25b9df4b2e3791d3dd";
         public const string IOFFICE_APPROVAL_TASK = "0x01080100e6fa232bca3b4b25b9df4b2e3791d3fc";
         
