@@ -175,22 +175,22 @@ namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS {
         protected global::System.Web.UI.WebControls.RadioButton rdbTypeOfApproval2;
         
         /// <summary>
-        /// literalPurchaseDetail control.
+        /// literalRequestDetail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal literalPurchaseDetail;
+        protected global::System.Web.UI.WebControls.Literal literalRequestDetail;
         
         /// <summary>
-        /// repeaterPurchaseDetail control.
+        /// repeaterRequestDetail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repeaterPurchaseDetail;
+        protected global::System.Web.UI.WebControls.Repeater repeaterRequestDetail;
         
         /// <summary>
         /// linkButtonAdd control.

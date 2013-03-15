@@ -275,10 +275,10 @@
                             <tr>
                                 <td style="border: 1px solid #45aefe; padding: 5px 0px 5px 0px; text-transform: uppercase;
                                     font: bold 16px Arial, Helvetica, sans-serif;" colspan="5">
-                                    <asp:Literal ID="literalPurchaseDetail" Text="Nội dung mua hàng" runat="server"></asp:Literal>
+                                    <asp:Literal ID="literalRequestDetail" Text="Nội dung mua hàng" runat="server"></asp:Literal>
                                 </td>
                             </tr>
-                            <asp:Repeater ID="repeaterPurchaseDetail" runat="server">
+                            <asp:Repeater ID="repeaterRequestDetail" runat="server">
                                 <HeaderTemplate>
                                     <tr class="row_title">
                                         <td style="border: 1px solid #45aefe;" width="5%" align="center" valign="middle">

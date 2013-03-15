@@ -6,9 +6,7 @@
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Register Tagprefix="ApplicationPages" Namespace="Microsoft.SharePoint.ApplicationPages.WebControls" Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 
-<%@ Register TagPrefix="uc" TagName="PurchaseFilterControl" Src="~/_CONTROLTEMPLATES/TVMCORP.TVS.ListDefinitions.PurchaseDefinition/PurchaseFilter/PurchaseFilterUserControl.ascx" %>
-
-<%@ Register TagPrefix="uc" TagName="RequestFilterControl" Src="~/_controltemplates/TVMCORP.TVS/RequestFilterUC.ascx" %>
+<%@ Register TagPrefix="uc" TagName="ucRequestFilter" Src="~/_controltemplates/TVMCORP.TVS/RequestFilterUC.ascx" %>
 
 <asp:Content ContentPlaceHolderId="PlaceHolderPageTitle" runat="server"><SharePoint:ListProperty Property="TitleOrFolder" runat="server"/> - <SharePoint:ListProperty Property="CurrentViewTitle" runat="server"/></asp:Content>
 <asp:Content ContentPlaceHolderId="PlaceHolderPageTitleInTitleArea" runat="server">
@@ -36,7 +34,7 @@
 		<WebPartPages:WebPartZone runat="server" FrameType="None" ID="Main" Title="loc:Main" />
 
         <div class="div-purchase-filter" style="display:none;" >
-            <uc:PurchaseFilterControl ID="RequestFilterControl" runat="server" />
+            <uc:ucRequestFilter ID="ucRequestFilter1" runat="server" />
         </div>
 
 </asp:Content>

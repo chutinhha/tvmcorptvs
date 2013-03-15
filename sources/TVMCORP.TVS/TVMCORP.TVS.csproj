@@ -143,15 +143,7 @@
     <Compile Include="Layouts\TVMCORP.TVS\PurchasePrint.aspx.designer.cs">
       <DependentUpon>PurchasePrint.aspx.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListDefinitions\PurchaseDefinition\FilterWebPart\FilterWebPart.cs" />
-    <Compile Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilter.cs" />
-    <Compile Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilterUserControl.ascx.cs">
-      <DependentUpon>PurchaseFilterUserControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilterUserControl.ascx.designer.cs">
-      <DependentUpon>PurchaseFilterUserControl.ascx.cs</DependentUpon>
-    </Compile>
+    <Compile Include="ListDefinitions\RequestDefinition\FilterWebPart\FilterWebPart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receivers\DiscussionEvents\DiscussionEvents.cs" />
     <Compile Include="Receivers\UpdateLinkViewItemReceiver\UpdateLinkViewItemReceiver.cs" />
@@ -173,7 +165,7 @@
     <None Include="ContentTypes\RequestContentType\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{6e8c6874-7473-48d0-9fec-55bf34d2dc10}</SharePointProjectItemId>
     </None>
-    <None Include="ContentTypes\PurchaseDetailContentType\SharePointProjectItem.spdata">
+    <None Include="ContentTypes\RequestDetailContentType\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{d669ad8f-12c4-48ca-8731-e503824368ae}</SharePointProjectItemId>
     </None>
     <None Include="CustomActions\BreadcrumbViewDelegate\SharePointProjectItem.spdata">
@@ -200,24 +192,20 @@
     <None Include="ListDefinitions\EmailTemplate\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{546d741b-7c88-48e7-af7d-23661a5d40f8}</SharePointProjectItemId>
     </None>
-    <None Include="ListDefinitions\PurchaseDefinition\FilterWebPart\FilterWebPart.webpart" />
-    <None Include="ListDefinitions\PurchaseDefinition\FilterWebPart\SharePointProjectItem.spdata">
+    <None Include="ListDefinitions\RequestDefinition\FilterWebPart\FilterWebPart.webpart" />
+    <None Include="ListDefinitions\RequestDefinition\FilterWebPart\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{f3963cc2-706d-497f-a7b6-5b64ed43ddaf}</SharePointProjectItemId>
     </None>
-    <None Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilter.webpart" />
-    <None Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{d636d529-0d3e-4fe6-a969-2b48f17c3efb}</SharePointProjectItemId>
-    </None>
-    <None Include="ListDefinitions\PurchaseDefinition\PurchaseInstance\SharePointProjectItem.spdata">
+    <None Include="ListDefinitions\RequestDefinition\RequestInstance\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{bd02efba-053d-4ec6-b601-a6fd28f378bf}</SharePointProjectItemId>
     </None>
-    <None Include="ListDefinitions\PurchaseDefinition\SharePointProjectItem.spdata">
+    <None Include="ListDefinitions\RequestDefinition\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{5834c38f-31f3-49a3-9a05-a8d2791caf3f}</SharePointProjectItemId>
     </None>
-    <None Include="ListDefinitions\PurchaseDetailDefinition\PurchaseDetailInstance\SharePointProjectItem.spdata">
+    <None Include="ListDefinitions\RequestDetailDefinition\RequestDetailInstance\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{3a6e6143-cfc1-46f8-8910-de23a2978f91}</SharePointProjectItemId>
     </None>
-    <None Include="ListDefinitions\PurchaseDetailDefinition\SharePointProjectItem.spdata">
+    <None Include="ListDefinitions\RequestDetailDefinition\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{e644d922-2813-4c24-98e9-db82dfafc795}</SharePointProjectItemId>
     </None>
     <None Include="ControlTemplates\SharePointProjectItem.spdata">
@@ -246,7 +234,7 @@
     <None Include="Modules\WebPartPages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{654fa44e-cbb4-4543-9679-dfea75becc22}</SharePointProjectItemId>
     </None>
-    <None Include="ListInstances\PurchaseTaskListInstance\SharePointProjectItem.spdata">
+    <None Include="ListInstances\RequestTaskListInstance\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{1f05a374-6689-4a53-8344-c46eac36f1d9}</SharePointProjectItemId>
     </None>
     <None Include="Package\Package.package">
@@ -287,7 +275,7 @@
     <Content Include="ContentTypes\RequestContentType\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="ContentTypes\PurchaseDetailContentType\Elements.xml">
+    <Content Include="ContentTypes\RequestDetailContentType\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ControlTemplates\TVMCORP.TVS\LookupFieldWithPickerEditor.ascx">
@@ -352,28 +340,22 @@
     <Content Include="Layouts\TVMCORP.TVS\DiscussionResolver.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
-    <Content Include="Layouts\TVMCORP.TVS\PurchasePrint.aspx">
-      <SubType>ASPXCodeBehind</SubType>
-    </Content>
+    <Content Include="Layouts\TVMCORP.TVS\PurchasePrint.aspx" />
     <Content Include="Libs\itextsharp.dll" />
     <Content Include="ListDefinitions\EmailTemplate\Elements.xml" />
     <Content Include="ListDefinitions\EmailTemplate\EmailTemplateInstance\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ListDefinitions\EmailTemplate\Schema.xml" />
-    <Content Include="ListDefinitions\PurchaseDefinition\Elements.xml" />
-    <Content Include="ListDefinitions\PurchaseDefinition\FilterWebPart\Elements.xml" />
-    <Content Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\Elements.xml" />
-    <Content Include="ListDefinitions\PurchaseDefinition\PurchaseFilter\PurchaseFilterUserControl.ascx">
-      <SubType>ASPXCodeBehind</SubType>
-    </Content>
-    <Content Include="ListDefinitions\PurchaseDefinition\PurchaseInstance\Elements.xml" />
-    <Content Include="ListDefinitions\PurchaseDefinition\Schema.xml">
+    <Content Include="ListDefinitions\RequestDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\RequestDefinition\FilterWebPart\Elements.xml" />
+    <Content Include="ListDefinitions\RequestDefinition\RequestInstance\Elements.xml" />
+    <Content Include="ListDefinitions\RequestDefinition\Schema.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="ListDefinitions\PurchaseDetailDefinition\Elements.xml" />
-    <Content Include="ListDefinitions\PurchaseDetailDefinition\PurchaseDetailInstance\Elements.xml" />
-    <Content Include="ListDefinitions\PurchaseDetailDefinition\Schema.xml" />
+    <Content Include="ListDefinitions\RequestDetailDefinition\Elements.xml" />
+    <Content Include="ListDefinitions\RequestDetailDefinition\RequestDetailInstance\Elements.xml" />
+    <Content Include="ListDefinitions\RequestDetailDefinition\Schema.xml" />
     <Content Include="ControlTemplates\TVMCorpTemplate.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
@@ -384,7 +366,7 @@
     </Content>
     <Content Include="ListInstances\FormTemplates\DoxTemplates_Module\Sample.txt" />
     <Content Include="ListInstances\FormTemplates\Elements.xml" />
-    <Content Include="ListInstances\PurchaseTaskListInstance\Schema.xml" />
+    <Content Include="ListInstances\RequestTaskListInstance\Schema.xml" />
     <Content Include="ListInstances\PurchaseArchiveListInstance\Elements.xml" />
     <Content Include="ListInstances\TempDocsListInstance\Elements.xml" />
     <Content Include="Modules\WebPartPages\Elements.xml" />
@@ -406,7 +388,7 @@
     <Content Include="AppGlobalResources\TVMCORP.TVS.CustomFields.LookupFieldWithPicker.en-US.resx" />
     <Content Include="AppGlobalResources\TVMCORP.TVS.CustomFields.LookupFieldWithPicker.resx" />
     <EmbeddedResource Include="WebParts.xml" />
-    <Content Include="ListInstances\PurchaseTaskListInstance\Elements.xml" />
+    <Content Include="ListInstances\RequestTaskListInstance\Elements.xml" />
     <EmbeddedResource Include="XMLSettings\ApprovalWorkflowSettings_Purchase.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -58,7 +58,7 @@ namespace TVMCORP.TVS.WebParts.RequestFilter
             Controls.Add(lblTitle);
 
             dropDownContentType = new System.Web.UI.WebControls.DropDownList();
-            var purchaseList = Utility.GetListFromURL(Constants.PURCHASE_LIST_URL, SPContext.Current.Web);
+            var purchaseList = Utility.GetListFromURL(Constants.REQUEST_LIST_URL, SPContext.Current.Web);
             if (purchaseList != null)
             {
                 foreach (SPContentType contentType in purchaseList.ContentTypes)

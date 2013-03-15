@@ -38,9 +38,12 @@ namespace TVMCORP.TVS.WebParts.RequestFilter
             SetCustomQuery();
             if (!IsPostBack)
             {
-                var purchaseList = Utility.GetListFromURL(Constants.PURCHASE_LIST_URL, SPContext.Current.Web);
-                string url = string.Format(@"javascript:NewItem2(event,'{0}/{1}?ContentTypeId={2}&IsDlg=1');javascript:return false;", SPContext.Current.Web.Url, purchaseList.Forms[PAGETYPE.PAGE_NEWFORM].Url, RequestContentType);
-                linkButtonAdd.OnClientClick = url;
+                var requestList = Utility.GetListFromURL(Constants.REQUEST_LIST_URL, SPContext.Current.Web);
+                if (requestList != null)
+                {
+                    string url = string.Format(@"javascript:NewItem2(event,'{0}/{1}?ContentTypeId={2}&IsDlg=1');javascript:return false;", SPContext.Current.Web.Url, requestList.Forms[PAGETYPE.PAGE_NEWFORM].Url, RequestContentType);
+                    linkButtonAdd.OnClientClick = url;
+                }
             }
         }
 
@@ -74,34 +77,37 @@ namespace TVMCORP.TVS.WebParts.RequestFilter
                                             <FieldRef Name='DepartmentRequest' />
                                             <Value Type='Text'>{0}</Value>
                                         </Eq>", GetDepartmentOfCurrentUser());
-            var purchaseList = Utility.GetListFromURL(Constants.PURCHASE_LIST_URL, SPContext.Current.Web);
-            FindListViewWebParts(this.Page, purchaseList.ID);
-            if (xsltListViewWebParts.Count > 0)
+            var requestList = Utility.GetListFromURL(Constants.REQUEST_LIST_URL, SPContext.Current.Web);
+            if (requestList != null)
             {
-                foreach (var item in xsltListViewWebParts)
+                FindListViewWebParts(this.Page, requestList.ID);
+                if (xsltListViewWebParts.Count > 0)
                 {
-                    XmlDocument xml = new XmlDocument();
-                    xml.LoadXml(item.XmlDefinition);
-
-                    XmlElement viewXml = xml["View"];
-                    XmlNode viewQuery = viewXml.SelectSingleNode("//Query");
-                    XmlNode where = viewQuery.SelectSingleNode("//Where");
-
-                    if (where == null)
+                    foreach (var item in xsltListViewWebParts)
                     {
-                        where = xml.CreateElement("Where");
-                        viewQuery.AppendChild(where);
-                    }
+                        XmlDocument xml = new XmlDocument();
+                        xml.LoadXml(item.XmlDefinition);
 
-                    if (where.ChildNodes.Count == 1)
-                    {
-                        where.InnerXml = string.Format("<And>{0}{1}</And>", where.FirstChild.OuterXml, query);
+                        XmlElement viewXml = xml["View"];
+                        XmlNode viewQuery = viewXml.SelectSingleNode("//Query");
+                        XmlNode where = viewQuery.SelectSingleNode("//Where");
+
+                        if (where == null)
+                        {
+                            where = xml.CreateElement("Where");
+                            viewQuery.AppendChild(where);
+                        }
+
+                        if (where.ChildNodes.Count == 1)
+                        {
+                            where.InnerXml = string.Format("<And>{0}{1}</And>", where.FirstChild.OuterXml, query);
+                        }
+                        else
+                        {
+                            where.InnerXml = query;
+                        }
+                        item.XmlDefinition = xml.InnerXml;
                     }
-                    else
-                    {
-                        where.InnerXml = query;
-                    }
-                    item.XmlDefinition = xml.InnerXml;
                 }
             }
         }

@@ -16,7 +16,7 @@ namespace TVMCORP.TVS.Layouts.TVMCORP.TVS
         {
             base.OnInit(e);
             //
-            repeaterPurchaseDetail.ItemDataBound += new RepeaterItemEventHandler(repeaterPurchaseDetail_ItemDataBound);
+            repeaterRequestDetail.ItemDataBound += new RepeaterItemEventHandler(repeaterRequestDetail_ItemDataBound);
             repeaterPurchaseReference.ItemDataBound += new RepeaterItemEventHandler(repeaterPurchaseReference_ItemDataBound);
             //
             InitData();
@@ -51,9 +51,9 @@ namespace TVMCORP.TVS.Layouts.TVMCORP.TVS
         {
             if (!IsPostBack)
             {
-                DataTable purchaseDetails = LoadPurchaseDetail();
-                repeaterPurchaseDetail.DataSource = purchaseDetails;
-                repeaterPurchaseDetail.DataBind();
+                DataTable RequestDetails = LoadRequestDetail();
+                repeaterRequestDetail.DataSource = RequestDetails;
+                repeaterRequestDetail.DataBind();
 
                 DataTable purchaseReferences = LoadPurchaseReferences();
                 repeaterPurchaseReference.DataSource = purchaseReferences;
@@ -61,7 +61,7 @@ namespace TVMCORP.TVS.Layouts.TVMCORP.TVS
             }
         }
 
-        void repeaterPurchaseDetail_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        void repeaterRequestDetail_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             DataRowView rowView = (DataRowView)e.Item.DataItem;
             if (rowView != null)
@@ -94,7 +94,7 @@ namespace TVMCORP.TVS.Layouts.TVMCORP.TVS
             rdbTypeOfApproval2.Enabled = false;
         }
 
-        private DataTable LoadPurchaseDetail()
+        private DataTable LoadRequestDetail()
         {
             DataTable dataTable = dataTable = new DataTable();
             DataColumn[] dataColumn = new DataColumn[]{
@@ -105,12 +105,12 @@ namespace TVMCORP.TVS.Layouts.TVMCORP.TVS
             };
             dataTable.Columns.AddRange(dataColumn);
 
-            var purchaseDetailList = Utility.GetListFromURL(Constants.PURCHASE_DETAIL_LIST_URL, SPContext.Current.Web);
-            purchaseDetailList = Utility.GetListFromURL(Constants.PURCHASE_DETAIL_LIST_URL, SPContext.Current.Web);
-            SPFieldLookupValueCollection purchaseDetails = SPContext.Current.ListItem["PurchaseDetail"] as SPFieldLookupValueCollection;
-            foreach (var purchaseDetail in purchaseDetails)
+            var RequestDetailList = Utility.GetListFromURL(Constants.REQUEST_DETAIL_LIST_URL, SPContext.Current.Web);
+            RequestDetailList = Utility.GetListFromURL(Constants.REQUEST_DETAIL_LIST_URL, SPContext.Current.Web);
+            SPFieldLookupValueCollection RequestDetails = SPContext.Current.ListItem["RequestDetail"] as SPFieldLookupValueCollection;
+            foreach (var RequestDetail in RequestDetails)
             {
-                SPListItem listItem = purchaseDetailList.GetItemById(purchaseDetail.LookupId);
+                SPListItem listItem = RequestDetailList.GetItemById(RequestDetail.LookupId);
                 if (listItem != null)
                 {
                     DataRow row = dataTable.NewRow();

@@ -83,15 +83,15 @@ namespace TVMCORP.TVS.Features.TVMCORP.TVS.Feature
                         {
                             spWeb.AllowUnsafeUpdates = true;
                             //Purchase list
-                            var purchaseList = Utility.GetListFromURL(Constants.PURCHASE_LIST_URL, spWeb);
+                            var purchaseList = Utility.GetListFromURL(Constants.REQUEST_LIST_URL, spWeb);
                             purchaseList.BreakRoleInheritance(false);
                             purchaseList.SetPermissions(spWeb.EnsureUser(Constants.AUTHENTICATED_USERS), SPRoleType.Contributor);
                             //Purchase Detail list
-                            var purchaseDetailList = Utility.GetListFromURL(Constants.PURCHASE_DETAIL_LIST_URL, spWeb);
-                            purchaseDetailList.BreakRoleInheritance(false);
-                            purchaseDetailList.SetPermissions(spWeb.EnsureUser(Constants.AUTHENTICATED_USERS), SPRoleType.Contributor);
+                            var RequestDetailList = Utility.GetListFromURL(Constants.REQUEST_DETAIL_LIST_URL, spWeb);
+                            RequestDetailList.BreakRoleInheritance(false);
+                            RequestDetailList.SetPermissions(spWeb.EnsureUser(Constants.AUTHENTICATED_USERS), SPRoleType.Contributor);
                             //Purchase Task List
-                            var purchaseTaskApprovalList = Utility.GetListFromURL(Constants.PURCHASE_TASK_LIST_URL, spWeb);
+                            var purchaseTaskApprovalList = Utility.GetListFromURL(Constants.REQUEST_TASK_LIST_URL, spWeb);
                             purchaseTaskApprovalList.BreakRoleInheritance(false);
                             purchaseTaskApprovalList.SetPermissions(spWeb.EnsureUser(Constants.AUTHENTICATED_USERS), SPRoleType.Reader);
                             spWeb.AllowUnsafeUpdates = true;
@@ -162,7 +162,7 @@ namespace TVMCORP.TVS.Features.TVMCORP.TVS.Feature
             {
                 web.AllowUnsafeUpdates = true;
 
-                SPList listPurchase = web.GetList(web.ServerRelativeUrl.TrimEnd('/') + "/Lists/Purchase");
+                SPList listPurchase = Utility.GetListFromURL(Constants.REQUEST_LIST_URL, web);
                 if (listPurchase != null)
                 {
                     //SetListProperties(listPurchase, true);
@@ -222,7 +222,7 @@ namespace TVMCORP.TVS.Features.TVMCORP.TVS.Feature
                 association = SerializationHelper.SerializeToXml(SerializationHelper.DeserializeFromXml<ApprovalWFAssociationData>(xml));
             }
 
-            list.AssociateWorkflow(workflowTemplateName, workflowName, association, "Duyệt đề nghị mua hàng");
+            list.AssociateWorkflow(workflowTemplateName, workflowName, association, "Duyệt đề nghị");
         }
         #endregion Functions
     }

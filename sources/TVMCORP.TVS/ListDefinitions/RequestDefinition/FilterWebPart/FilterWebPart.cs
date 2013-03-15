@@ -1,23 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.ComponentModel;
+using System.Web;
 using System.Web.UI;
-using System.Xml;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
 using Microsoft.SharePoint;
-using TVMCORP.TVS.UTIL;
+using Microsoft.SharePoint.WebControls;
+using System.Collections.Generic;
 using TVMCORP.TVS.UTIL.Utilities;
+using TVMCORP.TVS.UTIL;
+using System.Xml;
 
-namespace TVMCORP.TVS.ControlTemplates.TVMCORP.TVS
+namespace TVMCORP.TVS.ListDefinitions.RequestDefinition.FilterWebPart
 {
-    public partial class RequestFilterUC : UserControl
+    [ToolboxItemAttribute(false)]
+    public class FilterWebPart : WebPart
     {
         private List<Microsoft.SharePoint.WebPartPages.XsltListViewWebPart> xsltListViewWebParts = new List<Microsoft.SharePoint.WebPartPages.XsltListViewWebPart>();
-
-        protected override void OnDataBinding(EventArgs e)
-        {
-            SetCustomQuery();
-        }
-
-        protected void Page_Load(object sender, EventArgs e)
+        protected override void CreateChildControls()
         {
             SetCustomQuery();
         }
