@@ -7,18 +7,17 @@ namespace TVMCORP.TVS.UTIL
 {
    public class Constants
    {
-       #region Purchase
+       #region Request
        public const string THREAD_ID = "ThreadID";
        public const string DISCUSSION_URL = "/Lists/Discussions";
 
-       public const string PURCHASE_LIST_URL = "/Lists/Purchase";
-       public const string PURCHASE_DETAIL_LIST_URL = "/Lists/PurchaseDetail";
-       public const string PURCHASE_TASK_LIST_URL = "/Lists/PurchaseTasks";
+       public const string REQUEST_LIST_URL = "/Lists/Request";
+       public const string REQUEST_DETAIL_LIST_URL = "/Lists/RequestDetail";
+       public const string REQUEST_TASK_LIST_URL = "/Lists/RequestTasks";
        public const string DISCUSSIONS_LIST_URL = "/Lists/Discussions";
        
-       public const string PURCHASE_TITLE_PREFIX = "Yêu cầu mua hàng - ";
-       public const string PURCHASE_MY_ITEM_VIEW_URL = "Lists/Purchase/MyItems.aspx";
-       public const string PURCHASE_MY_DEPARTMENT_ITEM_VIEW_URL = "Lists/Purchase/MyDepartmentItems.aspx";
+       public const string REQUEST_MY_ITEM_VIEW_URL = "Lists/Request/MyItems.aspx";
+       public const string REQUEST_MY_DEPARTMENT_ITEM_VIEW_URL = "Lists/Request/MyDepartmentItems.aspx";
 
        public const string DRAFT_STATUS = "Tạo mới";
        public const string PENDING_STATUS = "Đợi duyệt";
@@ -29,7 +28,7 @@ namespace TVMCORP.TVS.UTIL
 
        public const string AUTHENTICATED_USERS = "NT Authority\\Authenticated Users";
 
-       #endregion Purchase
+       #endregion Request
 
        #region Approval Status
        public const string APPROVED = "0";
