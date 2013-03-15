@@ -180,7 +180,7 @@ namespace TVMCORP.TVS.UTIL.MODELS
         public bool CopyMetadata { get; set; }
         public bool CopyPermission { get; set; }
         public string DocumentFormat { get; set; }
-
+        public string TitleFormula { get; set; }
         public string DestinationLib { get; set; }
     }
 
