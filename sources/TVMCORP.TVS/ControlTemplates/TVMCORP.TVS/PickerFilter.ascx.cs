@@ -148,6 +148,7 @@ namespace TVMCORP.TVS.Controls
                             };
                         }
                         break;
+
                     default:
                         if (formField.Value != null && ddlQUeryOpt.SelectedValue != Constants.NOT_APPLY_VALUE)
                         {
@@ -197,6 +198,10 @@ namespace TVMCORP.TVS.Controls
                                         break;
 	                            }
                             break;
+                        case SPFieldType.User:
+                            func = (y => y[field.Id] == (DataTypes.UserId)searchValue.ToString());
+                            break;
+
                         default:
                             func = (y => (string)y[field.Id] == searchValue.ToString());
                             break;
